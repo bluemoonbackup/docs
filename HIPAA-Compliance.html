@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="docs.css">
+		<link rel="stylesheet" type="text/css" href="magnific-popup.css">		
+		<script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="magnific-popup.1.1.0.min.js"></script>
+		<script type="text/javascript" src="lunr-2.1.0.min.js"></script>
+		<script type="text/javascript" src="docs.js"></script>
+		<title>Documentation</title>		
+	</head>
+	<body>
+	
+		<div id="header-bar">
+			<div id="header-logo"></div>
+			Documentation
+		</div>
+	
+		<div id="main-area">
+			<div id="position-nav">
+				<div id="nav-inner">
+					<ul><li><form method="GET" action="search-results.html"><input name="s" class="search-box" placeholder="Search..."></form></li>
+<li><span class="category-header">Guides</span></li>
+<li><a href="guide-getting-started.html" title="Getting Started">Getting Started</a></li>
+<li><a href="guide-cometgo-getting-started.html" title="Getting Started with CometGo!">Getting Started with CometGo!</a></li>
+<li><a href="guide-seedload-walkthrough.html" title="Seed Load Walkthrough">Seed Load Walkthrough</a></li>
+<li><span class="category-header">Documentation</span></li>
+<li><a href="about-these-docs.html" title="Software Documentation">Software Documentation</a></li>
+<li><a href="application-architecture.html" title="Overview and Concepts">Overview and Concepts</a></li>
+<li><a href="comet-server-installation.html" title="Comet Server installation">Comet Server installation</a></li>
+<li><a href="comet-server-configuration.html" title="Comet Server configuration">Comet Server configuration</a></li>
+<li><a href="comet-server-usage.html" title="Comet Server usage">Comet Server usage</a></li>
+<li><a href="comet-backup-installation.html" title="Comet Backup installation">Comet Backup installation</a></li>
+<li><a href="comet-backup-usage.html" title="Comet Backup usage">Comet Backup usage</a></li>
+<li><a href="user-configuration.html" title="User configuration">User configuration</a></li>
+<li><a href="protected-items.html" title="Protected Item types">Protected Item types</a></li>
+<li><a href="storage-configuration.html" title="Storage configuration">Storage configuration</a></li>
+<li><a href="troubleshooting.html" title="Troubleshooting">Troubleshooting</a></li>
+<li><a href="api.html" title="API Guide">API Guide</a></li>
+<li><a href="api-reference.html" title="API Reference">API Reference</a></li>
+<li><a href="appendix.html" title="Appendix">Appendix</a></li>
+<li><a href="cloud-storage-providers.html" title="Cloud Storage Providers">Cloud Storage Providers</a></li>
+<li><a href="third-party-service-addons.html" title="Third-party service addons">Third-party service addons</a></li>
+<li><a href="comet-server-roles.html" title="Comet Server Roles ">Comet Server Roles </a></li>
+<li><a href="comet-chunking-overview.html" title="Comet Chunking Overview ">Comet Chunking Overview </a></li>
+<li class="current-page"><a data-indent="0" class="subsection-link subsection-indent-0" href="#hipaa-compliance" title="HIPAA Compliance ">HIPAA Compliance </a>
+<ul>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#what-is-hipaa" title="What is HIPAA?">What is HIPAA?</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#hipaa-compliant-cloud-storage-providers-supported-by-comet" title="HIPAA Compliant Cloud Storage Providers supported by Comet:">HIPAA Compliant Cloud Storage Providers supported by Comet:</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#how-comet-is-hipaa-compliant" title="How Comet is HIPAA compliant?">How Comet is HIPAA compliant?</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#backing-up" title="Backing up:">Backing up:</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#during-rest" title="During rest:">During rest:</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#what-is-a-business-associate-addendum-baa" title="What is a Business Associate Addendum (BAA)">What is a Business Associate Addendum (BAA)</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#do-i-need-to-sign-a-baa-with-comet" title="Do I need to sign a BAA with Comet?">Do I need to sign a BAA with Comet?</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#comet-enterprise-and-hipaa" title="Comet Enterprise and HIPAA">Comet Enterprise and HIPAA</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#cometgo-and-hipaa" title="CometGo! and HIPAA">CometGo! and HIPAA</a></li>
+</ul>
+</li><li><a href="GDPR-Compliance.html" title="GDPR Compliance">GDPR Compliance</a></li>
+</ul>
+				</div>
+			</div>
+		
+			<div id="position-content">
+				<div id="content-inner">
+					<span class="docsSectionMarker"><span id="hipaa-compliance" class="docsSectionMarkerChild"></span></span><h1>HIPAA Compliance&nbsp;<a class="docsSectionLinkIcon" href="HIPAA-Compliance.html#hipaa-compliance">&para;</a></h1>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="HIPAA-Compliant-Logo1.png"><img src="HIPAA-Compliant-Logo1.png.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="what-is-hipaa" class="docsSectionMarkerChild"></span></span><div class="docs-box"><h2>What is HIPAA?&nbsp;<a class="docsSectionLinkIcon" href="HIPAA-Compliance.html#what-is-hipaa">&para;</a></h2>
+<p>The United States HIPAA (Health Insurance Portability and Accountability Act) is legislation that mandates data privacy and security provisions for the safeguarding of patient data by health organizations, including drugstores, hospitals and specialized insurance companies.
+This law was further amended in 2009 to include the HITECH Act (The Health Information Technology for Economic and Clinical Health). The act states that Protected Health Information (PHI) must be rendered “unusable, unreadable, or indecipherable” to unauthorized persons and that encryption for data ‘at-rest’ and ‘inflight’ should be addressed.</p>
+<span class="docsSectionMarker"><span id="hipaa-compliant-cloud-storage-providers-supported-by-comet" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>HIPAA Compliant Cloud Storage Providers supported by Comet:&nbsp;<a class="docsSectionLinkIcon" href="HIPAA-Compliance.html#hipaa-compliant-cloud-storage-providers-supported-by-comet">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>Compliance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://aws.amazon.com/s3/"><img src="cloudprovider-amazon-s3.png" alt="Amazon S3" /></a></td>
+<td><a href="https://aws.amazon.com/compliance/hipaa-compliance/">Documentation</a></td>
+</tr>
+<tr>
+<td><a href="https://azure.microsoft.com/en-us/"><img src="cloudprovider-azure.png" alt="Microsoft Azure" /></a></td>
+<td><a href="https://www.microsoft.com/en-us/TrustCenter/Compliance/HIPAA">Documentation</a></td>
+</tr>
+<tr>
+<td><a href="https://cloud.google.com/storage/"><img src="cloudprovider-google-gcp.png" alt="Google Cloud Storage" /></a></td>
+<td><a href="https://cloud.google.com/security/compliance/hipaa/">Documentation</a></td>
+</tr>
+<tr>
+<td><a href="https://wasabi.com/"><img src="cloudprovider-wasabi.png" alt="Wasabi" /></a>]</td>
+<td><a href="https://info.wasabi.com/hipaa">Documentation</a></td>
+</tr>
+<tr>
+<td><a href="https://www.rackspace.com/cloud/files"><img src="cloudprovider-rackspace.png" alt="Rackspace Cloud Files" /></a></td>
+<td><a href="https://www.rackspace.com/industry/healthcare">Documentation</a></td>
+</tr>
+<tr>
+<td><a href="https://www.ibm.com/cloud-computing/bluemix/cloud-object-storage"><img src="cloudprovider-ibm-bluemix.png" alt="IBM Bluemix Cloud Object Storage" /></a></td>
+<td><a href="https://console.bluemix.net/docs/security/compliance.html#compliance">Documentation</a></td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="how-comet-is-hipaa-compliant" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>How Comet is HIPAA compliant?&nbsp;<a class="docsSectionLinkIcon" href="HIPAA-Compliance.html#how-comet-is-hipaa-compliant">&para;</a></h2>
+<span class="docsSectionMarker"><span id="backing-up" class="docsSectionMarkerChild"></span></span><h3>Backing up:&nbsp;<a class="docsSectionLinkIcon" href="HIPAA-Compliance.html#backing-up">&para;</a></h3>
+<p>Comet always encrypts all user data before sending or storing it, using strong AES-256-CTR with Poly1305 in AEAD mode with high-entropy random keys. The user's password is used to derive two 192-bit keys (the &quot;L&quot; and &quot;R&quot; keys) via PBKDF2-SHA512, with hard-coded parameters for repeatable output.</p>
+<ul>
+<li>The L-key is used to log in to the Auth Role server in place of the real password; the server stores only a bcrypt(sha512) hash of this L-key.</li>
+<li>The R-key never leaves the client, and is used to encrypt secret keys stored within the user's profile on the server.</li>
+</ul>
+<span class="docsSectionMarker"><span id="during-rest" class="docsSectionMarkerChild"></span></span><h3>During rest:&nbsp;<a class="docsSectionLinkIcon" href="HIPAA-Compliance.html#during-rest">&para;</a></h3>
+<p>When Comet sets up a Storage Vault for the first time, it generates two high-entropy random keys (the 256-bit &quot;A&quot; and 128-bit &quot;E&quot; keys). All user data in the Storage Vault is stored encrypted with the A-key using AES-256 in CTR mode, and authenticated using Poly1305 in AEAD (encrypt-then-MAC) mode.
+The only party with the decryption key is your company/the backup user. This ensures total privacy of the PHI data. </p>
+<span class="docsSectionMarker"><span id="what-is-a-business-associate-addendum-baa" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>What is a Business Associate Addendum (BAA)&nbsp;<a class="docsSectionLinkIcon" href="HIPAA-Compliance.html#what-is-a-business-associate-addendum-baa">&para;</a></h2>
+<p>Under the Health Insurance Portability and Accountability Act (HIPAA), a &quot;business associate&quot; is a person or entity who performs functions or activities on behalf of, or provides certain services to, a covered entity and isn’t employed by the covered entity. A &quot;business associate&quot; also includes a subcontractor that creates, receives, maintains, or transmits protected health information on behalf of another business associate. Under the HIPAA regulations, using a Cloud Service Provider like Amazon/Azure/Wasabi etc would classify you as being in a business associate arrangement and require an agreement. </p>
+<p>The HIPAA rules generally require that covered entities and business associates enter into contracts to ensure that the business associates will appropriately safeguard protected health information. The business associate contract also serves to clarify and limit, as appropriate, the permissible uses and disclosures of protected health information by the business associate, based on the relationship between the parties and the activities or services being performed by the business associate. </p>
+<span class="docsSectionMarker"><span id="do-i-need-to-sign-a-baa-with-comet" class="docsSectionMarkerChild"></span></span><h3>Do I need to sign a BAA with Comet?&nbsp;<a class="docsSectionLinkIcon" href="HIPAA-Compliance.html#do-i-need-to-sign-a-baa-with-comet">&para;</a></h3>
+<p>No, but it is advisable to sign one if you decide to use a storage provider. </p>
+<span class="docsSectionMarker"><span id="comet-enterprise-and-hipaa" class="docsSectionMarkerChild"></span></span><h3>Comet Enterprise and HIPAA&nbsp;<a class="docsSectionLinkIcon" href="HIPAA-Compliance.html#comet-enterprise-and-hipaa">&para;</a></h3>
+<p>As you are running/hosting Comet yourself and backing up to your own selected storage/cloud storage provider you do not need a BAA with us. Data that is backed up using Comet is always encrypted during backup, transit and at rest. Only you and parties you nominate, have access to your Comet Enterprise server. </p>
+<span class="docsSectionMarker"><span id="cometgo-and-hipaa" class="docsSectionMarkerChild"></span></span><h3>CometGo! and HIPAA&nbsp;<a class="docsSectionLinkIcon" href="HIPAA-Compliance.html#cometgo-and-hipaa">&para;</a></h3>
+<p>We do not recommend using CometGo as a HIPAA backup solution.</p>
+<p><a href="https://www.hhs.gov/hipaa/index.html">You can read more about HIPAA in general here on HHS.gov</a></p></div><div class="doc-navigation-section"><div class="doc-navigation-back doc-navigation-width-2"><a href="comet-chunking-overview.html">&laquo; Back: Comet Chunking Overview </a></div><div class="doc-navigation-next doc-navigation-width-2"><a href="GDPR-Compliance.html">Next: GDPR Compliance &raquo;</a></div></div> 
+				</div>
+			</div>
+		</div>
+	
+	
+	</body>
+</html>

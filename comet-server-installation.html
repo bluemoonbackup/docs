@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="docs.css">
+		<link rel="stylesheet" type="text/css" href="magnific-popup.css">		
+		<script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="magnific-popup.1.1.0.min.js"></script>
+		<script type="text/javascript" src="lunr-2.1.0.min.js"></script>
+		<script type="text/javascript" src="docs.js"></script>
+		<title>Documentation</title>		
+	</head>
+	<body>
+	
+		<div id="header-bar">
+			<div id="header-logo"></div>
+			Documentation
+		</div>
+	
+		<div id="main-area">
+			<div id="position-nav">
+				<div id="nav-inner">
+					<ul><li><form method="GET" action="search-results.html"><input name="s" class="search-box" placeholder="Search..."></form></li>
+<li><span class="category-header">Guides</span></li>
+<li><a href="guide-getting-started.html" title="Getting Started">Getting Started</a></li>
+<li><a href="guide-cometgo-getting-started.html" title="Getting Started with CometGo!">Getting Started with CometGo!</a></li>
+<li><a href="guide-seedload-walkthrough.html" title="Seed Load Walkthrough">Seed Load Walkthrough</a></li>
+<li><span class="category-header">Documentation</span></li>
+<li><a href="about-these-docs.html" title="Software Documentation">Software Documentation</a></li>
+<li><a href="application-architecture.html" title="Overview and Concepts">Overview and Concepts</a></li>
+<li class="current-page"><a data-indent="0" class="subsection-link subsection-indent-0" href="#comet-server-installation" title="Comet Server installation">Comet Server installation</a>
+<ul>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#system-requirements" title="System Requirements">System Requirements</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#windows" title="Windows">Windows</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#upgrading" title="Upgrading">Upgrading</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#linux--deb" title="Linux - DEB">Linux - DEB</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#compatibility" title="Compatibility">Compatibility</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#upgrading-from-sysvinit-to-systemd" title="Upgrading from SysVinit to systemd">Upgrading from SysVinit to systemd</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#upgrading-2" title="Upgrading">Upgrading</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#linux--rpm" title="Linux - RPM">Linux - RPM</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#installing" title="Installing">Installing</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#dnf" title="DNF">DNF</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#yum" title="YUM">YUM</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#zypper" title="Zypper">Zypper</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#other-rpmsystemd-distribution" title="Other RPM/systemd distribution">Other RPM/systemd distribution</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#converting-from-other-distribution-to-rpm-package" title="Converting from &quot;Other Distribution&quot; to RPM package">Converting from &quot;Other Distribution&quot; to RPM package</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#upgrading-3" title="Upgrading">Upgrading</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#linux-nas-synology-qnap" title="Linux NAS (Synology, QNAP)">Linux NAS (Synology, QNAP)</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#linux-other-distribution" title="Linux (Other distribution)">Linux (Other distribution)</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#commandline-arguments" title="Command-line arguments">Command-line arguments</a></li>
+</ul>
+</li><li><a href="comet-server-configuration.html" title="Comet Server configuration">Comet Server configuration</a></li>
+<li><a href="comet-server-usage.html" title="Comet Server usage">Comet Server usage</a></li>
+<li><a href="comet-backup-installation.html" title="Comet Backup installation">Comet Backup installation</a></li>
+<li><a href="comet-backup-usage.html" title="Comet Backup usage">Comet Backup usage</a></li>
+<li><a href="user-configuration.html" title="User configuration">User configuration</a></li>
+<li><a href="protected-items.html" title="Protected Item types">Protected Item types</a></li>
+<li><a href="storage-configuration.html" title="Storage configuration">Storage configuration</a></li>
+<li><a href="troubleshooting.html" title="Troubleshooting">Troubleshooting</a></li>
+<li><a href="api.html" title="API Guide">API Guide</a></li>
+<li><a href="api-reference.html" title="API Reference">API Reference</a></li>
+<li><a href="appendix.html" title="Appendix">Appendix</a></li>
+<li><a href="cloud-storage-providers.html" title="Cloud Storage Providers">Cloud Storage Providers</a></li>
+<li><a href="third-party-service-addons.html" title="Third-party service addons">Third-party service addons</a></li>
+<li><a href="comet-server-roles.html" title="Comet Server Roles ">Comet Server Roles </a></li>
+<li><a href="comet-chunking-overview.html" title="Comet Chunking Overview ">Comet Chunking Overview </a></li>
+<li><a href="HIPAA-Compliance.html" title="HIPAA Compliance ">HIPAA Compliance </a></li>
+<li><a href="GDPR-Compliance.html" title="GDPR Compliance">GDPR Compliance</a></li>
+</ul>
+				</div>
+			</div>
+		
+			<div id="position-content">
+				<div id="content-inner">
+					<span class="docsSectionMarker"><span id="comet-server-installation" class="docsSectionMarkerChild"></span></span><h1>Comet Server installation&nbsp;<a class="docsSectionLinkIcon" href="comet-server-installation.html#comet-server-installation">&para;</a></h1>
+<span class="docsSectionMarker"><span id="system-requirements" class="docsSectionMarkerChild"></span></span><div class="docs-box"><h2>System Requirements&nbsp;<a class="docsSectionLinkIcon" href="comet-server-installation.html#system-requirements">&para;</a></h2>
+<ul>
+<li>CPU:
+<ul>
+<li>x86_64 CPU architecture</li>
+<li>No minimum requirement (CPU usage scales with server load)</li>
+</ul></li>
+<li>RAM:
+<ul>
+<li>Suggest 2/4 GB minimum</li>
+<li>No minimum requirement (RAM usage scales with server load)</li>
+</ul></li>
+<li>Operating System:
+<ul>
+<li>Windows 7 or newer</li>
+<li>Windows Server 2008 or newer  
+<ul>
+<li>As of Comet 19.12.5, TLS 1.2 is mandatory in Comet Server. Windows Server 2008 users may require <a href="https://support.microsoft.com/en-us/help/4019276/update-to-add-support-for-tls-1-1-and-tls-1-2-in-windows">KB4019276</a> to continue accessing Comet Server; this update is also required for ESU (Extended Security Updates) for Windows Server 2008.</li>
+</ul></li>
+<li>Ubuntu 12.04 or newer</li>
+<li>Debian 6 &quot;Squeeze&quot; or newer</li>
+<li>CentOS 6 or newer</li>
+<li>Any other recent Linux operating system version (kernel 2.6.23 or later)</li>
+</ul></li>
+<li>Disk space:
+<ul>
+<li>Approximately 100MB for the server software application itself; plus</li>
+<li>a few 10s of MB for customer metadata, job history logs, etc; plus</li>
+<li>any space required for actual customer backup data (if you are not using cloud storage).</li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="windows" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Windows&nbsp;<a class="docsSectionLinkIcon" href="comet-server-installation.html#windows">&para;</a></h2>
+<p>Run the installer file and follow the prompts.</p>
+<p>By default, the software is installed into the <code>C:\Program Files\Comet Server</code> directory. Configuration files and log files are stored in the <code>C:\ProgramData\Comet</code> directory.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="img-comet-server-windows-install.png"><img src="img-comet-server-windows-install.png.thumb.jpg" alt="" /></a></p>
+<p>Before starting the server for the first time, a serial number must be entered, as described in following sections.</p>
+<p>Once the server software is installed, it can be started via</p>
+<ul>
+<li>Comet Server Service Manager (recommended), or</li>
+<li>the Services snap-in, or</li>
+<li>via the Services tab in Task Manager.</li>
+</ul>
+<p>For troubleshooting purposes only, the server can be started from an interactive terminal:</p>
+<ol>
+<li>Open a command prompt as Administrator</li>
+<li>cd <code>C:\Program Files\Comet Server</code></li>
+<li><code>cometd -Chdir C:\ProgramData\Comet</code></li>
+</ol>
+<span class="docsSectionMarker"><span id="upgrading" class="docsSectionMarkerChild"></span></span><h3>Upgrading&nbsp;<a class="docsSectionLinkIcon" href="comet-server-installation.html#upgrading">&para;</a></h3>
+<p>To upgrade Comet Server on Windows, run the updated installer file. The old version will be uninstalled and replaced with the new version. Your configuration will be preserved. Any running backup jobs should resume automatically.</p>
+<span class="docsSectionMarker"><span id="linux--deb" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Linux - DEB&nbsp;<a class="docsSectionLinkIcon" href="comet-server-installation.html#linux--deb">&para;</a></h2>
+<p>Comet Server is available as a <code>.deb</code> package for Debian and Ubuntu Server.</p>
+<p>Install by running <code>dpkg -i cometd_x.y.z_amd64.deb ; apt-get -f install</code> (replacing <code>x.y.z</code> as appropriate based on the downloaded <code>.deb</code> filename).</p>
+<p>The package installs into <code>/opt/</code>, but otherwise respects standard Debian policy:</p>
+<ul>
+<li>The configuration file is kept in <code>/etc/cometd/cometd.cfg</code>.</li>
+<li>Database files are stored in <code>/var/lib/cometd/</code>.</li>
+<li>The server log files are stored in <code>/var/log/cometd/</code>.</li>
+<li>Standard <code>service</code> or systemd <code>systemctl</code> commands can be used to start, stop, restart, and view logs for the server.</li>
+</ul>
+<iframe width="700" height="440" src="https://www.youtube.com/embed/HxhJthE0UY0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<span class="docsSectionMarker"><span id="compatibility" class="docsSectionMarkerChild"></span></span><h3>Compatibility&nbsp;<a class="docsSectionLinkIcon" href="comet-server-installation.html#compatibility">&para;</a></h3>
+<p>The <code>.deb</code> package supports Ubuntu Server 12.04, 14.04, 16.04, or compatible; and Debian 6 &quot;Squeeze&quot;, 7 &quot;Wheezy&quot;, 8 &quot;Jessie&quot;, 9 &quot;Stretch&quot;, or compatible. The package supports both SysVinit and systemd.</p>
+<p>The package may be compatible with future versions of Debian and Ubuntu, and compatible derivative distributions; however, this cannot be guaranteed at the time of writing.</p>
+<span class="docsSectionMarker"><span id="upgrading-from-sysvinit-to-systemd" class="docsSectionMarkerChild"></span></span><h4>Upgrading from SysVinit to systemd&nbsp;<a class="docsSectionLinkIcon" href="comet-server-installation.html#upgrading-from-sysvinit-to-systemd">&para;</a></h4>
+<p>When upgrading from a distribution using SysVinit or Upstart (e.g. Debian 6, Debian 7, Ubuntu 12.04, Ubuntu 14.04) to a distribution using systemd (e.g. Debian 8, Ubuntu 16.04), the Comet Server unit is not enabled in systemd and will not start automatically. You can resolve this issue by</p>
+<ul>
+<li>reinstalling the Comet Server package, or</li>
+<li>upgrading the Comet Server package to the latest version, or</li>
+<li>running <code>systemctl enable cometd</code></li>
+</ul>
+<span class="docsSectionMarker"><span id="upgrading-2" class="docsSectionMarkerChild"></span></span><h3>Upgrading&nbsp;<a class="docsSectionLinkIcon" href="comet-server-installation.html#upgrading-2">&para;</a></h3>
+<p>To upgrade Comet Server on Debian-based distributions, install the updated <code>.deb</code> file. The old version will be uninstalled and replaced with the new version. Your configuration will be preserved. Any running backup jobs should resume automatically.</p>
+<span class="docsSectionMarker"><span id="linux--rpm" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Linux - RPM&nbsp;<a class="docsSectionLinkIcon" href="comet-server-installation.html#linux--rpm">&para;</a></h2>
+<p><em>The RPM package is available for Comet 19.3.9 and later.</em></p>
+<p>Comet Server is available as an <code>.rpm</code> package for RPM distributions. The single <code>.rpm</code> package is designed to work on multiple Linux distributions that meet the following high-level requirements:</p>
+<ul>
+<li>Systemd
+<ul>
+<li>It is not generally feasible to install <code>systemd</code> on older Linux distributions (e.g. CentOS 6 / RHEL 6 and earlier).</li>
+</ul></li>
+<li>RPM with xz support
+<ul>
+<li>The RPM installer uses <code>xz</code> compression, that is not supported on older Linux distributions (e.g. CentOS 5 / RHEL 5 and earlier).</li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="installing" class="docsSectionMarkerChild"></span></span><h3>Installing&nbsp;<a class="docsSectionLinkIcon" href="comet-server-installation.html#installing">&para;</a></h3>
+<p>Use your distribution package manager to install the <code>.rpm</code> file and its dependencies:</p>
+<span class="docsSectionMarker"><span id="dnf" class="docsSectionMarkerChild"></span></span><h4>DNF&nbsp;<a class="docsSectionLinkIcon" href="comet-server-installation.html#dnf">&para;</a></h4>
+<p><em>DNF is the recommended package manager in Fedora 22 and later, CentOS 8, Red Hat Enterprise Linux (RHEL) 8, Oracle Linux 8, and others.</em></p>
+<ol>
+<li><code>dnf localinstall ./cometd-*.x86_64.rpm</code></li>
+<li>Edit <code>/etc/cometd/cometd.cfg</code> to enter your serial number</li>
+<li><code>systemctl start cometd</code></li>
+</ol>
+<span class="docsSectionMarker"><span id="yum" class="docsSectionMarkerChild"></span></span><h4>YUM&nbsp;<a class="docsSectionLinkIcon" href="comet-server-installation.html#yum">&para;</a></h4>
+<p><em>YUM is the recommended package manager in Fedora 15 and later, CentOS 7, Red Hat Enterprise Linux (RHEL) 7, Oracle Linux 7, and others.</em></p>
+<ol>
+<li><code>yum localinstall ./cometd-*.x86_64.rpm</code></li>
+<li>Edit <code>/etc/cometd/cometd.cfg</code> to enter your serial number</li>
+<li><code>systemctl start cometd</code></li>
+</ol>
+<span class="docsSectionMarker"><span id="zypper" class="docsSectionMarkerChild"></span></span><h4>Zypper&nbsp;<a class="docsSectionLinkIcon" href="comet-server-installation.html#zypper">&para;</a></h4>
+<p><em>Zypper is the recommended package manager in OpenSUSE 12, SLES 12 and later, and others.</em></p>
+<ol>
+<li><code>zypper install --recommends ./cometd-*.x86_64.rpm</code>
+<ul>
+<li>Choose to <strong>ignore</strong> warning that cometd rpm is unsigned</li>
+</ul></li>
+<li>Edit <code>/etc/cometd/cometd.cfg</code> to enter your serial number</li>
+<li><code>systemctl start cometd</code></li>
+</ol>
+<span class="docsSectionMarker"><span id="other-rpmsystemd-distribution" class="docsSectionMarkerChild"></span></span><h4>Other RPM/systemd distribution&nbsp;<a class="docsSectionLinkIcon" href="comet-server-installation.html#other-rpmsystemd-distribution">&para;</a></h4>
+<p>The basic RPM program does not automatically install necessary package dependencies.</p>
+<ol>
+<li>Manually install dependencies
+<ul>
+<li><code>setcap</code>, <code>tzdata</code>, <code>ca-certificates</code>, <code>adduser</code>/<code>useradd</code></li>
+</ul></li>
+<li><code>rpm -i ./cometd-*.x86_64.rpm</code></li>
+<li>Edit <code>/etc/cometd/cometd.cfg</code> to enter your serial number</li>
+<li><code>systemctl start cometd</code></li>
+</ol>
+<span class="docsSectionMarker"><span id="converting-from-other-distribution-to-rpm-package" class="docsSectionMarkerChild"></span></span><h4>Converting from &quot;Other Distribution&quot; to RPM package&nbsp;<a class="docsSectionLinkIcon" href="comet-server-installation.html#converting-from-other-distribution-to-rpm-package">&para;</a></h4>
+<p>The RPM package was introduced in Comet 19.3.9. If you were using Comet Server on an RPM-based Linux distribution prior to this version of Comet, you may wish to upgrade from the <code>.tar.xz</code> package to the RPM package.</p>
+<p>The RPM is a repackaged version of Comet Server that installs it in a predefined, standardised way. But the actual content of the installation is the same as for the existing .tar.xz package; the program and all settings files are compatible.</p>
+<p>The RPM installs Comet Server to the <code>/opt/cometd/</code> directory. It creates a <code>cometd</code> system user/group to run the service. It installs a startup script using systemd. All of those things might have been optional in the <code>.tar.xz</code> package.</p>
+<p>The RPM does not contain any settings files and will not overwrite the existing settings. If you were using the <code>/opt/cometd/</code> directory and a <code>cometd</code> user/group already, it may be possible to simply force-install the RPM over the top of the current directory.</p>
+<p>A safer, more-conservative set of rough steps should be</p>
+<ol>
+<li>Stop the running Comet Server service</li>
+<li>Remove any custom Comet Server startup script or systemd unit; if using systemd, run <code>systemctl daemon-reload</code> for it to pick up on the removal</li>
+<li>If your existing Comet Server installation used the <code>/opt/cometd/</code> directory, rename it to something different (e.g. <code>/opt/cometd-backup/</code>)</li>
+<li>Install the RPM. The new Comet Server service does not start up automatically</li>
+<li>Move the <code>cometd-**.db</code> files (x7), the <code>cometd.cfg</code> file, the <code>/resources/</code> subdirectory, and the <code>/logs/</code> subdirectory all into place from the old installation directory to the new installation directory </li>
+<li>If you were using local disk storage, move the storage directory (default <code>/userdata/</code>) back into place and/or check in the <code>cometd.cfg</code> file that the Comet Server is looking in the correct location for local disk storage</li>
+<li>Ensure that all the moved files above are owned and/or writable by the &quot;cometd&quot; user account (e.g. by running <code>chown -R comet:comet /opt/cometd/</code>)</li>
+<li>Start the Comet Server service</li>
+</ol>
+<span class="docsSectionMarker"><span id="upgrading-3" class="docsSectionMarkerChild"></span></span><h3>Upgrading&nbsp;<a class="docsSectionLinkIcon" href="comet-server-installation.html#upgrading-3">&para;</a></h3>
+<p>To upgrade Comet Server on RPM distributions, install the updated <code>.rpm</code> file. The old version will be uninstalled and replaced with the new version. Your configuration will be preserved. Any running backup jobs should resume automatically.</p>
+<span class="docsSectionMarker"><span id="linux-nas-synology-qnap" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Linux NAS (Synology, QNAP)&nbsp;<a class="docsSectionLinkIcon" href="comet-server-installation.html#linux-nas-synology-qnap">&para;</a></h2>
+<p class="highlight-upcoming">Future versions of Comet will provide integrated packages for Synology and QNAP NAS devices. In the meantime, if your NAS has an x86_64 CPU and you have SSH access to your NAS device, you can install Comet Server using the &quot;Other distribution&quot; package.</p>
+<span class="docsSectionMarker"><span id="linux-other-distribution" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Linux (Other distribution)&nbsp;<a class="docsSectionLinkIcon" href="comet-server-installation.html#linux-other-distribution">&para;</a></h2>
+<p>If you are using a Linux distribution without an available package, your support agent will be unable to assist with any issues related to your specific operating system. Different Linux distributions use different service managers, init systems, user management scripts, and filesystem hierarchies; the following instructions are deliberately vague as a result.</p>
+<p>The server software can be installed as follows:</p>
+<ol>
+<li>Create a new restricted user to run the application.</li>
+<li>Extract the provided archive.
+<ul>
+<li>Set permissions on the extracted files to match the created user, and mark the <code>cometd</code> binary as executable.</li>
+</ul></li>
+<li>Switch to the restricted user, and run the application once with the argument <code>-ValidateConfigOnly</code>. This will cause a default configuration file to be generated.</li>
+<li>Write a service management script (e.g. systemd unit file) to manage the service.</li>
+<li>Proceed to enter a serial number in the configuration file, as described in following sections.</li>
+</ol>
+<p>On Linux, binding to ports below 1024 (e.g. the common 80 or 443) requires authorization from the root user. There are many ways to achieve this: for example, you can run <code>setcap CAP_NET_BIND_SERVICE=+eip /path/to/cometd</code> as root (requires kernel 2.6.24 or newer), or investigate the <code>authbind</code> package for more granular control.</p>
+<p>The server can be started at any time, by either</p>
+<ul>
+<li>opening a terminal as the restricted user, and typing <code>./cometd</code> ; or</li>
+<li>by starting the service using the service management script (e.g. systemd unit).</li>
+</ul>
+<p>The latter should be preferred in general, but the former may be more convenient during initial configuration and for diagnostic purposes.</p>
+<p>Comet Server for Linux requires the IANA timezone database to be available unpacked in the <code>/usr/share/zoneinfo/</code> directory. This package is likely already installed by your distribution vendor.</p>
+<ul>
+<li>Alternative directories supported are <code>/usr/share/lib/zoneinfo/</code>, or <code>/usr/lib/locale/TZ/</code>.</li>
+</ul>
+<span class="docsSectionMarker"><span id="commandline-arguments" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Command-line arguments&nbsp;<a class="docsSectionLinkIcon" href="comet-server-installation.html#commandline-arguments">&para;</a></h2>
+<p>The Comet Server binary (i.e. <code>cometd.exe</code> on Windows / <code>cometd</code> on Linux) accepts a number of command-line arguments to configure its behavior.</p>
+<p><em><code>-ValidateConfigOnly</code></em></p>
+<p>This flag causes Comet Server to validate the <code>cometd.cfg</code> file, creating it if it does not already exist, and then exit immediately.</p>
+<p><em><code>-LogAccesses</code></em></p>
+<p>This flag causes Comet Server to add log entries for all HTTP accesses. This option can cause a lot of information to be generated and should be used sparingly when troubleshooting network issues.</p>
+<p><em><code>-Chdir=C:/custom-path/</code></em></p>
+<p>This flag causes Comet Server to look in a different directory for its read-write files, such as <code>cometd.cfg</code> and database files.</p>
+<p><em><code>-Instdir=C:/custom-path/</code></em></p>
+<p>This flag causes Comet Server to look in a different directory for its read-only files, such as <code>/vendor/</code>.</p>
+<p><em><code>-WebrootDir=C:/custom-path/</code></em></p>
+<p>This flag causes Comet Server to not use the built-in web interface, and instead use a custom web interface from the supplied directory. This option could be used to enable advanced customization of the web interface, or to disable the web interface entirely.</p>
+<p>The built-in web interface is entirely API-driven; modifying or disabling the web interface in this way has no impact upon any other uses of the product (including backup or restore operations).</p></div><div class="doc-navigation-section"><div class="doc-navigation-back doc-navigation-width-2"><a href="application-architecture.html">&laquo; Back: Overview and Concepts</a></div><div class="doc-navigation-next doc-navigation-width-2"><a href="comet-server-configuration.html">Next: Comet Server configuration &raquo;</a></div></div> 
+				</div>
+			</div>
+		</div>
+	
+	
+	</body>
+</html>

@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="docs.css">
+		<link rel="stylesheet" type="text/css" href="magnific-popup.css">		
+		<script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="magnific-popup.1.1.0.min.js"></script>
+		<script type="text/javascript" src="lunr-2.1.0.min.js"></script>
+		<script type="text/javascript" src="docs.js"></script>
+		<title>Documentation</title>		
+	</head>
+	<body>
+	
+		<div id="header-bar">
+			<div id="header-logo"></div>
+			Documentation
+		</div>
+	
+		<div id="main-area">
+			<div id="position-nav">
+				<div id="nav-inner">
+					<ul><li><form method="GET" action="search-results.html"><input name="s" class="search-box" placeholder="Search..."></form></li>
+<li><span class="category-header">Guides</span></li>
+<li><a href="guide-getting-started.html" title="Getting Started">Getting Started</a></li>
+<li><a href="guide-cometgo-getting-started.html" title="Getting Started with CometGo!">Getting Started with CometGo!</a></li>
+<li><a href="guide-seedload-walkthrough.html" title="Seed Load Walkthrough">Seed Load Walkthrough</a></li>
+<li><span class="category-header">Documentation</span></li>
+<li><a href="about-these-docs.html" title="Software Documentation">Software Documentation</a></li>
+<li><a href="application-architecture.html" title="Overview and Concepts">Overview and Concepts</a></li>
+<li><a href="comet-server-installation.html" title="Comet Server installation">Comet Server installation</a></li>
+<li><a href="comet-server-configuration.html" title="Comet Server configuration">Comet Server configuration</a></li>
+<li><a href="comet-server-usage.html" title="Comet Server usage">Comet Server usage</a></li>
+<li><a href="comet-backup-installation.html" title="Comet Backup installation">Comet Backup installation</a></li>
+<li><a href="comet-backup-usage.html" title="Comet Backup usage">Comet Backup usage</a></li>
+<li><a href="user-configuration.html" title="User configuration">User configuration</a></li>
+<li><a href="protected-items.html" title="Protected Item types">Protected Item types</a></li>
+<li><a href="storage-configuration.html" title="Storage configuration">Storage configuration</a></li>
+<li class="current-page"><a data-indent="0" class="subsection-link subsection-indent-0" href="#troubleshooting" title="Troubleshooting">Troubleshooting</a>
+<ul>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-local-error-tls-record-overflow" title="Error &quot;local error: tls: record overflow&quot;">Error &quot;local error: tls: record overflow&quot;</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#paused-state-on-windows-service" title="&quot;Paused&quot; state on Windows service">&quot;Paused&quot; state on Windows service</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#forgotten-administrator-password" title="Forgotten administrator password">Forgotten administrator password</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#storage-server--in-use-by-accounts-but-not-managed-by-constellation" title="Storage server &quot;127.0.0.1&quot; in use by accounts but not managed by Constellation">Storage server &quot;127.0.0.1&quot; in use by accounts but not managed by Constellation</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#microsoft-sql-server-backup-encountered-a-vdi-error" title="Microsoft SQL Server backup encountered a VDI error">Microsoft SQL Server backup encountered a VDI error</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-access-is-denied-when-backing-up-files-and-folders-on-windows" title="Error &quot;Access is denied&quot; when backing up files and folders on Windows">Error &quot;Access is denied&quot; when backing up files and folders on Windows</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#antivirus-detects-comet-backup-as-a-virus-or-malware" title="Antivirus detects Comet Backup as a virus or malware">Antivirus detects Comet Backup as a virus or malware</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#avast-filerepmalware" title="Avast &quot;FileRepMalware&quot;">Avast &quot;FileRepMalware&quot;</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#error-backuptoolexe-couldnt-be-launched-createprocess-failed-access-is-denied-message" title="Error &quot;backup-tool.exe couldn&apos;t be launched. CreateProcess() failed: Access is denied&quot; message">Error &quot;backup-tool.exe couldn&apos;t be launched. CreateProcess() failed: Access is denied&quot; message</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#network-connectivity-errors" title="Network connectivity errors">Network connectivity errors</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#accessing-windows-network-shares-and-unc-paths" title="Accessing Windows network shares and UNC paths">Accessing Windows network shares and UNC paths</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#mapped-network-drives" title="Mapped network drives">Mapped network drives</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#authentication" title="Authentication">Authentication</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-couldnt-take-snapshot-the-specified-object-was-not-found-using-deslock" title="Error &quot;Couldn&apos;t take snapshot: The specified object was not found&quot; using DESlock+">Error &quot;Couldn&apos;t take snapshot: The specified object was not found&quot; using DESlock+</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-vss-error-couldnt-take-snapshot-the-shadow-copy-provider-had-an-unexpected-error-while-trying-to-process-the-specified-operation" title="Error &quot;VSS Error: Couldn&apos;t take snapshot. The shadow copy provider had an unexpected error while trying to process the specified operation&quot;">Error &quot;VSS Error: Couldn&apos;t take snapshot. The shadow copy provider had an unexpected error while trying to process the specified operation&quot;</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#email-delivery-failed-when-using-mx-direct" title="Email delivery failed when using MX Direct">Email delivery failed when using MX Direct</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#ip-block-reputation" title="IP block reputation">IP block reputation</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#forwardconfirmed-reverse-dns" title="Forward-confirmed reverse DNS">Forward-confirmed reverse DNS</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#spf" title="SPF">SPF</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#dkim-signing" title="DKIM signing">DKIM signing</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#jobs-left-in-running-state" title="Jobs left in Running state">Jobs left in Running state</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#out-of-memory" title="Out of memory">Out of memory</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#tradeoffs" title="Trade-offs">Trade-offs</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#rescan-unchanged-files" title="Rescan unchanged files">Rescan unchanged files</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#prefer-temporary-files-instead-of-ram" title="Prefer temporary files instead of RAM">Prefer temporary files instead of RAM</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-http--in-comet-backup-logs" title="Error &quot;HTTP 500&quot; in Comet Backup logs">Error &quot;HTTP 500&quot; in Comet Backup logs</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#change-of-hardware-causes-registration-dialog-to-appear" title="Change of hardware causes registration dialog to appear">Change of hardware causes registration dialog to appear</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#handling-a-changed-device-id" title="Handling a changed device ID">Handling a changed device ID</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#storage-vault-locks" title="Storage Vault Locks">Storage Vault Locks</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#problem-statement" title="Problem statement">Problem statement</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#lock-files" title="Lock files">Lock files</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#downsides-of-lock-file-design" title="Downsides of lock file design">Downsides of lock file design</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#automatic-unlock" title="Automatic unlock">Automatic unlock</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#recovering-from-unsafe-unlock-operations" title="Recovering from unsafe unlock operations">Recovering from unsafe unlock operations</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#backup-process-stalled-on-preparing-storage-vault-for-first-use" title="Backup process stalled on &quot;Preparing Storage Vault for first use&quot;">Backup process stalled on &quot;Preparing Storage Vault for first use&quot;</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-media-is-write-protected-backing-up-onedrive-with-vss" title="Error &quot;Media is write protected&quot; backing up OneDrive with VSS">Error &quot;Media is write protected&quot; backing up OneDrive with VSS</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-access-to-the-cloud-file-is-denied-backing-up-onedrive" title="Error &quot;Access to the cloud file is denied&quot; backing up OneDrive">Error &quot;Access to the cloud file is denied&quot; backing up OneDrive</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-efsencrypted-files-may-be-unusable-once-restored" title="Error &quot;EFS-encrypted files may be unusable once restored&quot;">Error &quot;EFS-encrypted files may be unusable once restored&quot;</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-the-target-path-xwindowsimagebackup-already-exists--please-safely-remove-this-directory-and-retry-the-backup" title="Error &quot;The target path &apos;X:\WindowsImageBackup&apos; already exists - please safely remove this directory and retry the backup.&quot;">Error &quot;The target path &apos;X:\WindowsImageBackup&apos; already exists - please safely remove this directory and retry the backup.&quot;</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-an-attempt-was-made-to-access-a-socket-in-a-way-forbidden-by-its-access-permissions-in-comet-server" title="Error &quot;An attempt was made to access a socket in a way forbidden by its access permissions&quot; in Comet Server">Error &quot;An attempt was made to access a socket in a way forbidden by its access permissions&quot; in Comet Server</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#firewall" title="Firewall">Firewall</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#in-use-by-other-application" title="In use by other application">In use by other application</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-too-many-open-files" title="Error &quot;too many open files&quot;">Error &quot;too many open files&quot;</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#on-macos" title="On macOS">On macOS</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#on-linux" title="On Linux">On Linux</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#perprocess-limits" title="Per-process limits">Per-process limits</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#systemwide-limits" title="System-wide limits">System-wide limits</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#on-windows" title="On Windows">On Windows</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-couldnt-decrypt-vault-contents-message-in-job-reports" title="Error &quot;Couldn&apos;t decrypt Vault contents&quot; message in job reports">Error &quot;Couldn&apos;t decrypt Vault contents&quot; message in job reports</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-permission-denied-when-restoring-from-a-local-path-storage-vault-on-macos" title="Error &quot;permission denied&quot; when restoring from a Local Path Storage Vault on macOS">Error &quot;permission denied&quot; when restoring from a Local Path Storage Vault on macOS</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-a-specified-logon-session-does-not-exist-it-may-already-have-been-terminated-when-accessing-a-windows-network-share-smb" title="Error &quot;A specified logon session does not exist. It may already have been terminated&quot; when accessing a Windows network share (SMB)">Error &quot;A specified logon session does not exist. It may already have been terminated&quot; when accessing a Windows network share (SMB)</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#known-affected-smb-servers" title="Known affected SMB servers">Known affected SMB servers</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#verifying-the-issue" title="Verifying the issue">Verifying the issue</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#workarounds" title="Workarounds">Workarounds</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-the-term-getvm-is-not-recognized-or-please-install-hyperv-module-for-windows-powershell-in-hyperv-backups" title="Error &quot;The term Get-VM is not recognized&quot; or &quot;Please install &apos;Hyper-V Module for Windows PowerShell&apos;&quot; in Hyper-V backups">Error &quot;The term Get-VM is not recognized&quot; or &quot;Please install &apos;Hyper-V Module for Windows PowerShell&apos;&quot; in Hyper-V backups</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-xc-in-kernelbasedll-starting-services-on-windows-server--r" title="Error &quot;0xc0000142&quot; in KERNELBASE.dll starting services on Windows Server 2012 R2">Error &quot;0xc0000142&quot; in KERNELBASE.dll starting services on Windows Server 2012 R2</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#multiple-devices-are-detected-as-being-the-same-device" title="Multiple devices are detected as being the same device">Multiple devices are detected as being the same device</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#cant-use-userprofile-in-selected-backup-paths-on-windows" title="Can&apos;t use %USERPROFILE% in selected backup paths on Windows">Can&apos;t use %USERPROFILE% in selected backup paths on Windows</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-ciphertext-verification-failed-when-using-a-storage-vault" title="Error &quot;ciphertext verification failed&quot; when using a Storage Vault">Error &quot;ciphertext verification failed&quot; when using a Storage Vault</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#error-occurs-immediately" title="Error occurs immediately">Error occurs immediately</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#error-occurs-partway-through-a-running-job" title="Error occurs part-way through a running job">Error occurs part-way through a running job</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-not-a-supported-backup-storage-location-backing-up-system-state-to-a-usb-flash-drive" title="Error &quot;not a supported backup storage location&quot; backing up System State to a USB flash drive">Error &quot;not a supported backup storage location&quot; backing up System State to a USB flash drive</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-the-service-did-not-start-due-to-a-logon-failure" title="Error &quot;The service did not start due to a logon failure&quot;">Error &quot;The service did not start due to a logon failure&quot;</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#slow-backup-jobs" title="Slow backup jobs">Slow backup jobs</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#recent-changes" title="Recent changes">Recent changes</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#customer-pc-performance" title="Customer PC performance">Customer PC performance</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#storage-performance" title="Storage performance">Storage performance</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-errsslversioninterference-connecting-to-comet-server" title="Error &quot;ERR_SSL_VERSION_INTERFERENCE&quot; connecting to Comet Server">Error &quot;ERR_SSL_VERSION_INTERFERENCE&quot; connecting to Comet Server</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-mysqldump-couldnt-execute-show-package-status-where-db---you-have-an-error-in-your-sql-syntax---when-backing-up-mysql" title="Error &quot;mysqldump: Couldn&apos;t execute &apos;SHOW PACKAGE STATUS WHERE Db = &apos;[...]&apos;&apos;: You have an error in your SQL syntax [...] (1064)&quot; when backing up MySQL">Error &quot;mysqldump: Couldn&apos;t execute &apos;SHOW PACKAGE STATUS WHERE Db = &apos;[...]&apos;&apos;: You have an error in your SQL syntax [...] (1064)&quot; when backing up MySQL</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#workaround" title="Workaround">Workaround</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-incorrect-function" title="Error &quot;Incorrect function&quot;">Error &quot;Incorrect function&quot;</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-operation-not-permitted-macos" title="Error &quot;operation not permitted&quot; macOS">Error &quot;operation not permitted&quot; macOS</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-the-specified-backup-storage-location-has-the-shadow-copy-storage-on-another-volume-using-windows-system-backup" title="Error &quot;The specified backup storage location has the shadow copy storage on another volume&quot; using Windows System Backup">Error &quot;The specified backup storage location has the shadow copy storage on another volume&quot; using Windows System Backup</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#troubleshooting-2" title="Troubleshooting">Troubleshooting</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#workaround-2" title="Workaround">Workaround</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-dirty-shutdown-when-restoring-exchange-edb-content" title="Error &quot;Dirty Shutdown&quot; when restoring Exchange EDB content">Error &quot;Dirty Shutdown&quot; when restoring Exchange EDB content</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#error-data-error-cyclic-redundancy-check-while-backing-up-data" title="Error &quot;Data error (cyclic redundancy check)&quot; while backing up data">Error &quot;Data error (cyclic redundancy check)&quot; while backing up data</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#rekeying-a-comet-server-bucket" title="Re-keying a Comet Server bucket">Re-keying a Comet Server bucket</a></li>
+</ul>
+</li><li><a href="api.html" title="API Guide">API Guide</a></li>
+<li><a href="api-reference.html" title="API Reference">API Reference</a></li>
+<li><a href="appendix.html" title="Appendix">Appendix</a></li>
+<li><a href="cloud-storage-providers.html" title="Cloud Storage Providers">Cloud Storage Providers</a></li>
+<li><a href="third-party-service-addons.html" title="Third-party service addons">Third-party service addons</a></li>
+<li><a href="comet-server-roles.html" title="Comet Server Roles ">Comet Server Roles </a></li>
+<li><a href="comet-chunking-overview.html" title="Comet Chunking Overview ">Comet Chunking Overview </a></li>
+<li><a href="HIPAA-Compliance.html" title="HIPAA Compliance ">HIPAA Compliance </a></li>
+<li><a href="GDPR-Compliance.html" title="GDPR Compliance">GDPR Compliance</a></li>
+</ul>
+				</div>
+			</div>
+		
+			<div id="position-content">
+				<div id="content-inner">
+					<span class="docsSectionMarker"><span id="troubleshooting" class="docsSectionMarkerChild"></span></span><h1>Troubleshooting&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#troubleshooting">&para;</a></h1>
+<span class="docsSectionMarker"><span id="error-local-error-tls-record-overflow" class="docsSectionMarkerChild"></span></span><div class="docs-box"><h2>Error &quot;local error: tls: record overflow&quot;&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-local-error-tls-record-overflow">&para;</a></h2>
+<p>This message means the connection was corrupted over the network, and Comet aborted the connection.</p>
+<p>This can happen because of random network conditions. Retrying the operation should fix the issue.</p>
+<p>If the issue keeps happening repeatedly, this message indicates that something is interfering with packets in your network.</p>
+<ul>
+<li>Failing NIC</li>
+<li>Bad NIC driver or driver configuration</li>
+<li>Failing RAM, on either the endpoint machine or any of the intermediate routers</li>
+<li>Outdated firewall or proxy, performing incorrect SSL interception</li>
+</ul>
+<p>For more information, please see the <code>record_overflow</code> section in <a href="https://tools.ietf.org/html/rfc5246#page-31">IETF RFC 5246</a>.</p>
+<span class="docsSectionMarker"><span id="paused-state-on-windows-service" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>&quot;Paused&quot; state on Windows service&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#paused-state-on-windows-service">&para;</a></h2>
+<p>Comet Server on Windows consists of two parts: <code>cometd.exe</code> and <code>cometd-service.exe</code>. The latter binary is registered as a service with Windows, and is responsible for ensuring that the former binary stays running.</p>
+<p>If Comet Server encounters an error and closes, the service binary will restart it. If the Comet Server is repeatedly unable to start - if it closes immediately when launched, several hundred times consecutively - then the service manager will assume the error is permanent and abandon restarting the process. This condition is displayed as the &quot;Paused&quot; state.</p>
+<p>You can resolve this issue by resolving the underlying issue with the service. The error message should be recorded in Comet Server's log file.</p>
+<p>You can view Comet Server's log files</p>
+<ul>
+<li>in Comet Server Service Manager, use the Service menu &gt; &quot;Browse log files&quot; option, or</li>
+<li>by browsing the <code>C:\ProgramData\Comet\logs</code> directory.</li>
+</ul>
+<p>Comet Server makes one log file per day. The error should be recorded in the most recent file (highest number in name / latest modification date).</p>
+<span class="docsSectionMarker"><span id="forgotten-administrator-password" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Forgotten administrator password&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#forgotten-administrator-password">&para;</a></h2>
+<p>If you are locked out of the Comet Server web interface, you can change your administrator password by editing the <code>cometd.cfg</code> file.</p>
+<ol>
+<li>Stop the server, and edit the <code>cometd.cfg</code> file</li>
+<li>Find the <code>AdminUsers</code> section for the administrator user in question</li>
+<li>Set <code>"PasswordFormat"</code> to <code>0</code></li>
+<li>Set <code>"Password"</code> to e.g. <code>"admin"</code></li>
+<li>Save the file and restart the server.</li>
+</ol>
+<p>You should now be able to log in with the reset password. The password will be hashed and/or encrypted after first use.</p>
+<span class="docsSectionMarker"><span id="storage-server--in-use-by-accounts-but-not-managed-by-constellation" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Storage server &quot;127.0.0.1&quot; in use by accounts but not managed by Constellation&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#storage-server--in-use-by-accounts-but-not-managed-by-constellation">&para;</a></h2>
+<p>A user account has a bucket on a Storage Role Comet Server at the address 127.0.0.1, but this address was not selected for management by Constellation. Aside from the standard warnings about managing Constellation, the 127.0.0.1 is a special case.</p>
+<p>If Comet Server is configured to listen on all network interfaces, the server will be accessible on both 127.0.0.1 as well as LAN, WAN, or DNS addresses. If you log in to either the Comet Backup application or the Comet Server web interface at 127.0.0.1, and request a new Storage Vault from a Comet Server configured as &quot;Local&quot; (or <code>$self$</code> in <code>cometd.cfg</code>), the resulting Storage Vault will be configured using 127.0.0.1 as the remote network address.</p>
+<p>However, 127.0.0.1 has a different meaning depending on where it is found. The connection will fail if the Comet Backup client is not running on the same machine. There may also be unintended consequences if the account is replicated to another server.</p>
+<p>To avoid this problem, either </p>
+<ul>
+<li>always use the external DNS name for your Comet Server when requesting new Storage Vaults, or</li>
+<li>change the Request destination to use &quot;Remote&quot; with an external DNS name instead of &quot;Local&quot; (or <code>$self$</code> in <code>cometd.cfg</code>).</li>
+</ul>
+<p>A similar caveat applies to the software downloads, which can include embedded server address details.</p>
+<span class="docsSectionMarker"><span id="microsoft-sql-server-backup-encountered-a-vdi-error" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Microsoft SQL Server backup encountered a VDI error&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#microsoft-sql-server-backup-encountered-a-vdi-error">&para;</a></h2>
+<p>You should ensure that the necessary VDI <code>.dll</code> files are registered and are the correct version for your SQL Server installation. You can use <a href="https://github.com/Microsoft/tigertoolbox/releases/">Microsoft SQL Server Backup Simulator</a> to check the status of the VDI <code>.dll</code> files.</p>
+<span class="docsSectionMarker"><span id="error-access-is-denied-when-backing-up-files-and-folders-on-windows" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;Access is denied&quot; when backing up files and folders on Windows&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-access-is-denied-when-backing-up-files-and-folders-on-windows">&para;</a></h2>
+<p>An &quot;Access Denied&quot; error message means that the Windows user account running the backup job does not have access to read the file content.</p>
+<p>Current versions of Comet automatically creates a service account with all necessary permissions to read local files. If you are experiencing &quot;Access Denied&quot; errors on Comet 18.6.0 or later, you may be trying to back up a network path that has been mounted as a directory. Please see the &quot;Accessing Windows network shares and UNC paths&quot; section below for more information.</p>
+<p>If you are experiencing &quot;Access Denied&quot; errors on Comet 18.6.0 or later, and you are certain that you are not backing up a mounted network path, please contact support.</p>
+<span class="docsSectionMarker"><span id="antivirus-detects-comet-backup-as-a-virus-or-malware" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Antivirus detects Comet Backup as a virus or malware&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#antivirus-detects-comet-backup-as-a-virus-or-malware">&para;</a></h2>
+<p>Comet Backup is a safe application. Any such detection is a &quot;false positive&quot;.</p>
+<p>When Comet Backup is rebranded, it might seem like a new, unknown program. An unknown program that installs system services, accesses files on the disk and uploads them to the network, might be considered to be malware if it was installed without consent. Unfortunately it's understandable for an Antivirus product to detect this.</p>
+<p>In this situation, there are some actions you can take:</p>
+<ul>
+<li>Please ensure your Antivirus product is fully up-to-date.</li>
+<li>Please contact Comet Support with a screenshot of the error message. In some situations, it may be possible for our developers to resolve the issue.</li>
+<li>Choose to &quot;allow&quot; or &quot;white-list&quot; the file in the Antivirus software. This may send a signal to the Antivirus software vendor that the software is safe (e.g. ESET LiveGrid, Windows Defender Automatic Sample Submission, Kaspersky KSN, etc).</li>
+<li>Enable Authenticode signing on Windows. This may provide additional &quot;reputation&quot; to the software installer.</li>
+</ul>
+<span class="docsSectionMarker"><span id="avast-filerepmalware" class="docsSectionMarkerChild"></span></span><h3>Avast &quot;FileRepMalware&quot;&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#avast-filerepmalware">&para;</a></h3>
+<p>You will receive the &quot;FileRepMalware&quot; error message for any file that was</p>
+<ul>
+<li>downloaded from the internet; and</li>
+<li>does not have an Authenticode certificate; and</li>
+<li>has not been seen yet by many Avast users.</li>
+</ul>
+<p>Many custom-branded Comet Backup installers do fall into this category.</p>
+<p>You can resolve this issue by purchasing and installing an Authenticode certificate.</p>
+<span class="docsSectionMarker"><span id="error-backuptoolexe-couldnt-be-launched-createprocess-failed-access-is-denied-message" class="docsSectionMarkerChild"></span></span><h3>Error &quot;backup-tool.exe couldn't be launched. CreateProcess() failed: Access is denied&quot; message&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-backuptoolexe-couldnt-be-launched-createprocess-failed-access-is-denied-message">&para;</a></h3>
+<p>This error message indicates that something on the PC is blocking Comet's main <code>backup-tool.exe</code> program from running. It's likely this is the antivirus. Please follow the above steps to whitelist Comet in your antivirus application.</p>
+<span class="docsSectionMarker"><span id="network-connectivity-errors" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Network connectivity errors&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#network-connectivity-errors">&para;</a></h2>
+<p>Comet Backup uploads files to Comet Server (or to a cloud storage provider) over the internet. Occasionally, you may see errors such as the following:</p>
+<ul>
+<li><code>Couldn't save data chunk:</code></li>
+<li><code>HTTP/1.x transport connection broken</code></li>
+<li><code>net/http: request canceled (Client.Timeout exceeded while awaiting headers)</code></li>
+<li><code>wsarecv</code></li>
+<li><code>wsasend</code></li>
+<li><code>An existing connection was forcibly closed by the remote host</code></li>
+<li><code>dial tcp: lookup [...]: no such host</code></li>
+<li><code>connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.</code></li>
+</ul>
+<p>Comet Backup retries the upload several times, but eventually gives up. After a failed data chunk upload, you may see several more messages of the form <code>Couldn't save data chunk: context canceled</code> while Comet terminates the other upload threads.</p>
+<p>Network errors have many possible causes:</p>
+<ul>
+<li>Customer's PC</li>
+<li>Customer's network</li>
+<li>Customer's ISP</li>
+<li>Internet-wide outages between customer's ISP and your ISP</li>
+<li>Your ISP</li>
+<li>Your network</li>
+<li>Your Comet Server hardware</li>
+<li>Comet Server software</li>
+</ul>
+<p>To troubleshoot these issues, please check:</p>
+<ul>
+<li>
+<p>Does the backup succeed if it is retried?</p>
+<ul>
+<li>Many network errors are temporary and will only occur rarely. In addition, a repeated second backup job will often run faster because many of the existing data chunks have already been uploaded. (Any unused data chunks in the Storage Vault will be automatically cleaned up by the next retention pass.)</li>
+</ul>
+</li>
+<li>
+<p>Does the error message always happen at a certain time of day?</p>
+<ul>
+<li>It may be possible to reschedule the backup to avoid times of heavy internet congestion.</li>
+</ul>
+</li>
+<li>
+<p>Are there any corresponding messages for around the same time in your Comet Server logs?</p>
+<ul>
+<li>This is important to determine the cause of some failures.</li>
+<li>Some relevant Comet Server log messages take the form <code>Error saving upload stream</code> or <code>Blocking re-upload of preexisting file</code></li>
+</ul>
+</li>
+</ul>
+<span class="docsSectionMarker"><span id="accessing-windows-network-shares-and-unc-paths" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Accessing Windows network shares and UNC paths&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#accessing-windows-network-shares-and-unc-paths">&para;</a></h2>
+<p><em>This section applies to both Comet Server and Comet Backup.</em></p>
+<p>Comet can back up Windows network paths, and back up to Windows network storage (SMB / CIFS). However, because Comet runs as a service user, there are some issues with authentication to be aware of.</p>
+<p>Please note that if you are using Comet Backup to back up data from a network device, you should prefer to install Comet Backup directly on the device instead of backing it up over the network. This will also significantly improve performance, as less data needs to be transferred over the LAN.</p>
+<span class="docsSectionMarker"><span id="mapped-network-drives" class="docsSectionMarkerChild"></span></span><h3>Mapped network drives&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#mapped-network-drives">&para;</a></h3>
+<p>On Windows, each logged-on user session has its own set of mapped network drives. The service user account is unlikely to have any mapped drives. If you see error messages like <code>WARNING Missing: 'Z:\'</code>, this is probably the reason. You can work around this by using a UNC path instead.</p>
+<p>Comet 18.6.5 and later will automatically convert mapped network drives to their UNC path equivalents.</p>
+<p>For versions of Comet prior to 18.6.5:</p>
+<ul>
+<li>In Comet Backup, when choosing items in a Files and Folders Protected Item, you can use the &quot;Options&quot; button &gt; &quot;Add &quot; to browse inside a UNC path. Note that this browsing occurs as your logged-in Windows user, not as the service user, and may have different file access as a result. All backup jobs run as the service user.</li>
+<li>In Comet Server, when configuring Local Path storage in the First Use Wizard, you can browse to a UNC path directly.</li>
+</ul>
+<span class="docsSectionMarker"><span id="authentication" class="docsSectionMarkerChild"></span></span><h3>Authentication&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#authentication">&para;</a></h3>
+<p>If the UNC share requires authentication, the service user account is probably not logged-in to the UNC share. If you see error messages like <code>WARNING Lstat: CreateFile \\?\UNC\...: Access is denied.</code>, this is probably the reason.</p>
+<p>Comet 18.6.5 and later have built-in options for setting Windows network authentication credentials.</p>
+<p>For versions of Comet prior to 18.6.5, workarounds are available for both Comet Backup and Comet Server. Ranked in order of preference:</p>
+<ul>
+<li>
+<p>If you are using Comet Server to store data on a network device, you may be able to install Comet Server on the network device. If the network device is a NAS box (e.g. Synology / QNAP), Comet Server can be installed on Linux x86_64 NAS boxes.</p>
+</li>
+<li>
+<p>If you are storing data on a network share, you can also work around this issue by switching from Windows network shares (SMB) to a network protocol that has built-in credential support. For instance, a S3-compatible server (e.g. the free Minio server) or an SFTP server.</p>
+</li>
+<li>
+<p>In Comet Backup, you can work around this issue by adding <code>net use \\HOST\SHARE /user:USERNAME PASSWORD</code> as a &quot;Before&quot; command to the backup job.</p>
+<ul>
+<li>If you are storing data on a UNC path, you can add this &quot;Before&quot; command on the Storage Vault instead of on the Protected Item. This will ensure it is run for all backup jobs going to that Storage Vault.</li>
+</ul>
+</li>
+<li>
+<p>You can work around this issue in Comet Backup or in Comet Server by changing the Windows Service to use a different user account.</p>
+<ul>
+<li>For Comet Server, this is the <code>Comet Server</code> service.</li>
+<li>For Comet Backup 18.6.0 and later, this is the <code>Comet Backup (delegate service)</code> service.</li>
+<li>If you are using Comet on a Windows Server machine that is acting as the Domain Controller, you must choose a domain account.</li>
+</ul>
+</li>
+</ul>
+<span class="docsSectionMarker"><span id="error-couldnt-take-snapshot-the-specified-object-was-not-found-using-deslock" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;Couldn't take snapshot: The specified object was not found&quot; using DESlock+&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-couldnt-take-snapshot-the-specified-object-was-not-found-using-deslock">&para;</a></h2>
+<p>Some individual software, while it is launched from the within the users session, it may elevate itself when running or run under the System user account. If this happens, the encryption keys will not be available to that software's process and access will be denied to the containers.</p>
+<p>Example scenarios where the above behavior may be experienced are when software is running under a different user context within the users session. Comet runs the backup as a service user account (usually &quot;NT SERVICE\backup.delegate&quot; or &quot;LOCAL SYSTEM&quot; in some cases). The DESlock virtual drive is unavailable for other user accounts on the system.</p>
+<p>It's possible to mount a virtual disk globally so all users on the system will be able to access its contents. This is done using the [DESlock+] command line tool</p>
+<p>Follow DESlock's own instructions to mount the drive for all users.</p>
+<p>Source: <a href="https://support.deslock.com/index.php?/Default/Knowledgebase/Article/View/244">https://support.deslock.com/index.php?/Default/Knowledgebase/Article/View/244</a></p>
+<span class="docsSectionMarker"><span id="error-vss-error-couldnt-take-snapshot-the-shadow-copy-provider-had-an-unexpected-error-while-trying-to-process-the-specified-operation" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;VSS Error: Couldn't take snapshot. The shadow copy provider had an unexpected error while trying to process the specified operation&quot;&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-vss-error-couldnt-take-snapshot-the-shadow-copy-provider-had-an-unexpected-error-while-trying-to-process-the-specified-operation">&para;</a></h2>
+<p>Possible causes for this error include:</p>
+<ul>
+<li>
+<p>Backing up mapped network drives. You cannot use VSS on network share.</p>
+</li>
+<li>
+<p>Shadow storage on the source drives is not configured or not large enough. The shadow storage size can be checked and manually changed through command prompt:</p>
+<ul>
+<li>To check the current limit set: <code>vssadmin list shadowstorage</code></li>
+<li>To change the limit: <code>vssadmin Resize ShadowStorage /For=X: /On=X: /Maxsize=XX%</code></li>
+</ul>
+</li>
+<li>
+<p>Microsoft's native snapshot manager is only able to perform one snapshot at a time. If a snapshot process is already running when the backup job starts, then the backup job could fail. Stopping and restarting the Volume Shadow Copy service can resolve this problem. To do this, open an elevated command prompt window and run the following commands:</p>
+<ul>
+<li><code>net stop vss</code></li>
+<li><code>net start vss</code></li>
+</ul>
+</li>
+</ul>
+<p>A reboot of the server has also been known to clean up the snapshot manager correctly, should a service restart not resolve the issue.</p>
+<ul>
+<li>
+<p>Multiple backup products installed could cause this error. Many backup solutions have their own proprietary snapshot manager which can cause conflicts with other backup solutions installed on the system.</p>
+</li>
+<li>
+<p>VSS snapshots have been known to fail because an advanced format drive is connected to the machine.</p>
+</li>
+<li>
+<p>Check you have all the VSS writers installed and working. On an elevated command prompt: <code>vssadmin list writers</code></p>
+</li>
+</ul>
+<p>If you're still having issues, please open a support ticket with your results on the above troubleshooting.</p>
+<span class="docsSectionMarker"><span id="email-delivery-failed-when-using-mx-direct" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Email delivery failed when using MX Direct&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#email-delivery-failed-when-using-mx-direct">&para;</a></h2>
+<p>When using the &quot;MX Direct&quot; option to send email, your Comet Server is acting as an MTA (Mail Transfer Agent) to deliver the email directly to the recipient. There are strict requirements on MTAs to not have your outgoing emails discarded as spam.</p>
+<p>You may find more information online about running an email server and not having your messages discarded as spam. The advice following are only general guidelines:</p>
+<span class="docsSectionMarker"><span id="ip-block-reputation" class="docsSectionMarkerChild"></span></span><h3>IP block reputation&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#ip-block-reputation">&para;</a></h3>
+<p>Many email servers will maintain a list of known-bad IP ranges that have served spam emails in the past. If you are hosting Comet Server on a cloud VPS or cloud server, it's likely that the IP address has been used by someone else in the past. This is especially likely with the very small size of the IPv4 internet.</p>
+<p>Some IP reputation services allow you to submit your IP address for removal.</p>
+<p>At the time of writing, the following web services allow you to check if your IP address is on an email spam blacklist:</p>
+<ul>
+<li><a href="https://www.dnsbl.info/">https://www.dnsbl.info/</a> </li>
+<li><a href="https://mxtoolbox.com/blacklists.aspx">https://mxtoolbox.com/blacklists.aspx</a></li>
+</ul>
+<span class="docsSectionMarker"><span id="forwardconfirmed-reverse-dns" class="docsSectionMarkerChild"></span></span><h3>Forward-confirmed reverse DNS&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#forwardconfirmed-reverse-dns">&para;</a></h3>
+<p>Reverse DNS is a system where, for an IP address <code>1.2.3.4</code>, looking up the special domain name <code>4.3.2.1.in-addr.arpa</code> produces a <code>TXT</code> record explaining the owner of the <code>1.2.3.4</code> IP address.</p>
+<p>One anti-spam measure in email is Forward Confirmed Reverse DNS (FCrDNS). Looking up the DNS of the reverse DNS should produce the original domain name again. This is a method of ensuring that the domain name owner is also the IP address owner, an important authenticity check for anti-spam.</p>
+<p>Many cloud server providers will automatically configure the RDNS record to a suitable value. However, by changing it to match your domain name exactly, you may help ensure the email delivery is successful. If you do not have the access necessary to configure reverse DNS then you will need to find out who owns your IP block (usually this is your ISP or hosting provider) and contact them to configure it.</p>
+<p>Read more about FCrDNS:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Forward-confirmed_reverse_DNS">https://en.wikipedia.org/wiki/Forward-confirmed_reverse_DNS</a> </li>
+<li><a href="https://en.wikipedia.org/wiki/Reverse_DNS_lookup#IPv4_reverse_resolution">https://en.wikipedia.org/wiki/Reverse_DNS_lookup#IPv4_reverse_resolution</a></li>
+</ul>
+<span class="docsSectionMarker"><span id="spf" class="docsSectionMarkerChild"></span></span><h3>SPF&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#spf">&para;</a></h3>
+<p>SPF (Sender Policy Framework) is a system that allows your domain name to whitelist which servers are allowed to send email messages on behalf of that domain. An SPF record is added to your domain's DNS zone file as a TXT record and it identifies authorized SMTP servers for your domain.</p>
+<p>Generally speaking, and SPF policy will only block emails; lack of an SPF policy does not reduce deliverability rates. However, you may have an existing SPF policy added for your existing domain email provider (e.g Office 365, G Suite, Zoho Mail) that prevents other servers from sending email for your domain.</p>
+<p>Example: <code>include:yourserver.example.com</code></p>
+<span class="docsSectionMarker"><span id="dkim-signing" class="docsSectionMarkerChild"></span></span><h3>DKIM signing&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#dkim-signing">&para;</a></h3>
+<p>DKIM signing is a method of cryptographically ensuring that the mail server is authorized to send email. At the time of writing, Comet Server's built-in MTA does not support DKIM signing.</p>
+<span class="docsSectionMarker"><span id="jobs-left-in-running-state" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Jobs left in Running state&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#jobs-left-in-running-state">&para;</a></h2>
+<p>Comet Backup is responsible for closing-off a job log with Comet Server. If the PC is shut down unexpectedly, a job would be left in &quot;Running&quot; state indefinitely.</p>
+<p>The old, inactive &quot;Running&quot; jobs will be cleaned up automatically if Comet sees an opportunity to prove that they are no longer running.</p>
+<p>As of Comet 19.5.0, the following situations will clean up old, inactive &quot;Running&quot; jobs;</p>
+<ul>
+<li>Running a retention pass
+<ul>
+<li>For safety reasons, a retention pass requires Comet to temporarily take exclusive control over a Storage Vault. Comet makes a number of checks to verify this exclusivity, but the practical benefit is that when a retention pass runs, all past backup jobs must no longer be running by definition.</li>
+</ul></li>
+<li>Running a new backup job on the same device
+<ul>
+<li>Comet can compare lockfiles in the Storage Vault with the running process IDs in Task Manager. If a lockfile was created by a process that is no longer running, that job must have stopped.</li>
+</ul></li>
+<li>Running a software update
+<ul>
+<li>If a software update job completes successfully including a changed version number, the software update process must have terminated all prior jobs. All past backup jobs on this device are no longer running</li>
+</ul></li>
+</ul>
+<p class="highlight-upcoming">A future version of Comet may automatically clean up Running jobs in additional situations.</p>
+<span class="docsSectionMarker"><span id="out-of-memory" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Out of memory&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#out-of-memory">&para;</a></h2>
+<p>Comet Backup needs RAM to run. The main cause for this is to hold deduplication indexes; therefore the amount of RAM used is proportional to the size of the Storage Vault.</p>
+<p>You might see these error messages:</p>
+<ul>
+<li><code>runtime: VirtualAlloc of 1048576 bytes failed with errno=1455</code> on Windows</li>
+<li><code>0x5AF ERROR_COMMITMENT_LIMIT: The paging file is too small for this operation to complete.</code> on Windows</li>
+<li><code>fatal error: out of memory</code> on all platforms</li>
+</ul>
+<p>On Linux, when the system is out of memory (OOM), the kernel &quot;OOM Killer&quot; subsystem will immediately terminate a process of its choosing, to free up memory. If you see an error message like <code>signal: killed</code> in Comet on Linux, this means the process was terminated by a user or a subsystem, that might possibly be the OOM Killer. You can check for this in <code>dmesg</code> or <code>kern.log</code>.</p>
+<p>You can reduce Comet Backup's RAM usage by trying to limit how much data is in each Storage Vault. For instance, instead of having multiple devices backing up into a single Storage Vault, create multiple Storage Vaults for each device. This will reduce the deduplication efficiency, but it will also reduce the necessary memory usage.</p>
+<span class="docsSectionMarker"><span id="tradeoffs" class="docsSectionMarkerChild"></span></span><h3>Trade-offs&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#tradeoffs">&para;</a></h3>
+<p>Some trade-offs are possible, that can reduce Comet's memory usage at the expense of other system resource types:</p>
+<span class="docsSectionMarker"><span id="rescan-unchanged-files" class="docsSectionMarkerChild"></span></span><h4>Rescan unchanged files&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#rescan-unchanged-files">&para;</a></h4>
+<p>This option causes Comet to read more data from the source disk, reading less data from the Storage Vault into in-memory indexes. This can have a varied impact on RAM usage, and may be positive or negative depending on the shape of your directories.</p>
+<span class="docsSectionMarker"><span id="prefer-temporary-files-instead-of-ram" class="docsSectionMarkerChild"></span></span><h4>Prefer temporary files instead of RAM&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#prefer-temporary-files-instead-of-ram">&para;</a></h4>
+<p><em>This feature is available in Comet 18.12.2 and later.</em></p>
+<p>The &quot;Prefer temporary files instead of RAM&quot; option on a backup job schedule will cause Comet to keep indexes in an on-disk database file, instead of a pure in-memory index. The on-disk database file is mapped into pageable memory, that can more easily be reclaimed by the OS when the system is under memory pressure.</p>
+<p>Depending on how you measure Comet's memory usage, this option may not immediately appear to have lower memory usage if your measurement includes <code>mmap</code> disk sections. However, the resident working set is reduced.</p>
+<p>There is a major performance penalty for using this option (approximately 5x or worse) and it is not generally recommended.</p>
+<span class="docsSectionMarker"><span id="error-http--in-comet-backup-logs" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;HTTP 500&quot; in Comet Backup logs&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-http--in-comet-backup-logs">&para;</a></h2>
+<p>If you see an <code>HTTP 500</code> error message in the Comet Backup logs, this means the server encountered an error.</p>
+<p>If you see this while performing an operation to</p>
+<ul>
+<li><strong>Comet Server storage</strong>, then you should check the Comet Server log file for around the same timestamp, to see if there was a corresponding error on the server.</li>
+<li><strong>Cloud storage</strong>, then the cloud storage provider experienced an error at their end.
+<ul>
+<li>The error message may contain more detail; or</li>
+<li>You can contact the cloud provider for more information; or</li>
+<li>The operation may succeed if you retry it a short time later.</li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="change-of-hardware-causes-registration-dialog-to-appear" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Change of hardware causes registration dialog to appear&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#change-of-hardware-causes-registration-dialog-to-appear">&para;</a></h2>
+<p>Comet detects the current device based on a hardware ID.</p>
+<p>The hardware ID may be changed in some situations:</p>
+<ul>
+<li>if you replace the motherboard or CPU; or</li>
+<li>if you upgrade the BIOS / UEFI, without preserving hardware IDs; or</li>
+<li>if you virtualise a physical server; or</li>
+<li>if you migrate a VM guest to a different VM host, without preserving hardware IDs; or</li>
+<li>if you install &quot;sandboxing&quot; software, or install certain PC security software that includes a &quot;sandboxing&quot; feature (e.g. Comodo Containment); or</li>
+<li>if you make certain specific modifications to the operating system.</li>
+</ul>
+<p>In these situations, the device's hardware ID will change, and Comet will recognise the PC as a new device.</p>
+<span class="docsSectionMarker"><span id="handling-a-changed-device-id" class="docsSectionMarkerChild"></span></span><h3>Handling a changed device ID&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#handling-a-changed-device-id">&para;</a></h3>
+<p>If your device is recognised as a new device, you should register it again.</p>
+<p>The original backup data is still preserved in the Storage Vault, and will be deduplicated against any future backups from this device.</p>
+<p>You can move the Protected Item settings from one device to another, by using the Copy/Paste buttons in the Comet Server web interface on the user's page &gt; Protected Items tab.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="copypaste.gif"><img src="copypaste.gif.thumb.jpg" alt="" /></a></p>
+<p>The old device should be revoked once the new device has been properly set up to prevent it from incurring a license charge, alternatively, removing all Protected Item's from the old device will also prevent the device from being charged.</p>
+<p>The backup job log history will be preserved in the customer's account, but, it will be associated with the old device. </p>
+<ul>
+<li>
+<p>Once you de-register the original device, it would show as &quot;Unknown device (XXXXX...)&quot; in the job history.</p>
+</li>
+<li>
+<p>The customer can still see these old jobs in the Comet Server web interface.</p>
+</li>
+<li>
+<p>The customer can still see these old jobs in Comet Backup if they use the filter option &gt; &quot;All devices&quot;.</p>
+</li>
+</ul>
+<p>Because the device is detected as a new device, the billing period for this device will be restarted.</p>
+<span class="docsSectionMarker"><span id="storage-vault-locks" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Storage Vault Locks&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#storage-vault-locks">&para;</a></h2>
+<p>Lock files are an important part of Comet's safety design. Comet uses lock files to ensure data consistency during concurrent operations.</p>
+<span class="docsSectionMarker"><span id="problem-statement" class="docsSectionMarkerChild"></span></span><h3>Problem statement&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#problem-statement">&para;</a></h3>
+<p>Comet Backup supports multiple devices backing up into a shared Storage Vault simultaneously. But when Comet runs a retention pass to clean up data, it's very important that no other backup jobs are running simultaneously.</p>
+<p>A retention pass (A) looks at what data chunks exist in the Vault, then (B) deletes the unused ones.</p>
+<p>A backup job (A) looks at what data chunks exist in the Vault, then (B) uploads new chunks from the local data, and uploads a backup snapshot that relies on both pre-existing and newly-uploaded chunks.</p>
+<p>It's perfectly safe for multiple backup jobs to run simultaneously, even from multiple devices.</p>
+<p>But, it is not safe for a retention pass to run at the same time as a backup job, because if the steps are interleaved (retention A &gt; backup A &gt; retention B &gt; backup B) then a backup job might write a backup snapshot that refers to unknown chunks, <em>resulting in data loss</em>.</p>
+<p>Comet must prevent you from running a backup job and a retention pass simultaneously.</p>
+<span class="docsSectionMarker"><span id="lock-files" class="docsSectionMarkerChild"></span></span><h3>Lock files&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#lock-files">&para;</a></h3>
+<p>In order to check whether a retention pass is currently running, Comet must communicate between all devices that could potentially be using the Storage Vault.</p>
+<p>In order to determine whether any other device is actively using a Storage Vault, Comet writes a temporary text file into the Storage Vault, and deletes it when the job is completed. This is the only mechanism supported across all Storage Vault types (i.e. local disk / SFTP / S3 / etc). Then, any other job can look for these files to see what other operations are taking place concurrently.</p>
+<p>Jobs in a Storage Vault are classified into two categories:</p>
+<ul>
+<li>Exclusive (retention passes)</li>
+<li>Non-exclusive (backup/restore jobs)</li>
+</ul>
+<p>Multiple non-exclusive jobs may run simultaneously from any device. A non-exclusive job will refuse to start if any exclusive jobs are currently running. An exclusive job will refuse to start if any other jobs are running.</p>
+<p>Specifically:</p>
+<ul>
+<li>If a backup job is currently running, Comet will refuse to start a retention pass.</li>
+<li>If a retention pass is currently running, Comet will refuse to start a backup job.</li>
+</ul>
+<span class="docsSectionMarker"><span id="downsides-of-lock-file-design" class="docsSectionMarkerChild"></span></span><h3>Downsides of lock file design&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#downsides-of-lock-file-design">&para;</a></h3>
+<p>If Comet is stopped suddenly (e.g. PC crash), the lock file would not be removed. All other Comet processes would not realize that the job had stopped. This could prevent proper functioning of backup jobs and/or retention passes.</p>
+<p>Comet will alert you to this issue by failing the job. The error message should explain which device and/or job was responsible for originating the now-stale lock file.</p>
+<p>You may see error messages of the form:</p>
+<ul>
+<li><code>Locked by user '...' on this device (PID #...) since ... (... days ago)</code></li>
+<li><code>Locked by user '...' on computer '...' (PID #...) since ... (... days ago)</code></li>
+<li><code>However, the responsible process might have stopped.</code></li>
+<li><code>If you investigate this process, and are absolutely certain it won't resume, then it's safe to ignore it and continue.</code></li>
+</ul>
+<p>It is possible to delete lock files to recover from this situation. However, it is <em>critical</em> that you manually investigate the issue to ensure that the responsible process really has stopped. Consider that a PC may go to sleep at any time, and wake up days - or weeks - later, and immediately resume from the middle of a backup or retention operation; <strong>if the lock files were removed incorrectly, data loss is highly likely</strong>.</p>
+<p>If you are sure that the responsible process is stopped, you can delete the lock files.</p>
+<p>You can initiate this either</p>
+<ul>
+<li>in Comet Backup, on the &quot;Account&quot; pane &gt; right-click Storage Vault &gt; &quot;Advanced&quot; &gt; &quot;Clean up lock files&quot; option</li>
+<li>remotely via the Comet Server web interface (when logged in as an administrator). First, enable the &quot;Advanced Options&quot; from the user menu in the top right; then, perform the unlock action via the Connected Devices Actions dialog.</li>
+</ul>
+<span class="docsSectionMarker"><span id="automatic-unlock" class="docsSectionMarkerChild"></span></span><h3>Automatic unlock&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#automatic-unlock">&para;</a></h3>
+<p>Comet Backup will automatically delete stale lock files when it determines that it is safe to do so.</p>
+<ul>
+<li>When Comet is running on the same PC as a potentially-stale lock file, it can check the running processes to see if the originator process is still running.</li>
+</ul>
+<p class="highlight-upcoming">A future version of Comet may be able to automatically detect and remove stale lock files in more situations.</p>
+<span class="docsSectionMarker"><span id="recovering-from-unsafe-unlock-operations" class="docsSectionMarkerChild"></span></span><h3>Recovering from unsafe unlock operations&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#recovering-from-unsafe-unlock-operations">&para;</a></h3>
+<p>If you encounter a <code>Packindex '...' for snapshot '...' refers to unknown pack '...', shouldn't happen</code> error, a data file has been erroneously deleted inside the Storage Vault. Data has been lost. This can happen if the &quot;Unlock&quot; feature is used without proper caution as advised above.</p>
+<p>In this situation, you can recover the remaining data in the Storage Vault by following the instructions in the &quot;<a href="//docs/appendix#recovering-from-file-corruption">Recovering from file corruption</a>&quot; section above.</p>
+<span class="docsSectionMarker"><span id="backup-process-stalled-on-preparing-storage-vault-for-first-use" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Backup process stalled on &quot;Preparing Storage Vault for first use&quot;&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#backup-process-stalled-on-preparing-storage-vault-for-first-use">&para;</a></h2>
+<p>The first step on accessing a new, uninitalised Storage Vault is to generate and store some encryption material.</p>
+<p>If a backup to a new Storage Vault seems to hang at this initial step, it's likely that Comet Backup is failing to access the storage location, and repeatedly retrying- and timing-out. An error message may appear after some extended duration.</p>
+<p>Some possible causes of this issue are</p>
+<ul>
+<li>Storage Vault misconfiguration
+<ul>
+<li>For Storage Vaults located in a Comet Server bucket: check the Storage Vault properties &gt; &quot;Hostname&quot; field, that it points to a valid URL and not e.g. <code>127.0.0.1</code></li>
+<li>For Storage Vaults using cloud bucket credentials: double-check the credentials, and ensure there are no extra spaces pasted around the field values</li>
+</ul></li>
+<li>Outdated CA certificates
+<ul>
+<li>This would prevent Comet Backup from making an HTTPS / SSL connection to the storage location</li>
+<li>On Windows, run Windows Update
+<ul>
+<li>For Storage Vaults located in a Comet Server bucket, you can also check if the system Internet Explorer browser is able to load the Comet Server's web interface</li>
+</ul></li>
+<li>On Linux, update the <code>ca-certificates</code> package</li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="error-media-is-write-protected-backing-up-onedrive-with-vss" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;Media is write protected&quot; backing up OneDrive with VSS&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-media-is-write-protected-backing-up-onedrive-with-vss">&para;</a></h2>
+<p>To save on disk space, OneDrive (and some other cloud storage providers) use a system where some files are only &quot;virtually&quot; stored on the local disk, and are materialized from the cloud storage on-demand.</p>
+<p>When you use the &quot;Take filesystem snapshot&quot; option in Comet, Comet takes a VSS snapshot of the disk. This is a read-only snapshot.</p>
+<p>When you back up the OneDrive directory with VSS enabled, OneDrive is not able to download files into the snapshot, because the snapshot is read-only. This causes the &quot;Media is write protected&quot; error message.</p>
+<p>In this situation, your OneDrive data is not being protected by Comet and is not available for restore.</p>
+<p>You can workaround this issue by creating two Protected Items: one with VSS enabled, that excludes the OneDrive directory; and a second one with VSS disabled, that only includes the OneDrive directory.</p>
+<p>Note that if OneDrive needs to materialize a lot of data from the cloud, then backing up the OneDrive directory may cause a lot of data to be downloaded.</p>
+<p class="highlight-upcoming">A future version of Comet may avoid this issue by automatically disabling VSS for the OneDrive directory.</p>
+<span class="docsSectionMarker"><span id="error-access-to-the-cloud-file-is-denied-backing-up-onedrive" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;Access to the cloud file is denied&quot; backing up OneDrive&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-access-to-the-cloud-file-is-denied-backing-up-onedrive">&para;</a></h2>
+<p>To save on disk space, OneDrive (and some other cloud storage providers) use a system where some files are only &quot;virtually&quot; stored on the local disk, and are materialized from the cloud storage on-demand.</p>
+<p>If you encounter the &quot;Access to the cloud file is denied&quot; error message, this means that file in question does not exist on the local PC, and the OneDrive virtual filesystem driver is refusing to download this file on-demand for Comet to read it.</p>
+<p>At the time of writing, the only available workaround is to disable the &quot;Files-On-Demand&quot; feature in OneDrive. However, this may cause an unacceptable increase in local disk usage for some customers.</p>
+<p>To disable the &quot;Files-On-Demand&quot; feature in OneDrive:</p>
+<ol>
+<li>Right-click OneDrive in the System Tray</li>
+<li>Click the menu icon -&gt; Settings -&gt; Settings tab -&gt; &quot;Files-On-Demand&quot; section -&gt; disable the &quot;Save space and download files as you use them&quot; option</li>
+</ol>
+<span class="docsSectionMarker"><span id="error-efsencrypted-files-may-be-unusable-once-restored" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;EFS-encrypted files may be unusable once restored&quot;&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-efsencrypted-files-may-be-unusable-once-restored">&para;</a></h2>
+<p>You may see a warning of this form in the backup job logs:</p>
+<pre><code>EFS-encrypted files may be unusable once restored, unless you also backup the EFS encryption keys from this PC.
+To disable this warning, please ensure you have backed up the EFS encryption keys, and then enable the 'I confirm EFS keys are exported' option in the Protected Item settings.</code></pre>
+<p>EFS is a Windows feature that allows you to encrypt individual files on disk. The backup job was successful, but if you restore the data to a new PC, the files might not be readable because the EFS encryption keys are tied to the Windows user account. In effect, the backup might not be restorable in a practical sense.</p>
+<p>For more information, please see the full article on EFS in the &quot;<a href="/docs/protected-items#protected-item-types#encrypted-files-windows-efs">Protected Items</a>&quot; section,</p>
+<span class="docsSectionMarker"><span id="error-the-target-path-xwindowsimagebackup-already-exists--please-safely-remove-this-directory-and-retry-the-backup" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;The target path 'X:\WindowsImageBackup' already exists - please safely remove this directory and retry the backup.&quot;&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-the-target-path-xwindowsimagebackup-already-exists--please-safely-remove-this-directory-and-retry-the-backup">&para;</a></h2>
+<p>The &quot;Windows System Backup&quot; Protected Item type uses the <code>wbadmin</code> program to write a disk image to the spool directory; backs up the spool directory with Comet; and then cleans up the spool directory. Comet automatically removes this directory after the backup, even if the backup failed.</p>
+<p>If the directory exists at the start of a backup job, this could mean either</p>
+<ol>
+<li>Comet did not have the chance to clean up the directory (e.g. the PC was not shut down safely); or</li>
+<li>another Comet backup job is running simultaneously; or</li>
+<li>another non-Comet software on the PC is also using the <code>wbadmin</code> functionality for System State or Windows System Backup.</li>
+</ol>
+<p>You can avoid case 2 above by using the &quot;Skip if already running&quot; option.</p>
+<p>It's not generally possible to distinguish between case 1 and case 3 above. If you look at the job history or the customer's PC, and you are able to make a positive distinction between these cases, it may be safe to delete the directory.</p>
+<p>You can temporarily add the following command as a &quot;Before&quot; command to the backup job:</p>
+<p><code>rmdir /S /Q "X:\WindowsImageBackup\"</code></p>
+<p>You should then remove this command from the job settings after the command has run, because this command would cause problems if two Comet backup jobs ever run simultaneously in the future.</p>
+<span class="docsSectionMarker"><span id="error-an-attempt-was-made-to-access-a-socket-in-a-way-forbidden-by-its-access-permissions-in-comet-server" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;An attempt was made to access a socket in a way forbidden by its access permissions&quot; in Comet Server&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-an-attempt-was-made-to-access-a-socket-in-a-way-forbidden-by-its-access-permissions-in-comet-server">&para;</a></h2>
+<p>This error message occurs when configuring Comet Server on Windows to listen on an IP/port combination that is either (A) forbidden by the firewall, or (B) in-use by another application. Usually this affects port <code>80</code> or <code>443</code>.</p>
+<p>The following troubleshooting guidance is available:</p>
+<span class="docsSectionMarker"><span id="firewall" class="docsSectionMarkerChild"></span></span><h3>Firewall&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#firewall">&para;</a></h3>
+<p>One possibility is that the system firewall is preventing Comet Server from binding to this IP/Port. Comet Server automatically makes a firewall exception for itself in Windows Firewall.</p>
+<ul>
+<li>Is a third-party firewall installed, that could be preventing Comet Server from binding to this IP/port?</li>
+</ul>
+<span class="docsSectionMarker"><span id="in-use-by-other-application" class="docsSectionMarkerChild"></span></span><h3>In use by other application&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#in-use-by-other-application">&para;</a></h3>
+<ul>
+<li>
+<p>Is there any website visible when you browse to the IP/port in a web browser?</p>
+</li>
+<li>
+<p>Is IIS installed?</p>
+</li>
+</ul>
+<p>If you open Command Prompt as Administrator and run <code>netstat -o</code>, it shoudl list all the open network connections.</p>
+<ul>
+<li>Can you check if any process is using the affected port (e.g. <code>:80</code>), and compare the PID in Task Manager to find the process?</li>
+</ul>
+<p>If the affected process is &quot;SYSTEM&quot; (PID 4), then the <code>http.sys</code> driver is responsible for binding the port. The network system from IIS (<code>http.sys</code>) is also a necessary component of some other Windows features and may have been installed automatically.</p>
+<p>You can run <code>net stop http</code> to stop the driver and all the services that are using it.</p>
+<p>Some common services that use this driver are</p>
+<ul>
+<li>World Wide Web Publishing Service (IIS)</li>
+<li>&quot;Web Deployment Agent Service&quot; (<code>MsDepSvc</code> service)</li>
+<li>&quot;SQL Server Reporting Services&quot; services</li>
+<li>Windows Remote Management (<code>WS-Management</code> service)</li>
+</ul>
+<p>If you discover the services are essential, you could work around this issue by</p>
+<ul>
+<li>configuring Comet Server to listen on a different port; or</li>
+<li>configuring Comet Server to listen on a different port, and use NAT translation to make it seem like the in-use port to the outside world; or</li>
+<li>configuring Comet Server to listen on a specific interface or a different IP address.</li>
+</ul>
+<span class="docsSectionMarker"><span id="error-too-many-open-files" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;too many open files&quot;&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-too-many-open-files">&para;</a></h2>
+<p>A file handle is an abstract concept that includes network connections, temporary files, and disk files. </p>
+<p>If you experience the <code>too many open files</code> error message, this means Comet is either</p>
+<ul>
+<li>(A) running at the same time as another process with high file-handle usage; or</li>
+<li>(B) has been restricted to use a very low available amount of file handles; or</li>
+<li>(C) is itself using an excessive number of file handles</li>
+</ul>
+<p>During a backup job, Comet uses approximately</p>
+<ul>
+<li>approximately 10-20 handles for files being read from the disk; and</li>
+<li>approximately 10-20 handles for open network connections; and</li>
+<li>an unknown number of temporary cache files created during the &quot;Building cache&quot; phase</li>
+</ul>
+<p>You may be able to work around this issue by</p>
+<ul>
+<li>raising the kernel file handle limit (described below); or</li>
+<li>ensuring no file-intensive processes are running at the same time as the Comet Backup job; or</li>
+<li>ensuring multiple Comet backup jobs are not running simultaneously; or</li>
+<li>for &quot;File and Folder&quot; protected items, by enabling the &quot;Rescan unchanged files&quot; option. This reduces the number of temporary files that Comet uses for local caching. However, it may reduce the backup performance.</li>
+</ul>
+<p>If you discover your device has a different limit than the Operating System default, you should find the configuration file where the limit has been altered.</p>
+<p class="highlight-upcoming">A future version of Comet may redesign the cache mechanism to use fewer local temporary files.</p>
+<span class="docsSectionMarker"><span id="on-macos" class="docsSectionMarkerChild"></span></span><h3>On macOS&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#on-macos">&para;</a></h3>
+<p>macOS supports system and per-process limits on the number of open file handles.</p>
+<p>The default limits are fixed at a quite low value (at the time of writing: <code>12288</code> system-wide, <code>10240</code> per-process).</p>
+<p>You can check the current system-wide limits by running: <code>sysctl kern.maxfiles</code></p>
+<p>You can check the current per-process limit by running: <code>sysctl kern.maxfilesperproc</code></p>
+<p>On macOS 10.12.x and later, you can raise the system-wide limits by creating a <code>.plist</code> file in the <code>/Library/LaunchDaemons/</code> directory. Please see <a href="https://superuser.com/a/1171026">these instructions</a> for more information.</p>
+<p>On macOS 10.11.x and earlier, you can raise the system-wide limits by updating the <code>kern.*</code> settings in <code>/etc/sysctl.conf</code>. Please see <a href="https://superuser.com/a/443168">these instructions</a> for more information.</p>
+<span class="docsSectionMarker"><span id="on-linux" class="docsSectionMarkerChild"></span></span><h3>On Linux&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#on-linux">&para;</a></h3>
+<p>Linux supports system limits, per-process soft limits and per-process hard-limits on the number of open file handles.</p>
+<p>The default limits are fixed at a quite high value (<code>1048576</code> on Debian 10 &quot;Buster&quot;). However, the limits may have been lowered by the system administrator, especially if the Linux PC is a multi-tenant server, web server, container server or OpenVZ server, in order to provide a limited but consistent experience to the system tenants. Any installed Linux Security Module (LSM) such as SELinux or AppArmor may also impact the value.</p>
+<p>Any new child process will inherit the parent process's limit values.</p>
+<span class="docsSectionMarker"><span id="perprocess-limits" class="docsSectionMarkerChild"></span></span><h4>Per-process limits&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#perprocess-limits">&para;</a></h4>
+<p>You can check the current limits for new processes spawned by the current user account, by running: <code>ulimit -n</code></p>
+<p>You can check the available hard and soft limits for any process by running (e.g.):</p>
+<ul>
+<li>Find the PID of each Comet Backup process: <code>pidof backup-tool</code></li>
+<li>Check the soft/hard limits for the PID: <code>grep files "/proc/PID/limits"</code></li>
+</ul>
+<p>You can update the current limit for new child processes, by running: <code>ulimit -n 10485760</code> (for a 10x raise from the default) or <code>ulimit -n unlimited</code>.</p>
+<ul>
+<li>Only the <code>root</code> user has permission to raise their own <code>ulimit</code>.</li>
+<li>This will only affect newly spawned child processes. Existing processes will retain the previous limit. You should restart Comet Backup for the changes to take affect; or, you should restart the whole PC for the changes to affect all running processes, however, any changes may not survive a reboot.</li>
+</ul>
+<p>You can set the per-process file handle limit for processes spawns by systemd, by adding a <code>LimitNOFILE=...</code> stanza to the systemd unit file. The <code>infinity</code> value is supported.</p>
+<span class="docsSectionMarker"><span id="systemwide-limits" class="docsSectionMarkerChild"></span></span><h4>System-wide limits&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#systemwide-limits">&para;</a></h4>
+<p>You can view the current system-wide number of open file handles by running: <code>cat /proc/sys/fs/file-max</code>.</p>
+<p>You can view the current system-wide number of open file handles by running: <code>cat /proc/sys/fs/file-nr</code>, or, by running <code>lsof | wc -l</code>. The values may differ slightly.</p>
+<p>The default system-wide limit might be currently set</p>
+<ul>
+<li>in the <code>/etc/security/limits.conf</code> file, or</li>
+<li>by any file in the <code>/etc/security/limits.d/</code> subdirectory, or</li>
+<li>in the <code>/etc/sysctl.conf</code> file.</li>
+</ul>
+<p>You can update the system-wide limit by running:</p>
+<pre><code class="language-bash">echo "fs.file-max = 10485760" &gt;&gt; /etc/sysctl.conf
+/sbin/sysctl -p </code></pre>
+<p>This raises the system file handle limit 10x higher from the default, and then reloads the <code>sysctl</code> variables. On Debian, the <code>sysctl</code> program is in the <code>procps</code> package that also provides the <code>pidof</code> and <code>ps</code> programs.</p>
+<span class="docsSectionMarker"><span id="on-windows" class="docsSectionMarkerChild"></span></span><h3>On Windows&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#on-windows">&para;</a></h3>
+<p>Each process has a limit on the total number of open handle objects. The maximum number of open handles is 16711680 (16 million) on <code>x86_64</code> versions of Windows. However, it may be lower on other CPU architectures, or it might lowered by a system administrator via Group Policy.</p>
+<p>There is also a per-session limit on the number of opened files over the network. The default value is 16384; you can see this by running: <code>net config server</code>.</p>
+<p>You can see the current per-process handle count from Task Manager, on the Details tab by enabling the optional column &quot;Handles&quot;.</p>
+<span class="docsSectionMarker"><span id="error-couldnt-decrypt-vault-contents-message-in-job-reports" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;Couldn't decrypt Vault contents&quot; message in job reports&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-couldnt-decrypt-vault-contents-message-in-job-reports">&para;</a></h2>
+<p>Comet tried to access the Storage Vault, but it contained data using an unknown encryption key. Probably this Storage Vault is using the same data location as another Storage Vault (from the same- or a different- user account).</p>
+<p>Each Storage Vault in a user's profile is automatically encrypted on first use, with a randomly generated key. If you reuse the data storage location that was already used by another user's Storage Vault, Comet would not know the encryption key for the Storage Vault, and would be unable to access it.</p>
+<p>If you intended to share the same Storage Vault between multiple users, you should log their devices into the same account. Otherwise, you should use a different physical location for each Storage Vault.</p>
+<span class="docsSectionMarker"><span id="error-permission-denied-when-restoring-from-a-local-path-storage-vault-on-macos" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;permission denied&quot; when restoring from a Local Path Storage Vault on macOS&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-permission-denied-when-restoring-from-a-local-path-storage-vault-on-macos">&para;</a></h2>
+<p>In Comet Backup for macOS since 18.6.x, when you create a local path Storage Vault, the files are created by a background service account, using its own file permissions.</p>
+<p>However, in current (18.8.x) versions of Comet, restores are performed as the normal user account. Your normal user account may not have the necessary permissions to access the local path folder if it was created by the background service account.</p>
+<p>You may see error messages of the form:</p>
+<ul>
+<li><code>Couldn't retrieve a list of snapshots from this Storage Vault</code></li>
+<li><code>Couldn't connect to Storage Vault: Can't access Storage Vault: Open: open *YOUR-STORAGE-VAULT-DIRECTORY* : permission denied</code></li>
+</ul>
+<p>To fix this, use &quot;Get Info&quot; on the Storage Vault's folder to change permissions to allow for read/write, and use the cog menu to choose 'Apply to enclosed items...'.</p>
+<p class="highlight-upcoming">A future version of Comet may solve this problem by automatically setting file permissions.</p>
+<span class="docsSectionMarker"><span id="error-a-specified-logon-session-does-not-exist-it-may-already-have-been-terminated-when-accessing-a-windows-network-share-smb" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;A specified logon session does not exist. It may already have been terminated&quot; when accessing a Windows network share (SMB)&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-a-specified-logon-session-does-not-exist-it-may-already-have-been-terminated-when-accessing-a-windows-network-share-smb">&para;</a></h2>
+<p>Some SMB servers don't seem to accept multiple SMB login sessions, if they use the same SMB credentials from the same host from different Windows user accounts.</p>
+<p>On Windows, each user session has its own set of network login sessions. Comet performs the backup using a service user account. Therefore, this issue could occur with an affected SMB server if the interactive Windows user was logged in to the network share simultaneously.</p>
+<span class="docsSectionMarker"><span id="known-affected-smb-servers" class="docsSectionMarkerChild"></span></span><h3>Known affected SMB servers&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#known-affected-smb-servers">&para;</a></h3>
+<p><em>If you are experiencing this issue, please contact support so that we can document any affected OSes and versions.</em></p>
+<p>This issue is known to affect some Synology NAS devices.</p>
+<ul>
+<li>Workaround: Enable SMB3 in Synology DSM web interface (requires Windows 8 or later client OS)</li>
+</ul>
+<span class="docsSectionMarker"><span id="verifying-the-issue" class="docsSectionMarkerChild"></span></span><h3>Verifying the issue&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#verifying-the-issue">&para;</a></h3>
+<p>The &quot;Run as Administrator&quot; session also has its own separate network login sessions.</p>
+<ul>
+<li>Are you able to browse the network share from both an elevated and unelevated application? (e.g. &quot;File &gt; Open&quot; from notepad and from a notepad launched with &quot;Run as Administrator&quot;)</li>
+</ul>
+<p>The interactive user account may have an open network session to the affected device.</p>
+<ul>
+<li>
+<p>From a command prompt, can you run <code>net use</code> to see if the interactive user is logged in to the network share?</p>
+</li>
+<li>
+<p>From a command prompt, if you run <code>net use \\server_name\share_name /DELETE</code> to log the interactive user out of the network share, does this allow the backup to proceed?</p>
+<ul>
+<li>Note that this may cause the same error to affect the interactive user. You may have to run this same command as an After command in the backup job, to log the background service account out of the network share, so that the interactive user can log back in.</li>
+</ul>
+</li>
+</ul>
+<span class="docsSectionMarker"><span id="workarounds" class="docsSectionMarkerChild"></span></span><h3>Workarounds&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#workarounds">&para;</a></h3>
+<p>If you are backing up from the SMB server, you could work around this issue by</p>
+<ul>
+<li>installing Comet Backup directly on the network device (e.g. for Synology, enabling SSH access and install the command-line Linux version), to back up the files directly. This may have significantly better performance, as less data needs to travel across the LAN and the disk access latency is significantly improved.</li>
+</ul>
+<p>Alternatively, by</p>
+<ul>
+<li>logging the interactive user account out of Windows entirely before the job starts. This will close their network sessions. Comet will successfully log in to the network share; you should add <code>net use /DELETE</code> as an After command in Comet to ensure the service user logs out again after the backup</li>
+</ul>
+<p>Alternatively, by</p>
+<ul>
+<li>logging the interactive user account out of the network share before the job starts, and logging them back in afterward. You may be able to use Windows Task Scheduler for this with the &quot;Run only when user is logged on&quot; option to ensure that the commands run inside the correct logon session:
+<ul>
+<li><code>net use /DELETE</code> in Task Scheduler before the backup window, to log the interactive user out</li>
+<li>Enter network credentials in Comet, so the service user logs in</li>
+<li><code>net use /DELETE</code> as an After command in Comet, so the service user logs out</li>
+<li><code>net use</code> in Task Scheduler after the backup window, to log the interactive user back in again</li>
+</ul></li>
+</ul>
+<p>If you are backing up <em>to</em> the SMB server, you could work around this issue by</p>
+<ul>
+<li>enabling the SFTP system, or the Minio S3-compatible app, and configuring your Storage Vault to use that instead. These protocols support explicitly entering credentials, that should avoid this issue.</li>
+</ul>
+<span class="docsSectionMarker"><span id="error-the-term-getvm-is-not-recognized-or-please-install-hyperv-module-for-windows-powershell-in-hyperv-backups" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;The term Get-VM is not recognized&quot; or &quot;Please install 'Hyper-V Module for Windows PowerShell'&quot; in Hyper-V backups&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-the-term-getvm-is-not-recognized-or-please-install-hyperv-module-for-windows-powershell-in-hyperv-backups">&para;</a></h2>
+<p><em>This issue cannot occur with Comet 19.3.8 or later.</em></p>
+<p>The <code>Hyper-V Module for Windows PowerShell</code> must be installed to use this feature. You can install this module from PowerShell or from Windows Server Manager.</p>
+<p>You can install the module from PowerShell by running <code>Install-WindowsFeature -Name Hyper-V-PowerShell</code>.</p>
+<p>You can install the module from Windows Server Manager, in &quot;Add Roles and Features&quot;, in &quot;Features&quot;.</p>
+<p>For Windows Server 2016, the feature checkbox is located under &quot;Remote Server Administration Tools&quot; &gt; &quot;Role Administration Tools&quot; &gt; &quot;Hyper-V Management Tools&quot; &gt; &quot;Hyper-V Module for Windows PowerShell&quot;.</p>
+<span class="docsSectionMarker"><span id="error-xc-in-kernelbasedll-starting-services-on-windows-server--r" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;0xc0000142&quot; in KERNELBASE.dll starting services on Windows Server 2012 R2&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-xc-in-kernelbasedll-starting-services-on-windows-server--r">&para;</a></h2>
+<p>Windows was unable to launch Comet's process because of an internal error.</p>
+<p>In our experience, this issue can be resolved by running Windows Update. Please ensure Windows Update is fully up-to-date on this PC.</p>
+<p>If this does not resolve the issue, please contact support for further assistance,</p>
+<span class="docsSectionMarker"><span id="multiple-devices-are-detected-as-being-the-same-device" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Multiple devices are detected as being the same device&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#multiple-devices-are-detected-as-being-the-same-device">&para;</a></h2>
+<p>Comet tells machines apart by their &quot;device ID&quot;. This is automatically determined from a mix of hardware and software identifiers.</p>
+<p>One possible cause of this issue is if the two VMs were originally clones of each other. If you have cloned a VM in the past, it might have the same hardware and software identifiers, and so appear to Comet as the same device.</p>
+<p>If multiple devices appear to Comet as the same device, they will share the same Protected Items and job scheduling. This causes follow-on issues for logging and reporting.</p>
+<p>You can resolve this issue by changing the hardware or software ID for the affected VM. This will influence Comet's device ID to force the devices to be detected as different devices.</p>
+<p>On Linux, the SSH host keys are one signal that influences the generated device IDs. Installing SSH, or regenerating the SSH host keys, will cause the device ID to change.</p>
+<p>On Windows (with Comet 18.9.9 or later), you can add extra data to influence the generated device ID by creating a registry key.</p>
+<ol>
+<li>Open Registry Editor (<code>regedit.exe</code>)</li>
+<li>Browse to the <code>HKEY_LOCAL_MACHINE\Software\cometbackup</code> folder key, creating it if it does not already exist
+<ul>
+<li>The <code>HKEY_LOCAL_MACHINE\Software\backup-tool</code> folder key is also recognized <em>(with Comet 18.12.2 or later)</em></li>
+</ul></li>
+<li>Create a &quot;String Value&quot; with name <code>DeviceIdentificationEntropy</code></li>
+<li>Set any random text as the Data value. This value will influence the generated device ID.</li>
+<li>Restart all Comet services (e.g. <code>backup.delegate</code> and <code>backup.elevator</code>)</li>
+</ol>
+<span class="docsSectionMarker"><span id="cant-use-userprofile-in-selected-backup-paths-on-windows" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Can't use %USERPROFILE% in selected backup paths on Windows&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#cant-use-userprofile-in-selected-backup-paths-on-windows">&para;</a></h2>
+<p>Comet does not expand Windows environment variables in the path selection.</p>
+<p>The Comet Backup app runs backup jobs as a dedicated service account. If the <code>%userprofile%</code> environment variable was expanded, it would refer to the &quot;wrong&quot; user account.</p>
+<p>You can back up the <code>%USERPROFILE%\Documents</code> directory for all users, by</p>
+<ul>
+<li>including the entire <code>C:\Users</code> directory, and</li>
+<li>excluding other parts of it (e.g. pattern <code>C:\Users\**\Downloads</code> or regex <code>^C:\\Users\\[^\\+]\\Downloads</code>).</li>
+</ul>
+<span class="docsSectionMarker"><span id="error-ciphertext-verification-failed-when-using-a-storage-vault" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;ciphertext verification failed&quot; when using a Storage Vault&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-ciphertext-verification-failed-when-using-a-storage-vault">&para;</a></h2>
+<p>This error message can occur either immediately, when running any backup or restore operation; or, it can occur part-way through a job.</p>
+<span class="docsSectionMarker"><span id="error-occurs-immediately" class="docsSectionMarkerChild"></span></span><h3>Error occurs immediately&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-occurs-immediately">&para;</a></h3>
+<p>If this error message occurs immediately, it means Comet was unable to connect to the Storage Vault at all, because the encryption key in the user's Storage Vault settings does not match the files in the <code>/keys/</code> subdirectory in the data storage location.</p>
+<p>When a Storage Vault is used for the first time, Comet generates a random encryption key, and stores it in an encrypted form in both (A) the user's profile, and (B) in the <code>/keys/</code> subdirectory in the data storage location. It's important that these match at all times. If they do not match, Comet will be unable to use the data inside the Storage Vault.</p>
+<p>You may potentially encounter this issue in the following situations:</p>
+<ul>
+<li>
+<p>If the first time this Storage Vault was used, multiple backup jobs ran simultaneously</p>
+<ul>
+<li>The first-time initialization make take a few seconds. If multiple initialization jobs were running simultaneously, this may have caused a conflict when saving the encryption key into the user profile</li>
+</ul>
+</li>
+<li>
+<p>If you were performing a Seed Load, but...</p>
+<ul>
+<li>created a new Storage Vault in the client instead of reusing the existing one; or</li>
+<li>did not copy the <code>/keys/</code> subdirectory or the top-level <code>config</code> file; or</li>
+<li>misconfigured the &quot;subdirectory&quot; or &quot;path&quot; option in the Storage Vault settings</li>
+</ul>
+</li>
+<li>
+<p>If you change the Storage Vault location to point to another user account's Storage Vault</p>
+<ul>
+<li>Data locations cannot be simply reused by multiple user accounts - the other user account would have a different encryption key. If you want to share a single data storage location between multiple customers, you should have both customers log in to the same account as devices, so that they can share the Storage Vault settings including the encryption material.</li>
+</ul>
+</li>
+</ul>
+<span class="docsSectionMarker"><span id="error-occurs-partway-through-a-running-job" class="docsSectionMarkerChild"></span></span><h3>Error occurs part-way through a running job&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-occurs-partway-through-a-running-job">&para;</a></h3>
+<p>This indicates that a file inside the Storage Vault is corrupted. Please run a &quot;Deep Verify&quot; action on the Storage Vault, and see the &quot;Data validation&quot; section in the Appendix for more information.</p>
+<span class="docsSectionMarker"><span id="error-not-a-supported-backup-storage-location-backing-up-system-state-to-a-usb-flash-drive" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;not a supported backup storage location&quot; backing up System State to a USB flash drive&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-not-a-supported-backup-storage-location-backing-up-system-state-to-a-usb-flash-drive">&para;</a></h2>
+<p>The &quot;Windows Server System State&quot; and &quot;Windows System Backup&quot; Protected Item types in Comet inherit some restrictions from the underlying technology (<code>wbadmin</code>).</p>
+<p>It's not officially possible to spool the backup job to a USB flash drive:</p>
+<blockquote>
+<p>&quot;You cannot store backups on USB flash drives or pen drives.&quot; - <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753528(v=ws.11">https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753528(v=ws.11</a>)</p>
+</blockquote>
+<p>This is a preventative measure in case the drive is removed mid-backup.</p>
+<p>The following workarounds are available:</p>
+<ol>
+<li>Modify the flash drive to appear as a non-removable disk</li>
+</ol>
+<p>For more information, please see <a href="https://social.technet.microsoft.com/Forums/windowsserver/en-US/c39c050f-d579-4222-8ad1-44d2ff53882b/windows-backup-cannot-see-usb-flash-drive?forum=windowsbackup#03e336a4-bc68-46f6-9a4c-be6907903da6">https://social.technet.microsoft.com/Forums/windowsserver/en-US/c39c050f-d579-4222-8ad1-44d2ff53882b/windows-backup-cannot-see-usb-flash-drive?forum=windowsbackup#03e336a4-bc68-46f6-9a4c-be6907903da6</a></p>
+<ol start="2">
+<li>Create a shared network directory on the flash drive, and tell Comet to use the UNC network path as the spool directory instead</li>
+</ol>
+<p>For more information, please see <a href="https://social.technet.microsoft.com/Forums/lync/en-US/e1f0fa4e-5fb0-4749-82d6-16b1bd427495/when-will-windows-server-backup-allow-usb-flash-drives-as-a-target?forum=windowsbackup#fc8affd9-378a-447e-a36e-c5af0bb1e40b">https://social.technet.microsoft.com/Forums/lync/en-US/e1f0fa4e-5fb0-4749-82d6-16b1bd427495/when-will-windows-server-backup-allow-usb-flash-drives-as-a-target?forum=windowsbackup#fc8affd9-378a-447e-a36e-c5af0bb1e40b</a></p>
+<span class="docsSectionMarker"><span id="error-the-service-did-not-start-due-to-a-logon-failure" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;The service did not start due to a logon failure&quot;&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-the-service-did-not-start-due-to-a-logon-failure">&para;</a></h2>
+<p>This error may affect Comet Backup or Comet Server. Both products make use of a background Windows service.</p>
+<p>Please check in Windows Event Viewer for more detail about the error message. There may be an error report in the &quot;System&quot; log category, from the &quot;Service Control Manager&quot; source.</p>
+<p>One possible reason is that an account password was specified incorrectly.</p>
+<p>Another possible reason for this issue is if the right to log on as a service is denied for this user account. Normally the Comet installer asserts this policy during installation; however, on a domain-joined machine, it might have been overwritten by Active Directory policy.</p>
+<ul>
+<li>If the machine is domain-joined, please check the Active Directory policy.</li>
+<li>If the machine is not domain-joined, you can check this policy inside <code>gpedit.msc</code>; on the left-hand tree, expand &quot;Computer Configuration&quot; &gt; &quot;Windows Settings&quot; &gt; &quot;Security Settings&quot; &gt; &quot;Local Policies&quot; &gt; &quot;User Rights Assignment&quot;; then open the &quot;Log on as a service&quot; item. The target user should appear in this list, or, the target user should be a member of a Windows group that appears in this list.</li>
+</ul>
+<span class="docsSectionMarker"><span id="slow-backup-jobs" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Slow backup jobs&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#slow-backup-jobs">&para;</a></h2>
+<p>There are many possible reasons why a backup job might be slow.</p>
+<span class="docsSectionMarker"><span id="recent-changes" class="docsSectionMarkerChild"></span></span><h3>Recent changes&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#recent-changes">&para;</a></h3>
+<p>Did the issue suddenly start happening, on a certain time?</p>
+<ul>
+<li>New software
+<ul>
+<li>Any recently-installed software might change the performance profile of the customer's PC.</li>
+<li>On Windows, check in &quot;Programs And Features&quot; and sort by Date to see any recently-installed software</li>
+<li>Does the issue coincide with a Comet software update?</li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="customer-pc-performance" class="docsSectionMarkerChild"></span></span><h3>Customer PC performance&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#customer-pc-performance">&para;</a></h3>
+<p>Are multiple customers experiencing the issue, or just a single customer? This helps determine whether the issue is related to your general/server-side infrastructure or whether the issue is related to the customer's environment.</p>
+<ul>
+<li>
+<p>Antivirus</p>
+<ul>
+<li>Many antivirus programs will scan each file as Comet reads them, including but not limited to ESET NOD32 and Windows Defender.</li>
+<li>Does it help to exclude Comet's <code>backup-tool.exe</code> program in the antivirus software?
+<ul>
+<li>Comet 19.3.13 and later automatically does this for Windows Defender.</li>
+</ul></li>
+<li>Does the antivirus process show as having high usage in Task Manager when the backup is running?</li>
+</ul>
+</li>
+<li>
+<p>Use of slow settings</p>
+<ul>
+<li>Ensure the &quot;Limit backup to use only 1 disk thread&quot; option is not enabled</li>
+<li>Ensure the &quot;speed limit&quot; option is not enabled</li>
+<li>Ensure the &quot;Prefer temporary files instead of RAM (slower)&quot; option is not enabled</li>
+<li>Toggle the &quot;Rescan unchanged files&quot; option, to see if it increases- or decreases- performance</li>
+</ul>
+</li>
+<li>
+<p>RAM usage</p>
+<ul>
+<li>With large (multi-TB) Storage Vaults, there are many different data chunks that could be deduplicated against. Comet will start to use a few GB of RAM to hold all the indexes for deduplication. If the local PC is low on RAM, it may use the swapfile / pagefile, that can significantly reduce performance.</li>
+</ul>
+</li>
+<li>
+<p>CPU usage</p>
+<ul>
+<li>Comet compresses and encrypts all data before upload. On weak CPUs this may cause high CPU usage. The CPU usage may become a bottleneck.</li>
+</ul>
+</li>
+</ul>
+<span class="docsSectionMarker"><span id="storage-performance" class="docsSectionMarkerChild"></span></span><h3>Storage performance&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#storage-performance">&para;</a></h3>
+<p>Check what kind of disks the customer is backing up.</p>
+<p>Check what kind of storage the customer is using.</p>
+<p>Check where the temporary directory is for the backup service user account.</p>
+<ul>
+<li>
+<p>Avoid backing up files from a network share</p>
+<ul>
+<li>If you are backing up files from a network location, Comet must make many network roundtrips to access the data. It may be substantially faster to install Comet on the network device instead.</li>
+</ul>
+</li>
+<li>
+<p>Backup storage on the same volume as the backup source</p>
+<ul>
+<li>Using a mechanical harddrive for multiple tasks simultaneously may reduce its performance from the sequential-level down to the random-level, even for sequential tasks.</li>
+</ul>
+</li>
+<li>
+<p>Backup source is a single-queue block device</p>
+<ul>
+<li>Comet issues many requests to the source disk in parallel. To avoid negatively affecting other programs on the PC, Comet tries to access the source disk at a low OS priority, but this may be ineffectual if your disk only supports a single queue. You can toggle the &quot;Limit backup to use only 1 disk thread&quot; option to force Comet to make only a disk request to the source disk at a time. This may have a positive effect on other programs on the PC, at the expense of backup job performance.</li>
+</ul>
+</li>
+<li>
+<p>Use of external harddrives</p>
+<ul>
+<li>Is it USB 2 or USB 3?</li>
+<li>Some disk drives may experience slow performance. You can use a benchmarking tool to determine the expected performance of the USB drive  both in sequential reads, and in small random reads) independently of Comet, as a baseline to compare against Comet's performance.
+<ul>
+<li>At the time of writing, <a href="https://crystalmark.info/en/software/crystaldiskmark/">CrystalDiskMark</a> is a popular freeware software for measuring disk performance on Windows.</li>
+</ul></li>
+<li>Performance Mode
+<ul>
+<li>There is an option in Windows to control whether USB drives are configured for &quot;Quick removal&quot; (default) or &quot;Better performance&quot;. Switching to the latter mode can significantly improve performance, but requires you to safely eject the drive. To change this setting:
+<ol>
+<li>Open Device Manager &gt; Disk drives &gt; Properties &gt; Policies tab</li>
+<li>If the &quot;Quick removal&quot; / &quot;Better performance&quot; radio option is available, ensure it is set to &quot;Better performance&quot;</li>
+<li>If the &quot;Enable write caching&quot; checkbox option is available, ensure that it is enabled</li>
+</ol></li>
+</ul></li>
+</ul>
+</li>
+<li>
+<p>Backing up direct to cloud storage</p>
+<ul>
+<li>Check the customer's internet connection</li>
+<li>Check the service provider's status page, to ensure they are not currently experiencing any errors        </li>
+</ul>
+</li>
+<li>
+<p>Backing up to Comet Server Storage Role bucket</p>
+<ul>
+<li>Check the customer's internet connection</li>
+<li>Check the end-to-end latency of the storage, from the customer's PC through to the final storage location. High latency can reduce Comet performance</li>
+<li>Ensure the Comet Server is not experiencing high CPU or RAM usage.</li>
+</ul>
+</li>
+</ul>
+<span class="docsSectionMarker"><span id="error-errsslversioninterference-connecting-to-comet-server" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;ERR_SSL_VERSION_INTERFERENCE&quot; connecting to Comet Server&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-errsslversioninterference-connecting-to-comet-server">&para;</a></h2>
+<p><em>Comet Server 19.3.9 added support for TLS 1.3.</em></p>
+<p>The latest 1.3 version of TLS reduces connection latency and improves connection security. Comet Server continues to support genuine TLS 1.2 connections.</p>
+<p>If you see the <code>ERR_SSL_VERSION_INTERFERENCE</code> error, this message means that your web browser and the web server tried to use the latest TLS 1.3 standard, but, something inbetween them does not support TLS 1.3. Your web browser chose to abandon the connection rather than downgrading the connection security to TLS 1.2.</p>
+<p>If there are middleboxes or software on the network path, that expect to be able to intercept SSL traffic but do not support TLS 1.3, then all TLS 1.3 connections will fail. These middleboxes or software on the network path may need a software update to support TLS 1.3.</p>
+<ul>
+<li>
+<p>Are you using any &quot;web security&quot; software that intercepts SSL certificates? (e.g. ESET Internet Security, Symantec Web Security Service)</p>
+</li>
+<li>
+<p>Are you behind a corporate or education network proxy that intercepts SSL certificates? (e.g. BlueCoat / Microsoft Forefront TMG)</p>
+</li>
+<li>
+<p>Is the web browser up-to-date? Some web browsers use an early draft of the TLS 1.3 standard that might be incompatible with the final TLS 1.3 used by Comet Server</p>
+</li>
+<li>
+<p>A last-resort is to disable TLS 1.3 in your web browser, so that the web browser connects with TLS 1.2.</p>
+</li>
+</ul>
+<span class="docsSectionMarker"><span id="error-mysqldump-couldnt-execute-show-package-status-where-db---you-have-an-error-in-your-sql-syntax---when-backing-up-mysql" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;mysqldump: Couldn't execute 'SHOW PACKAGE STATUS WHERE Db = '[...]'': You have an error in your SQL syntax [...] (1064)&quot; when backing up MySQL&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-mysqldump-couldnt-execute-show-package-status-where-db---you-have-an-error-in-your-sql-syntax---when-backing-up-mysql">&para;</a></h2>
+<p>This error can occur if you are using a version of <code>mysqldump</code> from MariaDB 10.3 prior to July 2019, connecting to an older MySQL database.</p>
+<p>This version of <code>mysqldump</code> does not correctly limit itself to the remote server's capabilities.</p>
+<p>For instance, this issue can occur with the defalt mysqldump in Debian Buster 10.0.</p>
+<p>You can read more about this issue on the MariaDB bug tracker:</p>
+<ul>
+<li><a href="https://jira.mariadb.org/browse/MDEV-17429">https://jira.mariadb.org/browse/MDEV-17429</a></li>
+<li><a href="https://github.com/MariaDB/server/commit/620f4f8af98666e2efb7e14fb26">https://github.com/MariaDB/server/commit/620f4f8af98666e2efb7e14fb26</a></li>
+<li><a href="https://github.com/dbeaver/dbeaver/issues/6086">https://github.com/dbeaver/dbeaver/issues/6086</a></li>
+</ul>
+<span class="docsSectionMarker"><span id="workaround" class="docsSectionMarkerChild"></span></span><h3>Workaround&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#workaround">&para;</a></h3>
+<p>You can work around this issue by disabling backup of stored procedures.</p>
+<p>If this is acceptable, you can perform this workaround by stripping the <code>--routines</code> parameter that Comet passes to <code>mysqldump</code>. To do so on Linux,</p>
+<ol>
+<li>Create a file with the following content:
+<pre><code class="language-bash">#!/bin/bash
+# This program is a wrapper for mysqldump that removes the --routines argument,
+# to work around issue MDEV-17429 with older MySQL servers
+args=("$@")
+for ((i=0; i&lt;"${#args[@]}"; ++i)); do
+case ${args[i]} in
+    --routines)
+        unset args[i];
+    break;;
+esac
+done
+/usr/bin/mysqldump "${args[@]}"</code></pre></li>
+<li>Save this file as <code>/opt/CometBackup/mysqldump-no-routines</code></li>
+<li>Mark the file as executable: <code>chmod +x /opt/CometBackup/mysqldump-no-routines</code></li>
+<li>In the Protected Item settings, set &quot;custom mysqldump path&quot; to this file</li>
+</ol>
+<span class="docsSectionMarker"><span id="error-incorrect-function" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;Incorrect function&quot;&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-incorrect-function">&para;</a></h2>
+<p>This error message indicates the application tried to do something not supported by the disk, but all Comet is doing is reading those files and directories. If this error happens for a normal local disk, then that is certainly supported functionality.</p>
+<p>One possibility is that the disk driver is reporting this error message as a symptom of disk corruption when it fails to read sectors for those files.</p>
+<ul>
+<li>Check if it is possible to open the affected files in any normal app. </li>
+<li>Use the disk health tools on the device. In Windows Explorer &gt; &quot;This PC&quot; &gt; right-click the drive affected (shown in the error) &gt; &quot;Tools&quot; tab &gt; &quot;Check for errors&quot;.</li>
+</ul>
+<span class="docsSectionMarker"><span id="error-operation-not-permitted-macos" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;operation not permitted&quot; macOS&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-operation-not-permitted-macos">&para;</a></h2>
+<p>Since macOS 10.14, Apple has introduced a new privacy flow. The user is now asked for permission when an app requires access to certain features or functions. The user will need to explicitly grant &quot;Full Disk Access&quot; to the Comet Backup application.</p>
+<ol>
+<li>Open the System Preferences (Apple menu)</li>
+<li>Select &quot;Security and Privacy&quot; &gt; &quot;Privacy&quot; tab</li>
+<li>Select &quot;Full Disk Access&quot;</li>
+<li>Add Comet Backup</li>
+</ol>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="fulldiskaccess.gif"><img src="fulldiskaccess.gif.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="error-the-specified-backup-storage-location-has-the-shadow-copy-storage-on-another-volume-using-windows-system-backup" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;The specified backup storage location has the shadow copy storage on another volume&quot; using Windows System Backup&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-the-specified-backup-storage-location-has-the-shadow-copy-storage-on-another-volume-using-windows-system-backup">&para;</a></h2>
+<p>This error is not specific to Comet. You may find more information online.</p>
+<p>There is a problem with using the selected spool directory. The spool drive has its shadow storage configured in an unusual way that is incompatible with the <code>wbadmin</code> tool.</p>
+<span class="docsSectionMarker"><span id="troubleshooting-2" class="docsSectionMarkerChild"></span></span><h3>Troubleshooting&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#troubleshooting-2">&para;</a></h3>
+<ul>
+<li>
+<p>What kind of drive is the spool target? Is it a network share, or an external harddrive, or a SAN? If it is a SAN, is it a managed appliance?</p>
+</li>
+<li>
+<p>What is the output of running this command as Administrator: <code>vssadmin list shadowstorage</code></p>
+</li>
+</ul>
+<span class="docsSectionMarker"><span id="workaround-2" class="docsSectionMarkerChild"></span></span><h3>Workaround&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#workaround-2">&para;</a></h3>
+<p>You may be able to workaround this issue by creating a network share on the same drive, and entering the UNC path to the share instead of the actual local drive letter.</p>
+<span class="docsSectionMarker"><span id="error-dirty-shutdown-when-restoring-exchange-edb-content" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;Dirty Shutdown&quot; when restoring Exchange EDB content&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-dirty-shutdown-when-restoring-exchange-edb-content">&para;</a></h2>
+<p>Depending on the state of the last Exchange Server backup job, you may need to merge log files into the EDB file before it can be accessed. You can do this with the <code>eseutil</code> program included in Exchange Server.</p>
+<p>For example, if the database was restored to <code>D:\restore-edb</code>:</p>
+<ul>
+<li>Check EDB file state: <code>eseutil /MH "D:\restore-edb\File\Mailbox.edb"</code></li>
+<li>Apply log files: <code>eseutil /R E00 /D "D:\restore-edb\File" /D "D:\restore-edb\Logs" /S "D:\restore-edb\Logs"</code></li>
+</ul>
+<p>For more information, see <a href="https://blogs.technet.microsoft.com/mspfe/2012/09/06/why-exchange-databases-might-remain-dirty-after-eseutil-r-recovery/">this Microsoft article</a>.</p>
+<span class="docsSectionMarker"><span id="error-data-error-cyclic-redundancy-check-while-backing-up-data" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Error &quot;Data error (cyclic redundancy check)&quot; while backing up data&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#error-data-error-cyclic-redundancy-check-while-backing-up-data">&para;</a></h2>
+<p>Comet Backup tried to read a file from the disk for backup, but Windows was unable to provide the file content.</p>
+<p>This specific error message comes from the disk driver. If the local disk is a HDD or SSD, the most common cause is a bad sector in the physical hardware: please use the <code>chkdsk</code> tool to schedule a boot-time sector check.</p>
+<span class="docsSectionMarker"><span id="rekeying-a-comet-server-bucket" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Re-keying a Comet Server bucket&nbsp;<a class="docsSectionLinkIcon" href="troubleshooting.html#rekeying-a-comet-server-bucket">&para;</a></h2>
+<p>The buckets in the Comet Server storage role all have an ID and a key which must match inside the customer's Storage Vault settings.
+These are just login fields, and are not tied to the underlying data encryption.
+This explains why you can use the &quot;seed load&quot; process to switch a Storage Vault to point to a different location. The access key is just about accessing the location, not about what's inside it.
+Steps to re-key:</p>
+<ol>
+<li>make sure Constellation is not actively deleting anything; then</li>
+<li>on the Storage Buckets page, add a new bucket and note down the keys;</li>
+<li>on your server, move all the files from the old bucket to the new bucket;</li>
+<li>change the customer's existing Storage Vault so that it points to the new bucket;</li>
+<li>(undo step 1 if necessary)</li>
+<li>
+<p>This is just like seed loading, but, between two buckets on the same server</p>
+</li>
+</ol></div><div class="doc-navigation-section"><div class="doc-navigation-back doc-navigation-width-2"><a href="storage-configuration.html">&laquo; Back: Storage configuration</a></div><div class="doc-navigation-next doc-navigation-width-2"><a href="api.html">Next: API Guide &raquo;</a></div></div> 
+				</div>
+			</div>
+		</div>
+	
+	
+	</body>
+</html>

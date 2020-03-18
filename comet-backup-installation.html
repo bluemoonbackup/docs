@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="docs.css">
+		<link rel="stylesheet" type="text/css" href="magnific-popup.css">		
+		<script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="magnific-popup.1.1.0.min.js"></script>
+		<script type="text/javascript" src="lunr-2.1.0.min.js"></script>
+		<script type="text/javascript" src="docs.js"></script>
+		<title>Documentation</title>		
+	</head>
+	<body>
+	
+		<div id="header-bar">
+			<div id="header-logo"></div>
+			Documentation
+		</div>
+	
+		<div id="main-area">
+			<div id="position-nav">
+				<div id="nav-inner">
+					<ul><li><form method="GET" action="search-results.html"><input name="s" class="search-box" placeholder="Search..."></form></li>
+<li><span class="category-header">Guides</span></li>
+<li><a href="guide-getting-started.html" title="Getting Started">Getting Started</a></li>
+<li><a href="guide-cometgo-getting-started.html" title="Getting Started with CometGo!">Getting Started with CometGo!</a></li>
+<li><a href="guide-seedload-walkthrough.html" title="Seed Load Walkthrough">Seed Load Walkthrough</a></li>
+<li><span class="category-header">Documentation</span></li>
+<li><a href="about-these-docs.html" title="Software Documentation">Software Documentation</a></li>
+<li><a href="application-architecture.html" title="Overview and Concepts">Overview and Concepts</a></li>
+<li><a href="comet-server-installation.html" title="Comet Server installation">Comet Server installation</a></li>
+<li><a href="comet-server-configuration.html" title="Comet Server configuration">Comet Server configuration</a></li>
+<li><a href="comet-server-usage.html" title="Comet Server usage">Comet Server usage</a></li>
+<li class="current-page"><a data-indent="0" class="subsection-link subsection-indent-0" href="#comet-backup-installation" title="Comet Backup installation">Comet Backup installation</a>
+<ul>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#windows" title="Windows">Windows</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#system-requirements" title="System Requirements">System Requirements</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#not-compatible-with-windows-xp-released-" title="Not compatible with Windows XP (released 2001)">Not compatible with Windows XP (released 2001)</a></li>
+<li><a data-indent="4" class="subsection-link subsection-indent-4" href="#workarounds" title="Workarounds">Workarounds</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#install" title="Install">Install</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#silent-install-advanced" title="Silent install (advanced)">Silent install (advanced)</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#service-account" title="Service account">Service account</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#upgrading" title="Upgrading">Upgrading</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#silent-upgrade-advanced" title="Silent upgrade (advanced)">Silent upgrade (advanced)</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#service-account-2" title="Service account">Service account</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#uninstall" title="Uninstall">Uninstall</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#silent-uninstall" title="Silent uninstall">Silent uninstall</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#macos" title="macOS">macOS</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#system-requirements-2" title="System Requirements">System Requirements</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#install-2" title="Install">Install</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#upgrading-2" title="Upgrading">Upgrading</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#silent-upgrade-advanced-2" title="Silent upgrade (advanced)">Silent upgrade (advanced)</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#uninstall-2" title="Uninstall">Uninstall</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#linux-debian-ubuntu" title="Linux (Debian, Ubuntu)">Linux (Debian, Ubuntu)</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#linux-red-hat-enterprise-linux-rhel-centos" title="Linux (Red Hat Enterprise Linux (RHEL), CentOS)">Linux (Red Hat Enterprise Linux (RHEL), CentOS)</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#linux-nas-synology-qnap" title="Linux NAS (Synology, QNAP)">Linux NAS (Synology, QNAP)</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#linux-other-distribution" title="Linux (Other Distribution)">Linux (Other Distribution)</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#system-requirements-3" title="System Requirements">System Requirements</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#arm-cpu-support" title="ARM CPU support">ARM CPU support</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#timezone-database-dependency" title="Timezone database dependency">Timezone database dependency</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#ca-certificate-database-dependency" title="CA certificate database dependency">CA certificate database dependency</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#install-3" title="Install">Install</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#install-options" title="Install options">Install options</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#restarting-at-boot" title="Restarting at boot">Restarting at boot</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#preserve-home-environment-variable" title="Preserve HOME environment variable">Preserve HOME environment variable</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#start-in-the-background" title="Start in the background">Start in the background</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#startup-via-rclocal" title="Startup via `rc.local`">Startup via `rc.local`</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#startup-via-rcd" title="Startup via `rc.d`">Startup via `rc.d`</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#startup-via-cron" title="Startup via `cron`">Startup via `cron`</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#startup-via-initd" title="Startup via `init.d`">Startup via `init.d`</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#startup-via-systemd" title="Startup via `systemd`">Startup via `systemd`</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#upgrading-3" title="Upgrading">Upgrading</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#uninstall-3" title="Uninstall">Uninstall</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#change-password-on-linux-client" title="Change password on Linux client">Change password on Linux client</a></li>
+</ul>
+</li><li><a href="comet-backup-usage.html" title="Comet Backup usage">Comet Backup usage</a></li>
+<li><a href="user-configuration.html" title="User configuration">User configuration</a></li>
+<li><a href="protected-items.html" title="Protected Item types">Protected Item types</a></li>
+<li><a href="storage-configuration.html" title="Storage configuration">Storage configuration</a></li>
+<li><a href="troubleshooting.html" title="Troubleshooting">Troubleshooting</a></li>
+<li><a href="api.html" title="API Guide">API Guide</a></li>
+<li><a href="api-reference.html" title="API Reference">API Reference</a></li>
+<li><a href="appendix.html" title="Appendix">Appendix</a></li>
+<li><a href="cloud-storage-providers.html" title="Cloud Storage Providers">Cloud Storage Providers</a></li>
+<li><a href="third-party-service-addons.html" title="Third-party service addons">Third-party service addons</a></li>
+<li><a href="comet-server-roles.html" title="Comet Server Roles ">Comet Server Roles </a></li>
+<li><a href="comet-chunking-overview.html" title="Comet Chunking Overview ">Comet Chunking Overview </a></li>
+<li><a href="HIPAA-Compliance.html" title="HIPAA Compliance ">HIPAA Compliance </a></li>
+<li><a href="GDPR-Compliance.html" title="GDPR Compliance">GDPR Compliance</a></li>
+</ul>
+				</div>
+			</div>
+		
+			<div id="position-content">
+				<div id="content-inner">
+					<span class="docsSectionMarker"><span id="comet-backup-installation" class="docsSectionMarkerChild"></span></span><h1>Comet Backup installation&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#comet-backup-installation">&para;</a></h1>
+<span class="docsSectionMarker"><span id="windows" class="docsSectionMarkerChild"></span></span><div class="docs-box"><h2>Windows&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#windows">&para;</a></h2>
+<span class="docsSectionMarker"><span id="system-requirements" class="docsSectionMarkerChild"></span></span><h3>System Requirements&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#system-requirements">&para;</a></h3>
+<ul>
+<li><code>x86_32+SSE2</code> or <code>x86_64</code> CPU architecture</li>
+<li>Minimum 1024x600 screen resolution</li>
+<li>Windows Vista, 7, 8, 8.1, 10, or newer</li>
+<li>Windows Server 2008, 2008 R2, 2012, 2012 R2, 2016, or newer</li>
+</ul>
+<p>As of Comet 19.12.5, TLS 1.2 is mandatory in Comet Server. Windows Server 2008 users may require <a href="https://support.microsoft.com/en-us/help/4019276/update-to-add-support-for-tls-1-1-and-tls-1-2-in-windows">KB4019276</a> to continue accessing Comet Server; this update is also required for ESU (Extended Security Updates) for Windows Server 2008.</p>
+<p class="highlight-upcoming">Microsoft ended Extended support for Windows 7, Server 2008, and Server 2008 R2 on January 14th 2020. Future versions of Comet may drop support for older versions of Windows no longer under active security support from Microsoft.</p>
+<span class="docsSectionMarker"><span id="not-compatible-with-windows-xp-released-" class="docsSectionMarkerChild"></span></span><h4>Not compatible with Windows XP (released 2001)&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#not-compatible-with-windows-xp-released-">&para;</a></h4>
+<p>At the time of writing, there is no version of Comet available for Windows XP / Server 2003. All versions of Comet rely heavily on features that were only introduced in Windows Vista / Server 2008.</p>
+<p>Windows XP / Server 2003 no longer receives security patches from Microsoft. <em>It is <strong>unsafe</strong> to connect such a machine to the internet.</em> If you are attempting to supply backup services to a customer in this situation, you should arrange to first upgrade their operating system <em>with urgency</em>.</p>
+<p class="highlight-upcoming">Despite the above warning, our company would like to support as many platforms as possible. It might become supported in the future.</p>
+<span class="docsSectionMarker"><span id="workarounds" class="docsSectionMarkerChild"></span></span><h5>Workarounds&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#workarounds">&para;</a></h5>
+<p>You can work around this issue by</p>
+<ul>
+<li>installing Comet Backup on another machine, and then backup the XP machine over the network; or</li>
+<li>virtualizing the XP machine, and backing up the VM guest from the VM host. This also allows you to remove internet access from the XP machine.</li>
+</ul>
+<span class="docsSectionMarker"><span id="install" class="docsSectionMarkerChild"></span></span><h3>Install&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#install">&para;</a></h3>
+<p>Run the <code>CometBackup_install.exe</code> file and follow the prompts.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="img-comet-backup-windows-install.png"><img src="img-comet-backup-windows-install.png.thumb.jpg" alt="" /></a></p>
+<p>Once installed, the client software prompts for account details to log in.</p>
+<span class="docsSectionMarker"><span id="silent-install-advanced" class="docsSectionMarkerChild"></span></span><h4>Silent install (advanced)&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#silent-install-advanced">&para;</a></h4>
+<p>Comet allows you to install and configure the software silently, by running <code>install.exe /CONFIGURE=user:password</code> via your remote management software.</p>
+<span class="docsSectionMarker"><span id="service-account" class="docsSectionMarkerChild"></span></span><h4>Service account&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#service-account">&para;</a></h4>
+<p>Comet automatically creates a Virtual Account (<code>NT SERVICE\backup.delegate</code>) with all necessary permissions to back up files on the PC.</p>
+<p>Isolating Comet Backup under a Virtual Account is supported on Windows 7 or later, and Windows Server 2008 R2 or later when that server is not a Domain Controller. On other machines (e.g. Windows Server 2008 RTM, and domain controllers) the backup service will run as <code>LOCAL SYSTEM</code> by default.</p>
+<p>On a Domain Controller running Windows Server 2008 R2 or later, we recommend configuring a Managed Service Account inside Active Directory for the backup service. This allows you to isolate the backup service permissions in a password-less service account. You should apply this to the <code>backup.delegate</code> service (but not the <code>backup.elevator</code> service, used for software updates).</p>
+<span class="docsSectionMarker"><span id="upgrading" class="docsSectionMarkerChild"></span></span><h3>Upgrading&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#upgrading">&para;</a></h3>
+<p>The installer will safely remove and upgrade any prior version of Comet Backup, including those with a different software branding.</p>
+<p>If the product name is changed as a result of the installation process, the newly-branded software may be installed into the old-branded directory name. You can avoid this issue by completely uninstalling and reinstalling the software.</p>
+<span class="docsSectionMarker"><span id="silent-upgrade-advanced" class="docsSectionMarkerChild"></span></span><h4>Silent upgrade (advanced)&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#silent-upgrade-advanced">&para;</a></h4>
+<p>You can silently upgrade the software remotely via the Comet Server interface, or by running <code>install.exe /S</code> via your remote management software.</p>
+<span class="docsSectionMarker"><span id="service-account-2" class="docsSectionMarkerChild"></span></span><h4>Service account&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#service-account-2">&para;</a></h4>
+<p>In Comet 19.12.1 and later, if you customize the <code>backup.delegate</code> service to use any other user account, your changes will be preserved in any future software upgrade.</p>
+<p>In Comet 19.3.0 and later prior to 19.12.1, such changes will be preserved as long as the target user account is not <code>LOCAL SYSTEM</code> or <code>NT SERVICE\backup.delegate</code>.</p>
+<p>Prior to Comet 19.3.0, different restrictions were in place for this process. For more information, please see the documentation that is included with your previous version of Comet Server.</p>
+<span class="docsSectionMarker"><span id="uninstall" class="docsSectionMarkerChild"></span></span><h3>Uninstall&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#uninstall">&para;</a></h3>
+<p>The software can be uninstalled via the &quot;Apps and Features&quot; section in the Windows Control Panel.</p>
+<p>During this process, you may be prompted whether you wish to preserve any username/password credentials saved on this computer. </p>
+<p>You can also remove the saved credentials manually by deleting the <code>AppData\Roaming\backup-tool\config.dat</code> file. If the <code>backup.delegate</code> service was running as the <code>NT SERVICE\backup.delegate</code> user, this is stored in the <code>C:\Users\backup.delegate\AppData\Roaming\backup-tool\</code> directory; the path may differ if the service was running as another user account.</p>
+<span class="docsSectionMarker"><span id="silent-uninstall" class="docsSectionMarkerChild"></span></span><h4>Silent uninstall&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#silent-uninstall">&para;</a></h4>
+<p>You can silently uninstall Comet Backup for Windows by passing the <code>/S</code> command-line argument (e.g. <code>"C:\Program Files\Comet Backup\Uninstall.exe" /S</code>).</p>
+<span class="docsSectionMarker"><span id="macos" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>macOS&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#macos">&para;</a></h2>
+<span class="docsSectionMarker"><span id="system-requirements-2" class="docsSectionMarkerChild"></span></span><h3>System Requirements&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#system-requirements-2">&para;</a></h3>
+<ul>
+<li><code>x86_64</code> CPU architecture
+<ul>
+<li>Including <code>x86_64h</code></li>
+</ul></li>
+<li>OS X 10.10 or later
+<ul>
+<li>We recommend using a version of macOS that receives ongoing security support from Apple (usually the last 3 versions)</li>
+<li>OS X 10.9 was supported by Comet 19.12.1, the Comet 19.11.x series, and older versions of Comet</li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="install-2" class="docsSectionMarkerChild"></span></span><h3>Install&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#install-2">&para;</a></h3>
+<p>The macOS operating system requires codesigning to be enabled in order to launch a downloaded <code>.pkg</code> file. If you have not configured codesigning for macOS, you will be unable to launch the installer. However, you can bypass this by right-clicking the <code>.pkg</code> file and choosing Open.</p>
+<p>Run the <code>Comet Backup.pkg</code> file and follow the prompts.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="img-comet-backup-macos-install.png"><img src="img-comet-backup-macos-install.png.thumb.jpg" alt="" /></a></p>
+<p>Once installed, the client software prompts for account details to log in.</p>
+<p>If you are running the <code>.pkg</code> file from the Downloads directory, macOS will offer to move the <code>.pkg</code> file to the Trash after a successful installation.</p>
+<span class="docsSectionMarker"><span id="upgrading-2" class="docsSectionMarkerChild"></span></span><h3>Upgrading&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#upgrading-2">&para;</a></h3>
+<p>The installer will safely remove and upgrade any prior versions of Comet Backup, including those with a different software branding.</p>
+<span class="docsSectionMarker"><span id="silent-upgrade-advanced-2" class="docsSectionMarkerChild"></span></span><h4>Silent upgrade (advanced)&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#silent-upgrade-advanced-2">&para;</a></h4>
+<p>You can silently upgrade the software remotely via the Comet Server interface, or by running <code>/usr/sbin/installer -allowUntrusted -pkg "Comet Backup.pkg" -target /</code> via your remote management software.</p>
+<span class="docsSectionMarker"><span id="uninstall-2" class="docsSectionMarkerChild"></span></span><h3>Uninstall&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#uninstall-2">&para;</a></h3>
+<p>macOS does not have a standard system for uninstalling programs. However, you can still uninstall Comet by running the following command from a terminal window:</p>
+<p><code>sudo -u root "/Applications/Comet Backup.app/Contents/Resources/uninstall"</code></p>
+<p>This will automatically stop all running Comet processes, unregister Comet's <code>launchd</code> services, and remove all application files from the disk.</p>
+<p>In Comet 19.12.7 and earlier, the <code>uninstall</code> program was in the <code>MacOS</code> subdirectory instead.</p>
+<p>Uninstalling the software preserves any username/password credentials saved on this computer. To remove the saved credentials, delete the <code>/var/root/Library/Application Support/backup-tool/config.dat</code> file.</p>
+<span class="docsSectionMarker"><span id="linux-debian-ubuntu" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Linux (Debian, Ubuntu)&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#linux-debian-ubuntu">&para;</a></h2>
+<p class="highlight-upcoming">Future versions of Comet Backup will provide <code>.deb</code> packages for Debian, Ubuntu, and compatible distributions. In the meantime, you can install Comet Backup using the &quot;Other Distribution&quot; package.</p>
+<span class="docsSectionMarker"><span id="linux-red-hat-enterprise-linux-rhel-centos" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Linux (Red Hat Enterprise Linux (RHEL), CentOS)&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#linux-red-hat-enterprise-linux-rhel-centos">&para;</a></h2>
+<p class="highlight-upcoming">Future versions of Comet Backup will provide <code>.rpm</code> packages for RHEL, CentOS, and compatible distributions. In the meantime, you can install Comet Backup using the &quot;Other distribution&quot; package.</p>
+<span class="docsSectionMarker"><span id="linux-nas-synology-qnap" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Linux NAS (Synology, QNAP)&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#linux-nas-synology-qnap">&para;</a></h2>
+<p class="highlight-upcoming">Future versions of Comet will provide integrated packages for Synology and QNAP NAS devices. In the meantime, if you have SSH access to your NAS device, you can install Comet Backup using the &quot;Other distribution&quot; package.</p>
+<span class="docsSectionMarker"><span id="linux-other-distribution" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Linux (Other Distribution)&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#linux-other-distribution">&para;</a></h2>
+<p>This is a distribution-agnostic package that can be used if Comet does not have a more specific package available for your Linux distribution.</p>
+<p>Please note that in order to avoid distribution-specific differences, the package does not automatically start on boot. You should configure your system to run the launch script in <code>/opt/</code> on boot (e.g. via a systemd unit, upstart script, <code>/etc/init.d/</code> script, or a line in <code>init.rc</code>).</p>
+<span class="docsSectionMarker"><span id="system-requirements-3" class="docsSectionMarkerChild"></span></span><h3>System Requirements&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#system-requirements-3">&para;</a></h3>
+<ul>
+<li>CPU: <code>x86_64</code>, or <code>x86_32</code> with <code>SSE2</code>, or <code>ARM</code> (see below)</li>
+<li>Kernel 2.6.23 or later</li>
+<li>Dependencies
+<ul>
+<li><code>bash</code>, <code>xz</code>, GNU <code>awk</code>, and standard GNU/Linux system utilities</li>
+<li><code>ca-certificates</code> and <code>tzdata</code> (see below)</li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="arm-cpu-support" class="docsSectionMarkerChild"></span></span><h4>ARM CPU support&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#arm-cpu-support">&para;</a></h4>
+<p>Comet Backup is available for multiple ARM platform variants. The Comet Backup installer will select the best available binary for your hardware at install-time.</p>
+<p>As of Comet 18.8.0, the following platform variants are supported:</p>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ARMv8l</code></td>
+<td>ARM 64-bit (<code>Aarch64</code>), no <code>glibc</code> required</td>
+</tr>
+<tr>
+<td><code>ARMv7l</code></td>
+<td>ARM 32-bit with <code>vfp</code>, and a <code>glibc</code>-based OS with the &quot;hard-float&quot; ABI (<code>gnueabihf</code>)</td>
+</tr>
+<tr>
+<td><code>ARMv6kl</code></td>
+<td>ARM 32-bit with <code>vfp</code>, no <code>glibc</code> required</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="timezone-database-dependency" class="docsSectionMarkerChild"></span></span><h4>Timezone database dependency&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#timezone-database-dependency">&para;</a></h4>
+<p>Comet Backup on Linux requires the OS to provide an up-to-date timezone database, to perform timezone calculations</p>
+<ul>
+<li>On many Linux distributions, installing the <code>tzdata</code> or <code>timezone</code> package should be sufficient</li>
+<li>Otherwise, Comet will look for a timezone database in all of the following locations;
+<ul>
+<li><code>/usr/share/zoneinfo</code></li>
+<li><code>/usr/share/lib/zoneinfo</code></li>
+<li><code>/usr/lib/locale/TZ</code></li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="ca-certificate-database-dependency" class="docsSectionMarkerChild"></span></span><h4>CA certificate database dependency&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#ca-certificate-database-dependency">&para;</a></h4>
+<p>Comet Backup on Linux requires the OS to provide an up-to-date set of root certificate authorities, to validate HTTPS / SSL connections.</p>
+<ul>
+<li>On many Linux distributions, installing the <code>ca-certificates</code> package should be sufficient</li>
+<li>Otherwise, Comet will look for a certificate bundle in all of the following locations;
+<ul>
+<li><code>/etc/ssl/certs/ca-certificates.crt</code> (used by Debian/Ubuntu/Gentoo etc.)</li>
+<li><code>/etc/pki/tls/certs/ca-bundle.crt</code> (used by Fedora/RHEL 6)</li>
+<li><code>/etc/ssl/ca-bundle.pem</code> (used by OpenSUSE)</li>
+<li><code>/etc/pki/tls/cacert.pem</code> (used by OpenELEC)</li>
+<li><code>/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem</code> (used by CentOS/RHEL 7)</li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="install-3" class="docsSectionMarkerChild"></span></span><h3>Install&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#install-3">&para;</a></h3>
+<p>Run the <code>.run</code> file. This is a self-extracting archive.</p>
+<p>The installer will</p>
+<ol>
+<li>install the software into a branded <code>/opt/</code> subdirectory</li>
+<li>prompt you for an initial username and password</li>
+<li>register the current Linux device into that Comet account</li>
+<li>start running Comet Backup in the background.</li>
+</ol>
+<p>If you make a mistake with the username/password prompt, you should follow the below instructions to uninstall the software, and then start the installation again.</p>
+<span class="docsSectionMarker"><span id="install-options" class="docsSectionMarkerChild"></span></span><h4>Install options&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#install-options">&para;</a></h4>
+<p>You can control the installer by setting environment variables in your shell before running the <code>.run</code> file.</p>
+<p>The following options are available:</p>
+<ul>
+<li><code>WRITE_INSTALL_LOG</code>. Set this to a file path, to record details of the installation.</li>
+<li><code>OVERRIDE_INSTALL_SERVER</code>. Set this to a URL (including <code>http</code>/<code>https</code> and trailing slash) to override the Comet Server URL used by Comet Backup.</li>
+</ul>
+<p>You can set an environment variable in bash either on the same line (e.g. <code>WRITE_INSTALL_LOG=install.log ./install.run</code>) or as a separate <code>export</code> command (e.g. <code>export WRITE_INSTALL_LOG=install.log</code> followed by <code>./install.run</code>).</p>
+<span class="docsSectionMarker"><span id="restarting-at-boot" class="docsSectionMarkerChild"></span></span><h3>Restarting at boot&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#restarting-at-boot">&para;</a></h3>
+<p>The installer creates a <code>backup-daemon-start.sh</code> script that can start the service. The Comet Backup agent on &quot;Other Distribution&quot; Linux can be restarted by running the <code>backup-daemon-start.sh</code> script.</p>
+<p>In order for Comet Backup to start after a system reboot, you must configure this script to be run on system boot. Different Linux distributions support different methods for running commands on system boot: choose the most appropriate method for your Linux distribution. Some common choices are documented below.</p>
+<span class="docsSectionMarker"><span id="preserve-home-environment-variable" class="docsSectionMarkerChild"></span></span><h4>Preserve HOME environment variable&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#preserve-home-environment-variable">&para;</a></h4>
+<p><em>This section does not apply to Comet 19.8.0 and later.</em></p>
+<p>Comet uses the <code>$HOME</code> environment variable to find its saved credentials. When configuring Comet to start at system boot, ensure that the <code>$HOME</code> environment variable is set (i.e. to <code>/root/</code>), to ensure that Comet can find its saved credentials. If Comet is unable to log in, it's possible that your Linux distribution does not set <code>$HOME</code> at this early-boot stage. In that case, you should try running <code>HOME=/root/ /opt/CometBackup/backup-daemon-start.sh &amp;</code> instead.</p>
+<span class="docsSectionMarker"><span id="start-in-the-background" class="docsSectionMarkerChild"></span></span><h4>Start in the background&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#start-in-the-background">&para;</a></h4>
+<p>If you are running commands over SSH, please be aware that the <code>backup-daemon-start.sh</code> script runs in the foreground and will die when the SSH session is closed. You can avoid this by running the script in the background.</p>
+<p>You can run the script in the background (daemonize) by using the <code>backup-daemon-start-background.sh</code> file instead.</p>
+<p>Prior to Comet 19.5.0, the <code>backup-daemon-start-background.sh</code> file is not available, and you must daemonize it yourself via <code>nohup</code> / <code>disown</code> / double-fork (e.g. <code>( cd /opt/CometBackup ; ./backup-daemon-start.sh &gt;/dev/null 2&gt;/dev/null &amp; ) &amp;</code>).</p>
+<span class="docsSectionMarker"><span id="startup-via-rclocal" class="docsSectionMarkerChild"></span></span><h4>Startup via <code>rc.local</code>&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#startup-via-rclocal">&para;</a></h4>
+<p>You can make Comet Backup start at system boot by adding an entry to the <code>rc.local</code> file.</p>
+<p>First, find the <code>rc.local</code> file on your system:</p>
+<ul>
+<li><code>/etc/rc.local</code> (Debian/Ubuntu)</li>
+<li><code>/etc/rc.d/rc.local</code> (CentOS/RHEL)</li>
+</ul>
+<p>Add the following content to the <code>rc.local</code> file:</p>
+<p><code>/opt/CometBackup/backup-daemon-start.sh &amp;</code></p>
+<p>If the <code>rc.local</code> file contains an <code>exit 0</code> statement, the additional command should be added <em>before</em> such a statement.</p>
+<p>As of CentOS 7, the <code>rc.local</code> file is not executable by default. You should run <code>chmod +x</code> on the <code>rc.local</code> file to enable using this method for startup scripts.</p>
+<span class="docsSectionMarker"><span id="startup-via-rcd" class="docsSectionMarkerChild"></span></span><h4>Startup via <code>rc.d</code>&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#startup-via-rcd">&para;</a></h4>
+<p>You can make Comet Backup start at system boot by adding a file to the <code>rc.d</code> directory.</p>
+<p>First, find the <code>rc.d</code> directory on your system:</p>
+<ul>
+<li><code>/usr/local/etc/rc.d</code> (Synology DSM 6.1+)</li>
+</ul>
+<p>Add a new file to the <code>rc.d</code> directory with the following contents:</p>
+<pre><code class="language-bash">#!/bin/bash
+/opt/CometBackup/backup-daemon-start-background.sh</code></pre>
+<p>Mark the file as executable: <code>chmod +x /usr/local/etc/rc.d/my-comet-startup-script.sh</code></p>
+<span class="docsSectionMarker"><span id="startup-via-cron" class="docsSectionMarkerChild"></span></span><h4>Startup via <code>cron</code>&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#startup-via-cron">&para;</a></h4>
+<p>You can make Comet Backup start at system boot by adding an entry to <code>root</code>'s crontab.</p>
+<ol>
+<li>Run <code>crontab -e -u root</code> to launch a crontab editor</li>
+<li>Add the line <code>@reboot /opt/CometBackup/backup-daemon-start-background.sh</code></li>
+</ol>
+<span class="docsSectionMarker"><span id="startup-via-initd" class="docsSectionMarkerChild"></span></span><h4>Startup via <code>init.d</code>&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#startup-via-initd">&para;</a></h4>
+<p class="highlight-todo"><em>No further documentation is available for this topic.</em></p>
+<span class="docsSectionMarker"><span id="startup-via-systemd" class="docsSectionMarkerChild"></span></span><h4>Startup via <code>systemd</code>&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#startup-via-systemd">&para;</a></h4>
+<p>You can use the following unit as an basic example:</p>
+<pre><code class="language-ini">[Unit]
+Description=Comet Backup Client
+After=network.target
+
+[Service]
+Type=simple
+RemainAfterExit=true
+User=root
+ExecStart=/opt/CometBackup/backup-daemon-start.sh
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+<p>This unit file correctly starts the Comet Backup service at system boot.</p>
+<p>However, the process management in <code>systemd</code> is not fully compatible with the way Comet's multi-process model works. In particular, there are compatibility issues with the software updater. As a result, the above unit is (A) unable to take advantage of process group cleanup; (B) unable to auto-restart the Comet Backup agent service; and (C) after a software upgrade, Comet will keep running but the unit will remain in &quot;exited&quot; state.</p>
+<p class="highlight-upcoming">A future version of Comet Backup for Linux may change the updater system to work more seamlessly with <code>systemd</code> unit files.</p>
+<span class="docsSectionMarker"><span id="upgrading-3" class="docsSectionMarkerChild"></span></span><h3>Upgrading&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#upgrading-3">&para;</a></h3>
+<p>The &quot;Other Distribution&quot; version of Comet supports upgrading the software, with some caveats:</p>
+<ul>
+<li>The <code>.run</code> file will automatically upgrade the existing version</li>
+<li>The software can be remotely upgraded via the Comet Server web interface.</li>
+</ul>
+<p>However, the existing service will only be replaced with the upgraded version if the product brand name is unchanged.</p>
+<p class="highlight-upcoming">Future &quot;Other Distribution&quot; versions of Comet will support upgrading between installations regardless of product brand name.</p>
+<span class="docsSectionMarker"><span id="uninstall-3" class="docsSectionMarkerChild"></span></span><h3>Uninstall&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#uninstall-3">&para;</a></h3>
+<p>To uninstall &quot;Other Distribution&quot; versions of Comet, you should</p>
+<ol>
+<li>Stop all Comet processes</li>
+<li>Remove the relevant subdirectory under <code>/opt/</code></li>
+<li>Remove any custom startup scripts</li>
+</ol>
+<span class="docsSectionMarker"><span id="change-password-on-linux-client" class="docsSectionMarkerChild"></span></span><h3>Change password on Linux client&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-installation.html#change-password-on-linux-client">&para;</a></h3>
+<p>Run <code>backup-tool cmd -Action=change-password -Username USERNAME -Password OLDPASSWORD -Server http://YOURSERVER/ -ExtraData NEWPASSWORD</code></p></div><div class="doc-navigation-section"><div class="doc-navigation-back doc-navigation-width-2"><a href="comet-server-usage.html">&laquo; Back: Comet Server usage</a></div><div class="doc-navigation-next doc-navigation-width-2"><a href="comet-backup-usage.html">Next: Comet Backup usage &raquo;</a></div></div> 
+				</div>
+			</div>
+		</div>
+	
+	
+	</body>
+</html>

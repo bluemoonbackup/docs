@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="docs.css">
+		<link rel="stylesheet" type="text/css" href="magnific-popup.css">		
+		<script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="magnific-popup.1.1.0.min.js"></script>
+		<script type="text/javascript" src="lunr-2.1.0.min.js"></script>
+		<script type="text/javascript" src="docs.js"></script>
+		<title>Documentation</title>		
+	</head>
+	<body>
+	
+		<div id="header-bar">
+			<div id="header-logo"></div>
+			Documentation
+		</div>
+	
+		<div id="main-area">
+			<div id="position-nav">
+				<div id="nav-inner">
+					<ul><li><form method="GET" action="search-results.html"><input name="s" class="search-box" placeholder="Search..."></form></li>
+<li><span class="category-header">Guides</span></li>
+<li><a href="guide-getting-started.html" title="Getting Started">Getting Started</a></li>
+<li><a href="guide-cometgo-getting-started.html" title="Getting Started with CometGo!">Getting Started with CometGo!</a></li>
+<li><a href="guide-seedload-walkthrough.html" title="Seed Load Walkthrough">Seed Load Walkthrough</a></li>
+<li><span class="category-header">Documentation</span></li>
+<li><a href="about-these-docs.html" title="Software Documentation">Software Documentation</a></li>
+<li class="current-page"><a data-indent="0" class="subsection-link subsection-indent-0" href="#overview-and-concepts" title="Overview and Concepts">Overview and Concepts</a>
+<ul>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#comet-server" title="Comet Server">Comet Server</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#server-roles" title="Server Roles">Server Roles</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#licensing" title="Licensing">Licensing</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#serial-numbers" title="Serial Numbers">Serial Numbers</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#telemetry" title="Telemetry">Telemetry</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#user-configuration" title="User configuration">User configuration</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#protected-items-and-storage-vaults" title="Protected Items and Storage Vaults">Protected Items and Storage Vaults</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#devices" title="Devices">Devices</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#requesting" title="Requesting">Requesting</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#encryption" title="Encryption">Encryption</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#commands" title="Commands">Commands</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#client-software" title="Client Software">Client Software</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#application-structure" title="Application structure">Application structure</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#device-registration" title="Device registration">Device registration</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#backup-algorithm" title="Backup Algorithm">Backup Algorithm</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#customer-web-portal" title="Customer Web Portal">Customer Web Portal</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#backward-compatibility" title="Backward Compatibility">Backward Compatibility</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#what-version-should-i-use" title="What version should I use?">What version should I use?</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#version-numbers-and-release-schedule" title="Version numbers and release schedule">Version numbers and release schedule</a></li>
+</ul>
+</li><li><a href="comet-server-installation.html" title="Comet Server installation">Comet Server installation</a></li>
+<li><a href="comet-server-configuration.html" title="Comet Server configuration">Comet Server configuration</a></li>
+<li><a href="comet-server-usage.html" title="Comet Server usage">Comet Server usage</a></li>
+<li><a href="comet-backup-installation.html" title="Comet Backup installation">Comet Backup installation</a></li>
+<li><a href="comet-backup-usage.html" title="Comet Backup usage">Comet Backup usage</a></li>
+<li><a href="user-configuration.html" title="User configuration">User configuration</a></li>
+<li><a href="protected-items.html" title="Protected Item types">Protected Item types</a></li>
+<li><a href="storage-configuration.html" title="Storage configuration">Storage configuration</a></li>
+<li><a href="troubleshooting.html" title="Troubleshooting">Troubleshooting</a></li>
+<li><a href="api.html" title="API Guide">API Guide</a></li>
+<li><a href="api-reference.html" title="API Reference">API Reference</a></li>
+<li><a href="appendix.html" title="Appendix">Appendix</a></li>
+<li><a href="cloud-storage-providers.html" title="Cloud Storage Providers">Cloud Storage Providers</a></li>
+<li><a href="third-party-service-addons.html" title="Third-party service addons">Third-party service addons</a></li>
+<li><a href="comet-server-roles.html" title="Comet Server Roles ">Comet Server Roles </a></li>
+<li><a href="comet-chunking-overview.html" title="Comet Chunking Overview ">Comet Chunking Overview </a></li>
+<li><a href="HIPAA-Compliance.html" title="HIPAA Compliance ">HIPAA Compliance </a></li>
+<li><a href="GDPR-Compliance.html" title="GDPR Compliance">GDPR Compliance</a></li>
+</ul>
+				</div>
+			</div>
+		
+			<div id="position-content">
+				<div id="content-inner">
+					<span class="docsSectionMarker"><span id="overview-and-concepts" class="docsSectionMarkerChild"></span></span><h1>Overview and Concepts&nbsp;<a class="docsSectionLinkIcon" href="application-architecture.html#overview-and-concepts">&para;</a></h1>
+<span class="docsSectionMarker"><span id="comet-server" class="docsSectionMarkerChild"></span></span><div class="docs-box"><h2>Comet Server&nbsp;<a class="docsSectionLinkIcon" href="application-architecture.html#comet-server">&para;</a></h2>
+<span class="docsSectionMarker"><span id="server-roles" class="docsSectionMarkerChild"></span></span><h3>Server Roles&nbsp;<a class="docsSectionLinkIcon" href="application-architecture.html#server-roles">&para;</a></h3>
+<p>The Comet Server software is split into multiple roles. It can be considered to be (at least) two separate servers;</p>
+<ul>
+<li>the &quot;Authentication&quot; server role, which is responsible for handling users and logs; and</li>
+<li>the &quot;Storage&quot; server role, which is responsible for storing and replicating the raw data. </li>
+</ul>
+<p>This design allows you to scale either role, without necessarily scaling the other.</p>
+<p>For example, if a down-level reseller of your hosted backup service requires their own branded Comet Server, you could run an additional Authentication server role without needing to configure dedicated storage.</p>
+<p>Alternatively, if your storage capacity is exceeded, you can create an additional physical &quot;Storage&quot; server role without needing to duplicate user handling.</p>
+<p>In addition to these two, there are also roles for handling branded software downloads and for overseeing a cluster of Comet servers.</p>
+<span class="docsSectionMarker"><span id="licensing" class="docsSectionMarkerChild"></span></span><h3>Licensing&nbsp;<a class="docsSectionLinkIcon" href="application-architecture.html#licensing">&para;</a></h3>
+<p>Comet Server requires network access to <code>lic.cometbackup.com</code>.</p>
+<span class="docsSectionMarker"><span id="serial-numbers" class="docsSectionMarkerChild"></span></span><h4>Serial Numbers&nbsp;<a class="docsSectionLinkIcon" href="application-architecture.html#serial-numbers">&para;</a></h4>
+<p>Your serial number for Comet is used to request a short-term exclusive lease from a central licensing server. The Comet Server will not start without a valid lease, and no other running instance of Comet Server can use the same serial number until the short-term exclusive lease expires. There is a grace period of a few days, just in case of license server unavailability (exact details will not be published).</p>
+<p>At the time of writing, Comet Server stores data about the current lease within the <code>comet-license.db</code> file. Loss of this file results in loss of lease.</p>
+<p>The external IP address and hardware configuration (exact details will not be published) should not change for an existing Comet Server. Otherwise, the central licensing server may refuse granting a new lease for the serial, or might cause a running instance of Comet Server to refuse the existing lease (exact details will not be published).</p>
+<p>You may grant any number of additional serial numbers via <a href="https://cometbackup.com/">https://cometbackup.com/</a> . Your support representative is also able to relax leases on an existing serial number (for instance, when moving IP addresses or upgrading hardware).</p>
+<span class="docsSectionMarker"><span id="telemetry" class="docsSectionMarkerChild"></span></span><h4>Telemetry&nbsp;<a class="docsSectionLinkIcon" href="application-architecture.html#telemetry">&para;</a></h4>
+<p>The Comet Server submits information about user accounts to a central licensing server, in order to correctly price your subscription.</p>
+<span class="docsSectionMarker"><span id="user-configuration" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>User configuration&nbsp;<a class="docsSectionLinkIcon" href="application-architecture.html#user-configuration">&para;</a></h2>
+<span class="docsSectionMarker"><span id="protected-items-and-storage-vaults" class="docsSectionMarkerChild"></span></span><h3>Protected Items and Storage Vaults&nbsp;<a class="docsSectionLinkIcon" href="application-architecture.html#protected-items-and-storage-vaults">&para;</a></h3>
+<p>The user's configuration is broadly separated into Protected Items and Storage Vaults.</p>
+<p>A Protected Item is a description of the set of data that should be backed up.</p>
+<p>A Storage Vault is a location where the backed-up data can be stored. In most common configurations, this would be a Comet Server with the Storage Role enabled; but it's possible for the client software to back up to a local disk, or to a cloud storage provider.</p>
+<p>All data within a Storage Vault is compressed, encrypted, and deduplicated. A Storage Vault is the unit of deduplication; data is not deduplicated between multiple Storage Vaults.</p>
+<span class="docsSectionMarker"><span id="devices" class="docsSectionMarkerChild"></span></span><h3>Devices&nbsp;<a class="docsSectionLinkIcon" href="application-architecture.html#devices">&para;</a></h3>
+<p>Multiple devices (e.g. different computers, servers or laptops) can log in to the same Comet user account with a shared password. Each device has its own private set of Protected Items, but shares access to the same Storage Vaults. This allows you to deduplicate data between multiple devices.</p>
+<p>Each device can also restore and delete each others' backed-up data, so it is important that multi-device accounts are only used in trusted contexts.</p>
+<span class="docsSectionMarker"><span id="requesting" class="docsSectionMarkerChild"></span></span><h3>Requesting&nbsp;<a class="docsSectionLinkIcon" href="application-architecture.html#requesting">&para;</a></h3>
+<p>When a new account is created, they have no Protected Items and also no Storage Vaults. The client must register a new Storage Vault either by manually entering details, or by &quot;requesting&quot; a new Storage Vault from the server. It is possible that the Comet Server administrator might offer multiple tiers of storage (e.g. RAID; SSD; ephemeral; cloud-backed; etc) each with different costing, that the user could request individually. When configuring the server, the list of &quot;requestable&quot; Remote Storage Destination options can be configured. This feature is covered in more detail in later sections of this document.</p>
+<span class="docsSectionMarker"><span id="encryption" class="docsSectionMarkerChild"></span></span><h3>Encryption&nbsp;<a class="docsSectionLinkIcon" href="application-architecture.html#encryption">&para;</a></h3>
+<p><strong>We strongly recommend that users use strong passwords</strong>. Even the best security is foiled by a user choosing a weak or commonly-used password, such as <code>123456</code> or <code>letmein</code>.</p>
+<p>Comet always encrypts all user data before storing it, using strong AES-256-CTR with Poly1305 in AEAD mode with high-entropy random keys.</p>
+<p>Encryption keys are automatically generated and managed by the client. The data encryption keys are then encrypted against the customer's password, and stored on the Comet Server. This means that (A) the service provider is unable to decrypt data without the customer's password; and (B) in the event of a customer PC loss, only the customer's password is necessary to log in to the account and restore data.</p>
+<p>For more technical details about the encryption formats and key management, please see the Appendix.</p>
+<span class="docsSectionMarker"><span id="commands" class="docsSectionMarkerChild"></span></span><h3>Commands&nbsp;<a class="docsSectionLinkIcon" href="application-architecture.html#commands">&para;</a></h3>
+<p>You can register additional commands to run before- or after any backup job. For maximum flexibility, commands can be registered</p>
+<ul>
+<li>for a Protected Item (e.g. to dump a database), or</li>
+<li>for a Storage Vault (e.g. to perform custom network authentication), or</li>
+<li>for a Schedule (e.g. to shut down the computer afterward).</li>
+</ul>
+<p>During a backup job, the commands are run in this order: Schedule Before, Protected Item Before, Storage Vault Before, Backup, Storage Vault After, Protected Item After, Schedule After.</p>
+<p>Shell built-ins can be used as part of the command execution - the specified command is passed to either <code>cmd.exe</code> or <code>/bin/sh</code> as appropriate for your operating system.</p>
+<span class="docsSectionMarker"><span id="client-software" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Client Software&nbsp;<a class="docsSectionLinkIcon" href="application-architecture.html#client-software">&para;</a></h2>
+<span class="docsSectionMarker"><span id="application-structure" class="docsSectionMarkerChild"></span></span><h3>Application structure&nbsp;<a class="docsSectionLinkIcon" href="application-architecture.html#application-structure">&para;</a></h3>
+<p>The client software is split into two components; <code>backup-tool</code> is a command-line tool which implements all the software functionality. The graphical user interface is <code>backup-interface</code>, which wraps this command-line tool. Backup schedules will still run even if logged out of the GUI, as the background service will still be logged in.</p>
+<p>Additionally, clients can remotely control their installed software by logging in to the Comet Server web interface as a user.</p>
+<p>On platforms without a desktop interface available (e.g. Linux / FreeBSD server), only the <code>backup-tool</code> part is used, and you should control the application via the web interface.</p>
+<span class="docsSectionMarker"><span id="device-registration" class="docsSectionMarkerChild"></span></span><h3>Device registration&nbsp;<a class="docsSectionLinkIcon" href="application-architecture.html#device-registration">&para;</a></h3>
+<p>Each Comet account can be used by multiple devices. This allows you to deduplicate backups from multiple accounts, since backups can be targeted to the same Storage Vault.</p>
+<p>When you log in to the same Comet account from another device, such as a laptop or tablet, you will see a private view of Protected Items but a public view of Storage Vaults.</p>
+<ul>
+<li>You can view, edit, and use Storage Vaults configured by other devices</li>
+<li>You cannot view, edit, nor use Protected Items configured by other devices</li>
+<li>You can restore data from any device's Protected Item (hidden by default)</li>
+<li>You can view job logs from any device (hidden by default)</li>
+</ul>
+<span class="docsSectionMarker"><span id="backup-algorithm" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Backup Algorithm&nbsp;<a class="docsSectionLinkIcon" href="application-architecture.html#backup-algorithm">&para;</a></h2>
+<p>Comet backs up data by first splitting it into variable-sized chunks, which are individually compressed, encrypted, and uploaded. Comet uses data-dependent chunking, efficiently splitting a file into consistent chunks even in the face of random inserts.</p>
+<p>A backup job consists of a list of files and which chunks would be needed to reconstruct them. Any successive incremental backup jobs simply realize that chunks already exist on the server and do not need to be re-uploaded.</p>
+<p>This chunking technique has the following properties:</p>
+<ul>
+<li>Both the oldest and the most recent backup jobs can be restored with the same speed</li>
+<li>Duplicate data does not require any additional storage, since the chunks are the same (&quot;deduplication&quot;)</li>
+<li>There is never any need to re-upload the full file, regardless of the number of backup jobs</li>
+<li>There is no need for the server to be trusted to decrypt data.</li>
+</ul>
+<span class="docsSectionMarker"><span id="customer-web-portal" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Customer Web Portal&nbsp;<a class="docsSectionLinkIcon" href="application-architecture.html#customer-web-portal">&para;</a></h2>
+<p>You can log into the web interface with a user account to run backups, restores remotely. You can also edit Protected Item, Storage Vault settings, as well as viewing job history.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="customerportal1.PNG"><img src="customerportal1.PNG.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="backward-compatibility" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Backward Compatibility&nbsp;<a class="docsSectionLinkIcon" href="application-architecture.html#backward-compatibility">&para;</a></h2>
+<p>&quot;Upgrade Compatible&quot; means that new versions of Comet are compatible with backup data and/or user configuration from previous versions of Comet. Comet strives to maintain upgrade compatibility wherever possible.</p>
+<p>&quot;Downgrade Compatible&quot; means that old versions of Comet are compatible with backup data and/or user configuration from newer versions of Comet. Comet makes no guarantees about downgrade compatibility.</p>
+<p>For a history of compatibility events, please see the Appendix.</p>
+<span class="docsSectionMarker"><span id="what-version-should-i-use" class="docsSectionMarkerChild"></span></span><h3>What version should I use?&nbsp;<a class="docsSectionLinkIcon" href="application-architecture.html#what-version-should-i-use">&para;</a></h3>
+<p>In general, it is recommended to use the latest version of the software at all times.</p>
+<p>If multiple devices are using the same Comet account, it is recommended that they all use the same version, in order for shared resources to be mutually understood.</p>
+<span class="docsSectionMarker"><span id="version-numbers-and-release-schedule" class="docsSectionMarkerChild"></span></span><h3>Version numbers and release schedule&nbsp;<a class="docsSectionLinkIcon" href="application-architecture.html#version-numbers-and-release-schedule">&para;</a></h3>
+<p>The first two parts of a Comet version number indicate the release track (e.g. <code>18.5</code> means the &quot;Phobos&quot; release track). These digits roughly correspond to the year and month that version was first released (future updates within the release track do not change these numbers).</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="release-schedule.png"><img src="release-schedule.png.thumb.jpg" alt="" /></a></p></div><div class="doc-navigation-section"><div class="doc-navigation-back doc-navigation-width-2"><a href="about-these-docs.html">&laquo; Back: Software Documentation</a></div><div class="doc-navigation-next doc-navigation-width-2"><a href="comet-server-installation.html">Next: Comet Server installation &raquo;</a></div></div> 
+				</div>
+			</div>
+		</div>
+	
+	
+	</body>
+</html>

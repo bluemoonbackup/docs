@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="docs.css">
+		<link rel="stylesheet" type="text/css" href="magnific-popup.css">		
+		<script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="magnific-popup.1.1.0.min.js"></script>
+		<script type="text/javascript" src="lunr-2.1.0.min.js"></script>
+		<script type="text/javascript" src="docs.js"></script>
+		<title>Documentation</title>		
+	</head>
+	<body>
+	
+		<div id="header-bar">
+			<div id="header-logo"></div>
+			Documentation
+		</div>
+	
+		<div id="main-area">
+			<div id="position-nav">
+				<div id="nav-inner">
+					<ul><li><form method="GET" action="search-results.html"><input name="s" class="search-box" placeholder="Search..."></form></li>
+<li><span class="category-header">Guides</span></li>
+<li><a href="guide-getting-started.html" title="Getting Started">Getting Started</a></li>
+<li><a href="guide-cometgo-getting-started.html" title="Getting Started with CometGo!">Getting Started with CometGo!</a></li>
+<li><a href="guide-seedload-walkthrough.html" title="Seed Load Walkthrough">Seed Load Walkthrough</a></li>
+<li><span class="category-header">Documentation</span></li>
+<li><a href="about-these-docs.html" title="Software Documentation">Software Documentation</a></li>
+<li><a href="application-architecture.html" title="Overview and Concepts">Overview and Concepts</a></li>
+<li><a href="comet-server-installation.html" title="Comet Server installation">Comet Server installation</a></li>
+<li><a href="comet-server-configuration.html" title="Comet Server configuration">Comet Server configuration</a></li>
+<li><a href="comet-server-usage.html" title="Comet Server usage">Comet Server usage</a></li>
+<li><a href="comet-backup-installation.html" title="Comet Backup installation">Comet Backup installation</a></li>
+<li><a href="comet-backup-usage.html" title="Comet Backup usage">Comet Backup usage</a></li>
+<li><a href="user-configuration.html" title="User configuration">User configuration</a></li>
+<li><a href="protected-items.html" title="Protected Item types">Protected Item types</a></li>
+<li><a href="storage-configuration.html" title="Storage configuration">Storage configuration</a></li>
+<li><a href="troubleshooting.html" title="Troubleshooting">Troubleshooting</a></li>
+<li class="current-page"><a data-indent="0" class="subsection-link subsection-indent-0" href="#api-guide" title="API Guide">API Guide</a>
+<ul>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#overview" title="Overview">Overview</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#compatibility" title="Compatibility">Compatibility</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#quick-start-examples" title="Quick Start (examples)">Quick Start (examples)</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#curl" title="cURL">cURL</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#php-composer" title="PHP (Composer)">PHP (Composer)</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#php-curl" title="PHP (cURL)">PHP (cURL)</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#powershell" title="Powershell">Powershell</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#modifying-an-account" title="Modifying an account">Modifying an account</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#find-all-comettype-storage-vault-urls" title="Find all Comet-type Storage Vault URLs">Find all Comet-type Storage Vault URLs</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#set-policies-for-all-user-accounts" title="Set policies for all user accounts">Set policies for all user accounts</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#vbscript" title="VBScript">VBScript</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#go-golang" title="Go (golang)">Go (golang)</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#python-" title="Python 3">Python 3</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#other-api--comet-server-web-interface-postmessage-api" title="Other API - Comet Server web interface postMessage API">Other API - Comet Server web interface postMessage API</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#apploaded" title="AppLoaded">AppLoaded</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#sessionlogin" title="SessionLogin">SessionLogin</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#usersessionlogin" title="UserSessionLogin">UserSessionLogin</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#other-api--comet-server-special-apis" title="Other API - Comet Server special APIs">Other API - Comet Server special APIs</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#live-event-streaming" title="Live event streaming">Live event streaming</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#other-api--cometbackupcom-api" title="Other API - CometBackup.com API">Other API - CometBackup.com API</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#licenserelax" title="LicenseRelax">LicenseRelax</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#licensecreate" title="LicenseCreate">LicenseCreate</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#licensearchive" title="LicenseArchive">LicenseArchive</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#licenselistall" title="LicenseListAll">LicenseListAll</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#reportactiveservices" title="ReportActiveServices">ReportActiveServices</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#reportbillinghistory" title="ReportBillingHistory">ReportBillingHistory</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#latestversion" title="LatestVersion">LatestVersion</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#appendix" title="Appendix">Appendix</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#twofactor-authentication-for-the-comet-server-api" title="Two-Factor Authentication for the Comet Server API">Two-Factor Authentication for the Comet Server API</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#advanced-usage" title="Advanced usage">Advanced usage</a></li>
+</ul>
+</li><li><a href="api-reference.html" title="API Reference">API Reference</a></li>
+<li><a href="appendix.html" title="Appendix">Appendix</a></li>
+<li><a href="cloud-storage-providers.html" title="Cloud Storage Providers">Cloud Storage Providers</a></li>
+<li><a href="third-party-service-addons.html" title="Third-party service addons">Third-party service addons</a></li>
+<li><a href="comet-server-roles.html" title="Comet Server Roles ">Comet Server Roles </a></li>
+<li><a href="comet-chunking-overview.html" title="Comet Chunking Overview ">Comet Chunking Overview </a></li>
+<li><a href="HIPAA-Compliance.html" title="HIPAA Compliance ">HIPAA Compliance </a></li>
+<li><a href="GDPR-Compliance.html" title="GDPR Compliance">GDPR Compliance</a></li>
+</ul>
+				</div>
+			</div>
+		
+			<div id="position-content">
+				<div id="content-inner">
+					<span class="docsSectionMarker"><span id="api-guide" class="docsSectionMarkerChild"></span></span><h1>API Guide&nbsp;<a class="docsSectionLinkIcon" href="api.html#api-guide">&para;</a></h1>
+<span class="docsSectionMarker"><span id="overview" class="docsSectionMarkerChild"></span></span><div class="docs-box"><h2>Overview&nbsp;<a class="docsSectionLinkIcon" href="api.html#overview">&para;</a></h2>
+<p>The Comet Server can be controlled via an API over HTTP / HTTPS. Every action that can be performed via the Comet Server web interface or the Comet Backup client software interface can also be performed by the API.</p>
+<p>You can see the full list of Comet Server API endpoints in the &quot;API Reference&quot; document. This document includes information about </p>
+<ul>
+<li>Supported API endpoints,</li>
+<li>Data structures used by the API, and</li>
+<li>Constant values used by the API.</li>
+</ul>
+<span class="docsSectionMarker"><span id="compatibility" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Compatibility&nbsp;<a class="docsSectionLinkIcon" href="api.html#compatibility">&para;</a></h2>
+<p>The Comet Server API is backward compatible, so we recommend using the latest available online documentation.</p>
+<p>However, you can refer to the documentation for a specific version of Comet Server, included as local files with your copy of Comet Server.</p>
+<span class="docsSectionMarker"><span id="quick-start-examples" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Quick Start (examples)&nbsp;<a class="docsSectionLinkIcon" href="api.html#quick-start-examples">&para;</a></h2>
+<p>These examples make a network request to a Comet Server at <code>http://127.0.0.1/</code>, with the Auth Role enabled, using the administrator credentials <code>admin:admin</code>, to retrieve a list of user accounts.</p>
+<span class="docsSectionMarker"><span id="curl" class="docsSectionMarkerChild"></span></span><h3>cURL&nbsp;<a class="docsSectionLinkIcon" href="api.html#curl">&para;</a></h3>
+<pre><code class="language-bash">curl -X POST -d 'Username=admin&amp;AuthType=Password&amp;Password=admin' 'http://127.0.0.1/api/v1/admin/list-users'</code></pre>
+<span class="docsSectionMarker"><span id="php-composer" class="docsSectionMarkerChild"></span></span><h3>PHP (Composer)&nbsp;<a class="docsSectionLinkIcon" href="api.html#php-composer">&para;</a></h3>
+<p>A set of PHP classes are available to simplify using the Comet Server API. Please see <a href="https://github.com/CometBackup/comet-php-sdk">CometBackup/comet-php-sdk at GitHub</a> for more information.</p>
+<pre><code class="language-php">$server = new \Comet\Server("http://127.0.0.1:8060/", "admin", "admin");
+var_dump( $server-&gt;AdminListAccounts() );</code></pre>
+<span class="docsSectionMarker"><span id="php-curl" class="docsSectionMarkerChild"></span></span><h3>PHP (cURL)&nbsp;<a class="docsSectionLinkIcon" href="api.html#php-curl">&para;</a></h3>
+<pre><code class="language-php">&lt;?php
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL,  'http://127.0.0.1/api/v1/admin/list-users');
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
+    'Username' =&gt; 'admin',
+    'AuthType' =&gt; 'Password',
+    'Password' =&gt; 'admin',
+]));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+$response = curl_exec($ch);
+
+curl_close($ch);
+
+var_export($response);</code></pre>
+<span class="docsSectionMarker"><span id="powershell" class="docsSectionMarkerChild"></span></span><h3>Powershell&nbsp;<a class="docsSectionLinkIcon" href="api.html#powershell">&para;</a></h3>
+<pre><code class="language-powershell">Invoke-Webrequest -Uri http://127.0.0.1/api/v1/admin/list-users -Method POST -Body @{Username="admin"; AuthType="Password"; Password="admin"} | select Content</code></pre>
+<span class="docsSectionMarker"><span id="modifying-an-account" class="docsSectionMarkerChild"></span></span><h4>Modifying an account&nbsp;<a class="docsSectionLinkIcon" href="api.html#modifying-an-account">&para;</a></h4>
+<pre><code class="language-powershell"># Look up an account profile
+
+$lookup = Invoke-Webrequest -Uri http://127.0.0.1/api/v1/admin/get-user-profile -Method POST -Body @{
+    Username="admin"; AuthType="Password"; Password="admin";
+    TargetUser="testuser"
+}
+$profile = ConvertFrom-Json $lookup
+
+# Modify the profile however you like
+
+$profile.PolicyID = "8876b0d8-8f26-4fab-9ac9-9274ae030cfc"
+
+# Convert back to JSON and submit to the server
+
+$updated_json = ConvertTo-JSON $profile -Depth 99
+
+Invoke-WebRequest -Uri http://127.0.0.1/api/v1/admin/set-user-profile -Method POST -Body @{
+    Username="admin"; AuthType="Password"; Password="admin";
+    TargetUser="testuser";
+    ProfileData=$updated_json
+}</code></pre>
+<span class="docsSectionMarker"><span id="find-all-comettype-storage-vault-urls" class="docsSectionMarkerChild"></span></span><h4>Find all Comet-type Storage Vault URLs&nbsp;<a class="docsSectionLinkIcon" href="api.html#find-all-comettype-storage-vault-urls">&para;</a></h4>
+<pre><code class="language-powershell"># Look up all account profiles
+
+$lookup = Invoke-Webrequest -Uri http://127.0.0.1/api/v1/admin/list-users-full -Method POST -Body @{
+    Username="admin"; AuthType="Password"; Password="admin";
+}
+$all_users = ConvertFrom-Json $lookup
+
+# CSV header
+
+Write-Host "Username,Storage Vault Description,Comet Server URL"
+
+# Look at each user's profile
+
+foreach ($user in $all_users | Get-Member -type NoteProperty) { 
+    foreach ($storage_vault_id in $all_users."$($user.Name)".Destinations | Get-Member -type NoteProperty) {
+
+        $storage_vault = $all_users."$($user.Name)".Destinations."$($storage_vault_id.Name)"
+
+        if ($storage_vault.DestinationType -eq 1003) { # DESTINATIONTYPE_COMET = 1003
+            Write-Host "$($user.Name),$($storage_vault.Description),$($storage_vault.CometServer)"
+        }
+    }
+}</code></pre>
+<span class="docsSectionMarker"><span id="set-policies-for-all-user-accounts" class="docsSectionMarkerChild"></span></span><h4>Set policies for all user accounts&nbsp;<a class="docsSectionLinkIcon" href="api.html#set-policies-for-all-user-accounts">&para;</a></h4>
+<pre><code class="language-powershell">
+# Class keyword requires PowerShell 5.0+ or greater
+class CometServer {
+    [string]$Address
+    [string]$AdminUsername
+    [string]$AdminPassword
+
+    CometServer([string]$Address, [string]$AdminUsername, [string]$AdminPassword) {
+        $this.Address = $Address
+        $this.AdminUsername = $AdminUsername
+        $this.AdminPassword = $AdminPassword
+    }
+
+    [string[]]ListUsers() {
+        return $this._request("api/v1/admin/list-users")
+    }
+
+    [Object]GetUserProfile([string]$Username) {
+        return $this._request("api/v1/admin/get-user-profile", @{"TargetUser"= $Username})
+    }
+
+    [Object]SetUserProfile([string]$Username, [Object]$Profile) {
+        $ProfileJSON = ConvertTo-JSON $Profile -Depth 99
+
+        return $this._request("api/v1/admin/set-user-profile", @{"TargetUser"=$Username; "ProfileData"=$ProfileJSON})
+    }
+
+    [Object]_request([string]$Endpoint) {
+        return $this._request($Endpoint, @{})
+    }
+
+    [Object]_request([string]$Endpoint, [hashtable]$extraParams) {
+        $allParams = @{
+            Username = $this.AdminUsername;
+            AuthType = "Password";
+            Password = $this.AdminPassword;
+        }
+        foreach ($h in $extraParams.GetEnumerator()) {
+            $allParams[$h.Name] = $h.Value
+        }
+
+        $response = Invoke-Webrequest -Uri ($this.Address + $Endpoint) -Method POST -Body $allParams
+        $ret = ConvertFrom-Json $response
+        return $ret
+    }
+}
+
+$cs = [CometServer]::new("http://127.0.0.1:8060/", "adminuser", "adminpass")
+
+$all_users = $cs.ListUsers()
+foreach($username in $all_users) {
+    $profile = $cs.GetUserProfile($username)
+    $profile.PolicyID = "00000000-0000-4a00-0000-000000000000"
+    $cs.SetUserProfile($username, $profile)
+}</code></pre>
+<span class="docsSectionMarker"><span id="vbscript" class="docsSectionMarkerChild"></span></span><h3>VBScript&nbsp;<a class="docsSectionLinkIcon" href="api.html#vbscript">&para;</a></h3>
+<pre><code class="language-vbscript">set oRequest = CreateObject("Microsoft.XMLHTTP")
+oRequest.open "POST", "http://127.0.0.1/api/v1/admin/list-users", false
+oRequest.setRequestHeader "Content-Type", "application/x-www-form-urlencoded"
+oRequest.send "Username=admin&amp;AuthType=Password&amp;Password=admin"
+MsgBox oRequest.responseText</code></pre>
+<span class="docsSectionMarker"><span id="go-golang" class="docsSectionMarkerChild"></span></span><h3>Go (golang)&nbsp;<a class="docsSectionLinkIcon" href="api.html#go-golang">&para;</a></h3>
+<pre><code class="language-go">import (
+    "fmt"
+    "net/http"
+    "io/ioutil"
+)
+
+func ListUsers() {
+    resp, err := http.Post(
+        "http://127.0.0.1/api/v1/admin/list-users",
+        "application/x-www-form-urlencoded",
+        []byte("Username=admin&amp;AuthType=Password&amp;Password=admin"),
+    )
+    if err != nil {
+        panic(err)
+    }
+    defer resp.Body.Close()
+
+    body, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Println(string(body))
+}</code></pre>
+<span class="docsSectionMarker"><span id="python-" class="docsSectionMarkerChild"></span></span><h3>Python 3&nbsp;<a class="docsSectionLinkIcon" href="api.html#python-">&para;</a></h3>
+<pre><code class="language-python">#!/usr/bin/python3
+
+import json
+import urllib.parse
+import urllib.request
+
+class CometServer(object):
+    def __init__(self, url, adminuser, adminpass):
+        self.url = url
+        self.adminuser = adminuser
+        self.adminpass = adminpass
+
+    def AdminListUsers(self):
+        """List all usernames on the Comet Server"""
+        return self._request("api/v1/admin/list-users", {})
+
+    def _request(self, endpoint, extraparams):
+        """Make API request to Comet Server and parse response JSON"""
+        apiRequest = urllib.request.Request(
+            url = self.url + endpoint,
+            data = urllib.parse.urlencode({
+                "Username": self.adminuser,
+                "AuthType": "Password",
+                "Password": self.adminpass,
+                **extraparams
+            }).encode('utf-8')
+        )
+
+        ret = None
+        with urllib.request.urlopen(apiRequest) as apiResponse:
+            ret = json.loads( apiResponse.read() )
+
+        return ret
+
+def main():
+    cs = CometServer("http://127.0.0.1:8060/", "admin", "admin")
+    print( cs.AdminListUsers() )
+
+if __name__ == "__main__":
+    main()</code></pre>
+<span class="docsSectionMarker"><span id="other-api--comet-server-web-interface-postmessage-api" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Other API - Comet Server web interface postMessage API&nbsp;<a class="docsSectionLinkIcon" href="api.html#other-api--comet-server-web-interface-postmessage-api">&para;</a></h2>
+<p>As well as making API requests to your Comet Server instances described above, an API is also available for the Comet Server web interface frontend.</p>
+<p>This additional API allows you to control some parts of the web interface by making <code>postMessage</code> calls in Javascript. Messages will be sent in either direction, as Javascript objects, in the general form <code>{msg: "message_type", other_parameters: .... }</code>.</p>
+<p>To use this API, create a Comet Server web interface window (e.g. by using <code>window.open()</code> or <code>&lt;iframe&gt;</code>), and add a <code>message</code> event listener to wait for the <code>AppLoaded</code> API message described below.</p>
+<span class="docsSectionMarker"><span id="apploaded" class="docsSectionMarkerChild"></span></span><h3>AppLoaded&nbsp;<a class="docsSectionLinkIcon" href="api.html#apploaded">&para;</a></h3>
+<p>Notification sent to the opener window when the Comet Server web interface is ready to receive other <code>postMessage</code> requests.</p>
+<ul>
+<li>Message format: Object</li>
+<li>Direction: Response (Sent by Comet Server web interface to caller)</li>
+</ul>
+<p>Object parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>msg</code></td>
+<td><code>app_loaded</code></td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="sessionlogin" class="docsSectionMarkerChild"></span></span><h3>SessionLogin&nbsp;<a class="docsSectionLinkIcon" href="api.html#sessionlogin">&para;</a></h3>
+<p>Perform a single sign-on (SSO) login to the Comet Server web interface, as an administrator account.</p>
+<ul>
+<li>Message format: Object</li>
+<li>Direction: Request (Sent by caller to Comet Server web interface)</li>
+</ul>
+<p>Object parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>msg</code></td>
+<td><code>session_login</code></td>
+</tr>
+<tr>
+<td><code>username</code></td>
+<td>Admin username</td>
+</tr>
+<tr>
+<td><code>sessionkey</code></td>
+<td>Pre-generated admin session key from the <code>AdminAccountSessionStart</code> or <code>HybridSessionStart</code> server API</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="usersessionlogin" class="docsSectionMarkerChild"></span></span><h3>UserSessionLogin&nbsp;<a class="docsSectionLinkIcon" href="api.html#usersessionlogin">&para;</a></h3>
+<p>Perform a single sign-on (SSO) login to the Comet Server web interface, as an end-user account.</p>
+<ul>
+<li>Message format: Object</li>
+<li>Direction: Request (Sent by caller to Comet Server web interface)</li>
+</ul>
+<p>Object parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>msg</code></td>
+<td><code>user_session_login</code></td>
+</tr>
+<tr>
+<td><code>username</code></td>
+<td>Customer username</td>
+</tr>
+<tr>
+<td><code>sessionkey</code></td>
+<td>Pre-generated end-user session key from the <code>UserWebSessionStart</code> or <code>AdminAccountSessionStartAsUser</code> or <code>HybridSessionStart</code> server API</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="other-api--comet-server-special-apis" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Other API - Comet Server special APIs&nbsp;<a class="docsSectionLinkIcon" href="api.html#other-api--comet-server-special-apis">&para;</a></h2>
+<p>As well as making API requests to your Comet Server instances described above, some special-purpose APIs are available that do not fit the general documented pattern.</p>
+<span class="docsSectionMarker"><span id="live-event-streaming" class="docsSectionMarkerChild"></span></span><h3>Live event streaming&nbsp;<a class="docsSectionLinkIcon" href="api.html#live-event-streaming">&para;</a></h3>
+<p>You can use Comet's API to receive live notifications of new events on the Comet server. This includes notifications of new jobs, completed jobs, and user profile configuration changes.</p>
+<ol>
+<li>
+<p>Make a GET request to <code>/api/v1/events/stream</code>.</p>
+</li>
+<li>
+<p>The server will perform an HTTP Upgrade to a WebSocket connection.</p>
+</li>
+<li>
+<p>The client must emit five text message frames in order, containing <code>Username</code>, <code>AuthType</code>, <code>Password</code>, <code>SessionKey</code>, and <code>TOTP</code> parameter values respectively.</p>
+</li>
+<li>
+<p>If the authentication failed, the server will emit a text message frame containing the string <code>403 Unauth</code>, and then drop the connection. If the authentication succeeded, the server will emit a text message frame containing the string <code>200 OK</code>.</p>
+</li>
+<li>
+<p>Communication then proceeds in an API-specific manner.</p>
+</li>
+</ol>
+<span class="docsSectionMarker"><span id="other-api--cometbackupcom-api" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Other API - CometBackup.com API&nbsp;<a class="docsSectionLinkIcon" href="api.html#other-api--cometbackupcom-api">&para;</a></h2>
+<p>As well as making API requests to your Comet Server instances described above, an API is also available for the CometBackup.com web application.</p>
+<p>This additional API allows you to control some parts of your CometBackup.com account by making HTTP POST requests:</p>
+<span class="docsSectionMarker"><span id="licenserelax" class="docsSectionMarkerChild"></span></span><h3>LicenseRelax&nbsp;<a class="docsSectionLinkIcon" href="api.html#licenserelax">&para;</a></h3>
+<p>Relax an existing Comet Server serial number.</p>
+<ul>
+<li>Endpoint: <code>POST https://cometbackup.com/api/v1/license/relax</code></li>
+<li>Request body in <code>application/x-www-form-urlencoded</code> format</li>
+</ul>
+<p>Request parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>Email address to log in to CometBackup.com</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>Password to log in to CometBackup.com</td>
+</tr>
+<tr>
+<td><code>serial</code></td>
+<td>Target serial number to relax</td>
+</tr>
+</tbody>
+</table>
+<p>Possible responses:</p>
+<table>
+<thead>
+<tr>
+<th>HTTP Code</th>
+<th>Content-Type</th>
+<th>Response Body</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><code>text/plain</code></td>
+<td>OK, the serial was relaxed successfully</td>
+</tr>
+<tr>
+<td>400</td>
+<td><code>text/plain</code></td>
+<td>Invalid or missing parameter</td>
+</tr>
+<tr>
+<td>403</td>
+<td><code>text/plain</code></td>
+<td>Invalid credentials</td>
+</tr>
+<tr>
+<td>500</td>
+<td><code>text/plain</code></td>
+<td>Internal error</td>
+</tr>
+</tbody>
+</table>
+<p>This API can be accessed via an additional 1 endpoint(s) for backward compatibility. These aliases will be maintained indefinitely, but new applications should not use them.</p>
+<ul>
+<li><code>POST https://cometbackup.com/api/v1/relax_license</code> <em>(&quot;RelaxLicense&quot;)</em></li>
+</ul>
+<span class="docsSectionMarker"><span id="licensecreate" class="docsSectionMarkerChild"></span></span><h3>LicenseCreate&nbsp;<a class="docsSectionLinkIcon" href="api.html#licensecreate">&para;</a></h3>
+<p>Generate a new Comet Server serial number.</p>
+<ul>
+<li>Endpoint: <code>POST https://cometbackup.com/api/v1/license/create</code></li>
+<li>Request body in <code>application/x-www-form-urlencoded</code> format</li>
+</ul>
+<p>Request parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>Email address to log in to CometBackup.com</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>Password to log in to CometBackup.com</td>
+</tr>
+</tbody>
+</table>
+<p>Possible responses:</p>
+<table>
+<thead>
+<tr>
+<th>HTTP Code</th>
+<th>Content-Type</th>
+<th>Response Body</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><code>text/plain</code></td>
+<td>Newly generated serial (plain text)</td>
+</tr>
+<tr>
+<td>400</td>
+<td><code>text/plain</code></td>
+<td>Invalid or missing parameter</td>
+</tr>
+<tr>
+<td>403</td>
+<td><code>text/plain</code></td>
+<td>Invalid credentials</td>
+</tr>
+<tr>
+<td>500</td>
+<td><code>text/plain</code></td>
+<td>Internal error</td>
+</tr>
+</tbody>
+</table>
+<p>This API can be accessed via an additional 1 endpoint(s) for backward compatibility. These aliases will be maintained indefinitely, but new applications should not use them.</p>
+<ul>
+<li><code>POST https://cometbackup.com/api/v1/create_license</code> <em>(&quot;CreateLicense&quot;)</em></li>
+</ul>
+<span class="docsSectionMarker"><span id="licensearchive" class="docsSectionMarkerChild"></span></span><h3>LicenseArchive&nbsp;<a class="docsSectionLinkIcon" href="api.html#licensearchive">&para;</a></h3>
+<p>Deactivate and archive an existing Comet Server serial number</p>
+<ul>
+<li>Endpoint: <code>POST https://cometbackup.com/api/v1/license/archive</code></li>
+<li>Request body in <code>application/x-www-form-urlencoded</code> format</li>
+</ul>
+<p>Request parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>Email address to log in to CometBackup.com</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>Password to log in to CometBackup.com</td>
+</tr>
+<tr>
+<td><code>serial</code></td>
+<td>Target serial number to relax</td>
+</tr>
+</tbody>
+</table>
+<p>Possible responses:</p>
+<table>
+<thead>
+<tr>
+<th>HTTP Code</th>
+<th>Content-Type</th>
+<th>Response Body</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><code>text/plain</code></td>
+<td>OK, the serial was archived successfully</td>
+</tr>
+<tr>
+<td>400</td>
+<td><code>text/plain</code></td>
+<td>Invalid or missing parameter</td>
+</tr>
+<tr>
+<td>403</td>
+<td><code>text/plain</code></td>
+<td>Invalid credentials</td>
+</tr>
+<tr>
+<td>500</td>
+<td><code>text/plain</code></td>
+<td>Internal error</td>
+</tr>
+</tbody>
+</table>
+<p>This API can be accessed via an additional 1 endpoint(s) for backward compatibility. These aliases will be maintained indefinitely, but new applications should not use them.</p>
+<ul>
+<li><code>POST https://cometbackup.com/api/v1/archive_license</code> <em>(&quot;ArchiveLicense&quot;)</em></li>
+</ul>
+<span class="docsSectionMarker"><span id="licenselistall" class="docsSectionMarkerChild"></span></span><h3>LicenseListAll&nbsp;<a class="docsSectionLinkIcon" href="api.html#licenselistall">&para;</a></h3>
+<p>List all your current Comet Server serial numbers</p>
+<ul>
+<li>Endpoint: <code>POST https://cometbackup.com/api/v1/license/list_all</code></li>
+<li>Request body in <code>application/x-www-form-urlencoded</code> format</li>
+</ul>
+<p>Request parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>Email address to log in to CometBackup.com</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>Password to log in to CometBackup.com</td>
+</tr>
+</tbody>
+</table>
+<p>Possible responses:</p>
+<table>
+<thead>
+<tr>
+<th>HTTP Code</th>
+<th>Content-Type</th>
+<th>Response Body</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><code>application/json</code></td>
+<td>Array of objects, each object describing the Comet Server serial license</td>
+</tr>
+<tr>
+<td>400</td>
+<td><code>text/plain</code></td>
+<td>Invalid or missing parameter</td>
+</tr>
+<tr>
+<td>403</td>
+<td><code>text/plain</code></td>
+<td>Invalid credentials</td>
+</tr>
+<tr>
+<td>500</td>
+<td><code>text/plain</code></td>
+<td>Internal error</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="reportactiveservices" class="docsSectionMarkerChild"></span></span><h3>ReportActiveServices&nbsp;<a class="docsSectionLinkIcon" href="api.html#reportactiveservices">&para;</a></h3>
+<p>List all currently active services</p>
+<ul>
+<li>Endpoint: <code>POST https://cometbackup.com/api/v1/report/active_services</code></li>
+<li>Request body in <code>application/x-www-form-urlencoded</code> format</li>
+</ul>
+<p>Request parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>Email address to log in to CometBackup.com</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>Password to log in to CometBackup.com</td>
+</tr>
+<tr>
+<td><code>format</code></td>
+<td>One of <code>csv</code>, <code>json</code>, or <code>xlsx</code></td>
+</tr>
+</tbody>
+</table>
+<p>Possible responses:</p>
+<table>
+<thead>
+<tr>
+<th>HTTP Code</th>
+<th>Content-Type</th>
+<th>Response Body</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><code>text/csv</code></td>
+<td>My Active Services report in CSV format (if <code>format=csv</code> was supplied)</td>
+</tr>
+<tr>
+<td>200</td>
+<td><code>application/json</code></td>
+<td>My Active Services report in JSON format (if <code>format=json</code> was supplied)</td>
+</tr>
+<tr>
+<td>200</td>
+<td><code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code></td>
+<td>My Active Services report in XLSX format (if <code>format=xlsx</code> was supplied)</td>
+</tr>
+<tr>
+<td>400</td>
+<td><code>text/plain</code></td>
+<td>Invalid or missing parameter</td>
+</tr>
+<tr>
+<td>403</td>
+<td><code>text/plain</code></td>
+<td>Invalid credentials</td>
+</tr>
+<tr>
+<td>500</td>
+<td><code>text/plain</code></td>
+<td>Internal error</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="reportbillinghistory" class="docsSectionMarkerChild"></span></span><h3>ReportBillingHistory&nbsp;<a class="docsSectionLinkIcon" href="api.html#reportbillinghistory">&para;</a></h3>
+<p>List all deductions from your account balance</p>
+<ul>
+<li>Endpoint: <code>POST https://cometbackup.com/api/v1/report/billing_history</code></li>
+<li>Request body in <code>application/x-www-form-urlencoded</code> format</li>
+</ul>
+<p>Request parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>Email address to log in to CometBackup.com</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>Password to log in to CometBackup.com</td>
+</tr>
+<tr>
+<td><code>format</code></td>
+<td>One of <code>csv</code>, <code>json</code>, or <code>xlsx</code></td>
+</tr>
+</tbody>
+</table>
+<p>Possible responses:</p>
+<table>
+<thead>
+<tr>
+<th>HTTP Code</th>
+<th>Content-Type</th>
+<th>Response Body</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><code>text/csv</code></td>
+<td>Credit Usage report in CSV format (if <code>format=csv</code> was supplied)</td>
+</tr>
+<tr>
+<td>200</td>
+<td><code>application/json</code></td>
+<td>Credit Usage report in JSON format (if <code>format=json</code> was supplied)</td>
+</tr>
+<tr>
+<td>200</td>
+<td><code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code></td>
+<td>Credit Usage report in XLSX format (if <code>format=xlsx</code> was supplied)</td>
+</tr>
+<tr>
+<td>400</td>
+<td><code>text/plain</code></td>
+<td>Invalid or missing parameter</td>
+</tr>
+<tr>
+<td>403</td>
+<td><code>text/plain</code></td>
+<td>Invalid credentials</td>
+</tr>
+<tr>
+<td>500</td>
+<td><code>text/plain</code></td>
+<td>Internal error</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="latestversion" class="docsSectionMarkerChild"></span></span><h3>LatestVersion&nbsp;<a class="docsSectionLinkIcon" href="api.html#latestversion">&para;</a></h3>
+<p>Retrieve information about the latest available version of Comet Server to download.</p>
+<ul>
+<li>Endpoint: <code>GET https://cometbackup.com/latestversion</code></li>
+<li>No request body</li>
+</ul>
+<p>Request parameters:</p>
+<ul>
+<li>No request parameters</li>
+</ul>
+<p>Possible responses:</p>
+<table>
+<thead>
+<tr>
+<th>HTTP Code</th>
+<th>Content-Type</th>
+<th>Response Body</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><code>application/json</code></td>
+<td>Comet Server version information in JSON format</td>
+</tr>
+<tr>
+<td>500</td>
+<td><code>text/plain</code></td>
+<td>Internal error</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="appendix" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Appendix&nbsp;<a class="docsSectionLinkIcon" href="api.html#appendix">&para;</a></h2>
+<span class="docsSectionMarker"><span id="twofactor-authentication-for-the-comet-server-api" class="docsSectionMarkerChild"></span></span><h3>Two-Factor Authentication for the Comet Server API&nbsp;<a class="docsSectionLinkIcon" href="api.html#twofactor-authentication-for-the-comet-server-api">&para;</a></h3>
+<p>We would recommend against using two-factor authentication for the Comet API. It is possible to do this, but (A) it's not really meaningful for an automated process to have two factors of authentication; and also (B) it's not currently supported by our PHP SDK on GitHub.</p>
+<p>We would recommend creating a new Comet Server admin account just for API purposes with a long random password.</p>
+<span class="docsSectionMarker"><span id="advanced-usage" class="docsSectionMarkerChild"></span></span><h4>Advanced usage&nbsp;<a class="docsSectionLinkIcon" href="api.html#advanced-usage">&para;</a></h4>
+<p>If it's really seriously needed, it is possible to make any of the API requests using these authentication types: any Comet Server API request needs to be authenticated, and you can authenticate by setting the AuthType parameter to any one of <code>Password</code>, <code>SessionKey</code>, <code>PasswordTOTP</code>, or <code>PasswordU2F</code>; the latter two (TOTP / U2F) being the two currently supported methods of two-factor authentication in Comet Server.</p>
+<p>We would suggest only using <code>PasswordTOTP</code> and <code>PasswordU2F</code> only with the <code>AdminAccountSessionStart</code> API, that will give you a single <code>SessionKey</code> token to use with other API calls. Performing the entire TOTP / U2F handshake on every API call is probably an unreasonable amount of overhead. To authenticate using <code>SessionKey</code> mode, the API request should contain a valid <code>SessionKey</code> parameter that you get from the <code>AdminAccountSessionStart</code> API back in the <code>SessionKeyRegeneratedResponse</code> response structure.</p>
+<p>To authenticate using <code>Password</code> mode, the API request should contain a valid <code>Password</code> parameter (of the admin account's password), as per the examples in <a href="https://cometbackup.com/docs/api#quick-start-examples">https://cometbackup.com/docs/api#quick-start-examples</a> . Then, if a password-only is insufficient for the account, the API will respond with a HTTP 449 status (&quot;Retry With&quot;), and a <code>X-Comet-TOTP-Requested: 1</code> header or a <code>X-Comet-U2F-Challenge: ...</code> header. You should use this information to determine if a TOTP or U2F login is suitable.</p>
+<p>To authenticate using <code>PasswordTOTP</code> mode, the API request should contain both a valid <code>Password</code> parameter (of the admin account's password) and a valid <code>TOTP</code> parameter. A TOTP code is a 6-digit number that changes every 30 seconds. Both the client and server calculate it from a shared secret. You should find the current secret by decoding the QR code for the user, and then use a library in your programming language to generate the current 6-digit value for the current timestamp.</p>
+<p>To authenticate using <code>PasswordU2F</code> mode, the API request should contain a valid <code>Password</code> parameter (of the admin account's password) and a valid <code>U2FSign</code> POST parameter. You can use the information from the previous <code>X-Comet-U2F-Challenge</code> response header, to generate a U2F signature with your U2F hardware device, and fill in the <code>U2FSign</code> POST parameter as a <code>U2FSignResponse</code> struct in JSON encoding.</p></div><div class="doc-navigation-section"><div class="doc-navigation-back doc-navigation-width-2"><a href="troubleshooting.html">&laquo; Back: Troubleshooting</a></div><div class="doc-navigation-next doc-navigation-width-2"><a href="api-reference.html">Next: API Reference &raquo;</a></div></div> 
+				</div>
+			</div>
+		</div>
+	
+	
+	</body>
+</html>

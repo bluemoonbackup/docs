@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="docs.css">
+		<link rel="stylesheet" type="text/css" href="magnific-popup.css">		
+		<script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="magnific-popup.1.1.0.min.js"></script>
+		<script type="text/javascript" src="lunr-2.1.0.min.js"></script>
+		<script type="text/javascript" src="docs.js"></script>
+		<title>Documentation</title>		
+	</head>
+	<body>
+	
+		<div id="header-bar">
+			<div id="header-logo"></div>
+			Documentation
+		</div>
+	
+		<div id="main-area">
+			<div id="position-nav">
+				<div id="nav-inner">
+					<ul><li><form method="GET" action="search-results.html"><input name="s" class="search-box" placeholder="Search..."></form></li>
+<li><span class="category-header">Guides</span></li>
+<li><a href="guide-getting-started.html" title="Getting Started">Getting Started</a></li>
+<li><a href="guide-cometgo-getting-started.html" title="Getting Started with CometGo!">Getting Started with CometGo!</a></li>
+<li><a href="guide-seedload-walkthrough.html" title="Seed Load Walkthrough">Seed Load Walkthrough</a></li>
+<li><span class="category-header">Documentation</span></li>
+<li><a href="about-these-docs.html" title="Software Documentation">Software Documentation</a></li>
+<li><a href="application-architecture.html" title="Overview and Concepts">Overview and Concepts</a></li>
+<li><a href="comet-server-installation.html" title="Comet Server installation">Comet Server installation</a></li>
+<li><a href="comet-server-configuration.html" title="Comet Server configuration">Comet Server configuration</a></li>
+<li><a href="comet-server-usage.html" title="Comet Server usage">Comet Server usage</a></li>
+<li><a href="comet-backup-installation.html" title="Comet Backup installation">Comet Backup installation</a></li>
+<li><a href="comet-backup-usage.html" title="Comet Backup usage">Comet Backup usage</a></li>
+<li><a href="user-configuration.html" title="User configuration">User configuration</a></li>
+<li><a href="protected-items.html" title="Protected Item types">Protected Item types</a></li>
+<li><a href="storage-configuration.html" title="Storage configuration">Storage configuration</a></li>
+<li><a href="troubleshooting.html" title="Troubleshooting">Troubleshooting</a></li>
+<li><a href="api.html" title="API Guide">API Guide</a></li>
+<li><a href="api-reference.html" title="API Reference">API Reference</a></li>
+<li><a href="appendix.html" title="Appendix">Appendix</a></li>
+<li><a href="cloud-storage-providers.html" title="Cloud Storage Providers">Cloud Storage Providers</a></li>
+<li><a href="third-party-service-addons.html" title="Third-party service addons">Third-party service addons</a></li>
+<li><a href="comet-server-roles.html" title="Comet Server Roles ">Comet Server Roles </a></li>
+<li><a href="comet-chunking-overview.html" title="Comet Chunking Overview ">Comet Chunking Overview </a></li>
+<li><a href="HIPAA-Compliance.html" title="HIPAA Compliance ">HIPAA Compliance </a></li>
+<li><a href="GDPR-Compliance.html" title="GDPR Compliance">GDPR Compliance</a></li>
+</ul>
+				</div>
+			</div>
+		
+			<div id="position-content">
+				<div id="content-inner">
+					<h1>Search Results</h1>
+
+<div class="doc-search-results-area">
+    Loading...
+</div>
+
+<script type="text/javascript" src="lunr-index.js"></script>
+<script type="text/javascript">
+    (function() {
+        var rx = /s=([^=&]*)/g;
+        var match = rx.exec(window.location.search);
+        var search_term = match ? decodeURIComponent(match[1].replace(/\+/g, '%20')) : "";
+        
+        $(".search-box").val(search_term).focus();;
+
+        var results = searchindex.search(search_term);
+        if (results.length == 0) {
+            $(".doc-search-results-area").text("No results matched your search \"" + search_term + "\".");
+            return;
+        } else {
+			if (results.length > 10) {
+				$(".doc-search-results-area").html('').append([
+					$("<span>").text("Showing 1-"),
+					$("<span class='doc-search-count'>10</span>"),
+					$("<span>").text(" of " + results.length + " result(s) for your search \"" + search_term + "\":")
+				]);
+			} else {
+				$(".doc-search-results-area").text("Showing " + results.length + " result(s) for your search \"" + search_term + "\":");
+			}
+        }
+
+		var $container = $(".doc-search-results-area");
+        for (var i = 0; i < results.length; ++i) {
+            var $p = $("<p class='doc-search-result-p-" + i + "'>");
+			if (i >= 10) {
+				$p.hide();
+			}
+			
+            var matchRef = results[i]['ref'];
+            $p.append( $("<a>").attr('href', matchRef).text( refnames[matchRef] ) );
+            $container.append($p);
+        }
+		
+		if (results.length > 10) {
+			var visible_ptr = 10;
+			
+			var $link_p = $("<p>").append([
+				"More search results are available. ",
+				$("<a>")
+					.attr('href', 'javascript:;')
+					.text("Show...")
+					.click(function() {
+					
+						for (var i = visible_ptr; i < visible_ptr + 10; ++i) {
+							if (i == results.length) {
+								$link_p.remove();
+								break;
+							}
+							
+							$(".doc-search-result-p-" + i).show();
+						}
+						visible_ptr = i;
+						$(".doc-search-count").text(visible_ptr);
+						
+					})
+			]);
+		
+			$container.append($link_p);
+		}
+		
+    })();
+</script>
+ 
+				</div>
+			</div>
+		</div>
+	
+	
+	</body>
+</html>

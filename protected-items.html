@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="docs.css">
+		<link rel="stylesheet" type="text/css" href="magnific-popup.css">		
+		<script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="magnific-popup.1.1.0.min.js"></script>
+		<script type="text/javascript" src="lunr-2.1.0.min.js"></script>
+		<script type="text/javascript" src="docs.js"></script>
+		<title>Documentation</title>		
+	</head>
+	<body>
+	
+		<div id="header-bar">
+			<div id="header-logo"></div>
+			Documentation
+		</div>
+	
+		<div id="main-area">
+			<div id="position-nav">
+				<div id="nav-inner">
+					<ul><li><form method="GET" action="search-results.html"><input name="s" class="search-box" placeholder="Search..."></form></li>
+<li><span class="category-header">Guides</span></li>
+<li><a href="guide-getting-started.html" title="Getting Started">Getting Started</a></li>
+<li><a href="guide-cometgo-getting-started.html" title="Getting Started with CometGo!">Getting Started with CometGo!</a></li>
+<li><a href="guide-seedload-walkthrough.html" title="Seed Load Walkthrough">Seed Load Walkthrough</a></li>
+<li><span class="category-header">Documentation</span></li>
+<li><a href="about-these-docs.html" title="Software Documentation">Software Documentation</a></li>
+<li><a href="application-architecture.html" title="Overview and Concepts">Overview and Concepts</a></li>
+<li><a href="comet-server-installation.html" title="Comet Server installation">Comet Server installation</a></li>
+<li><a href="comet-server-configuration.html" title="Comet Server configuration">Comet Server configuration</a></li>
+<li><a href="comet-server-usage.html" title="Comet Server usage">Comet Server usage</a></li>
+<li><a href="comet-backup-installation.html" title="Comet Backup installation">Comet Backup installation</a></li>
+<li><a href="comet-backup-usage.html" title="Comet Backup usage">Comet Backup usage</a></li>
+<li><a href="user-configuration.html" title="User configuration">User configuration</a></li>
+<li class="current-page"><a data-indent="0" class="subsection-link subsection-indent-0" href="#protected-item-types" title="Protected Item types">Protected Item types</a>
+<ul>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#overview" title="Overview">Overview</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#files-and-folders-items" title="&quot;Files and Folders&quot; items">&quot;Files and Folders&quot; items</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#filesystem-snapshots" title="Filesystem snapshots">Filesystem snapshots</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#network-shares" title="Network shares">Network shares</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#encrypted-files-windows-efs" title="Encrypted files (Windows EFS)">Encrypted files (Windows EFS)</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#finding-files-using-efs" title="Finding files using EFS">Finding files using EFS</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#finding-the-certificate-used-to-encrypt-a-file" title="Finding the certificate used to encrypt a file">Finding the certificate used to encrypt a file</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#windows-server-deduplication" title="Windows Server Deduplication">Windows Server Deduplication</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#exclude-filters" title="Exclude filters">Exclude filters</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#glob-pattern-match" title="Glob pattern match">Glob pattern match</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#regular-expression-match" title="Regular expression match">Regular expression match</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#system-exclusions" title="System exclusions">System exclusions</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#rescan-unchanged-files" title="Rescan unchanged files">Rescan unchanged files</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#program-output-items" title="&quot;Program Output&quot; items">&quot;Program Output&quot; items</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#microsoft-exchange-server-items" title="&quot;Microsoft Exchange Server&quot; items">&quot;Microsoft Exchange Server&quot; items</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#exchange-server-" title="Exchange Server 2007">Exchange Server 2007</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#restore" title="Restore">Restore</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#full-edb-recovery" title="Full EDB Recovery">Full EDB Recovery</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#recovery-database-mode" title="Recovery Database mode">Recovery Database mode</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#extract-edb-contents" title="Extract EDB contents">Extract EDB contents</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#microsoft-hyperv-items" title="&quot;Microsoft Hyper-V&quot; items">&quot;Microsoft Hyper-V&quot; items</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#consistency-and-guest-additions" title="Consistency and guest additions">Consistency and guest additions</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#replica-vm" title="Replica VM">Replica VM</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#passthrough-disks" title="Pass-through disks">Pass-through disks</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#microsoft-sql-server-items" title="&quot;Microsoft SQL Server&quot; items">&quot;Microsoft SQL Server&quot; items</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#connection-details" title="Connection details">Connection details</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#address" title="Address">Address</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#driver" title="Driver">Driver</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#authentication" title="Authentication">Authentication</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#multiple-instances" title="Multiple instances">Multiple instances</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#backup-mode" title="Backup mode">Backup mode</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#base-images" title="Base images">Base images</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#differential" title="Differential">Differential</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#log" title="Log">Log</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#recommendations" title="Recommendations">Recommendations</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#alternative-ways-to-back-up-microsoft-sql-server" title="Alternative ways to back up Microsoft SQL Server">Alternative ways to back up Microsoft SQL Server</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#mysql-items" title="&quot;MySQL&quot; items">&quot;MySQL&quot; items</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#connection-details-2" title="Connection details">Connection details</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#selecting-databases" title="Selecting databases">Selecting databases</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#custom-mysqldump" title="Custom mysqldump">Custom mysqldump</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#system-databases" title="System databases">System databases</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#isolation-modes" title="Isolation modes">Isolation modes</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#mongodb-items" title="&quot;MongoDB&quot; items">&quot;MongoDB&quot; items</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#version-support" title="Version support">Version support</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#connection-details-3" title="Connection details">Connection details</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#authentication-2" title="Authentication">Authentication</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#sharding" title="Sharding">Sharding</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#selecting-databases-2" title="Selecting databases">Selecting databases</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#restore-2" title="Restore">Restore</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#windows-server-system-state-items" title="&quot;Windows Server System State&quot; items">&quot;Windows Server System State&quot; items</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#restoring" title="Restoring">Restoring</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#alternative-ways-of-backing-up-system-state" title="Alternative ways of backing up System State">Alternative ways of backing up System State</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#windows-system-backup-items" title="&quot;Windows System Backup&quot; items">&quot;Windows System Backup&quot; items</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#restoring-data-drive" title="Restoring (Data drive)">Restoring (Data drive)</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#restoring-bootable-operating-system" title="Restoring (Bootable Operating System)">Restoring (Bootable Operating System)</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#using-windows-recovery" title="Using Windows Recovery">Using Windows Recovery</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#using-wbadmin" title="Using wbadmin">Using wbadmin</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#using-qemuimg" title="Using qemu-img">Using qemu-img</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#using-the-hypervisor" title="Using the hypervisor">Using the hypervisor</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#alternative-ways-of-backing-up-windows-system-backup" title="Alternative ways of backing up Windows System Backup">Alternative ways of backing up Windows System Backup</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#applicationaware-writer-items" title="&quot;Application-Aware Writer&quot; items">&quot;Application-Aware Writer&quot; items</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#about" title="About">About</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#selecting-components" title="Selecting components">Selecting components</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#vss-mode" title="VSS Mode">VSS Mode</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#backing-up-oracle-database" title="Backing up Oracle Database">Backing up Oracle Database</a></li>
+</ul>
+</li><li><a href="storage-configuration.html" title="Storage configuration">Storage configuration</a></li>
+<li><a href="troubleshooting.html" title="Troubleshooting">Troubleshooting</a></li>
+<li><a href="api.html" title="API Guide">API Guide</a></li>
+<li><a href="api-reference.html" title="API Reference">API Reference</a></li>
+<li><a href="appendix.html" title="Appendix">Appendix</a></li>
+<li><a href="cloud-storage-providers.html" title="Cloud Storage Providers">Cloud Storage Providers</a></li>
+<li><a href="third-party-service-addons.html" title="Third-party service addons">Third-party service addons</a></li>
+<li><a href="comet-server-roles.html" title="Comet Server Roles ">Comet Server Roles </a></li>
+<li><a href="comet-chunking-overview.html" title="Comet Chunking Overview ">Comet Chunking Overview </a></li>
+<li><a href="HIPAA-Compliance.html" title="HIPAA Compliance ">HIPAA Compliance </a></li>
+<li><a href="GDPR-Compliance.html" title="GDPR Compliance">GDPR Compliance</a></li>
+</ul>
+				</div>
+			</div>
+		
+			<div id="position-content">
+				<div id="content-inner">
+					<span class="docsSectionMarker"><span id="protected-item-types" class="docsSectionMarkerChild"></span></span><h1>Protected Item types&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#protected-item-types">&para;</a></h1>
+<span class="docsSectionMarker"><span id="overview" class="docsSectionMarkerChild"></span></span><div class="docs-box"><h2>Overview&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#overview">&para;</a></h2>
+<p>Comet supports a range of different types for your Protected Item configuration, including file, application, system, and VM backup types.</p>
+<span class="docsSectionMarker"><span id="files-and-folders-items" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>&quot;Files and Folders&quot; items&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#files-and-folders-items">&para;</a></h2>
+<p>The &quot;Files and Folders&quot; option lets you back up files and folders on the PC.</p>
+<p>Use the Plus button to browse files and folders for backup. You can also drag-and-drop files and folders into the Comet Backup client to select them.</p>
+<p>The &quot;Choose files&quot; dialog displays a live estimate of the selected filesize (before compression and deduplication).</p>
+<span class="docsSectionMarker"><span id="filesystem-snapshots" class="docsSectionMarkerChild"></span></span><h3>Filesystem snapshots&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#filesystem-snapshots">&para;</a></h3>
+<p>On Windows, the &quot;Take filesystem snapshot&quot; option creates a VSS snapshot.</p>
+<p>This enables Comet to back up files that are currently in-use. It also provides disk-wide &quot;crash-consistency&quot;, as all files for backup will originate from the precisely same timestamp.</p>
+<p>Non-Windows platforms do not currently require the use of this feature to back up in-use files, however, they also do not benefit from the disk-wide consistency.</p>
+<p>Current versions of Comet cannot take filesystem snapshots of a Protected Item located on a network share; be sure to disable the &quot;Take filesystem snapshot&quot; option on the Protected Item.</p>
+<p>Windows supports taking VSS snapshots of <code>NTFS</code> and <code>ReFS</code> filesystems. Comet can snapshot these filesystems for backup.</p>
+<p>Windows does not support taking VSS snapshots of <code>FAT</code> or <code>exFAT</code> filesystems. Protected Items backing up these filesystems must not use the &quot;Take filesystem snapshot&quot; option.</p>
+<p>This feature is enabled by default for new Protected Items.</p>
+<span class="docsSectionMarker"><span id="network-shares" class="docsSectionMarkerChild"></span></span><h3>Network shares&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#network-shares">&para;</a></h3>
+<p>Comet supports backing up Windows network shares (SMB / CIFS). However, you should prefer to install Comet Backup directly on the network device; this will offer increased backup performance.</p>
+<p>On Windows,</p>
+<ul>
+<li>The &quot;Choose Items&quot; dialog lets you browse through mapped network drive letters. You can also use the &quot;Options &gt; Browse UNC Path&quot; option to directly browse a UNC path.</li>
+<li>Comet supports entering custom Windows Network Authentication credentials via the &quot;Log in to network share&quot; option. If you select a network share for backup, you may need to enter custom credentials in order for the service user account to access the network share.</li>
+<li>Because mapped network drives are private to a user session, Comet Backup automatically converts mapped network drive letters into their UNC path equivalent, so that it can still be accessed by the service user account.</li>
+</ul>
+<p>Current versions of Comet cannot take (VSS) filesystem snapshots of a Protected Item located on a network share; be sure to disable the &quot;Take filesystem snapshot&quot; option on the Protected Item.</p>
+<p>On non-Windows platforms,</p>
+<ul>
+<li>You should mount the network share locally before backing it up.</li>
+</ul>
+<span class="docsSectionMarker"><span id="encrypted-files-windows-efs" class="docsSectionMarkerChild"></span></span><h3>Encrypted files (Windows EFS)&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#encrypted-files-windows-efs">&para;</a></h3>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="efs_encryption_key_prompt.png"><img src="efs_encryption_key_prompt.png.thumb.jpg" alt="" /></a></p>
+<p>EFS is a Windows feature that allows you to encrypt individual files on disk. Comet supports backing up EFS-encrypted files on Windows. The files will be silently decrypted if possible (e.g. if Comet Backup is running as the encryption user, or if Comet Backup is running as the EFS Recovery Agent user).</p>
+<p>If it is not possible to automatically decrypt the file for backup, Comet will back up the file in its encrypted form, and will only be able to restore it in its encrypted form. EFS-encrypted files are displayed with green text in the Restore browser dialog in Comet Backup.</p>
+<p>If you have a PC failure, the EFS encryption keys may be lost. In this situation, the EFS-encrypted files may be unusable, even after restoring from backup. Comet warns you about this situation by adding a warning message in the backup job log.</p>
+<p>In order to safely prepare for this scenario, you should export the PC's EFS encryption keys, so that the files can be accessed after a PC failure. On Windows, you can do this via <code>certmgr.msc</code>; or on Windows Server, taking a System State backup may be sufficient.</p>
+<p>Once you have safely backed up the PC's EFS encryption keys, you can suppress the warning in Comet Backup by enabling the &quot;I confirm EFS keys are exported&quot; option in the Protected Item settings.</p>
+<p>If you have only a partial PC failure (e.g. files lost, but OS installation and user accounts remain intact) the EFS-encrypted files will be restorable without any further attention to the EFS keys. </p>
+<span class="docsSectionMarker"><span id="finding-files-using-efs" class="docsSectionMarkerChild"></span></span><h4>Finding files using EFS&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#finding-files-using-efs">&para;</a></h4>
+<p>You can use the <code>cipher /u /n</code> command to list all files on the local PC that are EFS-encrypted.</p>
+<span class="docsSectionMarker"><span id="finding-the-certificate-used-to-encrypt-a-file" class="docsSectionMarkerChild"></span></span><h4>Finding the certificate used to encrypt a file&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#finding-the-certificate-used-to-encrypt-a-file">&para;</a></h4>
+<p>You can use the <code>cipher /C C:\path\to\file.txt</code> command to display the user accounts and certificates that are able to decrypt a file. This may indicate which user originally encrypted the file and/or which EFS certificates are necessary for backup.</p>
+<span class="docsSectionMarker"><span id="windows-server-deduplication" class="docsSectionMarkerChild"></span></span><h3>Windows Server Deduplication&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#windows-server-deduplication">&para;</a></h3>
+<p>Windows Server 2012 and later have a data deduplication feature that is separate- and unrelated- to Comet's own deduplication, that can be used to increase free disk space on NTFS volumes. A scanning process runs in the background to find and merge duplicate file content. By default, the scanning process runs overnight.</p>
+<p>Deduplicated files look and behave like normal files; however, they are stored on disk in a special format, that can only be read by Windows Server (and Linux). Non-Server versions of Windows are entirely unable to read these files from disk.</p>
+<p>When backing up deduplicated files with Comet, it backs up the full (rehydrated) file content, and then applies its own deduplication to it. This means that Windows Server deduplicated files can be safely restored to non-Server versions of Windows.</p>
+<p>When restoring deduplicated files from Comet, the files are restored in their full (rehydrated) format, and are not re-deduplicated until Windows runs its next background scanning pass. This means that you may not have enough free disk space to completely restore a Comet backup to the same source drive.</p>
+<span class="docsSectionMarker"><span id="exclude-filters" class="docsSectionMarkerChild"></span></span><h3>Exclude filters&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#exclude-filters">&para;</a></h3>
+<p>You can exclude a range of files from the backup job. An exclusion filter checks whether to exclude each file from backup, using either a glob pattern or a regular expression (regex).</p>
+<p>There is no limit to the number of exclusion filters you can add to a single Protected Item.</p>
+<span class="docsSectionMarker"><span id="glob-pattern-match" class="docsSectionMarkerChild"></span></span><h4>Glob pattern match&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#glob-pattern-match">&para;</a></h4>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="exclude-globmatch.png"><img src="exclude-globmatch.png.thumb.jpg" alt="" /></a></p>
+<p>Comet can exclude files based on a glob pattern. Any files matching the glob pattern will be excluded from the backup job.</p>
+<p>The expression is tested against the full disk path to the file. Your glob expression can be a partial match (e.g. <code>*.txt</code>) or a fully anchored match (e.g. <code>C:\path\to\file.docx</code>).</p>
+<p>Some special characters and wildcards are allowed:</p>
+<ul>
+<li>A star (<code>*</code>) skips zero or more characters within a filename</li>
+<li>A double-star (<code>/**/</code>) skips any number of directory components</li>
+<li>A question-mark (<code>?</code>) skips a single character within a filename</li>
+<li>Square brackets denote a character class (e.g. <code>[0-9]</code>) within a directory or file name</li>
+</ul>
+<p>As of Comet 18.9.1, an invalid glob pattern will prevent a backup job from running.</p>
+<span class="docsSectionMarker"><span id="regular-expression-match" class="docsSectionMarkerChild"></span></span><h4>Regular expression match&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#regular-expression-match">&para;</a></h4>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="exclude-regexp.png"><img src="exclude-regexp.png.thumb.jpg" alt="" /></a></p>
+<p>Comet can exclude files based on a regular expression (regex). Any files matching the regular expression will be excluded from the backup job. The specific syntax flavour is that of the <a href="https://golang.org/pkg/regexp/syntax/#hdr-Syntax">Go regexp library</a>.</p>
+<p>The regular expression is tested against the full disk path to the file. This enables filtering by path component, or (on Windows) drive letter.</p>
+<p>By default, the regular expression is</p>
+<ul>
+<li>case-sensitive. You can perform a case-insensitive match by adding an <code>(?i)</code> expression</li>
+<li>non-anchored. You can restrict your regex to the start- or end- of the file path by using the <code>^</code>, <code>$</code>, <code>\A</code> and/or <code>\z</code> expressions.</li>
+</ul>
+<p>Forwardslash (<code>/</code>) is not a special character and does not require escaping with <code>\/</code>.</p>
+<p>An invalid regular expression will prevent a backup job from running.</p>
+<span class="docsSectionMarker"><span id="system-exclusions" class="docsSectionMarkerChild"></span></span><h4>System exclusions&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#system-exclusions">&para;</a></h4>
+<p>The Comet Backup system automatically excludes certain folders.</p>
+<p>On Windows, Comet skips</p>
+<ul>
+<li>The <code>$RECYCLE.BIN</code> and <code>System Volume Information</code> directories in any drive root</li>
+<li>The <code>C:\Recovery</code> directory</li>
+<li>The <code>C:\pagefile.sys</code>, <code>C:\hiberfil.sys</code>, and <code>C:\swapfile.sys</code> files</li>
+<li>The <code>MicrosoftEdge.exe</code> file
+<ul>
+<li>This is intended to work around an issue with <code>The file cannot be accessed by the system</code> messages affecting Windows 1803 and later.</li>
+</ul></li>
+<li>Invalid <code>.DFSFolderLink</code> files</li>
+</ul>
+<p>On Linux, Comet skips</p>
+<ul>
+<li>The <code>/proc</code> directory</li>
+<li>The <code>/sys</code> directory</li>
+<li>The <code>/selinux</code> directory</li>
+<li>The <code>/dev</code> directory (as of Comet 18.11.0)</li>
+</ul>
+<p>On macOS, Comet skips</p>
+<ul>
+<li>The <code>/dev</code> directory (as of Comet 18.11.0)</li>
+<li>The <code>/Users/.../Library/VoiceTrigger/SAT</code> directory (as of Comet 19.9.6)
+<ul>
+<li>This is a protected <code>AF_DATAVAULT</code> directory that is inaccessible with SIP enabled (the default).</li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="rescan-unchanged-files" class="docsSectionMarkerChild"></span></span><h3>Rescan unchanged files&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#rescan-unchanged-files">&para;</a></h3>
+<p>In a regular &quot;Files and Folders&quot; backup, Comet will skip over files that have the same file size and modification time as the last backup job. If these properties are the same, Comet will refer to previous chunks and not re-chunk the file. This dramatically improves performance.</p>
+<p>If you are working with certain types of files that change content without updating their modification time attribute on the filesystem - for instance, applications that use direct disk I/O instead of filesystem functions; some database data files; or VeraCrypt container files - then the above is obviously unsatisfactory for ensuring backup integrity. In this case, you can enable the &quot;Rescan unchanged files&quot; feature to cause Comet to chunk every encountered file. This has some performance penalty but does ensure backup integrity in the presence of such files.</p>
+<span class="docsSectionMarker"><span id="program-output-items" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>&quot;Program Output&quot; items&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#program-output-items">&para;</a></h2>
+<p>The &quot;Program Output&quot; backup type backs up the <code>stdout</code> (Standard Output) stream of any command execution. This stream data is saved as a virtual file within the backup job. You can choose the virtual file name.</p>
+<p>The data is streamed directly to the backup destination and never touches the local disk. This has the consequence that no progress bar or ETA can be calculated or displayed during backup jobs.</p>
+<p>If the target application produces any content on <code>stderr</code> (Standard Error), it will be logged in the job report, and the final job status will not be less severe than &quot;Warning&quot;.</p>
+<p>If the target application exits with a non-zero error code, the error code will be logged in the job report, and the final job status will not be less severe than &quot;Error&quot;.</p>
+<span class="docsSectionMarker"><span id="microsoft-exchange-server-items" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>&quot;Microsoft Exchange Server&quot; items&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#microsoft-exchange-server-items">&para;</a></h2>
+<p><em>Using this Protected Item type may incur a Booster charge.</em></p>
+<p>This Protected Item type backs up Microsoft Exchange Server databases. The underlying technology is <code>VSS</code> and is compatible with Microsoft Exchange Server 2007 and later, including Exchange Server 2016 (the latest version at the time of writing).</p>
+<p>The appropriate VSS writer must be installed.</p>
+<p>As Exchange Server can only be installed on Server SKUs of Windows, this backup type is only applicable when running on Windows Server.</p>
+<p>Some forms of Exchange Server backup will cause log truncation to occur on the Exchange Server. For more information, please see the official Exchange Server documentation. If circular logging is enabled on the Exchange Server, the 'Incremental' and 'Differential' backup types have limited effect.</p>
+<span class="docsSectionMarker"><span id="exchange-server-" class="docsSectionMarkerChild"></span></span><h3>Exchange Server 2007&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#exchange-server-">&para;</a></h3>
+<p>By default, Exchange 2007 does not enable the VSS writer. The VSS writer may have been enabled by another backup system installed on the PC.</p>
+<p>If you encounter error messages like <code>Couldn't find Exchange Server installation on this device</code> or <code>Failed to perform VSS snapshot</code> on a machine running Exchange 2007, the Exchange VSS writer (<code>MSExchangeIS</code>) may not be enabled.</p>
+<ul>
+<li>You can confirm whether this is the case by checking for <code>Microsoft Exchange Writer</code> in the output of <code>vssadmin list writers</code>, or, in the Browse dialog for a new &quot;Application Aware Writer&quot; Protected Item.</li>
+</ul>
+<p>You can manually activate the Exchange VSS writer by making the following steps:</p>
+<ol>
+<li>Open <code>regedit</code> and navigate to <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MSExchangeIS\ParametersSystem</code></li>
+<li>Change the <code>Disable Exchange Writer</code> value from <code>1</code> to <code>0</code></li>
+<li>Restart the <code>Microsoft Exchange Information Store</code> service</li>
+</ol>
+<p>For more information on this issue, please see Microsoft's own documentation at <a href="http://support.microsoft.com/kb/838183/en-us">http://support.microsoft.com/kb/838183/en-us</a> .</p>
+<span class="docsSectionMarker"><span id="restore" class="docsSectionMarkerChild"></span></span><h3>Restore&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#restore">&para;</a></h3>
+<p>The Comet Backup snapshot of Exchange Server includes the <code>*.edb</code> file, the <code>*.log</code>/<code>*.stm</code>/<code>*.chk</code> files, and/or other files.</p>
+<p>To restore data, you can either</p>
+<ul>
+<li>reinstate the Information Store files directly as a whole. This approach is suitable in a disaster recovery situation; or</li>
+<li>recover individual items. This allows you to access individual mailboxes and messages without affecting the existing mounted database. This approach is suitable if you only need to access some small parts of past data that has since been deleted or corrupted, without affecting the current running Exchange Server state.</li>
+</ul>
+<span class="docsSectionMarker"><span id="full-edb-recovery" class="docsSectionMarkerChild"></span></span><h4>Full EDB Recovery&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#full-edb-recovery">&para;</a></h4>
+<p>One option for restoring the Exchange EDB is to replace the full EDB file.</p>
+<p>You can replace the EDB and log files on the Exchange Server with the restored versions. This approach is suitable for disaster recovery.</p>
+<p>In the Exchange Server console:</p>
+<ol>
+<li>Dismount the existing Exchange Server Store</li>
+<li>Replace files on disk with the restored copies.
+<ul>
+<li>The path must match the original copy because the transaction log files include an embedded path to the <code>*.edb</code>/<code>*.stm</code> files. If the EDB file was backed up from a different disk location, you should first use the &quot;Move database&quot; feature to update Exchange Server to look for the database files in their original location. For more information, see <a href="https://social.technet.microsoft.com/Forums/exchange/en-US/54186102-2608-41bb-b5b8-ddafdc7d279c/newmailboxdatabase-with-existing-edb-file-possible?forum=exchange2010">this Microsoft article</a>.</li>
+</ul></li>
+<li>Mount the Exchange Server Store</li>
+</ol>
+<span class="docsSectionMarker"><span id="recovery-database-mode" class="docsSectionMarkerChild"></span></span><h4>Recovery Database mode&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#recovery-database-mode">&para;</a></h4>
+<p>Another option for restoring the Exchange EDB is to mount it as a recovery database (RDB).</p>
+<p>Once mounted, you can attach Outlook to the recovery database, or use the <code>New-MailboxRestoreRequest</code> PowerShell command to extract a PST mailbox.</p>
+<p>For more information, see <a href="https://docs.microsoft.com/en-us/exchange/high-availability/disaster-recovery/restore-data-using-recovery-dbs">this Microsoft article</a>.</p>
+<span class="docsSectionMarker"><span id="extract-edb-contents" class="docsSectionMarkerChild"></span></span><h4>Extract EDB contents&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#extract-edb-contents">&para;</a></h4>
+<p>Another option for restoring the Exchange EDB is to use a third-party application to extract content.</p>
+<p>Third-party applications can read the content of the EDB file to extract individual messages, contacts, or other mailbox items.</p>
+<p>At the time of writing, the following programs were available:</p>
+<ul>
+<li><a href="https://www.stellarinfo.com/edb-exchange-server-recovery.htm">Stellar</a> products, including but not limited to Stellar Converter for EDB, Stellar Repair for Exchange, Stellar Toolkit for Exchange</li>
+<li><a href="https://www.quest.com/products/recovery-manager-for-exchange/">Quest Recovery Manager for Exchange</a></li>
+<li><a href="https://www.nucleustechnologies.com/exchange-edb-viewer.html">Kernel Exchange EDB Viewer</a></li>
+<li><a href="https://www.edbviewer.org/">Systools Exchange EDB Viewer</a></li>
+</ul>
+<span class="docsSectionMarker"><span id="microsoft-hyperv-items" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>&quot;Microsoft Hyper-V&quot; items&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#microsoft-hyperv-items">&para;</a></h2>
+<p><em>Using this Protected Item type may incur a per-hypervisor Booster charge.</em></p>
+<p>This Protected Item type backs up Microsoft Hyper-V virtual machines. The underlying technology is <code>VSS</code> and is compatible with all versions of Hyper-V running on Windows Server, including Windows Server 2016 (the latest version at the time of writing).</p>
+<p>This backup type is only applicable when running on Windows Server. Hyper-V on Windows Desktop is not supported by this Protected item type.</p>
+<p>Comet integrates with the Hyper-V VSS writer to perform a Hyper-V backup snapshot, including support for in-VM quiescence on supported guest operating systems.</p>
+<p>Backing up a Hyper-V virtual machine with Comet includes, but is not limited to:</p>
+<ul>
+<li>its configuration file</li>
+<li>all attached virtual drives</li>
+<li>the contents of memory (if the machine was running)</li>
+<li>the full tree of saved checkpoints</li>
+</ul>
+<p>You can select individual virtual machines for backup, or choose &quot;All virtual machines&quot;.</p>
+<span class="docsSectionMarker"><span id="consistency-and-guest-additions" class="docsSectionMarkerChild"></span></span><h3>Consistency and guest additions&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#consistency-and-guest-additions">&para;</a></h3>
+<p><em>The following information applies to all products that perform Hyper-V backup.</em></p>
+<p>When backing up a guest VM, it's important to get a consistent state of the VM. There are some different ways this happens.</p>
+<p>If the guest OS has all necessary Hyper-V integration services installed, then the host can request for the guest VM to take a VSS snapshot. The snapshot is then exposed to Hyper-V on the host for Comet to back up. It shouldn't interrupt the guest OS. The VM backup is application-consistent. This is known as a &quot;Production checkpoint&quot;.</p>
+<p>If the host OS is running Server 2012 R2 or newer, but there are no integration services inside the guest OS, then Hyper-V will take a checkpoint of the VM; Comet will back up the checkpoint; and then the checkpoint will be removed. This kind of checkpoint does not interrupt the guest OS. The VM backup is crash-consistent. This is known as a &quot;Standard checkpoint&quot;.</p>
+<ul>
+<li>You can also achieve this behavior by disabling &quot;Production checkpoints&quot; in the Hyper-V settings for the VM.</li>
+</ul>
+<p>If the host OS is older than Server 2012 R2, and there are no integration services inside the guest OS, then the VM will be paused; Windows will take a VSS snapshot of Hyper-V's files in paused state; the VM will be resumed and Comet will back up from the VSS snapshot. It would cause a short interruption to the guest OS. The VM backup is crash-consistent.</p>
+<ul>
+<li>You can also achieve this behavior by disabling checkpoints in the Hyper-V settings for the VM.</li>
+</ul>
+<span class="docsSectionMarker"><span id="replica-vm" class="docsSectionMarkerChild"></span></span><h3>Replica VM&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#replica-vm">&para;</a></h3>
+<p><em>The following information applies to all products that perform Hyper-V backup.</em></p>
+<p>If you are using Hyper-V replication, you can back up your virtual machines from either the primary or replica host.</p>
+<p>A backup taken on the primary VM host is application-consistent (if possible), by quiescing a VSS snapshot inside the VM guest; or crash-consistent otherwise. However, a backup taken on the secondary VM host is only ever crash-consistent, because the replica VM is not running in order for guest integration services to take a VSS snapshot.</p>
+<p>Current versions of Hyper-V do not allow backing up a VM that is currently replicating. If a VM is found to be currently replicating at the time of backup, Comet will retry the operation a few times. If you repeatedly see errors of the form <code>The virtual machine '...' cannot start a backup operation because it is currently executing a conflicting operation. Try the backup again.</code>, and you are running backups from the replica VM host, you could consider</p>
+<ul>
+<li>scheduling the backup job to run at a time when it's more likely that the VM replication is up-to-date; or</li>
+<li>using Before / After commands in Comet to temporarily stop VM replication while the backup job is running.</li>
+</ul>
+<p>For more information about backing up a replica VM, see <a href="https://blogs.technet.microsoft.com/virtualization/2014/04/24/backup-of-a-replica-vm/">https://blogs.technet.microsoft.com/virtualization/2014/04/24/backup-of-a-replica-vm/</a> </p>
+<span class="docsSectionMarker"><span id="passthrough-disks" class="docsSectionMarkerChild"></span></span><h3>Pass-through disks&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#passthrough-disks">&para;</a></h3>
+<p><em>The following information applies to all products that perform Hyper-V backup.</em></p>
+<p>Hyper-V supports passthrough disks, to attach a physical disk from the host directly into the guest VM. This unmounts it from the host OS.</p>
+<p>Hyper-V itself does not support backing up passthrough disks (nor does it support replicating them). A Hyper-V backup of the guest machines can be taken from the host, but does not include any data from passthrough disks.</p>
+<p>You can work around this issue by either</p>
+<ul>
+<li>installing Comet Backup inside the guest VM, and backing up the extra data at a file level (this will use an extra Device license); or</li>
+<li>changing your passthrough disks to be a real disk containing a large <code>.vhd</code> or <code>.vhdx</code> file. The &quot;New Virtual Disk Wizard&quot; in Hyper-V Manager has an option to convert an existing disk to a <code>.vhd</code> or <code>.vhdx</code> file.</li>
+</ul>
+<p>For more information about backing up passthrough disks in Hyper-V, see <a href="https://blogs.technet.microsoft.com/virtualization/2009/03/03/working-around-the-pass-through-limitations-of-the-hyper-v-vss-writer/">https://blogs.technet.microsoft.com/virtualization/2009/03/03/working-around-the-pass-through-limitations-of-the-hyper-v-vss-writer/</a> </p>
+<span class="docsSectionMarker"><span id="microsoft-sql-server-items" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>&quot;Microsoft SQL Server&quot; items&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#microsoft-sql-server-items">&para;</a></h2>
+<p><em>Using this Protected Item type may incur a Booster charge.</em></p>
+<p>This Protected Item type backs up a Microsoft SQL Server database. The underlying technology is <code>VDI</code> and is compatible with SQL Server 2005 and later, including SQL Server 2019 (the latest version at the time of writing).</p>
+<p>No data is spooled to the local disk. As per the &quot;Program Output&quot; type, no progress bar or ETA appears during a Microsoft SQL Server backup.</p>
+<p>Databases are backed up one-at-a-time. If you require point-in-time consistency across multiple databases, please use the &quot;Application-Aware Writer&quot; option instead.</p>
+<span class="docsSectionMarker"><span id="connection-details" class="docsSectionMarkerChild"></span></span><h3>Connection details&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#connection-details">&para;</a></h3>
+<p>Connection details should be supplied before selecting databases. Comet will only connect to SQL Server running on the local machine. You must enter the instance name, or leave the field blank to use the default instance.</p>
+<span class="docsSectionMarker"><span id="address" class="docsSectionMarkerChild"></span></span><h4>Address&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#address">&para;</a></h4>
+<p>The address is always <code>localhost</code>, but Comet does not use TCP addresses or TCP ports to connect to SQL Server instances. Comet uses &quot;Shared Memory&quot; to connect to SQL Server instances.</p>
+<p>Comet's use of &quot;Shared Memory&quot; connection does improves performance for some operations, at the expense of only working on the local machine; but Comet's use of VDI requires it to run against the local machine anyway.</p>
+<p>If you encounter issues connecting to your SQL Server, you must ensure that &quot;Shared Memory protocol&quot; is enabled in SQL Server Configuration Manager.</p>
+<span class="docsSectionMarker"><span id="driver" class="docsSectionMarkerChild"></span></span><h4>Driver&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#driver">&para;</a></h4>
+<p><code>OLE DB</code> and <code>ODBC</code> are data access methods that use pluggable &quot;drivers&quot; / &quot;providers&quot; for connecting to databases like SQL Server. The following drivers for <code>OLE DB</code> / <code>ODBC</code> support SQL Server:</p>
+<table>
+<thead>
+<tr>
+<th>Driver</th>
+<th>TLS 1.2 Support</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MSOLEDBSQL</code></td>
+<td>Yes</td>
+<td>Included with SQL Server 2016 and 2017; Optional download from <a href="https://www.microsoft.com/en-us/download/details.aspx?id=56730">https://www.microsoft.com/en-us/download/details.aspx?id=56730</a></td>
+</tr>
+<tr>
+<td><code>SQLNCLI11</code></td>
+<td>Yes</td>
+<td>Included with SQL Server 2012 and 2014; Optional download from <a href="https://www.microsoft.com/en-us/download/details.aspx?id=50402">https://www.microsoft.com/en-us/download/details.aspx?id=50402</a></td>
+</tr>
+<tr>
+<td><code>SQLNCLI10</code></td>
+<td>No</td>
+<td>Included with SQL Server 2008</td>
+</tr>
+<tr>
+<td><code>SQLNCLI</code></td>
+<td>No</td>
+<td>Included with SQL Server 2005</td>
+</tr>
+<tr>
+<td><code>SQLOLEDB</code></td>
+<td>No</td>
+<td>Included with SQL Server (all versions); Included with Windows since XP / Server 2003</td>
+</tr>
+</tbody>
+</table>
+<p>Comet has been upgraded over time to support trying additional drivers:</p>
+<table>
+<thead>
+<tr>
+<th>Comet Version</th>
+<th>Preferred driver</th>
+<th>Fallback driver(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt;= 18.9.6, &gt;= 18.8.6</td>
+<td><code>MSOLEDBSQL</code></td>
+<td><code>SQLNCLI11</code>, <code>SQLOLEDB</code></td>
+</tr>
+<tr>
+<td>18.9.5</td>
+<td><code>MSOLEDBSQL</code></td>
+<td><code>SQLOLEDB</code></td>
+</tr>
+<tr>
+<td>18.9.4, 18.8.5 and older</td>
+<td><code>SQLOLEDB</code></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>You can list your installed drivers</p>
+<ul>
+<li>for <code>ODBC</code>, via the <code>odbcad32.exe</code> program &gt; &quot;Drivers&quot; tab; or</li>
+<li>for <code>OLE DB</code>, via <a href="https://stackoverflow.com/a/48298700">this PowerShell snippet</a>.</li>
+</ul>
+<span class="docsSectionMarker"><span id="authentication" class="docsSectionMarkerChild"></span></span><h4>Authentication&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#authentication">&para;</a></h4>
+<p>Comet allows you to connect to SQL Server using either Windows authentication (running as the backup service account - usually <code>NT SERVICE\backup.delegate</code> or <code>SYSTEM</code>), or native SQL Server authentication.</p>
+<ul>
+<li>If you are using Windows Authentication, the connection occurs as the backup service account.
+<ul>
+<li>You can assign this Windows user account to have <code>sysadmin</code> rights within SQL Server.</li>
+</ul></li>
+<li>If you are using SQL Server authentication, you must enter a valid username and password to connect to SQL Server.</li>
+</ul>
+<p class="highlight-upcoming">Impersonation is not currently available for Windows authentication. Future versions of Comet will support impersonation for Windows authentication.</p>
+<span class="docsSectionMarker"><span id="multiple-instances" class="docsSectionMarkerChild"></span></span><h4>Multiple instances&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#multiple-instances">&para;</a></h4>
+<p>Comet supports backing up multiple instances from SQL Server. You can select an instance for backup, by entering the instance name in the &quot;Instance Name&quot; field. Leave this field blank to use the default instance.</p>
+<p>Comet Backup automatically lists available instances for selection in the drop-down menu.</p>
+<p class="highlight-upcoming">A future version of Comet will make the instance dropdown list available for remote administration in Comet Server.</p>
+<span class="docsSectionMarker"><span id="backup-mode" class="docsSectionMarkerChild"></span></span><h3>Backup mode&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#backup-mode">&para;</a></h3>
+<p>By default, Comet opts to make a full database export from SQL Server, and then uses its own deduplication system to optimise the stored/uploaded data.</p>
+<p>This is the &quot;Full (copy only)&quot; option. It is equivalent to the <code>BACKUP WITH COPY_ONLY</code> T-SQL statement. </p>
+<p>Because Comet can efficiently deduplicate full image backups, it is normally sufficient to only take full backups of SQL Server in Comet.</p>
+<span class="docsSectionMarker"><span id="base-images" class="docsSectionMarkerChild"></span></span><h4>Base images&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#base-images">&para;</a></h4>
+<p>You have the option to use SQL Server's own differential/log backup system. This may be more efficient, but it does require additional administrative work, and complicates the process of restoring data.</p>
+<p>The SQL Server maintains one single point-in-time reference, from which it can produce differential backups and/or log-based backups. When you take a new &quot;Full (base image)&quot; backup, the point-in-time reference is moved forward, so that any future differential and/or log-based backups are based on the last base-image backup.</p>
+<p>To use SQL Server's own differential/log backup system, you must create multiple Protected Items (each with a different schedule) in order to capture both a base image and a differential/log backups. By creating multiple Protected Items, you can individually schedule, report-on, and manage retention policies for both base and differential/log backups.</p>
+<p>If you are using Comet alongside another product for SQL server backups, you should ensure that only one product is taking base-image backups. Otherwise, it's possible that a chain of differential/log backups would be incomplete.</p>
+<span class="docsSectionMarker"><span id="differential" class="docsSectionMarkerChild"></span></span><h4>Differential&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#differential">&para;</a></h4>
+<p>Comet can use SQL Server's own systems for differential backup. In this mode, you can regularly make &quot;differential base&quot; backups, and then a series of small &quot;differential increment&quot; backups, each containing the difference from the last base backup. These operations are equivalent to the <code>BACKUP</code> and <code>BACKUP WITH DIFFERENTIAL</code> T-SQL statements respectively. Comet will still deduplicate multiple base backups that are sent to the same Storage Vault.</p>
+<p>This is the &quot;Differential increment&quot; option.</p>
+<span class="docsSectionMarker"><span id="log" class="docsSectionMarkerChild"></span></span><h4>Log&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#log">&para;</a></h4>
+<p>You can opt to use SQL Server's own systems for log backup. In this mode, you must periodically take full (base image) backups, and regularly take log backups.</p>
+<p>You have the choice of whether to apply log truncation. These operations are equivalent to the <code>BACKUP LOG</code> and <code>BACKUP LOG WITH NO_TRUNCATE</code> T-SQL statements respectively. Comet will still deduplicate all data that is sent to the same Storage Vault.</p>
+<p>To use SQL Server's own log system, you must create multiple Protected Items (each with a different schedule) in order to capture both full and log backups.</p>
+<p>This mode requires that the database Recovery Model is set to &quot;Full&quot; or &quot;Bulk Logged&quot; in SQL Server. For more information, please see <a href="https://msdn.microsoft.com/en-us/library/ms189275.aspx">https://msdn.microsoft.com/en-us/library/ms189275.aspx</a> .</p>
+<span class="docsSectionMarker"><span id="recommendations" class="docsSectionMarkerChild"></span></span><h4>Recommendations&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#recommendations">&para;</a></h4>
+<p>In general, we would recommend using the default &quot;Full&quot; backup technique.</p>
+<p>SQL Server's native differential/log systems may be used if you experience performance issues with the default mode, however, you must ensure that</p>
+<ol>
+<li>No other backup systems are resetting the last base backup;</li>
+<li>Whenever the differential/log backs up successfully, that the base has also recently backed up successfully;</li>
+<li>Base backups are performed regularly to minimise differential overhead; and</li>
+<li>Retention is carefully managed to ensure that recovery is possible</li>
+</ol>
+<span class="docsSectionMarker"><span id="alternative-ways-to-back-up-microsoft-sql-server" class="docsSectionMarkerChild"></span></span><h3>Alternative ways to back up Microsoft SQL Server&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#alternative-ways-to-back-up-microsoft-sql-server">&para;</a></h3>
+<p>You can use the &quot;Application-Aware Writer&quot; type to back up SQL Server using the VSS Writer. Compared to Comet's standard VDI approach, this option enables more detailed progress information, and can take a consistent point-in-time snapshot of multiple databases at once; but offers more limited control over SQL Server features such as log truncation. The resulting files also must be restored in a different way.</p>
+<p>You can use Comet's &quot;Commands&quot; feature to call <code>osql</code>/<code>sqlcmd</code> to run a T-SQL <code>BACKUP</code> statement against the database, and then back up the resulting spooled file with the &quot;Files and Folders&quot; type. This option requires more temporary disk space than the built-in system above.</p>
+<p>You can use the &quot;Files and Folders&quot; type to back up individual database files if the &quot;Take filesystem snapshot&quot; option is selected. However, the &quot;Files and Folders&quot; backup type does not invoke SQL Server's VSS writer, so this would (at best) produce a &quot;crash-consistent&quot; backup and is <em>not recommended</em>.</p>
+<span class="docsSectionMarker"><span id="mysql-items" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>&quot;MySQL&quot; items&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#mysql-items">&para;</a></h2>
+<p>This Protected Item type backs up a MySQL database. It is also compatible with MySQL-compatible servers such as MariaDB and Percona Server. It works at the logical (SQL) level.</p>
+<p>No data is spooled to the local disk. As per the &quot;Program Output&quot; type, no progress bar or ETA appears during a MySQL backup.</p>
+<p>Databases are backed up one-at-a-time. Point-in-time consistency is only preserved on a per-database basis.</p>
+<span class="docsSectionMarker"><span id="connection-details-2" class="docsSectionMarkerChild"></span></span><h3>Connection details&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#connection-details-2">&para;</a></h3>
+<p>Connection details should be supplied before selecting databases. Fill in the fields at the bottom of the dialog window.</p>
+<span class="docsSectionMarker"><span id="selecting-databases" class="docsSectionMarkerChild"></span></span><h3>Selecting databases&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#selecting-databases">&para;</a></h3>
+<p>Use the plus button on the right to open a database browser, allowing you to select individual databases for backup. Use the dropdown-plus button to add a custom property.</p>
+<span class="docsSectionMarker"><span id="custom-mysqldump" class="docsSectionMarkerChild"></span></span><h3>Custom mysqldump&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#custom-mysqldump">&para;</a></h3>
+<p>Comet Backup's MySQL support works at the logical (SQL) level using <code>mysqldump</code>. A copy of this program must be found on the device in order for the backup job to run.</p>
+<p>The <code>mysqldump</code> binary is selected as follows:</p>
+<ul>
+<li>If a custom path to <code>mysqldump</code> has been set, this binary is used.</li>
+<li>Otherwise, if there is a version of <code>mysqldump</code> installed (e.g. you are backing up a MySQL server from the server itself), the local version of <code>mysqldump</code> will be used to ensure maximum compatibility.</li>
+<li>Otherwise, if no copy of <code>mysqldump</code> can be found, the Windows version of Comet Backup bundles a recent <code>mysqldump</code> binary in compliance with its license.</li>
+<li>If no suitable <code>mysqldump</code> binary is found, the MySQL backup job will fail with an error message <code>Couldn't find 'mysqldump' anywhere</code>. This failure can be detected via the backup job's status or its log entries.</li>
+</ul>
+<p>On Linux, you can install a copy of <code>mysqldump</code> as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Distro</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Debian, Ubuntu</td>
+<td><code>apt-get install mysql-client</code></td>
+</tr>
+<tr>
+<td>CentOS, RHEL</td>
+<td><code>yum install mysql</code></td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="system-databases" class="docsSectionMarkerChild"></span></span><h3>System databases&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#system-databases">&para;</a></h3>
+<p>Comet supports backing up the built-in system databases if desired.</p>
+<ul>
+<li>The <code>mysql</code> database contains server configuration, including user accounts and grants. It should only be restored to the same major release of MySQL.</li>
+<li>The <code>information_schema</code> database is a set of read-only views and does not need to be restored.</li>
+<li>The <code>performance_schema</code> database is a set of aggregated statistics and does not need to be restored.</li>
+<li><a href="https://dev.mysql.com/doc/refman/5.7/en/sys-schema.html">The <code>sys</code> database</a> (in MySQL 5.7.7 and higher) is a set of performance statistics and does not need to be restored. If your version of MySQL does not successfully back up this table, it is safe to exclude it from the Comet Backup settings.</li>
+</ul>
+<span class="docsSectionMarker"><span id="isolation-modes" class="docsSectionMarkerChild"></span></span><h3>Isolation modes&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#isolation-modes">&para;</a></h3>
+<p><em>This feature is available in Comet 19.3.0 and later.</em></p>
+<p>Comet allows you to select the isolation mode used when reading data from MySQL. You should select the most appropriate isolation mode for your MySQL engine type.</p>
+<p>The following options are available:</p>
+<table>
+<thead>
+<tr>
+<th>Isolation Mode</th>
+<th>InnoDB</th>
+<th>MyISAM</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Transaction</td>
+<td>Consistent</td>
+<td>Inconsistent</td>
+<td>Wrap all read access in a single transaction, so that the read data is consistent</td>
+</tr>
+<tr>
+<td>Lock tables <em>(default)</em></td>
+<td>Consistent, but slow</td>
+<td>Consistent, but slow</td>
+<td>Lock access to database before reading it, so that the read data is consistent. This requires that the MySQL user account has been granted the <code>LOCK TABLES</code> permission</td>
+</tr>
+<tr>
+<td>None</td>
+<td>Inconsistent</td>
+<td>Inconsistent</td>
+<td>Do not take a transaction and do not lock tables.</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="mongodb-items" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>&quot;MongoDB&quot; items&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#mongodb-items">&para;</a></h2>
+<p><em>This feature is available in Comet 19.9.3 and later.</em></p>
+<p><em>Using this Protected Item type may incur a Booster charge.</em></p>
+<p><a href="https://www.mongodb.com/">MongoDB</a> is a general purpose NoSQL database developed by MongoDB, Inc.</p>
+<p>Comet Backup supports backing up MongoDB databases as a Protected Item type.</p>
+<p>No temporary disk space is required: database content is streamed directly from the MongoDB server into Comet's chunking deduplication engine without requiring any temporary disk space. All backup jobs require only incremental storage using Comet's chunking technology.</p>
+<p>Backing up data from your MongoDB server will cause some additional load on the MongoDB server for the duration of the backup job.</p>
+<span class="docsSectionMarker"><span id="version-support" class="docsSectionMarkerChild"></span></span><h3>Version support&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#version-support">&para;</a></h3>
+<p>The underlying technology is <code>mongodump</code>. Comet will use your system installed <code>mongodump</code> version for best compatibility with the exact feature set of your MongoDB server. This is the officially supported mechanism for backing up a MongoDB database.</p>
+<p>This technology is also compatible with MongoDB forks, variants and cloud services, including but not limited to</p>
+<ul>
+<li>Self-hosted MongoDB server software
+<ul>
+<li>MongoDB Community Server</li>
+<li>MongoDB Enterprise Server</li>
+<li>TokuMX / Percona Server for Mongo</li>
+</ul></li>
+<li>Cloud hosted MongoDB services (SaaS)
+<ul>
+<li><a href="https://www.mongodb.com/cloud/atlas">MongoDB Atlas</a></li>
+<li><a href="https://aws.amazon.com/documentdb/">Amazon DocumentDB with MongoDB Compatibility</a></li>
+<li><a href="https://azure.microsoft.com/en-us/services/cosmos-db/">Azure CosmosDB's API for MongoDB</a></li>
+<li><a href="https://www.alibabacloud.com/product/apsaradb-for-mongodb">Alibaba Cloud ApsaraDB for MongoDB</a></li>
+</ul></li>
+</ul>
+<p>Comet will search the PC for the system installed <code>mongodump</code> and <code>mongo</code> shell binaries. If your binaries are installed in a normal system location, Comet will find and use the most recent available binary. If you have special requirements, or if Comet is unable to automatically detect the binary path, you can override the binary path to use a custom <code>mongodump</code> and <code>mongo</code> shell binary.</p>
+<span class="docsSectionMarker"><span id="connection-details-3" class="docsSectionMarkerChild"></span></span><h3>Connection details&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#connection-details-3">&para;</a></h3>
+<p>Connection details should be set before picking databases for backup. Enter your MongoDB connection details in the lower part of the window.</p>
+<p>Comet supports connecting to MongoDB in different ways:</p>
+<ul>
+<li>Direct connection
+<ul>
+<li>Enter a hostname and port for the MongoDB server (<code>mongod</code> / <code>mongos</code>). The default port is 27017.</li>
+</ul></li>
+<li>Direct connection through SSH tunnel
+<ul>
+<li>Comet will open an SSH tunnel to the remote server, and then run the locally installed <code>mongodump</code> binary against the forwarded port connection. The use of SSH as a transport layer is independent of whether SSL is also enabled (described below).</li>
+</ul></li>
+<li>Replica set
+<ul>
+<li>You must specify the name of the replica set (e.g. <code>rs0</code>)</li>
+<li>Add the hostname and port for each of the replica set members that are reachable from the Comet device.</li>
+<li>When using Replica Set connection in Comet, Comet will only read data from one of the members. You can use the &quot;read preference&quot; option to choose which MongoDB server Comet will prefer to back up from.
+<ul>
+<li>Primary
+<ul>
+<li>Comet will attempt to back up from the primary. If the primary server is unreachable, the backup job will fail.</li>
+</ul></li>
+<li>Primary preferred
+<ul>
+<li>Comet will attempt to back up from the primary, but will back up from the secondary if the primary is unreachable.</li>
+</ul></li>
+<li>Secondary
+<ul>
+<li>Comet will attempt to back up from the secondary. If the secondary server is unreachable, the backup job will fail.</li>
+</ul></li>
+<li>Secondary preferred
+<ul>
+<li>Comet will attempt to back up from the secondary, but will back up from the primary if the secondary is unreachable.</li>
+</ul></li>
+<li>Nearest
+<ul>
+<li>This option will back up data from the server in the replica set that has the lowest latency (ping) to the Comet device.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Comet supports the following transport layers:</p>
+<ul>
+<li>Plain</li>
+<li>SSL (TLS)
+<ul>
+<li>If your MongoDB server is using self-signed certificates, you can choose whether to trust an invalid SSL certificate from the MongoDB server. </li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="authentication-2" class="docsSectionMarkerChild"></span></span><h3>Authentication&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#authentication-2">&para;</a></h3>
+<p>Comet supports the following authentication mechanisms:</p>
+<ul>
+<li>Unauthenticated</li>
+<li>Username/password (<code>SCRAM</code>)
+<ul>
+<li>You must specify the authentication database for looking up the credentials inside MongoDB. The default authentication database is <code>admin</code>.</li>
+</ul></li>
+<li>Client certificates (<code>MONGODB-X509</code>)
+<ul>
+<li>This option is only available if the MongoDB server connection is going over an SSL (TLS) transport layer.</li>
+<li>To use this feature, you should have a <code>.pem</code> file that contains the client SSL (TLS) certificate, intermediates, and private key in text <code>X.509</code> format.</li>
+<li>A private key password is optionally supported.</li>
+</ul></li>
+</ul>
+<p>Other authentication mechanisms are not currently supported in Comet (e.g. neither Kerberos / LDAP when using MongoDB Enterprise; nor, custom authentication mechanisms used by MongoDB software variants).</p>
+<span class="docsSectionMarker"><span id="sharding" class="docsSectionMarkerChild"></span></span><h3>Sharding&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#sharding">&para;</a></h3>
+<p>Comet can backup a MongoDB replica set with a consistent point-in-time snapshot.</p>
+<p>Comet can back up a sharded MongoDB cluster, but depending on your MongoDB server version, there are some limitations:</p>
+<ul>
+<li>In MongoDB 4.2 and later, the backup may not be point-in-time consistent, unless writes are temporarily suspended to the MongoDB cluster (e.g. by running custom Before and After commands on the Comet Protected Item configuration).</li>
+<li>If you are using a variant MongoDB engine (e.g. Amazon DocumentDB or Azure CosmosDB), different consistency guarantees may apply to sharded backups. You should check with your vendor for additional information.</li>
+</ul>
+<p>To back up a sharded cluster in Comet, enter the <code>mongos</code> front-end server in the Comet connection details.</p>
+<p>When backing up from a <code>mongos</code> server, Comet cannot make use of the &quot;read preference&quot; selection as data is proxied through <code>mongos</code>. The backup will read from the primary replica set member of each shard replica set.</p>
+<span class="docsSectionMarker"><span id="selecting-databases-2" class="docsSectionMarkerChild"></span></span><h3>Selecting databases&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#selecting-databases-2">&para;</a></h3>
+<p>Use the plus button on the right to open a database browser, allowing you to select individual MongoDB databases for backup.</p>
+<p>Comet will back up all MongoDB collections within the selected MongoDB databases.</p>
+<span class="docsSectionMarker"><span id="restore-2" class="docsSectionMarkerChild"></span></span><h3>Restore&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#restore-2">&para;</a></h3>
+<p>Comet's MongoDB Protected Item type produces a <code>.bson</code> file for each selected MongoDB database. You can restore all databases, or selected databases only.</p>
+<p>When restoring, you can choose to either</p>
+<ul>
+<li>restore back to a <code>.bson</code> files on disk, and then import them into your MongoDB server; or</li>
+<li>you can use the Program Input restore type to pipe the restore data directly back into your MongoDB server</li>
+</ul>
+<span class="docsSectionMarker"><span id="windows-server-system-state-items" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>&quot;Windows Server System State&quot; items&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#windows-server-system-state-items">&para;</a></h2>
+<p>Comet Backup integrates with Windows Server System State to support backing up System State <code>.vhd</code> files using the <code>wbadmin</code> technology. This feature is only available on certain versions of Windows Server with the &quot;Server Backup Role&quot; feature enabled.</p>
+<p>A Windows Server System State backup may include Active Directory, boot files, the COM+ registration, the system Registry hive, and/or other system files.</p>
+<p>A local path must be used for spooling temporary data. Spooled temporary data will be removed once the backup job completes. The selected path </p>
+<ul>
+<li>must be a bare root drive, and</li>
+<li>must support VSS, and</li>
+<li>must have at minimum 10GB free space, and</li>
+<li>on Server 2008 and Server 2008 R2, must not reside on a &quot;critical&quot; volume
+<ul>
+<li>You can work around this issue by applying the registry change in <a href="http://support.microsoft.com/kb/944530">Microsoft KB944530</a>.</li>
+</ul></li>
+<li>must appear to Windows as fixed, not removable - regardless of whether it is physically an internal or external drive
+<ul>
+<li>You can work around this issue for a removable drive by sharing a folder on the drive, and setting its UNC path as the spool directory.</li>
+</ul></li>
+</ul>
+<p>For more information about Windows Server System State backups, please see</p>
+<ul>
+<li>Backing Up System State Data <a href="https://technet.microsoft.com/en-us/library/cc938537.aspx">https://technet.microsoft.com/en-us/library/cc938537.aspx</a> </li>
+<li>Wbadmin <a href="https://technet.microsoft.com/en-us/library/cc742124(v=ws.11).aspx">https://technet.microsoft.com/en-us/library/cc742124(v=ws.11).aspx</a> </li>
+</ul>
+<span class="docsSectionMarker"><span id="restoring" class="docsSectionMarkerChild"></span></span><h3>Restoring&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#restoring">&para;</a></h3>
+<p>Once you restore the <code>.vhd</code> file with Comet, you can use the <code>wbadmin start systemstaterecovery</code> command to apply a System State <code>.vhd</code> backup to an installed copy of Windows Server.</p>
+<span class="docsSectionMarker"><span id="alternative-ways-of-backing-up-system-state" class="docsSectionMarkerChild"></span></span><h3>Alternative ways of backing up System State&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#alternative-ways-of-backing-up-system-state">&para;</a></h3>
+<p>Note that because <code>wbadmin</code> is used, spool space is required. As an alternative, you can back up System State by using the &quot;Application-Aware Writer&quot; Protected Item type. This produces a similar result, but</p>
+<ul>
+<li>no spool space is required; and</li>
+<li>the files are not collected in a <code>.vhd</code> file. This may produce better deduplication at the expense of missing bootloader files.</li>
+</ul>
+<span class="docsSectionMarker"><span id="windows-system-backup-items" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>&quot;Windows System Backup&quot; items&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#windows-system-backup-items">&para;</a></h2>
+<p>Comet Backup integrates with Windows System Backup to support backing up entire system volumes as <code>.vhd</code> / <code>.vhdx</code> files using the <code>wbadmin</code> technology.</p>
+<p>Choose volumes to back up, and/or choose &quot;all critical volumes&quot;.</p>
+<ul>
+<li>You can choose a volume by its drive letter (e.g. <code>C:\</code>), or by a qualified Windows volume reference for volumes without a drive letter (see the output of <code>fsutil volume list</code>).</li>
+</ul>
+<p>A local path must be used for spooling temporary data. Spooled temporary data will be removed once the backup job completes. The selected spool path </p>
+<ul>
+<li>must be a bare root drive, and</li>
+<li>must not be included as one of the selected volumes, and</li>
+<li>must appear to Windows as fixed, not removable - regardless of whether it is physically an internal or external drive
+<ul>
+<li>You can work around this issue for a removable drive by sharing a folder on the drive, and setting its UNC path as the spool directory.</li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="restoring-data-drive" class="docsSectionMarkerChild"></span></span><h3>Restoring (Data drive)&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#restoring-data-drive">&para;</a></h3>
+<p>Once you restore the <code>.vhd</code> file with Comet, it can be mounted in Windows, or it can be browsed (e.g. in 7-Zip), or it can be attached to a virtual machine, or it can be written out to a physical volume. This will allow you to access and extract individual files and folders within the backup.</p>
+<span class="docsSectionMarker"><span id="restoring-bootable-operating-system" class="docsSectionMarkerChild"></span></span><h3>Restoring (Bootable Operating System)&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#restoring-bootable-operating-system">&para;</a></h3>
+<p>If you included the OS drive in the backup, it is possible to restore the OS to a bootable state, provided some additional conditions are met:</p>
+<p>The following method of restoring the OS requires that you included the &quot;System Reserved&quot; partition in the backup job; either by manually including the volume, or by choosing &quot;All Critical Volumes&quot; in the volume selection.</p>
+<p>If you do not include the &quot;System Reserved&quot; partition in the backup job, the resulting <code>.vhd</code> / <code>.vhdx</code> is a data-only file. In that situation you may need to manually recreate an NTLDR bootloader (using the <code>bootsect</code> and <code>bcdedit</code> commands) before the machine can be booted.</p>
+<p>If you are backing up a machine that booted via EFI, you may also need to backup and restore the EFI System Partition (ESP).</p>
+<p>Note that Windows OS installations do specialize themselves for the current hardware, and backup images are not automatically pre-prepared for hardware independence. An operating system image may only boot on identical- or highly-similar hardware. This issue originates from the <code>wbadmin</code> &quot;Windows System Backup&quot; technology and is not specific to Comet's implementation. You may find more information online.</p>
+<span class="docsSectionMarker"><span id="using-windows-recovery" class="docsSectionMarkerChild"></span></span><h4>Using Windows Recovery&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#using-windows-recovery">&para;</a></h4>
+<p>Once you restore the <code>.vhd</code> / <code>.vhdx</code> file(s) with Comet, you can boot into either Windows Recovery or the Windows install media, and choose the &quot;System Image Recovery&quot; option.</p>
+<p>It may be mandatory to keep the files in the <code>WindowsImageBackup</code> subdirectory on the root drive, in order for the &quot;System Image Recovery&quot; GUI to find the files. &quot;System Image Recovery&quot; is only able to restore a system image if the backup included the &quot;System Reserved&quot; partition.</p>
+<ul>
+<li>
+<p>In this dialog, you can click the &quot;Select a system image&quot; option to find the <code>.vhd</code> / <code>.vhdx</code> file, so that Windows can write it back to your physical disk.</p>
+</li>
+<li>
+<p>More information is available online, including a visual walkthrough: </p>
+<ul>
+<li>Windows 10 / Server 2016:
+<a href="https://answers.microsoft.com/en-us/windows/forum/windows_10-update/how-to-restore-a-windows-10-system-image-to-an/e20992ca-5641-4f7c-bb09-3895d0732162">via answers.microsoft.com</a></li>
+<li>Windows Vista / Server 2008: <a href="https://www.dell.com/support/article/nz/en/nzbsd1/sln156956/windows-server-how-to-restore-a-windows-server-2008-or-2008-r2-domain-controller-from-a-backup?lang=en">via dell.com</a></li>
+</ul>
+</li>
+<li>
+<p>Later versions of the Windows install media are able to recover vhd files of older versions of Windows, and may have better driver support. For instance, if you experience problems recovering a <code>.vhd</code> file using the Server 2008 install media, consider trying with install media from a newer version of windows.</p>
+</li>
+</ul>
+<span class="docsSectionMarker"><span id="using-wbadmin" class="docsSectionMarkerChild"></span></span><h4>Using wbadmin&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#using-wbadmin">&para;</a></h4>
+<p>You can use the <code>wbadmin start recovery</code> or <code>wbadmin start sysrecovery</code> commands to restore the OS without using the Windows &quot;System Image Recovery&quot; GUI.</p>
+<span class="docsSectionMarker"><span id="using-qemuimg" class="docsSectionMarkerChild"></span></span><h4>Using qemu-img&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#using-qemuimg">&para;</a></h4>
+<p>The <code>.vhd</code> file can be manually written out to a physical volume using <code>qemu-img</code> (e.g. <code>qemu-img convert -f vpc image.vhd /dev/sda</code>) or any similar tool.</p>
+<span class="docsSectionMarker"><span id="using-the-hypervisor" class="docsSectionMarkerChild"></span></span><h4>Using the hypervisor&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#using-the-hypervisor">&para;</a></h4>
+<p>The <code>.vhd</code> file can be attached to a virtual machine and booted as-is.</p>
+<span class="docsSectionMarker"><span id="alternative-ways-of-backing-up-windows-system-backup" class="docsSectionMarkerChild"></span></span><h3>Alternative ways of backing up Windows System Backup&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#alternative-ways-of-backing-up-windows-system-backup">&para;</a></h3>
+<p>Note that because <code>wbadmin</code> is used, spool space is required. It may be preferable to use the &quot;Files and Folders&quot; backup type instead, that does not require spool space. However, backing up a Windows OS installation in this way does not result in a bootable image.</p>
+<span class="docsSectionMarker"><span id="applicationaware-writer-items" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>&quot;Application-Aware Writer&quot; items&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#applicationaware-writer-items">&para;</a></h2>
+<p><em>Using this Protected Item type may incur a Booster charge.</em></p>
+<span class="docsSectionMarker"><span id="about" class="docsSectionMarkerChild"></span></span><h3>About&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#about">&para;</a></h3>
+<p>VSS is a technology for taking a consistent point-in-time snapshot of a disk volume. A VSS Writer is an extra software plugin that detects when this action is taking place and ensures that application-specific files are in a safe state on disk. Comet's &quot;Application-Aware Writer&quot; feature allows you to invoke a single VSS Writer, or a sub-component of a single VSS Writer, and back up only the files that it was protecting.</p>
+<p>This is also an important third-party integration point for application vendors. If your third-party application includes a VSS Writer, you can use this Protected Item type to back it up using Comet.</p>
+<p>Some products that can be backed up with this Protected Item type are:</p>
+<ul>
+<li>Oracle DB;</li>
+<li>MailStore Server;</li>
+<li>Microsoft Dynamics CRM;</li>
+<li>Microsoft Sharepoint;</li>
+<li>Pervasive PSQL;</li>
+<li>other products natively supported by Comet, including Microsoft Exchange Server, Microsoft Hyper-V, and Microsoft SQL Server;</li>
+<li>and other products.</li>
+</ul>
+<p>In versions of Comet before 18.3.13, the Protected Item type was named &quot;VSS-Aware Component&quot;.</p>
+<p><strong>NOTE:</strong> This Protected Item type is intended for integration with specific custom applications. If you want to back up normal files with a VSS snapshot, use the &quot;Files and Folders&quot; Protected Item type with the &quot;take filesystem snapshot&quot; option enabled.</p>
+<span class="docsSectionMarker"><span id="selecting-components" class="docsSectionMarkerChild"></span></span><h3>Selecting components&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#selecting-components">&para;</a></h3>
+<p>In Comet Backup, click the Edit button (pencil icon) to browse the available VSS Writers installed on your device.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="vss-aware-component.png"><img src="vss-aware-component.png.thumb.jpg" alt="" /></a></p>
+<p>You can select the top-most checkbox to include all components within the VSS Writer, or you can select individual components within the VSS Writer. For instance, the Microsoft SQL Server VSS Writer allows you to select individual databases for backup.</p>
+<p>The VSS Writer itself may mark some components as non-selectable. This is shown in Comet as a grey subcomponent without a checkbox.</p>
+<span class="docsSectionMarker"><span id="vss-mode" class="docsSectionMarkerChild"></span></span><h3>VSS Mode&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#vss-mode">&para;</a></h3>
+<p>You can perform the operation in &quot;VSS Full&quot;, &quot;VSS Copy&quot;, &quot;VSS Incremental&quot;, or &quot;VSS Differential&quot; modes. If a specific VSS Writer does not support the selected backup mode, it will perform the backup in &quot;Full&quot; mode.</p>
+<p>The actual behavior of these modes is specific to each VSS Writer. For more information, consult the documentation for your VSS Writer.</p>
+<span class="docsSectionMarker"><span id="backing-up-oracle-database" class="docsSectionMarkerChild"></span></span><h3>Backing up Oracle Database&nbsp;<a class="docsSectionLinkIcon" href="protected-items.html#backing-up-oracle-database">&para;</a></h3>
+<p>Comet can back up the contents of any installed VSS Writer using the &quot;Application Aware Writer&quot; option. Oracle Database officially supports backup via its installed VSS Writer.</p>
+<p>You may need to install the Oracle VSS Writer separately. It is available with Oracle Database 11g and later (including 12c and 18c); newer versions of the Oracle VSS Writer can be installed separately to back up a 10g or 9i database.</p>
+<p>You should use the &quot;Application Aware Writer&quot; option and select the <code>Oracle VSS Writer - ORCL</code> component. Inside this option, you can select individual tablespaces for backup, or select the entire component.</p>
+<p>The Oracle VSS Writer reads the database with <code>SYSDBA</code> privileges.</p>
+<p>The Oracle VSS Writer supports log, copy, full, differential, and incremental backups:</p>
+<ul>
+<li>if you take &quot;full&quot; or &quot;copy&quot; backups at the VSS component, Comet will deduplicate them together, producing its own incremental backups</li>
+<li>if you take &quot;incremental&quot; backups at the VSS component, it may be slightly more space-efficient than Comet's incremental system as Oracle has more specific understanding of the file formats. However, when restoring, you must take care to restore the full backup and all incremental/log backups too, that adds complexity.</li>
+</ul>
+<p>More information about the Oracle VSS Writer is available in <a href="https://docs.oracle.com/cd/B28359_01/win.111/b32010/vss.htm#NTQRF280">Oracle's documentation</a>.</p></div><div class="doc-navigation-section"><div class="doc-navigation-back doc-navigation-width-2"><a href="user-configuration.html">&laquo; Back: User configuration</a></div><div class="doc-navigation-next doc-navigation-width-2"><a href="storage-configuration.html">Next: Storage configuration &raquo;</a></div></div> 
+				</div>
+			</div>
+		</div>
+	
+	
+	</body>
+</html>
