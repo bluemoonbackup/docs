@@ -1,77 +1,0 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="docs.css">
-		<link rel="stylesheet" type="text/css" href="magnific-popup.css">		
-		<script type="text/javascript" src="jquery-1.12.4.min.js"></script>
-		<script type="text/javascript" src="jquery.scrollTo.min.js"></script>
-		<script type="text/javascript" src="magnific-popup.1.1.0.min.js"></script>
-		<script type="text/javascript" src="lunr-2.1.0.min.js"></script>
-		<script type="text/javascript" src="docs.js"></script>
-		<title>Documentation</title>		
-	</head>
-	<body>
-	
-		<div id="header-bar">
-			<div id="header-logo"></div>
-			Documentation
-		</div>
-	
-		<div id="main-area">
-			<div id="position-nav">
-				<div id="nav-inner">
-					<ul><li><form method="GET" action="search-results.html"><input name="s" class="search-box" placeholder="Search..."></form></li>
-<li><span class="category-header">Guides</span></li>
-<li><a href="guide-getting-started.html" title="Getting Started">Getting Started</a></li>
-<li><a href="guide-cometgo-getting-started.html" title="Getting Started with CometGo!">Getting Started with CometGo!</a></li>
-<li><a href="guide-seedload-walkthrough.html" title="Seed Load Walkthrough">Seed Load Walkthrough</a></li>
-<li><span class="category-header">Documentation</span></li>
-<li><a href="about-these-docs.html" title="Software Documentation">Software Documentation</a></li>
-<li><a href="application-architecture.html" title="Overview and Concepts">Overview and Concepts</a></li>
-<li><a href="comet-server-installation.html" title="Comet Server installation">Comet Server installation</a></li>
-<li><a href="comet-server-configuration.html" title="Comet Server configuration">Comet Server configuration</a></li>
-<li><a href="comet-server-usage.html" title="Comet Server usage">Comet Server usage</a></li>
-<li><a href="comet-backup-installation.html" title="Comet Backup installation">Comet Backup installation</a></li>
-<li><a href="comet-backup-usage.html" title="Comet Backup usage">Comet Backup usage</a></li>
-<li><a href="user-configuration.html" title="User configuration">User configuration</a></li>
-<li><a href="protected-items.html" title="Protected Item types">Protected Item types</a></li>
-<li><a href="storage-configuration.html" title="Storage configuration">Storage configuration</a></li>
-<li><a href="troubleshooting.html" title="Troubleshooting">Troubleshooting</a></li>
-<li><a href="api.html" title="API Guide">API Guide</a></li>
-<li><a href="api-reference.html" title="API Reference">API Reference</a></li>
-<li><a href="appendix.html" title="Appendix">Appendix</a></li>
-<li><a href="cloud-storage-providers.html" title="Cloud Storage Providers">Cloud Storage Providers</a></li>
-<li><a href="third-party-service-addons.html" title="Third-party service addons">Third-party service addons</a></li>
-<li><a href="comet-server-roles.html" title="Comet Server Roles ">Comet Server Roles </a></li>
-<li class="current-page"><a data-indent="0" class="subsection-link subsection-indent-0" href="#comet-chunking-overview" title="Comet Chunking Overview ">Comet Chunking Overview </a>
-<ul>
-<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#overview" title="Overview">Overview</a></li>
-<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#backing-up" title="Backing up">Backing up</a></li>
-<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#restoring" title="Restoring">Restoring</a></li>
-</ul>
-</li><li><a href="HIPAA-Compliance.html" title="HIPAA Compliance ">HIPAA Compliance </a></li>
-<li><a href="GDPR-Compliance.html" title="GDPR Compliance">GDPR Compliance</a></li>
-</ul>
-				</div>
-			</div>
-		
-			<div id="position-content">
-				<div id="content-inner">
-					<span class="docsSectionMarker"><span id="comet-chunking-overview" class="docsSectionMarkerChild"></span></span><h1>Comet Chunking Overview&nbsp;<a class="docsSectionLinkIcon" href="comet-chunking-overview.html#comet-chunking-overview">&para;</a></h1>
-<span class="docsSectionMarker"><span id="overview" class="docsSectionMarkerChild"></span></span><div class="docs-box"><h2>Overview&nbsp;<a class="docsSectionLinkIcon" href="comet-chunking-overview.html#overview">&para;</a></h2>
-<p>At the core of Comet is our technology that allows us to back-up and restore faster than the competition: this is called &quot;Chunking&quot;.</p>
-<span class="docsSectionMarker"><span id="backing-up" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Backing up&nbsp;<a class="docsSectionLinkIcon" href="comet-chunking-overview.html#backing-up">&para;</a></h2>
-<p>Comet backs up data by first splitting it into variable-sized chunks, which are individually compressed, encrypted, and uploaded. Comet uses data-dependent chunking, efficiently splitting a file into consistent chunks even in the face of random inserts.</p>
-<p>Further incremental back-up jobs simply realize that chunks already exist on the server and do not need to be re-uploaded.</p>
-<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="Chunking-backingup.PNG"><img src="Chunking-backingup.PNG.thumb.jpg" alt="" /></a></p>
-<span class="docsSectionMarker"><span id="restoring" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Restoring&nbsp;<a class="docsSectionLinkIcon" href="comet-chunking-overview.html#restoring">&para;</a></h2>
-<p>When it comes to restoring, Comet is just as fast. Comet directly downloads only the chunks it needs for the file and requires no additional space other than the size of the file and has no CPU intensive merging processes.</p>
-<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="Chunking-restoring.PNG"><img src="Chunking-restoring.PNG.thumb.jpg" alt="" /></a></p></div><div class="doc-navigation-section"><div class="doc-navigation-back doc-navigation-width-2"><a href="comet-server-roles.html">&laquo; Back: Comet Server Roles </a></div><div class="doc-navigation-next doc-navigation-width-2"><a href="HIPAA-Compliance.html">Next: HIPAA Compliance  &raquo;</a></div></div> 
-				</div>
-			</div>
-		</div>
-	
-	
-	</body>
-</html>

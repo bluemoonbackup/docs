@@ -7,14 +7,12 @@
     <script type="text/javascript" src="jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="jquery.scrollTo.min.js"></script>
     <script type="text/javascript" src="magnific-popup.1.1.0.min.js"></script>
-    <script type="text/javascript" src="lunr-2.1.0.min.js"></script>
     <script type="text/javascript" src="docs.js"></script>
     <title>Documentation</title>
   </head>
   <body>
     <div id="header-bar">
-      <div id="header-logo"></div>
-      Documentation
+      Blue Moon Backup Documentation
     </div>
 
     <div id="main-area">
@@ -22,454 +20,21 @@
         <div id="nav-inner">
           <ul>
             <li>
-              <form method="GET" action="search-results.html">
-                <input name="s" class="search-box" placeholder="Search..." />
-              </form>
+              <a href="/about-these-docs.html" title="Documentation"
+                >Documentation</a
+              >
             </li>
-            <li><span class="category-header">Guides</span></li>
+            <li><a href="/upgrade.html" title="Upgrade">Upgrade</a></li>
+
             <li>
-              <a href="guide-getting-started.html" title="Getting Started"
-                >Getting Started</a
+              <a href="cloud-backup-usage.html" title="Cloud Backup usage"
+                >Cloud Backup usage</a
               >
             </li>
             <li>
-              <a
-                href="guide-cometgo-getting-started.html"
-                title="Getting Started with CometGo!
-"
-                >Getting Started with CometGo!
-              </a>
-            </li>
-            <li>
-              <a
-                href="guide-seedload-walkthrough.html"
-                title="Seed Load Walkthrough"
-                >Seed Load Walkthrough</a
-              >
-            </li>
-            <li><span class="category-header">Documentation</span></li>
-            <li>
-              <a href="about-these-docs.html" title="Software Documentation"
-                >Software Documentation</a
-              >
-            </li>
-            <li>
-              <a
-                href="application-architecture.html"
-                title="Overview and Concepts"
-                >Overview and Concepts</a
-              >
-            </li>
-            <li>
-              <a
-                href="comet-server-installation.html"
-                title="Comet Server installation"
-                >Comet Server installation</a
-              >
-            </li>
-            <li>
-              <a
-                href="comet-server-configuration.html"
-                title="Comet Server configuration"
-                >Comet Server configuration</a
-              >
-            </li>
-            <li>
-              <a href="comet-server-usage.html" title="Comet Server usage"
-                >Comet Server usage</a
-              >
-            </li>
-            <li>
-              <a
-                href="comet-backup-installation.html"
-                title="Comet Backup installation"
-                >Comet Backup installation</a
-              >
-            </li>
-            <li>
-              <a href="comet-backup-usage.html" title="Comet Backup usage"
-                >Comet Backup usage</a
-              >
-            </li>
-            <li class="current-page">
-              <a
-                data-indent="0"
-                class="subsection-link subsection-indent-0"
-                href="#user-configuration"
-                title="User configuration"
+              <a href="user-configuration.html" title="User configuration"
                 >User configuration</a
               >
-              <ul>
-                <li>
-                  <a
-                    data-indent="1"
-                    class="subsection-link subsection-indent-1"
-                    href="#overview"
-                    title="Overview"
-                    >Overview</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="1"
-                    class="subsection-link subsection-indent-1"
-                    href="#profile"
-                    title="Profile"
-                    >Profile</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="2"
-                    class="subsection-link subsection-indent-2"
-                    href="#username"
-                    title="Username"
-                    >Username</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="3"
-                    class="subsection-link subsection-indent-3"
-                    href="#changes-to-username-support"
-                    title="Changes to username support"
-                    >Changes to username support</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="2"
-                    class="subsection-link subsection-indent-2"
-                    href="#password"
-                    title="Password"
-                    >Password</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="2"
-                    class="subsection-link subsection-indent-2"
-                    href="#language"
-                    title="Language"
-                    >Language</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="3"
-                    class="subsection-link subsection-indent-3"
-                    href="#help-translate-comet"
-                    title="Help translate Comet"
-                    >Help translate Comet</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="2"
-                    class="subsection-link subsection-indent-2"
-                    href="#timezone"
-                    title="Timezone"
-                    >Timezone</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="2"
-                    class="subsection-link subsection-indent-2"
-                    href="#email-addresses"
-                    title="Email addresses"
-                    >Email addresses</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="3"
-                    class="subsection-link subsection-indent-3"
-                    href="#custom-email-reports"
-                    title="Custom email reports"
-                    >Custom email reports</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="4"
-                    class="subsection-link subsection-indent-4"
-                    href="#recipes"
-                    title="Recipes"
-                    >Recipes</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="2"
-                    class="subsection-link subsection-indent-2"
-                    href="#quota"
-                    title="Quota"
-                    >Quota</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="3"
-                    class="subsection-link subsection-indent-3"
-                    href="#all-protected-items-quota"
-                    title="All Protected Items Quota"
-                    >All Protected Items Quota</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="3"
-                    class="subsection-link subsection-indent-3"
-                    href="#device-limit"
-                    title="Device Limit"
-                    >Device Limit</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="3"
-                    class="subsection-link subsection-indent-3"
-                    href="#storage-vault-quota"
-                    title="Storage Vault quota"
-                    >Storage Vault quota</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="2"
-                    class="subsection-link subsection-indent-2"
-                    href="#suspending-accounts"
-                    title="Suspending Accounts"
-                    >Suspending Accounts</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="1"
-                    class="subsection-link subsection-indent-1"
-                    href="#protected-items"
-                    title="Protected Items"
-                    >Protected Items</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="2"
-                    class="subsection-link subsection-indent-2"
-                    href="#overview-tab"
-                    title="Overview tab"
-                    >Overview tab</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="2"
-                    class="subsection-link subsection-indent-2"
-                    href="#items-tab"
-                    title="Items tab"
-                    >Items tab</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="2"
-                    class="subsection-link subsection-indent-2"
-                    href="#schedules"
-                    title="Schedules"
-                    >Schedules</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="3"
-                    class="subsection-link subsection-indent-3"
-                    href="#general-schedule-options"
-                    title="General Schedule options"
-                    >General Schedule options</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="3"
-                    class="subsection-link subsection-indent-3"
-                    href="#schedule-times"
-                    title="Schedule times"
-                    >Schedule times</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="3"
-                    class="subsection-link subsection-indent-3"
-                    href="#commands-schedule"
-                    title="Commands (Schedule)"
-                    >Commands (Schedule)</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="2"
-                    class="subsection-link subsection-indent-2"
-                    href="#commands-protected-item"
-                    title="Commands (Protected Item)"
-                    >Commands (Protected Item)</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="2"
-                    class="subsection-link subsection-indent-2"
-                    href="#retention-protected-item"
-                    title="Retention (Protected Item)"
-                    >Retention (Protected Item)</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="1"
-                    class="subsection-link subsection-indent-1"
-                    href="#retention-storage-vault"
-                    title="Retention (Storage Vault)"
-                    >Retention (Storage Vault)</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="2"
-                    class="subsection-link subsection-indent-2"
-                    href="#retention-pass"
-                    title="Retention Pass"
-                    >Retention Pass</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="3"
-                    class="subsection-link subsection-indent-3"
-                    href="#automatic-retention-passes"
-                    title="Automatic retention passes"
-                    >Automatic retention passes</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="3"
-                    class="subsection-link subsection-indent-3"
-                    href="#manual-retention-passes"
-                    title="Manual retention passes"
-                    >Manual retention passes</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="2"
-                    class="subsection-link subsection-indent-2"
-                    href="#preferences"
-                    title="Preferences"
-                    >Preferences</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="2"
-                    class="subsection-link subsection-indent-2"
-                    href="#retention-policies"
-                    title="Retention policies"
-                    >Retention policies</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="3"
-                    class="subsection-link subsection-indent-3"
-                    href="#retention-ranges"
-                    title="Retention ranges"
-                    >Retention ranges</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="1"
-                    class="subsection-link subsection-indent-1"
-                    href="#storage-vaults"
-                    title="Storage Vaults"
-                    >Storage Vaults</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="2"
-                    class="subsection-link subsection-indent-2"
-                    href="#general-tab"
-                    title="General tab"
-                    >General tab</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="3"
-                    class="subsection-link subsection-indent-3"
-                    href="#quota-storage-vault"
-                    title="Quota (Storage Vault)"
-                    >Quota (Storage Vault)</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="4"
-                    class="subsection-link subsection-indent-4"
-                    href="#after-a-quota-has-been-exceeded"
-                    title="After a quota has been exceeded"
-                    >After a quota has been exceeded</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="2"
-                    class="subsection-link subsection-indent-2"
-                    href="#storage-tab"
-                    title="Storage tab"
-                    >Storage tab</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="2"
-                    class="subsection-link subsection-indent-2"
-                    href="#commands"
-                    title="Commands"
-                    >Commands</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="2"
-                    class="subsection-link subsection-indent-2"
-                    href="#encryption"
-                    title="Encryption"
-                    >Encryption</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="1"
-                    class="subsection-link subsection-indent-1"
-                    href="#devices"
-                    title="Devices"
-                    >Devices</a
-                  >
-                </li>
-                <li>
-                  <a
-                    data-indent="1"
-                    class="subsection-link subsection-indent-1"
-                    href="#policies"
-                    title="Policies"
-                    >Policies</a
-                  >
-                </li>
-              </ul>
             </li>
             <li>
               <a href="protected-items.html" title="Protected Item types"
@@ -477,75 +42,11 @@
               >
             </li>
             <li>
-              <a href="storage-configuration.html" title="Storage configuration"
-                >Storage configuration</a
-              >
-            </li>
-            <li>
               <a href="troubleshooting.html" title="Troubleshooting"
                 >Troubleshooting</a
               >
             </li>
-            <li>
-              <a
-                href="api.html"
-                title="API Guide
-"
-                >API Guide
-              </a>
-            </li>
-            <li>
-              <a href="api-reference.html" title="API Reference"
-                >API Reference</a
-              >
-            </li>
             <li><a href="appendix.html" title="Appendix">Appendix</a></li>
-            <li>
-              <a
-                href="cloud-storage-providers.html"
-                title="Cloud Storage Providers"
-                >Cloud Storage Providers</a
-              >
-            </li>
-            <li>
-              <a
-                href="third-party-service-addons.html"
-                title="Third-party service addons"
-                >Third-party service addons</a
-              >
-            </li>
-            <li>
-              <a
-                href="comet-server-roles.html"
-                title="Comet Server Roles
-"
-                >Comet Server Roles
-              </a>
-            </li>
-            <li>
-              <a
-                href="comet-chunking-overview.html"
-                title="Comet Chunking Overview
-"
-                >Comet Chunking Overview
-              </a>
-            </li>
-            <li>
-              <a
-                href="HIPAA-Compliance.html"
-                title="HIPAA Compliance
-"
-                >HIPAA Compliance
-              </a>
-            </li>
-            <li>
-              <a
-                href="GDPR-Compliance.html"
-                title="GDPR Compliance
-"
-                >GDPR Compliance
-              </a>
-            </li>
           </ul>
         </div>
       </div>
@@ -575,12 +76,12 @@
             </h2>
             <p>
               An administrator can change user account properties, Protected
-              Item, Storage Vault, Device, and Policy settings via the Comet
-              Server web interface.
+              Item, Storage Vault, Device, and Policy settings via the Server
+              web interface.
             </p>
             <p>
               A user can change their own Protected Item and Storage Vault
-              settings via the Comet Backup client application and the web
+              settings via the Cloud Backup client application and the web
               interface.
             </p>
             <p>The descriptions in this section apply to both situations.</p>
@@ -596,11 +97,6 @@
                 >&para;</a
               >
             </h2>
-            <p class="doc-standalone-image-paragraph">
-              <a class="doc-thumbnail-popup" href="comet-server-user-page.png"
-                ><img src="comet-server-user-page.png.thumb.jpg" alt=""
-              /></a>
-            </p>
             <span class="docsSectionMarker"
               ><span id="username" class="docsSectionMarkerChild"></span
             ></span>
@@ -618,36 +114,6 @@
               (<code>@</code>), and hyphen (<code>-</code>).
             </p>
             <p>Usernames are case-sensitive.</p>
-            <span class="docsSectionMarker"
-              ><span
-                id="changes-to-username-support"
-                class="docsSectionMarkerChild"
-              ></span
-            ></span>
-            <h4>
-              Changes to username support&nbsp;<a
-                class="docsSectionLinkIcon"
-                href="user-configuration.html#changes-to-username-support"
-                >&para;</a
-              >
-            </h4>
-            <p>
-              Certain versions of Comet expanded the list of characters allowed
-              in usernames. Usernames that are valid for newer versions of Comet
-              may be invalid when used with older versions of Comet. This may
-              impact certain scenarios including software downgrades and/or
-              mixed-server-version replication.
-            </p>
-            <p>
-              If you have usernames that would be invalid under older versions
-              of Comet, please take care to ensure that all your Comet
-              infrastructure is upgraded past the point of conversion, to
-              prevent any potential issues that may occur.
-            </p>
-            <p class="highlight-upcoming">
-              Future versions of Comet may allow characters from international
-              alphabets in usernames (subject to Unicode normalization).
-            </p>
             <span class="docsSectionMarker"
               ><span id="password" class="docsSectionMarkerChild"></span
             ></span>
@@ -667,115 +133,6 @@
               characters, symbols, and characters from international alphabets.
             </p>
             <span class="docsSectionMarker"
-              ><span id="language" class="docsSectionMarkerChild"></span
-            ></span>
-            <h3>
-              Language&nbsp;<a
-                class="docsSectionLinkIcon"
-                href="user-configuration.html#language"
-                >&para;</a
-              >
-            </h3>
-            <p>The user is able to set their own language.</p>
-            <p>As of Comet 18.12.0, the following languages are supported:</p>
-            <table>
-              <thead>
-                <tr>
-                  <th>Language</th>
-                  <th>Code</th>
-                  <th>First introduced</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>English</td>
-                  <td><code>en_US</code></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Spanish</td>
-                  <td><code>es_ES</code></td>
-                  <td>Comet Beta 1.0.0</td>
-                </tr>
-                <tr>
-                  <td>Portuguese (Brazil)</td>
-                  <td><code>pt_BR</code></td>
-                  <td>Comet 17.3.2</td>
-                </tr>
-                <tr>
-                  <td>Dutch</td>
-                  <td><code>nl_NL</code></td>
-                  <td>Comet 17.3.4</td>
-                </tr>
-                <tr>
-                  <td>Italian</td>
-                  <td><code>it_IT</code></td>
-                  <td>Comet 17.9.0</td>
-                </tr>
-                <tr>
-                  <td>German</td>
-                  <td><code>de_DE</code></td>
-                  <td>Comet 17.9.2</td>
-                </tr>
-                <tr>
-                  <td>French</td>
-                  <td><code>fr_FR</code></td>
-                  <td>Comet 17.9.2</td>
-                </tr>
-                <tr>
-                  <td>Croatian</td>
-                  <td><code>hr_HR</code></td>
-                  <td>Comet 17.12.6</td>
-                </tr>
-                <tr>
-                  <td>Russian</td>
-                  <td><code>ru_RU</code></td>
-                  <td>Comet 18.5.0</td>
-                </tr>
-                <tr>
-                  <td>Hebrew</td>
-                  <td><code>he_IL</code></td>
-                  <td>Comet 18.6.0</td>
-                </tr>
-                <tr>
-                  <td>Portuguese (Europe)</td>
-                  <td><code>pt_PT</code></td>
-                  <td>Comet 18.12.0</td>
-                </tr>
-              </tbody>
-            </table>
-            <span class="docsSectionMarker"
-              ><span
-                id="help-translate-comet"
-                class="docsSectionMarkerChild"
-              ></span
-            ></span>
-            <h4>
-              Help translate Comet&nbsp;<a
-                class="docsSectionLinkIcon"
-                href="user-configuration.html#help-translate-comet"
-                >&para;</a
-              >
-            </h4>
-            <p>
-              Our company is committed to making Comet available in multiple
-              languages. Our staff mostly only speak English, so we contract
-              translation companies to perform this work.
-            </p>
-            <p>
-              However, the best-quality translations come from our customers,
-              who better understand the software and the backup industry. We
-              would really appreciate any translation assistance you can offer.
-            </p>
-            <p>
-              If you want to correct a translation in Comet, or if you want to
-              translate Comet into a new language, further information is
-              available via
-              <a href="https://github.com/CometBackup/translations"
-                >CometBackup/translations at GitHub</a
-              >.
-            </p>
-            <span class="docsSectionMarker"
               ><span id="timezone" class="docsSectionMarkerChild"></span
             ></span>
             <h3>
@@ -786,7 +143,7 @@
               >
             </h3>
             <p>
-              The Comet Backup client app resets the user's timezone
+              the Cloud Backup client app resets the user's timezone
               automatically, to match the user's operating system timezone. An
               administrator can set the user's timezone to any valid IANA
               <code>tzdata</code> timezone. The default timezone for new
@@ -809,15 +166,15 @@
               >
             </h3>
             <p>
-              Comet Server has some built-in features to send email reports to
-              customers. You can configure any number of email addresses for a
-              user account.
+              Cloud Backup Server has some built-in features to send email
+              reports to customers. You can configure any number of email
+              addresses for a user account.
             </p>
             <p>
-              Email addresses can be configured via Comet Server and via the
-              Comet Backup client. An administrator can set an account policy to
-              control whether users are allowed to modify their own email
-              addresses.
+              Email addresses can be configured via Cloud Backup Server and via
+              the Cloud Backup client. An administrator can set an account
+              policy to control whether users are allowed to modify their own
+              email addresses.
             </p>
             <span class="docsSectionMarker"
               ><span
@@ -837,8 +194,7 @@
               backup job finishes.
             </p>
             <p>
-              Comet supports customising the email reports received by
-              customers.
+              You can customize the email reports received by customers.
             </p>
             <p class="doc-standalone-image-paragraph">
               <a class="doc-thumbnail-popup" href="email-custom-1.png"
@@ -884,8 +240,8 @@
             </p>
             <p>
               For report templates allowing custom schedules, you can use any
-              schedule supported by Comet's normal backup scheduler. Scheduled
-              times are relative to each customer's configured local timezone.
+              schedule supported by the normal backup scheduler. Scheduled times
+              are relative to each customer's configured local timezone.
             </p>
             <span class="docsSectionMarker"
               ><span id="recipes" class="docsSectionMarkerChild"></span
@@ -1003,14 +359,7 @@
                 ><img src="email-custom-2.png.thumb.jpg" alt=""
               /></a>
             </p>
-            <iframe
-              width="700"
-              height="440"
-              src="https://www.youtube.com/embed/ZxguTdW1Fvs"
-              frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+
             <span class="docsSectionMarker"
               ><span id="quota" class="docsSectionMarkerChild"></span
             ></span>
@@ -1022,7 +371,7 @@
               >
             </h3>
             <p>
-              Comet Backup supports Quota restrictions based on different types
+              Cloud Backup supports Quota restrictions based on different types
               of data measurements.
             </p>
             <span class="docsSectionMarker"
@@ -1078,33 +427,9 @@
             <p>
               For more information about Storage Vault quota, please see the
               <a href="/docs/user-configuration#quota-storage-vault"
-                >Storage Vault &gt; Quota</a
+                >Vault &gt; Quota</a
               >
               section below.
-            </p>
-            <span class="docsSectionMarker"
-              ><span
-                id="suspending-accounts"
-                class="docsSectionMarkerChild"
-              ></span
-            ></span>
-            <h3>
-              Suspending Accounts&nbsp;<a
-                class="docsSectionLinkIcon"
-                href="user-configuration.html#suspending-accounts"
-                >&para;</a
-              >
-            </h3>
-            <p>
-              An administrator is able to suspend user accounts in Comet Server.
-              An administrator can suspend a user account by clicking the
-              'Actions' button and choosing the 'Suspend' option. You can
-              unsuspend a suspended account in the same way.
-            </p>
-            <p>
-              A suspended user cannot log in to the Comet Backup client and
-              cannot backup nor restore any data. A user is not able to
-              un-suspend themselves.
             </p>
             <span class="docsSectionMarker"
               ><span id="protected-items" class="docsSectionMarkerChild"></span
@@ -1163,9 +488,8 @@
               /></a>
             </p>
             <p>
-              Comet can run backup jobs automatically on a schedule. It is
-              strongly recommended to automate your backups on a regular
-              schedule.
+              Backup jobs can run automatically on a schedule. It is strongly
+              recommended to automate your backups on a regular schedule.
             </p>
             <p>Click the plus button to add a new schedule.</p>
             <span class="docsSectionMarker"
@@ -1194,8 +518,8 @@
             <ul>
               <li>
                 <strong>Skip if already running</strong>. If this option is
-                enabled, and another backup job is known by the Comet Server to
-                exist for the same Protected Item and Storage Vault in
+                enabled, and another backup job is known by the Cloud Backup
+                Server to exist for the same Protected Item and Storage Vault in
                 &quot;Running&quot; status, then this backup job will be
                 skipped. Skipping a backup job creates a log entry for the job
                 in &quot;Skipped&quot; status.
@@ -1207,13 +531,13 @@
               </li>
               <li>
                 <strong>Limit Storage Vault Speed</strong>. This option allows
-                you to limit the total speed that Comet reads and writes to the
-                Storage Vault. The speed limit applies to the total combined
-                read/write bandwidth.
+                you to limit the total speed that Cloud Backup reads and writes
+                to the Storage Vault. The speed limit applies to the total
+                combined read/write bandwidth.
               </li>
               <li>
                 <strong>Limit backup to use only 1 disk thread</strong>. When
-                reading multiple files from the local disk for backup, Comet
+                reading multiple files from the local disk for backup, Clout
                 Backup uses multithreading to improve performance. On some
                 machines, this can impact PC performance. If you are
                 experiencing low system performance while the backup job is
@@ -1227,7 +551,7 @@
               <li>
                 <strong>Allow backup of zero files to succeed</strong>. If a
                 backup job completes successfully but did not include any files
-                in the backup, Comet will by default mark the job as
+                in the backup, Cloud Backup will by default mark the job as
                 &quot;Error&quot; status. This is a useful feature to help
                 detect against accidental path changes or incorrect file
                 selections. However in some cases you may expect a backup job to
@@ -1290,13 +614,13 @@
               </li>
             </ul>
             <p>
-              If the device is online, Comet Backup will try to run the backup
+              If the device is online, Cloud Backup will try to run the backup
               job. If the device is not online, or the backup job could not be
-              started, the Comet Server will inject a &quot;Missed&quot; job
-              into the customer's backup job log. Administrators can use these
-              &quot;Missed&quot; backup job notifications when monitoring the
-              job history for their customers, to ensure that backup jobs run on
-              schedule.
+              started, the Cloud Backup Server will inject a &quot;Missed&quot;
+              job into the customer's backup job log. Administrators can use
+              these &quot;Missed&quot; backup job notifications when monitoring
+              the job history for their customers, to ensure that backup jobs
+              run on schedule.
             </p>
             <p>Event-based schedule frequencies are also available.</p>
             <p>The available event-based schedule frequencies are:</p>
@@ -1317,7 +641,7 @@
             </ul>
             <p>
               The time that the &quot;PC starts&quot; is defined as follows: the
-              time that the Comet Backup background service started, if the
+              time that the Cloud Backup background service started, if the
               system uptime is less than 10 minutes.
               <em>(This definition is subject to change.)</em>
             </p>
@@ -1340,13 +664,7 @@
             </p>
             <p>
               The Commands feature on a Schedule works the same way as for
-              Commands on a Protected Item or on a Storage Vault. For more
-              information about the Commands feature, please see details under
-              the
-              <a href="/docs/application-architecture#overview-and-concepts"
-                >Overview and Concepts</a
-              >
-              section.
+              Commands on a Protected Item or on a Storage Vault.
             </p>
             <span class="docsSectionMarker"
               ><span
@@ -1367,12 +685,7 @@
             </p>
             <p>
               The Commands feature on a Protected Item works the same way as for
-              Commands on a Storage Vault or on a Schedule. For more information
-              about the Commands feature, please see details under the
-              <a href="/docs/application-architecture#overview-and-concepts"
-                >Overview and Concepts</a
-              >
-              section.
+              Commands on a Storage Vault or on a Schedule.
             </p>
             <span class="docsSectionMarker"
               ><span
@@ -1431,7 +744,7 @@
               the Storage Vault that exceeds the configured retention policy.
             </p>
             <p>
-              During a retention pass, Comet Backup looks at each backed-up job
+              During a retention pass, Cloud Backup looks at each backed-up job
               within the Storage Vault and determines whether it meets the
               retention policy. If the retention policy states that the
               backed-up job can be safely removed, the backed-up job is removed
@@ -1457,12 +770,12 @@
             <p>
               Because the retention pass is a destructive action, it temporarily
               requires the Storage Vault to be completely idle, to take
-              exclusive control over the Storage Vault. Comet Backup has to
+              exclusive control over the Storage Vault. Cloud Backup has to
               determine a possible idle time. Without loss of generality, any
               possible idle-time always occurs at the end of some backup job. By
               checking at the end of a backup job as to whether the Storage
-              Vault is idle, Comet is guaranteed to find the idle time-window as
-              long as such a time-window exists.
+              Vault is idle, Cloud Backup is guaranteed to find the idle
+              time-window as long as such a time-window exists.
             </p>
             <p>
               An automatic retention pass is not necessarily critical, and so if
@@ -1473,8 +786,8 @@
               The &quot;overdue&quot; rules for automatic retention passes are
               based on the time since the previous successful retention pass,
               and, the number of jobs exceeding the configured retention policy.
-              The exact rules are subject to change in future versions of Comet.
-              As of Comet 19.12.4, the rules are as follows:
+              The exact rules are subject to change in future versions of Cloud
+              Backup. As of Cloud Backup 19.12.4, the rules are as follows:
             </p>
             <table>
               <thead>
@@ -1524,12 +837,14 @@
                 attempted at the end of the backup job
               </li>
               <li>
-                &quot;Attempt&quot; means that Comet will attempt a retention
-                pass, but not throw an error if the Storage Vault is still busy
+                &quot;Attempt&quot; means that Cloud Backup will attempt a
+                retention pass, but not throw an error if the Storage Vault is
+                still busy
               </li>
               <li>
-                &quot;Require&quot; means that Comet will attempt a retention
-                pass, and will throw an error if the Storage Vault is still busy
+                &quot;Require&quot; means that Cloud Backup will attempt a
+                retention pass, and will throw an error if the Storage Vault is
+                still busy
               </li>
             </ul>
             <span class="docsSectionMarker"
@@ -1547,9 +862,9 @@
             </h4>
             <p>
               You can run a retention pass for a Storage Vault on demand, by
-              right-clicking the Storage Vault within the Comet Backup
+              right-clicking the Storage Vault within the Cloud Backup
               application, or an administrator can remotely initiate this by
-              using the live-connection action from the Comet Server web
+              using the live-connection action from the Cloud Backup Server web
               interface.
             </p>
             <p>
@@ -1567,8 +882,8 @@
               >
             </h3>
             <p>
-              Comet allows you to configure retention for a Storage Vault, as
-              well as for a Protected Item / Storage Vault pair.
+              Cloud Backup allows you to configure retention for a Storage
+              Vault, as well as for a Protected Item / Storage Vault pair.
             </p>
             <p>
               The retention rule for the pair will be used in preference to the
@@ -1582,7 +897,7 @@
               </li>
               <li>
                 the Protected Item is unknown, deleted, or belongs to a
-                different Comet user account
+                different Cloud Backup user account
               </li>
             </ul>
             <span class="docsSectionMarker"
@@ -1661,8 +976,8 @@
                   </td>
                   <td>Specify a number of days.</td>
                   <td>
-                    Comet will keep the single first backup job from each of
-                    that most recent days
+                    Cloud Backup will keep the single first backup job from each
+                    of that most recent days
                   </td>
                 </tr>
                 <tr>
@@ -1671,9 +986,9 @@
                   </td>
                   <td>Specify a number of weeks, and a day of the week</td>
                   <td>
-                    Comet will keep the single first backup job that occurred on
-                    that day of the wek, for each of that number of most recent
-                    weeks
+                    Cloud Backup will keep the single first backup job that
+                    occurred on that day of the wek, for each of that number of
+                    most recent weeks
                   </td>
                 </tr>
                 <tr>
@@ -1684,16 +999,16 @@
                   </td>
                   <td>Specify a number of months, and a calendar date</td>
                   <td>
-                    Comet will keep the single first backup job that occurred on
-                    that calendar date, for each of that number of most recent
-                    months
+                    Cloud Backup will keep the single first backup job that
+                    occurred on that calendar date, for each of that number of
+                    most recent months
                   </td>
                 </tr>
               </tbody>
             </table>
             <p class="highlight-upcoming">
-              Future versions of Comet may make additional Retention Range
-              options available.
+              Future versions of Cloud Backup may make additional Retention
+              Range options available.
             </p>
             <span class="docsSectionMarker"
               ><span id="storage-vaults" class="docsSectionMarkerChild"></span
@@ -1741,9 +1056,9 @@
               >
             </h4>
             <p>
-              On this tab, an administrator using Comet Server can configure a
-              quota limit, restricting the total amount of data stored within
-              this Storage Vault.
+              On this tab, an administrator using Cloud Backup Server can
+              configure a quota limit, restricting the total amount of data
+              stored within this Storage Vault.
             </p>
             <p>
               You can set this property on a per-Storage Vault basis. For
@@ -1808,12 +1123,7 @@
             <p>
               On this tab, you can configure the data storage location for this
               Storage Vault. A number of types are available, including local
-              disk storage, network accounts, and cloud storage providers. For
-              more information about data storage locations, please see the
-              <a href="/docs/storage-configuration#storage-configuration"
-                >Storage Configuration</a
-              >
-              documentation.
+              disk storage, network accounts, and cloud storage providers.
             </p>
             <span class="docsSectionMarker"
               ><span id="commands" class="docsSectionMarkerChild"></span
@@ -1827,12 +1137,7 @@
             </h3>
             <p>
               The Commands feature on a Protected Item works the same way as for
-              Commands on a Storage Vault or on a Schedule. For more information
-              about the Commands feature, please see details under the
-              <a href="/docs/application-architecture#overview-and-concepts"
-                >Overview and Concepts</a
-              >
-              section.
+              Commands on a Storage Vault or on a Schedule.
             </p>
             <span class="docsSectionMarker"
               ><span id="encryption" class="docsSectionMarkerChild"></span
@@ -1845,9 +1150,9 @@
               >
             </h3>
             <p>
-              Comet automatically enables encryption for all Storage Vaults.
-              This is not customizable; this tab solely serves to indicate that
-              fact to unaware users.
+              Cloud Backup automatically enables encryption for all Storage
+              Vaults. This is not customizable; this tab solely serves to
+              indicate that fact to unaware users.
             </p>
             <p>
               Storage Vault encryption is initialized upon first-use. You can
@@ -1889,7 +1194,7 @@
               also limit the total number of devices in an account.
             </p>
             <p>
-              If a device is live-connected to the Comet Server, an
+              If a device is live-connected to the Cloud Backup Server, an
               administrator can request that the device performs certain
               actions.
             </p>
@@ -1907,26 +1212,9 @@
             </h2>
             <p>
               An administrator can apply additional restrictions to user
-              accounts, using the Policies feature in the Comet Server web
-              interface. For more information about the Policies feature, please
-              see details under the
-              <a href="/docs/comet-server-usage#policies"
-                >Comet Server Usage - Policies</a
-              >
-              section.
+              accounts, using the Policies feature in the Cloud Backup Server
+              web interface.
             </p>
-          </div>
-          <div class="doc-navigation-section">
-            <div class="doc-navigation-back doc-navigation-width-2">
-              <a href="comet-backup-usage.html"
-                >&laquo; Back: Comet Backup usage</a
-              >
-            </div>
-            <div class="doc-navigation-next doc-navigation-width-2">
-              <a href="protected-items.html"
-                >Next: Protected Item types &raquo;</a
-              >
-            </div>
           </div>
         </div>
       </div>

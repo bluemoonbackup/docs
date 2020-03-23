@@ -7,93 +7,24 @@
     <script type="text/javascript" src="jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="jquery.scrollTo.min.js"></script>
     <script type="text/javascript" src="magnific-popup.1.1.0.min.js"></script>
-    <script type="text/javascript" src="lunr-2.1.0.min.js"></script>
     <script type="text/javascript" src="docs.js"></script>
     <title>Documentation</title>
   </head>
   <body>
     <div id="header-bar">
-      <div id="header-logo"></div>
-      Documentation
+      Blue Moon Backup Documentation
     </div>
 
     <div id="main-area">
       <div id="position-nav">
         <div id="nav-inner">
           <ul>
+						<li><a href="/about-these-docs.html" title="Documentation">Documentation</a></li>
+						<li><a href="/upgrade.html" title="Upgrade">Upgrade</a></li>
+
             <li>
-              <form method="GET" action="search-results.html">
-                <input name="s" class="search-box" placeholder="Search..." />
-              </form>
-            </li>
-            <li><span class="category-header">Guides</span></li>
-            <li>
-              <a href="guide-getting-started.html" title="Getting Started"
-                >Getting Started</a
-              >
-            </li>
-            <li>
-              <a
-                href="guide-cometgo-getting-started.html"
-                title="Getting Started with CometGo!
-"
-                >Getting Started with CometGo!
-              </a>
-            </li>
-            <li>
-              <a
-                href="guide-seedload-walkthrough.html"
-                title="Seed Load Walkthrough"
-                >Seed Load Walkthrough</a
-              >
-            </li>
-            <li><span class="category-header">Documentation</span></li>
-            <li class="current-page">
-              <a
-                data-indent="0"
-                class="subsection-link subsection-indent-0"
-                href="#software-documentation"
-                title="Software Documentation"
-                >Software Documentation</a
-              >
-              <ul></ul>
-            </li>
-            <li>
-              <a
-                href="application-architecture.html"
-                title="Overview and Concepts"
-                >Overview and Concepts</a
-              >
-            </li>
-            <li>
-              <a
-                href="comet-server-installation.html"
-                title="Comet Server installation"
-                >Comet Server installation</a
-              >
-            </li>
-            <li>
-              <a
-                href="comet-server-configuration.html"
-                title="Comet Server configuration"
-                >Comet Server configuration</a
-              >
-            </li>
-            <li>
-              <a href="comet-server-usage.html" title="Comet Server usage"
-                >Comet Server usage</a
-              >
-            </li>
-            <li>
-              <a
-                href="comet-backup-installation.html"
-                title="Comet Backup installation"
-                >Comet Backup installation</a
-              >
-            </li>
-            <li>
-              <a href="comet-backup-usage.html" title="Comet Backup usage"
-                >Comet Backup usage</a
+              <a href="cloud-backup-usage.html" title="Cloud Backup usage"
+                >Cloud Backup usage</a
               >
             </li>
             <li>
@@ -107,75 +38,11 @@
               >
             </li>
             <li>
-              <a href="storage-configuration.html" title="Storage configuration"
-                >Storage configuration</a
-              >
-            </li>
-            <li>
               <a href="troubleshooting.html" title="Troubleshooting"
                 >Troubleshooting</a
               >
             </li>
-            <li>
-              <a
-                href="api.html"
-                title="API Guide
-"
-                >API Guide
-              </a>
-            </li>
-            <li>
-              <a href="api-reference.html" title="API Reference"
-                >API Reference</a
-              >
-            </li>
             <li><a href="appendix.html" title="Appendix">Appendix</a></li>
-            <li>
-              <a
-                href="cloud-storage-providers.html"
-                title="Cloud Storage Providers"
-                >Cloud Storage Providers</a
-              >
-            </li>
-            <li>
-              <a
-                href="third-party-service-addons.html"
-                title="Third-party service addons"
-                >Third-party service addons</a
-              >
-            </li>
-            <li>
-              <a
-                href="comet-server-roles.html"
-                title="Comet Server Roles
-"
-                >Comet Server Roles
-              </a>
-            </li>
-            <li>
-              <a
-                href="comet-chunking-overview.html"
-                title="Comet Chunking Overview
-"
-                >Comet Chunking Overview
-              </a>
-            </li>
-            <li>
-              <a
-                href="HIPAA-Compliance.html"
-                title="HIPAA Compliance
-"
-                >HIPAA Compliance
-              </a>
-            </li>
-            <li>
-              <a
-                href="GDPR-Compliance.html"
-                title="GDPR Compliance
-"
-                >GDPR Compliance
-              </a>
-            </li>
           </ul>
         </div>
       </div>
@@ -189,7 +56,7 @@
             ></span
           ></span>
           <h1>
-            Software Documentation&nbsp;<a
+            Important Notes&nbsp;<a
               class="docsSectionLinkIcon"
               href="about-these-docs.html#software-documentation"
               >&para;</a
@@ -197,83 +64,13 @@
           </h1>
           <div class="docs-box">
             <p>
-              To get started, select your topic from the left hand side or use
-              the search box.
+              To get started, select your topic from the left hand side.
             </p>
-            <p>
-              This documentation is aimed at system administrators and/or MSP
-              (Managed Service Provider) partners with a valid license.
-            </p>
-            <p>The backup software consists of two components:</p>
-            <ul>
-              <li>
-                <em>Comet Server</em>, a server-side application that manages
-                user accounts and stores backup data; and
-              </li>
-              <li>
-                <em>Comet Backup</em>, a client-side application that performs
-                backup and restore operations on a user's device.
-              </li>
-            </ul>
-            <p>Comet Server is offered in two packages:</p>
-            <ul>
-              <li>
-                <em>Comet Enterprise</em>, in which you install Comet Server on
-                your own hardware; and
-              </li>
-              <li>
-                <em>CometGo!</em>, in which you access a managed instance of
-                Comet Server running on Amazon AWS.
-              </li>
-            </ul>
-            <p>There are two release branches of Comet:</p>
-            <ul>
-              <li>
-                <em>Major releases</em> every quarter, with patches and
-                long-term support to ensure a stable experience for your
-                customers; and
-              </li>
-              <li>
-                <em>Comet Voyager</em> every week, adding the latest features
-                and application compatibility, that eventually becomes the next
-                major release.
-              </li>
-            </ul>
-            <p>This documentation is available from two locations:</p>
-            <ul>
-              <li>
-                Online at
-                <a href="https://cometbackup.com/">cometbackup.com</a>, where it
-                refers to the latest released version
-              </li>
-              <li>
-                Offline in your Comet Server install directory in the
-                <code>docs/</code> subdirectory, or from the Help menu in the
-                Comet Server Service Manager app, where it refers to your
-                installed version
-              </li>
-            </ul>
             <p class="highlight-upcoming">
               Changes planned for future versions of the software are
               highlighted in blue.
             </p>
-            <p>
-              If you need any further support, please open a ticket from inside
-              the My Account section of
-              <a href="https://cometbackup.com/">cometbackup.com</a>.
-            </p>
           </div>
-          <div class="doc-navigation-section">
-            <div class="doc-navigation-back doc-navigation-width-2">
-              <a href="guide-seedload-walkthrough.html"
-                >&laquo; Back: Seed Load Walkthrough</a
-              >
-            </div>
-            <div class="doc-navigation-next doc-navigation-width-2">
-              <a href="application-architecture.html"
-                >Next: Overview and Concepts &raquo;</a
-              >
-            </div>
           </div>
         </div>
       </div>
