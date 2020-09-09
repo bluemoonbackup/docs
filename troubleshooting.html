@@ -11,9 +11,7 @@
     <title>Documentation</title>
   </head>
   <body>
-    <div id="header-bar">
-      Blue Moon Backup Documentation
-    </div>
+    <div id="header-bar">Blue Moon Backup Documentation</div>
 
     <div id="main-area">
       <div id="position-nav">
@@ -79,7 +77,7 @@
             </h2>
             <p>
               This message means the connection was corrupted over the network,
-              and Comet aborted the connection.
+              and the Cloud Backup client aborted the connection.
             </p>
             <p>
               This can happen because of random network conditions. Retrying the
@@ -154,22 +152,22 @@
               the file content.
             </p>
             <p>
-              Current versions of Comet automatically creates a service account
-              with all necessary permissions to read local files. If you are
-              experiencing &quot;Access Denied&quot; errors on Comet 18.6.0 or
-              later, you may be trying to back up a network path that has been
-              mounted as a directory. Please see the &quot;Accessing Windows
-              network shares and UNC paths&quot; section below for more
-              information.
+              Current versions of the Cloud Backup client automatically create a
+              service account with all necessary permissions to read local
+              files. If you are experiencing &quot;Access Denied&quot; errors on
+              Cloud Backup 18.6.0 or later, you may be trying to back up a
+              network path that has been mounted as a directory. Please see the
+              &quot;Accessing Windows network shares and UNC paths&quot; section
+              below for more information.
             </p>
             <p>
-              If you are experiencing &quot;Access Denied&quot; errors on Comet
-              18.6.0 or later, and you are certain that you are not backing up a
-              mounted network path, please contact support.
+              If you are experiencing &quot;Access Denied&quot; errors on Cloud
+              Backup 18.6.0 or later, and you are certain that you are not
+              backing up a mounted network path, please contact support.
             </p>
             <span class="docsSectionMarker"
               ><span
-                id="antivirus-detects-comet-backup-as-a-virus-or-malware"
+                id="antivirus-detects-cloud-backup-as-a-virus-or-malware"
                 class="docsSectionMarkerChild"
               ></span
             ></span>
@@ -178,7 +176,7 @@
             <h2>
               Antivirus detects Cloud Backup as a virus or malware&nbsp;<a
                 class="docsSectionLinkIcon"
-                href="troubleshooting.html#antivirus-detects-comet-backup-as-a-virus-or-malware"
+                href="troubleshooting.html#antivirus-detects-cloud-backup-as-a-virus-or-malware"
                 >&para;</a
               >
             </h2>
@@ -187,12 +185,12 @@
               &quot;false positive&quot;.
             </p>
             <p>
-              When Cloud Backup is rebranded, it might seem like a new, unknown
-              program. An unknown program that installs system services,
-              accesses files on the disk and uploads them to the network, might
-              be considered to be malware if it was installed without consent.
-              Unfortunately it's understandable for an Antivirus product to
-              detect this.
+              When a new Cloud Backup version is released, it might seem like a
+              new, unknown program. An unknown program that installs system
+              services, accesses files on the disk and uploads them to the
+              network, might be considered to be malware if it was installed
+              without consent. Unfortunately it's understandable for an
+              Antivirus product to detect this.
             </p>
             <p>In this situation, there are some actions you can take:</p>
             <ul>
@@ -225,9 +223,10 @@
             </h3>
             <p>
               This error message indicates that something on the PC is blocking
-              Comet's main <code>backup-tool.exe</code> program from running.
-              It's likely this is the antivirus. Please follow the above steps
-              to whitelist Comet in your antivirus application.
+              the Cloud Backup client's main
+              <code>backup-tool.exe</code> program from running. It's likely
+              this is the antivirus. Please follow the above steps to whitelist
+              the Cloud Backup client in your antivirus application.
             </p>
             <span class="docsSectionMarker"
               ><span
@@ -280,8 +279,8 @@
               Cloud Backup retries the upload several times, but eventually
               gives up. After a failed data chunk upload, you may see several
               more messages of the form
-              <code>Couldn't save data chunk: context canceled</code> while
-              Comet terminates the other upload threads.
+              <code>Couldn't save data chunk: context canceled</code> while the
+              Cloud Backup client terminates the other upload threads.
             </p>
             <p>Network errors have many possible causes:</p>
             <ul>
@@ -349,10 +348,10 @@
               >
             </h2>
             <p>
-              Comet can back up Windows network paths, and back up to Windows
-              network storage (SMB / CIFS). However, because Comet runs as a
-              service user, there are some issues with authentication to be
-              aware of.
+              The Cloud Backup client can back up Windows network paths, and
+              back up to Windows network storage (SMB / CIFS). However, because
+              Cloud Backup runs as a service user, there are some issues with
+              authentication to be aware of.
             </p>
             <p>
               Please note that if you are using Cloud Backup to back up data
@@ -399,9 +398,7 @@
                 >WARNING Lstat: CreateFile \\?\UNC\...: Access is denied.</code
               >, this is probably the reason.
             </p>
-            <p>
-              Workarounds, ranked in order of preference:
-            </p>
+            <p>Workarounds, ranked in order of preference:</p>
             <ul>
               <li>
                 <p>
@@ -438,9 +435,9 @@
                     <code>Cloud Backup (delegate service)</code> service.
                   </li>
                   <li>
-                    If you are using Comet on a Windows Server machine that is
-                    acting as the Domain Controller, you must choose a domain
-                    account.
+                    If you are using Cloud Backup on a Windows Server machine
+                    that is acting as the Domain Controller, you must choose a
+                    domain account.
                   </li>
                 </ul>
               </li>
@@ -471,10 +468,11 @@
             <p>
               Example scenarios where the above behavior may be experienced are
               when software is running under a different user context within the
-              users session. Comet runs the backup as a service user account
-              (usually &quot;NT SERVICE\backup.delegate&quot; or &quot;LOCAL
-              SYSTEM&quot; in some cases). The DESlock virtual drive is
-              unavailable for other user accounts on the system.
+              users session. The Cloud Backup client runs the backup as a
+              service user account (usually &quot;NT
+              SERVICE\backup.delegate&quot; or &quot;LOCAL SYSTEM&quot; in some
+              cases). The DESlock virtual drive is unavailable for other user
+              accounts on the system.
             </p>
             <p>
               It's possible to mount a virtual disk globally so all users on the
@@ -612,12 +610,12 @@
                 Running a retention pass
                 <ul>
                   <li>
-                    For safety reasons, a retention pass requires Comet to
-                    temporarily take exclusive control over a Storage Vault.
-                    Comet makes a number of checks to verify this exclusivity,
-                    but the practical benefit is that when a retention pass
-                    runs, all past backup jobs must no longer be running by
-                    definition.
+                    For safety reasons, a retention pass requires the Cloud
+                    Backup client to temporarily take exclusive control over a
+                    Storage Vault. The Cloud Backup client makes a number of
+                    checks to verify this exclusivity, but the practical benefit
+                    is that when a retention pass runs, all past backup jobs
+                    must no longer be running by definition.
                   </li>
                 </ul>
               </li>
@@ -625,10 +623,10 @@
                 Running a new backup job on the same device
                 <ul>
                   <li>
-                    Comet can compare lockfiles in the Storage Vault with the
-                    running process IDs in Task Manager. If a lockfile was
-                    created by a process that is no longer running, that job
-                    must have stopped.
+                    Cloud Backup client can compare lockfiles in the Storage
+                    Vault with the running process IDs in Task Manager. If a
+                    lockfile was created by a process that is no longer running,
+                    that job must have stopped.
                   </li>
                 </ul>
               </li>
@@ -645,8 +643,8 @@
               </li>
             </ul>
             <p class="highlight-upcoming">
-              A future version of Comet may automatically clean up Running jobs
-              in additional situations.
+              A future version of Cloud Backup client may automatically clean up
+              Running jobs in additional situations.
             </p>
             <span class="docsSectionMarker"
               ><span id="out-of-memory" class="docsSectionMarkerChild"></span
@@ -687,10 +685,10 @@
               On Linux, when the system is out of memory (OOM), the kernel
               &quot;OOM Killer&quot; subsystem will immediately terminate a
               process of its choosing, to free up memory. If you see an error
-              message like <code>signal: killed</code> in Comet on Linux, this
-              means the process was terminated by a user or a subsystem, that
-              might possibly be the OOM Killer. You can check for this in
-              <code>dmesg</code> or <code>kern.log</code>.
+              message like <code>signal: killed</code> in the Cloud Backup
+              client on Linux, this means the process was terminated by a user
+              or a subsystem, that might possibly be the OOM Killer. You can
+              check for this in <code>dmesg</code> or <code>kern.log</code>.
             </p>
             <p>
               You can reduce Cloud Backup's RAM usage by trying to limit how
@@ -711,8 +709,9 @@
               >
             </h3>
             <p>
-              Some trade-offs are possible, that can reduce Comet's memory usage
-              at the expense of other system resource types:
+              Some trade-offs are possible, that can reduce the Cloud Backup
+              client's memory usage at the expense of other system resource
+              types:
             </p>
             <span class="docsSectionMarker"
               ><span
@@ -728,10 +727,11 @@
               >
             </h4>
             <p>
-              This option causes Comet to read more data from the source disk,
-              reading less data from the Storage Vault into in-memory indexes.
-              This can have a varied impact on RAM usage, and may be positive or
-              negative depending on the shape of your directories.
+              This option causes the Cloud Backup client to read more data from
+              the source disk, reading less data from the Storage Vault into
+              in-memory indexes. This can have a varied impact on RAM usage, and
+              may be positive or negative depending on the shape of your
+              directories.
             </p>
             <span class="docsSectionMarker"
               ><span
@@ -748,16 +748,17 @@
             </h4>
             <p>
               The &quot;Prefer temporary files instead of RAM&quot; option on a
-              backup job schedule will cause Comet to keep indexes in an on-disk
-              database file, instead of a pure in-memory index. The on-disk
-              database file is mapped into pageable memory, that can more easily
-              be reclaimed by the OS when the system is under memory pressure.
+              backup job schedule will cause the Cloud Backup client to keep
+              indexes in an on-disk database file, instead of a pure in-memory
+              index. The on-disk database file is mapped into pageable memory,
+              that can more easily be reclaimed by the OS when the system is
+              under memory pressure.
             </p>
             <p>
-              Depending on how you measure Comet's memory usage, this option may
-              not immediately appear to have lower memory usage if your
-              measurement includes <code>mmap</code> disk sections. However, the
-              resident working set is reduced.
+              Depending on how you measure the Cloud Backup client's memory
+              usage, this option may not immediately appear to have lower memory
+              usage if your measurement includes <code>mmap</code> disk
+              sections. However, the resident working set is reduced.
             </p>
             <p>
               There is a major performance penalty for using this option
@@ -765,7 +766,7 @@
             </p>
             <span class="docsSectionMarker"
               ><span
-                id="error-http--in-comet-backup-logs"
+                id="error-http--in-cloud-backup-logs"
                 class="docsSectionMarkerChild"
               ></span
             ></span>
@@ -774,13 +775,13 @@
             <h2>
               Error &quot;HTTP 500&quot; in Cloud Backup logs&nbsp;<a
                 class="docsSectionLinkIcon"
-                href="troubleshooting.html#error-http--in-comet-backup-logs"
+                href="troubleshooting.html#error-http--in-cloud-backup-logs"
                 >&para;</a
               >
             </h2>
             <p>
-              If you see an <code>HTTP 500</code> error message in the Comet
-              Backup logs, this means the server encountered an error.
+              If you see an <code>HTTP 500</code> error message in the backup
+              logs, this means the server encountered an error.
             </p>
             <p>
               If you see this while performing an operation to
@@ -811,7 +812,10 @@
                 >&para;</a
               >
             </h2>
-            <p>Comet detects the current device based on a hardware ID.</p>
+            <p>
+              The Cloud Backup client detects the current device based on a
+              hardware ID.
+            </p>
             <p>The hardware ID may be changed in some situations:</p>
             <ul>
               <li>if you replace the motherboard or CPU; or</li>
@@ -836,7 +840,7 @@
             </ul>
             <p>
               In these situations, the device's hardware ID will change, and
-              Cloud Backup will recognise the PC as a new device.
+              Cloud Backup will recognize the PC as a new device.
             </p>
             <span class="docsSectionMarker"
               ><span
@@ -852,7 +856,7 @@
               >
             </h3>
             <p>
-              If your device is recognised as a new device, you should register
+              If your device is recognized as a new device, you should register
               it again.
             </p>
             <p>
@@ -915,9 +919,9 @@
               >
             </h2>
             <p>
-              Lock files are an important part of Comet's safety design. Comet
-              uses lock files to ensure data consistency during concurrent
-              operations.
+              Lock files are an important part of Cloud Backup's safety design.
+              Cloud Backup uses lock files to ensure data consistency during
+              concurrent operations.
             </p>
             <span class="docsSectionMarker"
               ><span
@@ -934,9 +938,9 @@
             </h3>
             <p>
               Cloud Backup supports multiple devices backing up into a shared
-              Storage Vault simultaneously. But when Comet runs a retention pass
-              to clean up data, it's very important that no other backup jobs
-              are running simultaneously.
+              Storage Vault simultaneously. But when it runs a retention pass to
+              clean up data, it's very important that no other backup jobs are
+              running simultaneously.
             </p>
             <p>
               A retention pass (A) looks at what data chunks exist in the Vault,
@@ -960,8 +964,8 @@
               <em>resulting in data loss</em>.
             </p>
             <p>
-              Comet must prevent you from running a backup job and a retention
-              pass simultaneously.
+              Cloud Backup must prevent you from running a backup job and a
+              retention pass simultaneously.
             </p>
             <span class="docsSectionMarker"
               ><span id="lock-files" class="docsSectionMarkerChild"></span
@@ -975,12 +979,12 @@
             </h3>
             <p>
               In order to check whether a retention pass is currently running,
-              Comet must communicate between all devices that could potentially
-              be using the Storage Vault.
+              communication must occur between all devices that could
+              potentially be using the Storage Vault.
             </p>
             <p>
               In order to determine whether any other device is actively using a
-              Storage Vault, Comet writes a temporary text file into the Storage
+              Storage Vault, a temporary text file is written into the Storage
               Vault, and deletes it when the job is completed. This is the only
               mechanism supported across all Storage Vault types (i.e. local
               disk / SFTP / S3 / etc). Then, any other job can look for these
@@ -1022,10 +1026,11 @@
               >
             </h3>
             <p>
-              If Comet is stopped suddenly (e.g. PC crash), the lock file would
-              not be removed. All other Comet processes would not realize that
-              the job had stopped. This could prevent proper functioning of
-              backup jobs and/or retention passes.
+              If the Cloud Backup client is stopped suddenly (e.g. PC crash),
+              the lock file would not be removed. All other the Cloud Backup
+              client processes would not realize that the job had stopped. This
+              could prevent proper functioning of backup jobs and/or retention
+              passes.
             </p>
             <p>
               Cloud Backup will alert you to this issue by failing the job. The
@@ -1099,14 +1104,15 @@
             </p>
             <ul>
               <li>
-                When Comet is running on the same PC as a potentially-stale lock
-                file, it can check the running processes to see if the
-                originator process is still running.
+                When the Cloud Backup client is running on the same PC as a
+                potentially-stale lock file, it can check the running processes
+                to see if the originator process is still running.
               </li>
             </ul>
             <p class="highlight-upcoming">
-              A future version of Comet may be able to automatically detect and
-              remove stale lock files in more situations.
+              A future version of the Cloud Backup client may be able to
+              automatically detect and remove stale lock files in more
+              situations.
             </p>
             <span class="docsSectionMarker"
               ><span
@@ -1229,9 +1235,9 @@
               materialized from the cloud storage on-demand.
             </p>
             <p>
-              When you use the &quot;Take filesystem snapshot&quot; option in
-              Comet, Comet takes a VSS snapshot of the disk. This is a read-only
-              snapshot.
+              When you use the &quot;Take filesystem snapshot&quot; option, the
+              Cloud Backup client takes a VSS snapshot of the disk. This is a
+              read-only snapshot.
             </p>
             <p>
               When you back up the OneDrive directory with VSS enabled, OneDrive
@@ -1240,8 +1246,8 @@
               protected&quot; error message.
             </p>
             <p>
-              In this situation, your OneDrive data is not being protected by
-              Comet and is not available for restore.
+              In this situation, your OneDrive data is not being protected and
+              is not available for restore.
             </p>
             <p>
               You can workaround this issue by creating two Protected Items: one
@@ -1255,8 +1261,8 @@
               data to be downloaded.
             </p>
             <p class="highlight-upcoming">
-              A future version of Comet may avoid this issue by automatically
-              disabling VSS for the OneDrive directory.
+              A future version may avoid this issue by automatically disabling
+              VSS for the OneDrive directory.
             </p>
             <span class="docsSectionMarker"
               ><span
@@ -1284,8 +1290,7 @@
               If you encounter the &quot;Access to the cloud file is
               denied&quot; error message, this means that file in question does
               not exist on the local PC, and the OneDrive virtual filesystem
-              driver is refusing to download this file on-demand for Comet to
-              read it.
+              driver is refusing to download this file on-demand.
             </p>
             <p>
               At the time of writing, the only available workaround is to
@@ -1357,9 +1362,9 @@ To disable this warning, please ensure you have backed up the EFS encryption key
             <p>
               The &quot;Windows System Backup&quot; Protected Item type uses the
               <code>wbadmin</code> program to write a disk image to the spool
-              directory; backs up the spool directory with Comet; and then
-              cleans up the spool directory. Comet automatically removes this
-              directory after the backup, even if the backup failed.
+              directory; backs up the spool directory; and then cleans up the
+              spool directory. The Cloud Backup client automatically removes
+              this directory after the backup, even if the backup failed.
             </p>
             <p>
               If the directory exists at the start of a backup job, this could
@@ -1367,12 +1372,13 @@ To disable this warning, please ensure you have backed up the EFS encryption key
             </p>
             <ol>
               <li>
-                Comet did not have the chance to clean up the directory (e.g.
-                the PC was not shut down safely); or
+                the Cloud Backup client did not have the chance to clean up the
+                directory (e.g. the PC was not shut down safely); or
               </li>
               <li>another Cloud Backup job is running simultaneously; or</li>
               <li>
-                another non-Comet software on the PC is also using the
+                another non-The Cloud Backup client software on the PC is also
+                using the
                 <code>wbadmin</code> functionality for System State or Windows
                 System Backup.
               </li>
@@ -1418,7 +1424,7 @@ To disable this warning, please ensure you have backed up the EFS encryption key
             </p>
             <p>
               If you experience the <code>too many open files</code> error
-              message, this means Comet is either
+              message, this means the Cloud Backup client is either
             </p>
             <ul>
               <li>
@@ -1431,7 +1437,9 @@ To disable this warning, please ensure you have backed up the EFS encryption key
               </li>
               <li>(C) is itself using an excessive number of file handles</li>
             </ul>
-            <p>During a backup job, Comet uses approximately</p>
+            <p>
+              During a backup job, the Cloud Backup client uses approximately
+            </p>
             <ul>
               <li>
                 approximately 10-20 handles for files being read from the disk;
@@ -1461,8 +1469,8 @@ To disable this warning, please ensure you have backed up the EFS encryption key
               <li>
                 for &quot;File and Folder&quot; protected items, by enabling the
                 &quot;Rescan unchanged files&quot; option. This reduces the
-                number of temporary files that Comet uses for local caching.
-                However, it may reduce the backup performance.
+                number of temporary files that the Cloud Backup client uses for
+                local caching. However, it may reduce the backup performance.
               </li>
             </ul>
             <p>
@@ -1471,8 +1479,8 @@ To disable this warning, please ensure you have backed up the EFS encryption key
               where the limit has been altered.
             </p>
             <p class="highlight-upcoming">
-              A future version of Comet may redesign the cache mechanism to use
-              fewer local temporary files.
+              A future version may redesign the cache mechanism to use fewer
+              local temporary files.
             </p>
             <span class="docsSectionMarker"
               ><span id="on-macos" class="docsSectionMarkerChild"></span
@@ -1684,17 +1692,17 @@ To disable this warning, please ensure you have backed up the EFS encryption key
               >
             </h2>
             <p>
-              Comet tried to access the Storage Vault, but it contained data
-              using an unknown encryption key. Probably this Storage Vault is
-              using the same data location as another Storage Vault (from the
-              same- or a different- user account).
+              The Cloud Backup client tried to access the Storage Vault, but it
+              contained data using an unknown encryption key. Probably this
+              Storage Vault is using the same data location as another Storage
+              Vault (from the same- or a different- user account).
             </p>
             <p>
               Each Storage Vault in a user's profile is automatically encrypted
               on first use, with a randomly generated key. If you reuse the data
               storage location that was already used by another user's Storage
-              Vault, Comet would not know the encryption key for the Storage
-              Vault, and would be unable to access it.
+              Vault, the Cloud Backup client would not know the encryption key
+              for the Storage Vault, and would be unable to access it.
             </p>
             <p>
               If you intended to share the same Storage Vault between multiple
@@ -1724,10 +1732,11 @@ To disable this warning, please ensure you have backed up the EFS encryption key
               account, using its own file permissions.
             </p>
             <p>
-              However, in current (18.8.x) versions of Comet, restores are
-              performed as the normal user account. Your normal user account may
-              not have the necessary permissions to access the local path folder
-              if it was created by the background service account.
+              However, in current (18.8.x) versions of the Cloud Backup client,
+              restores are performed as the normal user account. Your normal
+              user account may not have the necessary permissions to access the
+              local path folder if it was created by the background service
+              account.
             </p>
             <p>You may see error messages of the form:</p>
             <ul>
@@ -1751,8 +1760,8 @@ To disable this warning, please ensure you have backed up the EFS encryption key
               cog menu to choose 'Apply to enclosed items...'.
             </p>
             <p class="highlight-upcoming">
-              A future version of Comet may solve this problem by automatically
-              setting file permissions.
+              A future version of the Cloud Backup client may solve this problem
+              by automatically setting file permissions.
             </p>
             <span class="docsSectionMarker"
               ><span
@@ -1778,10 +1787,10 @@ To disable this warning, please ensure you have backed up the EFS encryption key
             </p>
             <p>
               On Windows, each user session has its own set of network login
-              sessions. Comet performs the backup using a service user account.
-              Therefore, this issue could occur with an affected SMB server if
-              the interactive Windows user was logged in to the network share
-              simultaneously.
+              sessions. the Cloud Backup client performs the backup using a
+              service user account. Therefore, this issue could occur with an
+              affected SMB server if the interactive Windows user was logged in
+              to the network share simultaneously.
             </p>
             <span class="docsSectionMarker"
               ><span
@@ -1894,7 +1903,8 @@ To disable this warning, please ensure you have backed up the EFS encryption key
                 before the job starts. This will close their network sessions.
                 Cloud Backup will successfully log in to the network share; you
                 should add <code>net use /DELETE</code> as an After command in
-                Comet to ensure the service user logs out again after the backup
+                the Cloud Backup client to ensure the service user logs out
+                again after the backup
               </li>
             </ul>
             <p>Alternatively, by</p>
@@ -1911,12 +1921,12 @@ To disable this warning, please ensure you have backed up the EFS encryption key
                     backup window, to log the interactive user out
                   </li>
                   <li>
-                    Enter network credentials in Comet, so the service user logs
-                    in
+                    Enter network credentials in the Cloud Backup client, so the
+                    service user logs in
                   </li>
                   <li>
-                    <code>net use /DELETE</code> as an After command in Comet,
-                    so the service user logs out
+                    <code>net use /DELETE</code> as an After command in the
+                    Cloud Backup client, so the service user logs out
                   </li>
                   <li>
                     <code>net use</code> in Task Scheduler after the backup
@@ -1954,8 +1964,8 @@ To disable this warning, please ensure you have backed up the EFS encryption key
               >
             </h2>
             <p>
-              Windows was unable to launch Comet's process because of an
-              internal error.
+              Windows was unable to launch the Cloud Backup client's process
+              because of an internal error.
             </p>
             <p>
               In our experience, this issue can be resolved by running Windows
@@ -1982,25 +1992,27 @@ To disable this warning, please ensure you have backed up the EFS encryption key
               >
             </h2>
             <p>
-              Comet tells machines apart by their &quot;device ID&quot;. This is
-              automatically determined from a mix of hardware and software
-              identifiers.
+              the Cloud Backup client tells machines apart by their &quot;device
+              ID&quot;. This is automatically determined from a mix of hardware
+              and software identifiers.
             </p>
             <p>
               One possible cause of this issue is if the two VMs were originally
               clones of each other. If you have cloned a VM in the past, it
               might have the same hardware and software identifiers, and so
-              appear to Comet as the same device.
+              appear to the Cloud Backup client as the same device.
             </p>
             <p>
-              If multiple devices appear to Comet as the same device, they will
-              share the same Protected Items and job scheduling. This causes
-              follow-on issues for logging and reporting.
+              If multiple devices appear to the Cloud Backup client as the same
+              device, they will share the same Protected Items and job
+              scheduling. This causes follow-on issues for logging and
+              reporting.
             </p>
             <p>
               You can resolve this issue by changing the hardware or software ID
-              for the affected VM. This will influence Comet's device ID to
-              force the devices to be detected as different devices.
+              for the affected VM. This will influence the Cloud Backup client's
+              device ID to force the devices to be detected as different
+              devices.
             </p>
             <p>
               On Linux, the SSH host keys are one signal that influences the
@@ -2008,8 +2020,8 @@ To disable this warning, please ensure you have backed up the EFS encryption key
               keys, will cause the device ID to change.
             </p>
             <p>
-              On Windows (with Comet 18.9.9 or later), you can add extra data to
-              influence the generated device ID by creating a registry key.
+              On Windows (with version 18.9.9 or later), you can add extra data
+              to influence the generated device ID by creating a registry key.
             </p>
             <ol>
               <li>Open Registry Editor (<code>regedit.exe</code>)</li>
@@ -2022,7 +2034,7 @@ To disable this warning, please ensure you have backed up the EFS encryption key
                     The
                     <code>HKEY_LOCAL_MACHINE\Software\backup-tool</code> folder
                     key is also recognized
-                    <em>(with Comet 18.12.2 or later)</em>
+                    <em>(with version 18.12.2 or later)</em>
                   </li>
                 </ul>
               </li>
@@ -2035,7 +2047,7 @@ To disable this warning, please ensure you have backed up the EFS encryption key
                 the generated device ID.
               </li>
               <li>
-                Restart all Comet services (e.g.
+                Restart all Cloud Backup services (e.g.
                 <code>backup.delegate</code> and <code>backup.elevator</code>)
               </li>
             </ol>
@@ -2056,8 +2068,8 @@ To disable this warning, please ensure you have backed up the EFS encryption key
               >
             </h2>
             <p>
-              Comet does not expand Windows environment variables in the path
-              selection.
+              the Cloud Backup client does not expand Windows environment
+              variables in the path selection.
             </p>
             <p>
               The Cloud Backup app runs backup jobs as a dedicated service
@@ -2112,16 +2124,16 @@ To disable this warning, please ensure you have backed up the EFS encryption key
               >
             </h3>
             <p>
-              If this error message occurs immediately, it means Comet was
-              unable to connect to the Storage Vault at all, because the
-              encryption key in the user's Storage Vault settings does not match
-              the files in the <code>/keys/</code> subdirectory in the data
-              storage location.
+              If this error message occurs immediately, it means the Cloud
+              Backup client was unable to connect to the Storage Vault at all,
+              because the encryption key in the user's Storage Vault settings
+              does not match the files in the <code>/keys/</code> subdirectory
+              in the data storage location.
             </p>
             <p>
-              When a Storage Vault is used for the first time, Comet generates a
-              random encryption key, and stores it in an encrypted form in both
-              (A) the user's profile, and (B) in the
+              When a Storage Vault is used for the first time, the Cloud Backup
+              client generates a random encryption key, and stores it in an
+              encrypted form in both (A) the user's profile, and (B) in the
               <code>/keys/</code> subdirectory in the data storage location.
               It's important that these match at all times. If they do not
               match, Cloud Backup will be unable to use the data inside the
@@ -2218,8 +2230,8 @@ To disable this warning, please ensure you have backed up the EFS encryption key
             </h2>
             <p>
               The &quot;Windows Server System State&quot; and &quot;Windows
-              System Backup&quot; Protected Item types in Comet inherit some
-              restrictions from the underlying technology
+              System Backup&quot; Protected Item types in the Cloud Backup
+              client inherit some restrictions from the underlying technology
               (<code>wbadmin</code>).
             </p>
             <p>
@@ -2254,7 +2266,8 @@ To disable this warning, please ensure you have backed up the EFS encryption key
             <ol start="2">
               <li>
                 Create a shared network directory on the flash drive, and tell
-                Comet to use the UNC network path as the spool directory instead
+                the Cloud Backup client to use the UNC network path as the spool
+                directory instead
               </li>
             </ol>
             <p>
@@ -2296,7 +2309,7 @@ To disable this warning, please ensure you have backed up the EFS encryption key
             </p>
             <p>
               Another possible reason for this issue is if the right to log on
-              as a service is denied for this user account. Normally the Comet
+              as a service is denied for this user account. Normally the
               installer asserts this policy during installation; however, on a
               domain-joined machine, it might have been overwritten by Active
               Directory policy.
@@ -2356,7 +2369,10 @@ To disable this warning, please ensure you have backed up the EFS encryption key
                     On Windows, check in &quot;Programs And Features&quot; and
                     sort by Date to see any recently-installed software
                   </li>
-                  <li>Does the issue coincide with a Comet software update?</li>
+                  <li>
+                    Does the issue coincide with a the Cloud Backup client
+                    software update?
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -2384,18 +2400,18 @@ To disable this warning, please ensure you have backed up the EFS encryption key
                 <p>Antivirus</p>
                 <ul>
                   <li>
-                    Many antivirus programs will scan each file as Comet reads
-                    them, including but not limited to ESET NOD32 and Windows
-                    Defender.
+                    Many antivirus programs will scan each file as the Cloud
+                    Backup client reads them, including but not limited to ESET
+                    NOD32 and Windows Defender.
                   </li>
                   <li>
-                    Does it help to exclude Comet's
+                    Does it help to exclude the Cloud Backup client's
                     <code>backup-tool.exe</code> program in the antivirus
                     software?
                     <ul>
                       <li>
-                        Comet 19.3.13 and later automatically does this for
-                        Windows Defender.
+                        the Cloud Backup client 19.3.13 and later automatically
+                        does this for Windows Defender.
                       </li>
                     </ul>
                   </li>
@@ -2442,9 +2458,9 @@ To disable this warning, please ensure you have backed up the EFS encryption key
                 <p>CPU usage</p>
                 <ul>
                   <li>
-                    Comet compresses and encrypts all data before upload. On
-                    weak CPUs this may cause high CPU usage. The CPU usage may
-                    become a bottleneck.
+                    the Cloud Backup client compresses and encrypts all data
+                    before upload. On weak CPUs this may cause high CPU usage.
+                    The CPU usage may become a bottleneck.
                   </li>
                 </ul>
               </li>
@@ -2473,10 +2489,10 @@ To disable this warning, please ensure you have backed up the EFS encryption key
                 <p>Avoid backing up files from a network share</p>
                 <ul>
                   <li>
-                    If you are backing up files from a network location, Comet
-                    must make many network roundtrips to access the data. It may
-                    be substantially faster to install Comet on the network
-                    device instead.
+                    If you are backing up files from a network location, the
+                    Cloud Backup client must make many network roundtrips to
+                    access the data. It may be substantially faster to install
+                    the Cloud Backup client on the network device instead.
                   </li>
                 </ul>
               </li>
@@ -2495,15 +2511,16 @@ To disable this warning, please ensure you have backed up the EFS encryption key
                 <p>Backup source is a single-queue block device</p>
                 <ul>
                   <li>
-                    Comet issues many requests to the source disk in parallel.
-                    To avoid negatively affecting other programs on the PC,
-                    Comet tries to access the source disk at a low OS priority,
-                    but this may be ineffectual if your disk only supports a
-                    single queue. You can toggle the &quot;Limit backup to use
-                    only 1 disk thread&quot; option to force Comet to make only
-                    a disk request to the source disk at a time. This may have a
-                    positive effect on other programs on the PC, at the expense
-                    of backup job performance.
+                    the Cloud Backup client issues many requests to the source
+                    disk in parallel. To avoid negatively affecting other
+                    programs on the PC, the Cloud Backup client tries to access
+                    the source disk at a low OS priority, but this may be
+                    ineffectual if your disk only supports a single queue. You
+                    can toggle the &quot;Limit backup to use only 1 disk
+                    thread&quot; option to force the Cloud Backup client to make
+                    only a disk request to the source disk at a time. This may
+                    have a positive effect on other programs on the PC, at the
+                    expense of backup job performance.
                   </li>
                 </ul>
               </li>
@@ -2515,8 +2532,9 @@ To disable this warning, please ensure you have backed up the EFS encryption key
                     Some disk drives may experience slow performance. You can
                     use a benchmarking tool to determine the expected
                     performance of the USB drive both in sequential reads, and
-                    in small random reads) independently of Comet, as a baseline
-                    to compare against Comet's performance.
+                    in small random reads) independently of the Cloud Backup
+                    client, as a baseline to compare against the Cloud Backup
+                    client's performance.
                     <ul>
                       <li>
                         At the time of writing,
@@ -2576,7 +2594,7 @@ To disable this warning, please ensure you have backed up the EFS encryption key
                   <li>
                     Check the end-to-end latency of the storage, from the
                     customer's PC through to the final storage location. High
-                    latency can reduce Comet performance
+                    latency can reduce backup performance
                   </li>
                   <li>
                     Ensure the Cloud Backup Server is not experiencing high CPU
@@ -2587,17 +2605,17 @@ To disable this warning, please ensure you have backed up the EFS encryption key
             </ul>
             <span class="docsSectionMarker"
               ><span
-                id="error-errsslversioninterference-connecting-to-comet-server"
+                id="error-errsslversioninterference-connecting-to-server"
                 class="docsSectionMarkerChild"
               ></span
             ></span>
           </div>
           <div class="docs-box">
             <h2>
-              Error &quot;ERR_SSL_VERSION_INTERFERENCE&quot; connecting to Comet
-              Server&nbsp;<a
+              Error &quot;ERR_SSL_VERSION_INTERFERENCE&quot; connecting to Cloud
+              Backup Server&nbsp;<a
                 class="docsSectionLinkIcon"
-                href="troubleshooting.html#error-errsslversioninterference-connecting-to-comet-server"
+                href="troubleshooting.html#error-errsslversioninterference-connecting-to-server"
                 >&para;</a
               >
             </h2>
@@ -2720,8 +2738,8 @@ To disable this warning, please ensure you have backed up the EFS encryption key
             </p>
             <p>
               If this is acceptable, you can perform this workaround by
-              stripping the <code>--routines</code> parameter that Comet passes
-              to <code>mysqldump</code>. To do so on Linux,
+              stripping the <code>--routines</code> parameter that the Cloud
+              Backup client passes to <code>mysqldump</code>. To do so on Linux,
             </p>
             <ol>
               <li>
@@ -2769,9 +2787,10 @@ done
             </h2>
             <p>
               This error message indicates the application tried to do something
-              not supported by the disk, but all Comet is doing is reading those
-              files and directories. If this error happens for a normal local
-              disk, then that is certainly supported functionality.
+              not supported by the disk, but all the Cloud Backup client is
+              doing is reading those files and directories. If this error
+              happens for a normal local disk, then that is certainly supported
+              functionality.
             </p>
             <p>
               One possibility is that the disk driver is reporting this error
@@ -2839,8 +2858,8 @@ done
               >
             </h2>
             <p>
-              This error is not specific to Comet. You may find more information
-              online.
+              This error is not specific to backups. You may find more
+              information online.
             </p>
             <p>
               There is a problem with using the selected spool directory. The
