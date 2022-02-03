@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="docs.css">
+		<link rel="stylesheet" type="text/css" href="magnific-popup.css">		
+		<script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="magnific-popup.1.1.0.min.js"></script>
+		<script type="text/javascript" src="lunr-2.1.0.min.js"></script>
+		<script type="text/javascript" src="docs.js"></script>
+		<title>Documentation</title>		
+	</head>
+	<body>
+	
+		<div id="header-bar">
+			<div id="header-logo"></div>
+			Documentation
+		</div>
+	
+		<div id="main-area">
+			<div id="position-nav">
+				<div id="nav-inner">
+					<ul><li><form method="GET" action="search-results.html"><input name="s" class="search-box" placeholder="Search..."></form></li>
+<li><span class="category-header">Guides</span></li>
+<li><a href="guide-getting-started.html" title="Getting Started with Self-Hosted Comet">Getting Started with Self-Hosted Comet</a></li>
+<li><a href="guide-cometgo-getting-started.html" title="Getting Started with Comet-Hosted">Getting Started with Comet-Hosted</a></li>
+<li><a href="guide-comet-backup-getting-started.html" title="Getting Started with Comet Backup">Getting Started with Comet Backup</a></li>
+<li><a href="guide-disk-image-walkthrough.html" title="Disk Image Walkthrough">Disk Image Walkthrough</a></li>
+<li><a href="guide-seedload-walkthrough.html" title="Seed Load Walkthrough">Seed Load Walkthrough</a></li>
+<li><a href="guide-disaster-recovery.html" title="Disaster Recovery">Disaster Recovery</a></li>
+<li><a href="guide-best-practices.html" title="Best Practices">Best Practices</a></li>
+<li class="current-page"><a data-indent="0" class="subsection-link subsection-indent-0" href="#common-problems-and-solutions" title="Common Problems and Solutions">Common Problems and Solutions</a>
+<ul>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#my-backup-seems-to-be-very-slow" title="My backup seems to be very slow">My backup seems to be very slow</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#i-cant-backup-a-network-share-but-the-user-account-can-access-and-view-the-files" title="I can’t backup a network share, but the user account can access and view the files">I can’t backup a network share, but the user account can access and view the files</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#restoring-a-small-file-downloads-a-much-larger-amount-of-data" title="Restoring a small file downloads a much larger amount of data">Restoring a small file downloads a much larger amount of data</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#windows-server-system-state-or-windows-system-backup-wont-work" title="Windows Server System State or Windows System Backup won’t work">Windows Server System State or Windows System Backup won’t work</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#the-comet-server-login-page-wont-load-or-i-have-changedmoved-the-primary-storage-typelocation-now-the-admin-web-interface-wont-open" title="The Comet Server login page won&apos;t load, or, I have changed/moved the primary storage type/location, now the admin web interface won’t open">The Comet Server login page won&apos;t load, or, I have changed/moved the primary storage type/location, now the admin web interface won’t open</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#my-comet-server-logs-show-that-the-server-continuously-restarts" title="My Comet Server logs show that the Server continuously restarts">My Comet Server logs show that the Server continuously restarts</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#i-have-a-vss-problem" title="I have a VSS problem...">I have a VSS problem...</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#job-history-shows-a-running-job-and-it-wont-cancel" title="Job History shows a running job, and it won’t cancel">Job History shows a running job, and it won’t cancel</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#log-shows--reindex-needed" title="Log shows &quot;... Reindex Needed!&quot;">Log shows &quot;... Reindex Needed!&quot;</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#log-shows-packindexxxxxxxxx-says-snapshotyyyyyyyy-depends-on-missing-pack-datazzzzzzzz" title="Log shows &quot;&lt;packindex/xxxxxxxx&gt; says &lt;snapshot/yyyyyyyy&gt; depends on missing pack &lt;data/zzzzzzzz&gt;&quot;">Log shows &quot;&lt;packindex/xxxxxxxx&gt; says &lt;snapshot/yyyyyyyy&gt; depends on missing pack &lt;data/zzzzzzzz&gt;&quot;</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#log-shows-cannot-proceed--locked-by-device" title="Log shows &quot;Cannot proceed - Locked by device&quot;">Log shows &quot;Cannot proceed - Locked by device&quot;</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#the-client-software-wont-install-on-a-windows-device" title="The client software won’t install on a Windows device">The client software won’t install on a Windows device</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#backup-client-has-issues-with-connection-processservices-or-ui" title="Backup client has issues with connection, process/services, or UI">Backup client has issues with connection, process/services, or UI</a></li>
+</ul>
+</li><li><span class="category-header">Documentation</span></li>
+<li><a href="about-these-docs.html" title="Software Documentation">Software Documentation</a></li>
+<li><a href="application-architecture.html" title="Overview and Concepts">Overview and Concepts</a></li>
+<li><a href="comet-server-installation.html" title="Comet Server installation">Comet Server installation</a></li>
+<li><a href="comet-server-configuration.html" title="Comet Server configuration">Comet Server configuration</a></li>
+<li><a href="comet-server-usage.html" title="Comet Server usage">Comet Server usage</a></li>
+<li><a href="comet-backup-installation.html" title="Comet Backup installation">Comet Backup installation</a></li>
+<li><a href="comet-backup-usage.html" title="Comet Backup usage">Comet Backup usage</a></li>
+<li><a href="user-configuration.html" title="User configuration">User configuration</a></li>
+<li><a href="protected-items.html" title="Protected Item types">Protected Item types</a></li>
+<li><a href="storage-configuration.html" title="Storage configuration">Storage configuration</a></li>
+<li><a href="troubleshooting.html" title="Troubleshooting">Troubleshooting</a></li>
+<li><a href="api.html" title="API Guide">API Guide</a></li>
+<li><a href="api-reference.html" title="API Reference">API Reference</a></li>
+<li><a href="appendix.html" title="Appendix">Appendix</a></li>
+<li><a href="cloud-storage-providers.html" title="Cloud Storage Providers">Cloud Storage Providers</a></li>
+<li><a href="third-party-service-addons.html" title="Third-party service addons">Third-party service addons</a></li>
+<li><a href="comet-server-roles.html" title="Comet Server Roles ">Comet Server Roles </a></li>
+<li><a href="comet-chunking-overview.html" title="Comet Chunking Overview ">Comet Chunking Overview </a></li>
+<li><a href="security-compliance.html" title="Security &amp; Compliance">Security & Compliance</a></li>
+</ul>
+				</div>
+			</div>
+		
+			<div id="position-content">
+				<div id="content-inner">
+					<span class="docsSectionMarker"><span id="common-problems-and-solutions" class="docsSectionMarkerChild"></span></span><h1>Common Problems and Solutions&nbsp;<a class="docsSectionLinkIcon" href="guide-common-problems-and-solutions.html#common-problems-and-solutions">&para;</a></h1>
+<span class="docsSectionMarker"><span id="my-backup-seems-to-be-very-slow" class="docsSectionMarkerChild"></span></span><div class="docs-box"><h2>My backup seems to be very slow&nbsp;<a class="docsSectionLinkIcon" href="guide-common-problems-and-solutions.html#my-backup-seems-to-be-very-slow">&para;</a></h2>
+<ul>
+<li>Comet is designed so that the client software installed in the device does all the ‘heavy lifting’ required for backups. Nothing is done server-side, it is all client-side. This means that if the client device is constrained in any way by resources (low-power CPU, minimal RAM, low-quality LAN or switching equipment, slow internet speeds, etc), then this may have a harmful effect on the speed of any backups.</li>
+<li>Solution: 
+<ul>
+<li>Troubleshoot any network or hardware issues as applicable; or</li>
+<li>Check for other backups or other activity which may be overloading the LAN or the internet around the time of the slow backup.</li>
+<li>More in-depth discussion here: <a href="https://account.cometbackup.com/docs/troubleshooting#slow-backup-jobs">https://account.cometbackup.com/docs/troubleshooting#slow-backup-jobs</a></li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="i-cant-backup-a-network-share-but-the-user-account-can-access-and-view-the-files" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>I can’t backup a network share, but the user account can access and view the files&nbsp;<a class="docsSectionLinkIcon" href="guide-common-problems-and-solutions.html#i-cant-backup-a-network-share-but-the-user-account-can-access-and-view-the-files">&para;</a></h2>
+<ul>
+<li>Solution:
+<ul>
+<li>Check the path of the Protected Item. The user may be trying to specify “Z:\ drive” which only exists for that user account. Change to a UNC path instead; or</li>
+<li>Check the permissions for the client software. The client software is installed with the minimum permissions required to access all files on the device, but no more. You may need to create an account on the share that the client software backup.delegate service can use to ‘logon as’; or</li>
+<li>Install the client software onto the device which holds the original data</li>
+<li>More in-depth discussion here: <a href="https://account.cometbackup.com/docs/troubleshooting#accessing-windows-network-shares-and-unc-paths">https://account.cometbackup.com/docs/troubleshooting#accessing-windows-network-shares-and-unc-paths</a></li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="restoring-a-small-file-downloads-a-much-larger-amount-of-data" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Restoring a small file downloads a much larger amount of data&nbsp;<a class="docsSectionLinkIcon" href="guide-common-problems-and-solutions.html#restoring-a-small-file-downloads-a-much-larger-amount-of-data">&para;</a></h2>
+<ul>
+<li>Currently, the device performing the restore needs an index of the data in the Storage Vault so that it can determine which data chunks are needed to restore the file in question. This index is very small, typically 0.1% of the size of the data stored. With very large stored-data sizes (multiple terabytes), however, the downloaded index can reach 100MB or more, even if the file to restore may be only 100KB.</li>
+</ul>
+<span class="docsSectionMarker"><span id="windows-server-system-state-or-windows-system-backup-wont-work" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Windows Server System State or Windows System Backup won’t work&nbsp;<a class="docsSectionLinkIcon" href="guide-common-problems-and-solutions.html#windows-server-system-state-or-windows-system-backup-wont-work">&para;</a></h2>
+<ul>
+<li>These backup types are Microsoft proprietary backups, and can be problematic for a wide variety of reasons. Commonly, users make the mistake of ‘spooling’ to a drive which is one of the drives also selected for backup; or the user attempts to use a non-permanent drive (eg: portable USB). We make better recommendations here: <a href="https://account.cometbackup.com/docs/protected-items#windows-system-backup-items">https://account.cometbackup.com/docs/protected-items#windows-system-backup-items</a>.</li>
+<li>Solution:
+<ul>
+<li>If the above guide does not resolve the problem, consider switching to the Comet Disk Image backup type, which was designed to circumvent these problems: <a href="https://account.cometbackup.com/docs/guide-disk-image-walkthrough#disk-image-walkthrough">https://account.cometbackup.com/docs/guide-disk-image-walkthrough#disk-image-walkthrough</a></li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="the-comet-server-login-page-wont-load-or-i-have-changedmoved-the-primary-storage-typelocation-now-the-admin-web-interface-wont-open" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>The Comet Server login page won't load, or, I have changed/moved the primary storage type/location, now the admin web interface won’t open&nbsp;<a class="docsSectionLinkIcon" href="guide-common-problems-and-solutions.html#the-comet-server-login-page-wont-load-or-i-have-changedmoved-the-primary-storage-typelocation-now-the-admin-web-interface-wont-open">&para;</a></h2>
+<ul>
+<li>One of the first Comet Server start-up routines is a check on whether the storage location is available and accessible. If it is not, the Server will not be able to function, and the login page won’t be available. The Server will repeatedly attempt to restart, as this action will often correct network-connection issues. Where a restart does not fix an underlying issue, the multiple restart action has no untoward effect, except that the Comet Server is not running. The Server log will show the repeated restarts.</li>
+<li>Solution:
+<ul>
+<li>Make the storage location accessible; or</li>
+<li>Use a recent Server Self-Backup to restore the Server to a stable recent state and thereby undo any recent changes; or</li>
+<li>If a Windows-based Comet Server, open the Comet Server Service Manager (CSSM). Use the minimalistic Setup Wizard to manually undo any recent changes; or
+<ul>
+<li>Use the CSSM to temporarily disable the Storage Role; or </li>
+<li>Use the CSSM to configure the storage to be a known-good and accessible location.</li>
+</ul></li>
+<li>If a Linux-based Comet Server, stop the cometd service, then edit the /etc/cometd.cometd.cfg file “StorageRole” section, pointing the location to a known-good and accessible location. Restart the cometd service.</li>
+</ul></li>
+<li>The above actions will allow the Server to finish starting up, and the web interface will then become available, at which point, the storage location can be reconfigured.</li>
+</ul>
+<span class="docsSectionMarker"><span id="my-comet-server-logs-show-that-the-server-continuously-restarts" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>My Comet Server logs show that the Server continuously restarts&nbsp;<a class="docsSectionLinkIcon" href="guide-common-problems-and-solutions.html#my-comet-server-logs-show-that-the-server-continuously-restarts">&para;</a></h2>
+<ul>
+<li>The Comet Server process will exit and restart if it fails to validate its Comet license on startup. The Server will repeatedly restart, as this may allow time for network issues to resolve themselves</li>
+<li>Solution:
+<ul>
+<li>Verify that outgoing communications are allowed to ‘lic.cometbackup.com’.</li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="i-have-a-vss-problem" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>I have a VSS problem...&nbsp;<a class="docsSectionLinkIcon" href="guide-common-problems-and-solutions.html#i-have-a-vss-problem">&para;</a></h2>
+<ul>
+<li>Volume Shadow Copy Service (VSS) is a Microsoft technology for taking consistent, point-in-time snapshots of a disk volume. A VSS Writer is an extra software plugin that detects when this action is taking place, and ensures that application-specific files are in a safe state on disk. This feature allows you to invoke a single VSS Writer, or a sub-component of a single VSS Writer, and to backup only the files that it was protecting. </li>
+<li>VSS snapshotting does not work over network paths. Instead of trying to snapshot over a network, install the client software onto the device which holds the original data.</li>
+<li>VSS issues can occur if another backup software is also running, and has prevented the Comet VSS writer from working. Stop the other software to see if the issue persists.</li>
+<li>VSS issues are often accompanied by an error code in the form of 0xXXXXXXXX. This is an externally-originating code, which will often signify why the VSS writer failed. Research this error code for solutions to the problem.</li>
+<li>Open an elevated-permissions command line, and run “vssadmin list writers” to see a current list of the writers. This will highlight any which failed, as well as their own error codes. This may help troubleshoot which writer contributed to the failure, or show the failure point.</li>
+</ul>
+<span class="docsSectionMarker"><span id="job-history-shows-a-running-job-and-it-wont-cancel" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Job History shows a running job, and it won’t cancel&nbsp;<a class="docsSectionLinkIcon" href="guide-common-problems-and-solutions.html#job-history-shows-a-running-job-and-it-wont-cancel">&para;</a></h2>
+<ul>
+<li>The ‘Cancel’ button shows in the Job History report while a job status is ‘running’.</li>
+<li>Solution:
+<ul>
+<li>Allow the job time to finish on its own.</li>
+<li>If you still require it to stop, or it won’t cancel after using the 'Cancel' button, 
+<ul>
+<li>Firstly, send the device an Update Software signal: <a href="https://account.cometbackup.com/docs/comet-server-usage#bulk-update">https://account.cometbackup.com/docs/comet-server-usage#bulk-update</a> (or update an individual device via Connected Devices -&gt; Actions). The device will reinstall the current version, and this action definitely terminates any running backup process. </li>
+<li>Secondly, when the device has updated, use Connected Devices -&gt; Actions -&gt; ‘Apply Retention Rules Now’ to tidy up the Vault, and update the device status in the logs.</li>
+</ul></li>
+</ul></li>
+<li>More in-depth discussion here: <a href="https://account.cometbackup.com/docs/troubleshooting#jobs-left-in-running-state">https://account.cometbackup.com/docs/troubleshooting#jobs-left-in-running-state</a></li>
+</ul>
+<span class="docsSectionMarker"><span id="log-shows--reindex-needed" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Log shows &quot;... Reindex Needed!&quot;&nbsp;<a class="docsSectionLinkIcon" href="guide-common-problems-and-solutions.html#log-shows--reindex-needed">&para;</a></h2>
+<ul>
+<li>Recent updates to Comet will reduce this occurrence and need for troubleshooting this log message.</li>
+<li>Solution:
+<ul>
+<li>Complete explanation and solution here: <a href="https://account.cometbackup.com/docs/troubleshooting#error-found-x-packs-in-index-but-not-appearing-on-disk-reindex-needed">https://account.cometbackup.com/docs/troubleshooting#error-found-x-packs-in-index-but-not-appearing-on-disk-reindex-needed</a></li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="log-shows-packindexxxxxxxxx-says-snapshotyyyyyyyy-depends-on-missing-pack-datazzzzzzzz" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Log shows &quot;&lt;packindex/xxxxxxxx&gt; says &lt;snapshot/yyyyyyyy&gt; depends on missing pack &lt;data/zzzzzzzz&gt;&quot;&nbsp;<a class="docsSectionLinkIcon" href="guide-common-problems-and-solutions.html#log-shows-packindexxxxxxxxx-says-snapshotyyyyyyyy-depends-on-missing-pack-datazzzzzzzz">&para;</a></h2>
+<ul>
+<li>Recent updates to Comet will reduce this occurrence and need for troubleshooting this log message.</li>
+<li>Solution:
+<ul>
+<li>Complete explanation and solution here: <a href="https://account.cometbackup.com/docs/troubleshooting#error-packindexpppppppp-says-snapshotssssssss-depends-on-missing-pack-datadddddddd-nonrestorable">https://account.cometbackup.com/docs/troubleshooting#error-packindexpppppppp-says-snapshotssssssss-depends-on-missing-pack-datadddddddd-nonrestorable</a></li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="log-shows-cannot-proceed--locked-by-device" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Log shows &quot;Cannot proceed - Locked by device&quot;&nbsp;<a class="docsSectionLinkIcon" href="guide-common-problems-and-solutions.html#log-shows-cannot-proceed--locked-by-device">&para;</a></h2>
+<ul>
+<li>Recent updates to Comet will reduce this occurrence and need for troubleshooting this log message.</li>
+<li>Solution:
+<ul>
+<li>Complete explanation and solution here: <a href="https://account.cometbackup.com/docs/troubleshooting#error-cannot-proceed--locked-by-device-xxxxxxxx">https://account.cometbackup.com/docs/troubleshooting#error-cannot-proceed--locked-by-device-xxxxxxxx</a></li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="the-client-software-wont-install-on-a-windows-device" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>The client software won’t install on a Windows device&nbsp;<a class="docsSectionLinkIcon" href="guide-common-problems-and-solutions.html#the-client-software-wont-install-on-a-windows-device">&para;</a></h2>
+<ul>
+<li>Solution:
+<ul>
+<li>Ensure that the installer zip file is fully extracted first; or</li>
+<li>Consider code-signing the software via the Settings page -&gt; Branding: Client -&gt; Code-signing; or</li>
+<li>Consider installation-file anti-virus exclusions</li>
+</ul></li>
+<li>More in-depth discussion here: <a href="https://account.cometbackup.com/docs/troubleshooting#antivirus-detects-comet-backup-as-a-virus-or-malware">https://account.cometbackup.com/docs/troubleshooting#antivirus-detects-comet-backup-as-a-virus-or-malware</a></li>
+</ul>
+<span class="docsSectionMarker"><span id="backup-client-has-issues-with-connection-processservices-or-ui" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Backup client has issues with connection, process/services, or UI&nbsp;<a class="docsSectionLinkIcon" href="guide-common-problems-and-solutions.html#backup-client-has-issues-with-connection-processservices-or-ui">&para;</a></h2>
+<ul>
+<li>Solution: 
+<ul>
+<li>If connection issues, UI issues, etc, are proving difficult to resolve, then you may want to try a manual reinstallation of the client software as a potential quick solution. A simple reinstallation may resolve many issues by effectively resetting permissions, etc; or</li>
+<li>Ensure that the client is updated to the latest version. Silently and remotely update all connected devices via: Accounts -&gt; Bulk Updates -&gt; New Campaign.</li>
+</ul></li>
+</ul></div><div class="doc-navigation-section"><div class="doc-navigation-back doc-navigation-width-2"><a href="guide-best-practices.html">&laquo; Back: Best Practices</a></div><div class="doc-navigation-next doc-navigation-width-2"><a href="about-these-docs.html">Next: Software Documentation &raquo;</a></div></div> 
+				</div>
+			</div>
+		</div>
+	
+	
+	</body>
+</html>

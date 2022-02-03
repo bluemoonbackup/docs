@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="docs.css">
+		<link rel="stylesheet" type="text/css" href="magnific-popup.css">		
+		<script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="magnific-popup.1.1.0.min.js"></script>
+		<script type="text/javascript" src="lunr-2.1.0.min.js"></script>
+		<script type="text/javascript" src="docs.js"></script>
+		<title>Documentation</title>		
+	</head>
+	<body>
+	
+		<div id="header-bar">
+			<div id="header-logo"></div>
+			Documentation
+		</div>
+	
+		<div id="main-area">
+			<div id="position-nav">
+				<div id="nav-inner">
+					<ul><li><form method="GET" action="search-results.html"><input name="s" class="search-box" placeholder="Search..."></form></li>
+<li><span class="category-header">Guides</span></li>
+<li><a href="guide-getting-started.html" title="Getting Started with Self-Hosted Comet">Getting Started with Self-Hosted Comet</a></li>
+<li><a href="guide-cometgo-getting-started.html" title="Getting Started with Comet-Hosted">Getting Started with Comet-Hosted</a></li>
+<li><a href="guide-comet-backup-getting-started.html" title="Getting Started with Comet Backup">Getting Started with Comet Backup</a></li>
+<li><a href="guide-disk-image-walkthrough.html" title="Disk Image Walkthrough">Disk Image Walkthrough</a></li>
+<li><a href="guide-seedload-walkthrough.html" title="Seed Load Walkthrough">Seed Load Walkthrough</a></li>
+<li class="current-page"><a data-indent="0" class="subsection-link subsection-indent-0" href="#disaster-recovery" title="Disaster Recovery">Disaster Recovery</a>
+<ul>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#overview" title="Overview">Overview</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#comet-server-loss" title="Comet Server Loss">Comet Server Loss</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#backup-client-device-loss" title="Backup Client Device Loss">Backup Client Device Loss</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#other-scenarios" title="Other Scenarios">Other Scenarios</a></li>
+</ul>
+</li><li><a href="guide-best-practices.html" title="Best Practices">Best Practices</a></li>
+<li><a href="guide-common-problems-and-solutions.html" title="Common Problems and Solutions">Common Problems and Solutions</a></li>
+<li><span class="category-header">Documentation</span></li>
+<li><a href="about-these-docs.html" title="Software Documentation">Software Documentation</a></li>
+<li><a href="application-architecture.html" title="Overview and Concepts">Overview and Concepts</a></li>
+<li><a href="comet-server-installation.html" title="Comet Server installation">Comet Server installation</a></li>
+<li><a href="comet-server-configuration.html" title="Comet Server configuration">Comet Server configuration</a></li>
+<li><a href="comet-server-usage.html" title="Comet Server usage">Comet Server usage</a></li>
+<li><a href="comet-backup-installation.html" title="Comet Backup installation">Comet Backup installation</a></li>
+<li><a href="comet-backup-usage.html" title="Comet Backup usage">Comet Backup usage</a></li>
+<li><a href="user-configuration.html" title="User configuration">User configuration</a></li>
+<li><a href="protected-items.html" title="Protected Item types">Protected Item types</a></li>
+<li><a href="storage-configuration.html" title="Storage configuration">Storage configuration</a></li>
+<li><a href="troubleshooting.html" title="Troubleshooting">Troubleshooting</a></li>
+<li><a href="api.html" title="API Guide">API Guide</a></li>
+<li><a href="api-reference.html" title="API Reference">API Reference</a></li>
+<li><a href="appendix.html" title="Appendix">Appendix</a></li>
+<li><a href="cloud-storage-providers.html" title="Cloud Storage Providers">Cloud Storage Providers</a></li>
+<li><a href="third-party-service-addons.html" title="Third-party service addons">Third-party service addons</a></li>
+<li><a href="comet-server-roles.html" title="Comet Server Roles ">Comet Server Roles </a></li>
+<li><a href="comet-chunking-overview.html" title="Comet Chunking Overview ">Comet Chunking Overview </a></li>
+<li><a href="security-compliance.html" title="Security &amp; Compliance">Security & Compliance</a></li>
+</ul>
+				</div>
+			</div>
+		
+			<div id="position-content">
+				<div id="content-inner">
+					<span class="docsSectionMarker"><span id="disaster-recovery" class="docsSectionMarkerChild"></span></span><h1>Disaster Recovery&nbsp;<a class="docsSectionLinkIcon" href="guide-disaster-recovery.html#disaster-recovery">&para;</a></h1>
+<span class="docsSectionMarker"><span id="overview" class="docsSectionMarkerChild"></span></span><div class="docs-box"><h2>Overview&nbsp;<a class="docsSectionLinkIcon" href="guide-disaster-recovery.html#overview">&para;</a></h2>
+<p>Backup data is encypted by default and encryption cannot be turned off. The key to accessing data in a Storage Vault is the user-profile that backed it up. Comet Server supports replication for the <a href="/docs/comet-server-configuration#authentication-role">Authentication Role</a> (the Comet Server itself), and <a href="/docs/comet-server-configuration#storage-role">Storage Role</a> (customers data).</p>
+<p>To ensure redundancy for your backup environment, use:</p>
+<ul>
+<li><a href="/docs/comet-server-configuration#server-selfbackup">Server Self-Backup</a> to backup your Comet Server (Auth Role), and then choose any other external method to have a redundant copy of the storage data. It is strongly recommendeded to enable Server Self-Backup.</li>
+<li><a href="/docs/comet-server-usage#replication">Replication</a> to replicate your Comet Server (Auth Role) and the storage data (Storage Role) to another Comet Server (replication will only happen in one-direction). Note: Replication will keep a duplicate of the current data. Mistakes will also be copied-over to the redundant copy.</li>
+</ul>
+<span class="docsSectionMarker"><span id="comet-server-loss" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Comet Server Loss&nbsp;<a class="docsSectionLinkIcon" href="guide-disaster-recovery.html#comet-server-loss">&para;</a></h2>
+<p>If you experience the loss of a Comet Server (fire, theft, disaster, ransomware), then you need to do the following:-</p>
+<ol>
+<li>Install a copy of Comet server on the new machine (download the software from here: <a href="https://account.cometbackup.com/downloads">https://account.cometbackup.com/downloads</a>)</li>
+<li>Stop the service, and unzip the Server Self-Backup file, overwrite the contents of Windows C:\ProgramData\Comet or Linux/Unix /var/lib/cometd/.</li>
+<li>If on Linux/Unix, run the following command to make sure the file permissions are correct. <code>sudo chown -R cometd:cometd /var/lib/cometd</code></li>
+<li>Login and 'relax' the serial to allow the new Comet Server to operate on your account: <a href="https://cometbackup.com/my_servers">https://cometbackup.com/my_servers</a></li>
+<li>Once done, the new Comet server will be at the same state as was the previous one at the time of the Server Self-Backup, including all of the client configuration data. You may need to alter DNS records, IP addresses, etc to match the new machine.</li>
+</ol>
+<p>Notes for Step 1:</p>
+<ul>
+<li>You will need your Comet account email and password to install Comet Server. </li>
+<li>A video tutorial on setting up the server is here: <a href="https://www.youtube.com/watch?v=jen7TdenIrM">https://www.youtube.com/watch?v=jen7TdenIrM</a></li>
+</ul>
+<span class="docsSectionMarker"><span id="backup-client-device-loss" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Backup Client Device Loss&nbsp;<a class="docsSectionLinkIcon" href="guide-disaster-recovery.html#backup-client-device-loss">&para;</a></h2>
+<p>If the user loses a device, then all that is needed to recover backed-up data, is the following:-</p>
+<ol>
+<li>Install a fresh copy of the Comet client software on the replacement device, using the user-profile username and password.</li>
+<li>Verify that the new device shows as 'Online' in the admin web interface: Accounts -&gt; Users -&gt; name -&gt; Devices.</li>
+<li>Perform a 'Restore' function as needed.</li>
+<li>Add the old device's Protected Items to the new device: <a href="https://account.cometbackup.com/docs/comet-server-usage#copy-and-paste">https://account.cometbackup.com/docs/comet-server-usage#copy-and-paste</a> and <a href="https://account.cometbackup.com/docs/troubleshooting#handling-a-changed-device-id">https://account.cometbackup.com/docs/troubleshooting#handling-a-changed-device-id</a></li>
+<li>When complete, 'Revoke' the old device-listing in the admin web interface -&gt; Accounts -&gt; Users -&gt; name -&gt; Devices.</li>
+</ol>
+<p>Notes:  </p>
+<ul>
+<li>If the user password is unknown, then it can be reset via admin web interface: Accounts -&gt; Users -&gt; name -&gt; Actions -&gt; Reset Password.</li>
+<li>If the user has disabled admin password reset, then the user must supply the current password for the installation step. The password can be changed by the user at a later stage. </li>
+<li>If the old device is brought back online at some future time, Comet may make a catch-up billing for the uncharged intervening period.</li>
+</ul>
+<span class="docsSectionMarker"><span id="other-scenarios" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Other Scenarios&nbsp;<a class="docsSectionLinkIcon" href="guide-disaster-recovery.html#other-scenarios">&para;</a></h2>
+<p>If you have a recovery requirement which is different from the above basic scenarios, please contact support via <a href="https://cometbackup.com/support">https://cometbackup.com/support</a> </p>
+<p>Please include:</p>
+<ul>
+<li>A brief description of the nature of the recovery situation</li>
+<li>Details of your Comet system: number of servers, what role(s) each server has, what type of data storage is used, whether data storage is local or remote. </li>
+<li>Further details may be requested by the support team.</li>
+</ul></div><div class="doc-navigation-section"><div class="doc-navigation-back doc-navigation-width-2"><a href="guide-seedload-walkthrough.html">&laquo; Back: Seed Load Walkthrough</a></div><div class="doc-navigation-next doc-navigation-width-2"><a href="guide-best-practices.html">Next: Best Practices &raquo;</a></div></div> 
+				</div>
+			</div>
+		</div>
+	
+	
+	</body>
+</html>

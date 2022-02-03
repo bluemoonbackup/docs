@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="docs.css">
+		<link rel="stylesheet" type="text/css" href="magnific-popup.css">		
+		<script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="magnific-popup.1.1.0.min.js"></script>
+		<script type="text/javascript" src="lunr-2.1.0.min.js"></script>
+		<script type="text/javascript" src="docs.js"></script>
+		<title>Documentation</title>		
+	</head>
+	<body>
+	
+		<div id="header-bar">
+			<div id="header-logo"></div>
+			Documentation
+		</div>
+	
+		<div id="main-area">
+			<div id="position-nav">
+				<div id="nav-inner">
+					<ul><li><form method="GET" action="search-results.html"><input name="s" class="search-box" placeholder="Search..."></form></li>
+<li><span class="category-header">Guides</span></li>
+<li><a href="guide-getting-started.html" title="Getting Started with Self-Hosted Comet">Getting Started with Self-Hosted Comet</a></li>
+<li><a href="guide-cometgo-getting-started.html" title="Getting Started with Comet-Hosted">Getting Started with Comet-Hosted</a></li>
+<li><a href="guide-comet-backup-getting-started.html" title="Getting Started with Comet Backup">Getting Started with Comet Backup</a></li>
+<li><a href="guide-disk-image-walkthrough.html" title="Disk Image Walkthrough">Disk Image Walkthrough</a></li>
+<li class="current-page"><a data-indent="0" class="subsection-link subsection-indent-0" href="#seed-load-walkthrough" title="Seed Load Walkthrough">Seed Load Walkthrough</a>
+<ul>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#seed-load-backup" title="Seed Load Backup">Seed Load Backup</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#overview" title="Overview">Overview</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#process" title="Process">Process</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#step-" title="Step 1">Step 1</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#step--2" title="Step 2">Step 2</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#step--3" title="Step 3">Step 3</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#step--4" title="Step 4">Step 4</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#step--5" title="Step 5">Step 5</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#step--6" title="Step 6">Step 6</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#seed-load-restore" title="Seed Load Restore">Seed Load Restore</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#overview-2" title="Overview">Overview</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#process-for-obtaining-an-unencrypted-copy-of-the-original-client-data" title="Process for obtaining an unencrypted copy of the original client data">Process for obtaining an unencrypted copy of the original client data</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#step--7" title="Step 1">Step 1</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#step--8" title="Step 2">Step 2</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#process-for-obtaining-a-copy-of-the-encrypted-contents-of-the-bucket-containing-the-clients-storage-vaults" title="Process for obtaining a copy of the encrypted contents of the bucket containing the client&apos;s storage vaults">Process for obtaining a copy of the encrypted contents of the bucket containing the client&apos;s storage vaults</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#step--9" title="Step 1">Step 1</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#step--10" title="Step 2">Step 2</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#step--11" title="Step 3">Step 3</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#step--12" title="Step 4">Step 4</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#step--13" title="Step 5">Step 5</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#step--14" title="Step 6">Step 6</a></li>
+</ul>
+</li><li><a href="guide-disaster-recovery.html" title="Disaster Recovery">Disaster Recovery</a></li>
+<li><a href="guide-best-practices.html" title="Best Practices">Best Practices</a></li>
+<li><a href="guide-common-problems-and-solutions.html" title="Common Problems and Solutions">Common Problems and Solutions</a></li>
+<li><span class="category-header">Documentation</span></li>
+<li><a href="about-these-docs.html" title="Software Documentation">Software Documentation</a></li>
+<li><a href="application-architecture.html" title="Overview and Concepts">Overview and Concepts</a></li>
+<li><a href="comet-server-installation.html" title="Comet Server installation">Comet Server installation</a></li>
+<li><a href="comet-server-configuration.html" title="Comet Server configuration">Comet Server configuration</a></li>
+<li><a href="comet-server-usage.html" title="Comet Server usage">Comet Server usage</a></li>
+<li><a href="comet-backup-installation.html" title="Comet Backup installation">Comet Backup installation</a></li>
+<li><a href="comet-backup-usage.html" title="Comet Backup usage">Comet Backup usage</a></li>
+<li><a href="user-configuration.html" title="User configuration">User configuration</a></li>
+<li><a href="protected-items.html" title="Protected Item types">Protected Item types</a></li>
+<li><a href="storage-configuration.html" title="Storage configuration">Storage configuration</a></li>
+<li><a href="troubleshooting.html" title="Troubleshooting">Troubleshooting</a></li>
+<li><a href="api.html" title="API Guide">API Guide</a></li>
+<li><a href="api-reference.html" title="API Reference">API Reference</a></li>
+<li><a href="appendix.html" title="Appendix">Appendix</a></li>
+<li><a href="cloud-storage-providers.html" title="Cloud Storage Providers">Cloud Storage Providers</a></li>
+<li><a href="third-party-service-addons.html" title="Third-party service addons">Third-party service addons</a></li>
+<li><a href="comet-server-roles.html" title="Comet Server Roles ">Comet Server Roles </a></li>
+<li><a href="comet-chunking-overview.html" title="Comet Chunking Overview ">Comet Chunking Overview </a></li>
+<li><a href="security-compliance.html" title="Security &amp; Compliance">Security & Compliance</a></li>
+</ul>
+				</div>
+			</div>
+		
+			<div id="position-content">
+				<div id="content-inner">
+					<span class="docsSectionMarker"><span id="seed-load-walkthrough" class="docsSectionMarkerChild"></span></span><h1>Seed Load Walkthrough&nbsp;<a class="docsSectionLinkIcon" href="guide-seedload-walkthrough.html#seed-load-walkthrough">&para;</a></h1>
+<span class="docsSectionMarker"><span id="seed-load-backup" class="docsSectionMarkerChild"></span></span><div class="docs-box"><h2>Seed Load Backup&nbsp;<a class="docsSectionLinkIcon" href="guide-seedload-walkthrough.html#seed-load-backup">&para;</a></h2>
+<span class="docsSectionMarker"><span id="overview" class="docsSectionMarkerChild"></span></span><h3>Overview&nbsp;<a class="docsSectionLinkIcon" href="guide-seedload-walkthrough.html#overview">&para;</a></h3>
+<p>This is a graphical walkthrough of the Seed Load Backup process. For clients with slow internet connections, or with large data volumes, it is possible to perform the initial backup to a client-local external drive, and then send the external drive containing the encrypted data to the storage location administrator. This data is then copied directly to the client bucket, vastly speeding up the initial backup. Subsequent client backups are incremental, building on the data already-stored.</p>
+<p>Comet Backup supports this technique under the name &quot;Seed Load Backup&quot;.</p>
+<span class="docsSectionMarker"><span id="process" class="docsSectionMarkerChild"></span></span><h3>Process&nbsp;<a class="docsSectionLinkIcon" href="guide-seedload-walkthrough.html#process">&para;</a></h3>
+<span class="docsSectionMarker"><span id="step-" class="docsSectionMarkerChild"></span></span><h4>Step 1&nbsp;<a class="docsSectionLinkIcon" href="guide-seedload-walkthrough.html#step-">&para;</a></h4>
+<p>On the Comet backup client application, create a new &quot;Local Path&quot; Storage Vault. This will initially represent the seed device, and will later represent the remote device.</p>
+<p class="doc-standalone-image-paragraph"><img src="images/seedload-walkthrough-00.png" alt="" /></p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/seedload-walkthrough-01.png"><img src="images/seedload-walkthrough-01.png.thumb.jpg" alt="" /></a></p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/seedload-walkthrough-02.png"><img src="images/seedload-walkthrough-02.png.thumb.jpg" alt="" /></a></p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/seedload-walkthrough-03.png"><img src="images/seedload-walkthrough-03.png.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="step--2" class="docsSectionMarkerChild"></span></span><h4>Step 2&nbsp;<a class="docsSectionLinkIcon" href="guide-seedload-walkthrough.html#step--2">&para;</a></h4>
+<p>Perform a backup to that Storage Vault.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/seedload-walkthrough-04.png"><img src="images/seedload-walkthrough-04.png.thumb.jpg" alt="" /></a></p>
+<p>Now we have successfully backed up the data to the seed load device and the next step is to bring that data to your Comet Server.</p>
+<span class="docsSectionMarker"><span id="step--3" class="docsSectionMarkerChild"></span></span><h4>Step 3&nbsp;<a class="docsSectionLinkIcon" href="guide-seedload-walkthrough.html#step--3">&para;</a></h4>
+<p>Create a new Bucket on a Comet Server</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/seedload-walkthrough-05.png"><img src="images/seedload-walkthrough-05.png.thumb.jpg" alt="" /></a></p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/seedload-walkthrough-05b.png"><img src="images/seedload-walkthrough-05b.png.thumb.jpg" alt="" /></a></p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/seedload-walkthrough-06.png"><img src="images/seedload-walkthrough-06.png.thumb.jpg" alt="" /></a></p>
+<p><strong>WARNING:</strong> This new bucket is currently unused. It will be used soon, but if you have Constellation enabled and <strong>deleting</strong> unused buckets, then Constellation may delete the bucket before the seed load process is finished. You should set the Constellation option to prevent it deleting unused buckets, and re-enable it only after the Seed Load process is complete.</p>
+<span class="docsSectionMarker"><span id="step--4" class="docsSectionMarkerChild"></span></span><h4>Step 4&nbsp;<a class="docsSectionLinkIcon" href="guide-seedload-walkthrough.html#step--4">&para;</a></h4>
+<p>Navigate to the Storage Vault's directory on the seed device and move the content into the new Bucket's directory.</p>
+<p>By default, the Bucket's data directory will either be (A) empty, or (B) contain only empty directories. Do not continue if the paste operation warns you that files will be overwritten.</p>
+<p><strong>Copy the seed load vault's data:</strong></p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/seedload-walkthrough-07.png"><img src="images/seedload-walkthrough-07.png.thumb.jpg" alt="" /></a></p>
+<p><strong>Paste the data into the Bucket Directory:</strong></p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/seedload-walkthrough-08.png"><img src="images/seedload-walkthrough-08.png.thumb.jpg" alt="" /></a></p>
+<p>All on-disk paths are identical between &quot;Local Copy&quot; and &quot;Comet&quot; vault types. Your Comet Server will see the files immediately and does not need to be restarted.</p>
+<span class="docsSectionMarker"><span id="step--5" class="docsSectionMarkerChild"></span></span><h4>Step 5&nbsp;<a class="docsSectionLinkIcon" href="guide-seedload-walkthrough.html#step--5">&para;</a></h4>
+<p>Edit the client's Storage Vault settings in the to point to the Bucket.</p>
+<p>It's very <strong>important</strong> that you change the existing Storage Vault, <em>not</em> create a new Storage Vault, because the data is encrypted with properties from this specific Vault.</p>
+<p class="doc-standalone-image-paragraph"><img src="images/seedload-walkthrough-09.png" alt="" /></p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/seedload-walkthrough-03.png"><img src="images/seedload-walkthrough-03.png.thumb.jpg" alt="" /></a></p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/seedload-walkthrough-11.png"><img src="images/seedload-walkthrough-11.png.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="step--6" class="docsSectionMarkerChild"></span></span><h4>Step 6&nbsp;<a class="docsSectionLinkIcon" href="guide-seedload-walkthrough.html#step--6">&para;</a></h4>
+<p>Test backup/restore from the Storage Vault's new location.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/seedload-walkthrough-12.png"><img src="images/seedload-walkthrough-12.png.thumb.jpg" alt="" /></a></p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/seedload-walkthrough-13.png"><img src="images/seedload-walkthrough-13.png.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="seed-load-restore" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Seed Load Restore&nbsp;<a class="docsSectionLinkIcon" href="guide-seedload-walkthrough.html#seed-load-restore">&para;</a></h2>
+<span class="docsSectionMarker"><span id="overview-2" class="docsSectionMarkerChild"></span></span><h3>Overview&nbsp;<a class="docsSectionLinkIcon" href="guide-seedload-walkthrough.html#overview-2">&para;</a></h3>
+<p>This is a walkthrough of the Seed Load Restore process. These are the steps for restoring data from a Storage Role based Storage Vault (not a direct-to-cloud vault). For clients with slow internet connections, or with large data volumes, and who need their data more quickly than they may be able to download it (eg: post-disaster), it is possible to perform a data restore to a local external drive, and then to bring the data directly to the client, vastly speeding up the process. The restored data can be in the form of either:</p>
+<ol>
+<li>Unencrypted data ready for immediate deployment to the original location; or as the</li>
+<li>Encrypted contents of the storage bucket, from which the client-local backup tool can produce unencrypted data as above, ready for immediate deployment to the original location. For this type, a small amount of client-profile Storage Vault configuration is needed before and after the process. </li>
+</ol>
+<p>Comet Backup supports these techniques under the name &quot;Seed Load Restore&quot;.  </p>
+<span class="docsSectionMarker"><span id="process-for-obtaining-an-unencrypted-copy-of-the-original-client-data" class="docsSectionMarkerChild"></span></span><h3>Process for obtaining an unencrypted copy of the original client data&nbsp;<a class="docsSectionLinkIcon" href="guide-seedload-walkthrough.html#process-for-obtaining-an-unencrypted-copy-of-the-original-client-data">&para;</a></h3>
+<span class="docsSectionMarker"><span id="step--7" class="docsSectionMarkerChild"></span></span><h4>Step 1&nbsp;<a class="docsSectionLinkIcon" href="guide-seedload-walkthrough.html#step--7">&para;</a></h4>
+<p>Install the Comet Backup application onto a local device, using the client user-profile username and password. This will register the device as a new device on the client's profile, but it will not incur charges unless the device adds a Protected Item.</p>
+<span class="docsSectionMarker"><span id="step--8" class="docsSectionMarkerChild"></span></span><h4>Step 2&nbsp;<a class="docsSectionLinkIcon" href="guide-seedload-walkthrough.html#step--8">&para;</a></h4>
+<p>Attach a suitably-sized external drive, and perform a normal restore, using the external drive as the output directory.
+The external drive will now contain the unencrypted client data, and can be taken to the client for immediate deployment.</p>
+<p>Finished.</p>
+<span class="docsSectionMarker"><span id="process-for-obtaining-a-copy-of-the-encrypted-contents-of-the-bucket-containing-the-clients-storage-vaults" class="docsSectionMarkerChild"></span></span><h3>Process for obtaining a copy of the encrypted contents of the bucket containing the client's storage vaults&nbsp;<a class="docsSectionLinkIcon" href="guide-seedload-walkthrough.html#process-for-obtaining-a-copy-of-the-encrypted-contents-of-the-bucket-containing-the-clients-storage-vaults">&para;</a></h3>
+<span class="docsSectionMarker"><span id="step--9" class="docsSectionMarkerChild"></span></span><h4>Step 1&nbsp;<a class="docsSectionLinkIcon" href="guide-seedload-walkthrough.html#step--9">&para;</a></h4>
+<p>Identify the ID of the client's bucket:</p>
+<ol>
+<li>On the Comet admin web interface, open Cluster -&gt; About This Cluster -&gt; Bucket Users.</li>
+<li>Note the bucket ID corresponding to the client name, under the Use Locations column</li>
+</ol>
+<span class="docsSectionMarker"><span id="step--10" class="docsSectionMarkerChild"></span></span><h4>Step 2&nbsp;<a class="docsSectionLinkIcon" href="guide-seedload-walkthrough.html#step--10">&para;</a></h4>
+<p>Using a file-explorer tool, or similar, find the bucket in the storage location.
+Attach a suitably-sized external drive to your device, and copy the entire contents of the client's bucket onto the external drive.</p>
+<span class="docsSectionMarker"><span id="step--11" class="docsSectionMarkerChild"></span></span><h4>Step 3&nbsp;<a class="docsSectionLinkIcon" href="guide-seedload-walkthrough.html#step--11">&para;</a></h4>
+<p>Take the external drive to the client, and attach it to the device which requires the restored data.</p>
+<span class="docsSectionMarker"><span id="step--12" class="docsSectionMarkerChild"></span></span><h4>Step 4&nbsp;<a class="docsSectionLinkIcon" href="guide-seedload-walkthrough.html#step--12">&para;</a></h4>
+<p>Edit the client storage vault details:</p>
+<ol>
+<li>Open the Comet Server web admin interface.</li>
+<li>Open the client storage vault details for editing (Do Not Create A New Vault!)</li>
+<li>Note the existing storage vault location details for later.</li>
+<li>Edit the location to point to the attached external drive (eg: &quot;E:\&quot;).</li>
+</ol>
+<span class="docsSectionMarker"><span id="step--13" class="docsSectionMarkerChild"></span></span><h4>Step 5&nbsp;<a class="docsSectionLinkIcon" href="guide-seedload-walkthrough.html#step--13">&para;</a></h4>
+<p>Perform a normal restore function. You, or the client, can either restore the unencrypted data to its original location, overwriting existing contents, or to some other directory, from where it can be moved at a later date.</p>
+<span class="docsSectionMarker"><span id="step--14" class="docsSectionMarkerChild"></span></span><h4>Step 6&nbsp;<a class="docsSectionLinkIcon" href="guide-seedload-walkthrough.html#step--14">&para;</a></h4>
+<p>Edit the client storage vault details back to the original settings:</p>
+<ol>
+<li>Open the Comet Server web admin interface.</li>
+<li>Open the client storage vault details for editing.</li>
+<li>Edit the location to point back to the original storage location, as noted from earlier.</li>
+</ol>
+<p>Finished.</p></div><div class="doc-navigation-section"><div class="doc-navigation-back doc-navigation-width-2"><a href="guide-disk-image-walkthrough.html">&laquo; Back: Disk Image Walkthrough</a></div><div class="doc-navigation-next doc-navigation-width-2"><a href="guide-disaster-recovery.html">Next: Disaster Recovery &raquo;</a></div></div> 
+				</div>
+			</div>
+		</div>
+	
+	
+	</body>
+</html>

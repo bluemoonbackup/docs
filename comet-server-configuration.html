@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="docs.css">
+		<link rel="stylesheet" type="text/css" href="magnific-popup.css">		
+		<script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="magnific-popup.1.1.0.min.js"></script>
+		<script type="text/javascript" src="lunr-2.1.0.min.js"></script>
+		<script type="text/javascript" src="docs.js"></script>
+		<title>Documentation</title>		
+	</head>
+	<body>
+	
+		<div id="header-bar">
+			<div id="header-logo"></div>
+			Documentation
+		</div>
+	
+		<div id="main-area">
+			<div id="position-nav">
+				<div id="nav-inner">
+					<ul><li><form method="GET" action="search-results.html"><input name="s" class="search-box" placeholder="Search..."></form></li>
+<li><span class="category-header">Guides</span></li>
+<li><a href="guide-getting-started.html" title="Getting Started with Self-Hosted Comet">Getting Started with Self-Hosted Comet</a></li>
+<li><a href="guide-cometgo-getting-started.html" title="Getting Started with Comet-Hosted">Getting Started with Comet-Hosted</a></li>
+<li><a href="guide-comet-backup-getting-started.html" title="Getting Started with Comet Backup">Getting Started with Comet Backup</a></li>
+<li><a href="guide-disk-image-walkthrough.html" title="Disk Image Walkthrough">Disk Image Walkthrough</a></li>
+<li><a href="guide-seedload-walkthrough.html" title="Seed Load Walkthrough">Seed Load Walkthrough</a></li>
+<li><a href="guide-disaster-recovery.html" title="Disaster Recovery">Disaster Recovery</a></li>
+<li><a href="guide-best-practices.html" title="Best Practices">Best Practices</a></li>
+<li><a href="guide-common-problems-and-solutions.html" title="Common Problems and Solutions">Common Problems and Solutions</a></li>
+<li><span class="category-header">Documentation</span></li>
+<li><a href="about-these-docs.html" title="Software Documentation">Software Documentation</a></li>
+<li><a href="application-architecture.html" title="Overview and Concepts">Overview and Concepts</a></li>
+<li><a href="comet-server-installation.html" title="Comet Server installation">Comet Server installation</a></li>
+<li class="current-page"><a data-indent="0" class="subsection-link subsection-indent-0" href="#comet-server-configuration" title="Comet Server configuration">Comet Server configuration</a>
+<ul>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#overview" title="Overview">Overview</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#settings-page" title="Settings page">Settings page</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#configuration-file" title="Configuration file">Configuration file</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#file-validation-and-access" title="File validation and access">File validation and access</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#windows" title="Windows">Windows</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#serial-number" title="Serial number">Serial number</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#server-branding" title="Server branding">Server branding</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#email" title="Email">Email</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#delivery-method" title="Delivery method">Delivery method</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#none-do-not-send-email" title="None (Do not send email)">None (Do not send email)</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#mx-direct" title="MX Direct">MX Direct</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#smtp-server" title="SMTP Server">SMTP Server</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#gmail-account" title="Gmail account">Gmail account</a></li>
+<li><a data-indent="4" class="subsection-link subsection-indent-4" href="#gmail-accounts-with-two-factor-authentication" title="Gmail accounts with two factor authentication">Gmail accounts with two factor authentication</a></li>
+<li><a data-indent="4" class="subsection-link subsection-indent-4" href="#allow-less-secure-apps" title="Allow less secure apps">Allow less secure apps</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#network" title="Network">Network</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#change-hostport-or-use-multiple-ports" title="Change host/port, or use multiple ports">Change host/port, or use multiple ports</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#configure-ssl-certificate" title="Configure SSL Certificate">Configure SSL Certificate</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#use-an-existing-ssl-certificate" title="Use an existing SSL certificate">Use an existing SSL certificate</a></li>
+<li><a data-indent="4" class="subsection-link subsection-indent-4" href="#existing-x-pem-certificate" title="Existing X.509 (PEM) certificate">Existing X.509 (PEM) certificate</a></li>
+<li><a data-indent="4" class="subsection-link subsection-indent-4" href="#existing-pkcs-certificate" title="Existing PKCS12 certificate">Existing PKCS12 certificate</a></li>
+<li><a data-indent="4" class="subsection-link subsection-indent-4" href="#troubleshooting" title="Troubleshooting">Troubleshooting</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#use-a-free-automaticallyrenewing-ssl-certificate" title="Use a free, automatically-renewing SSL certificate">Use a free, automatically-renewing SSL certificate</a></li>
+<li><a data-indent="4" class="subsection-link subsection-indent-4" href="#troubleshooting-2" title="Troubleshooting">Troubleshooting</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#enabling-http-to-https-redirection" title="Enabling HTTP to HTTPS redirection">Enabling HTTP to HTTPS redirection</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#customizing-the-https-security-levels" title="Customizing the HTTPS security levels">Customizing the HTTPS security levels</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#ip-rate-limiting" title="IP rate limiting">IP rate limiting</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#session-options" title="Session Options">Session Options</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#admin-accounts" title="Admin accounts">Admin accounts</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#username" title="Username">Username</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#password" title="Password">Password</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#change-or-reset-administrator-password" title="Change or reset administrator password">Change or reset administrator password</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#allow-login-via" title="Allow login via">Allow login via</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#ip-allowlist" title="IP Allowlist">IP Allowlist</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#policies-administrator-account" title="Policies (Administrator account)">Policies (Administrator account)</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#external-authentication-sources" title="External authentication sources">External authentication sources</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#ldap" title="LDAP">LDAP</a></li>
+<li><a data-indent="4" class="subsection-link subsection-indent-4" href="#method--bind-as-ownuser-only" title="Method 1. Bind as own-user only">Method 1. Bind as own-user only</a></li>
+<li><a data-indent="4" class="subsection-link subsection-indent-4" href="#method--bind-as-ownuser-search-and-rebind" title="Method 2. Bind as own-user, search, and rebind">Method 2. Bind as own-user, search, and rebind</a></li>
+<li><a data-indent="4" class="subsection-link subsection-indent-4" href="#method--bind-as-readonly-user-search-and-rebind-as-ownuser" title="Method 3. Bind as read-only user, search, and rebind as own-user">Method 3. Bind as read-only user, search, and rebind as own-user</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#twofactor-authentication-for-externallyauthenticated-administrator-accounts" title="Two-factor authentication for externally-authenticated administrator accounts">Two-factor authentication for externally-authenticated administrator accounts</a></li>
+<li><a data-indent="4" class="subsection-link subsection-indent-4" href="#primary-bind-exempted-from-fa-when-using-duo-authentication-proxy" title="&quot;Primary bind exempted from 2FA&quot; when using DUO Authentication Proxy">&quot;Primary bind exempted from 2FA&quot; when using DUO Authentication Proxy</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#authentication-role" title="Authentication Role">Authentication Role</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#authentication-role-request-storage-vault" title="Authentication Role Request Storage Vault">Authentication Role Request Storage Vault</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#configure-a-requestable-storage-vault-using-your-servers-storage-role" title="Configure a Requestable Storage Vault using your server&apos;s Storage Role">Configure a Requestable Storage Vault using your server&apos;s Storage Role</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#configure-a-requestable-storage-vault-to-backup-directly-to-a-cloud-provider" title="Configure a Requestable Storage Vault to backup directly to a cloud provider">Configure a Requestable Storage Vault to backup directly to a cloud provider</a></li>
+<li><a data-indent="4" class="subsection-link subsection-indent-4" href="#current-supported-cloud-storage-providers-for-direct-requestable-storage-vaults" title="Current supported cloud storage providers for direct Requestable Storage Vaults">Current supported cloud storage providers for direct Requestable Storage Vaults</a></li>
+<li><a data-indent="4" class="subsection-link subsection-indent-4" href="#video-tutorial" title="Video Tutorial">Video Tutorial</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#authentication-role-replication" title="Authentication Role Replication">Authentication Role Replication</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#summary-for-setting-up-the-replication-server" title="Summary for setting up the Replication server:">Summary for setting up the Replication server:</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#authentication-role-properties" title="Authentication Role Properties">Authentication Role Properties</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#missed-backups" title="Missed Backups">Missed Backups</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#internal-database-integrity-checks" title="Internal database integrity checks">Internal database integrity checks</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#storage-role" title="Storage Role">Storage Role</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#locations" title="Locations">Locations</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#storage-role-replication" title="Storage Role Replication">Storage Role Replication</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#summary-for-setting-up-the-replication-server-2" title="Summary for setting up the Replication server:">Summary for setting up the Replication server:</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#software-build-role" title="Software Build Role">Software Build Role</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#comet-client-branding" title="Comet Client Branding">Comet Client Branding</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#product-name" title="Product name">Product name</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#company-name" title="Company name">Company name</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#help-url" title="Help URL">Help URL</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#default-server-url" title="Default server URL">Default server URL</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#registration-url" title="Registration URL">Registration URL</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#icon-windows--macos" title="Icon (Windows / macOS)">Icon (Windows / macOS)</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#eula" title="EULA">EULA</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#logo-image-x" title="Logo image (100x32)">Logo image (100x32)</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#tile-image-x" title="Tile image (150x150)">Tile image (150x150)</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#background-logo" title="Background logo">Background logo</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#codesigning" title="Codesigning">Codesigning</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#codesigning-for-windows-authenticode" title="Codesigning for Windows (Authenticode)">Codesigning for Windows (Authenticode)</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#codesigning-for-windows-authenticode-ev" title="Codesigning for Windows (Authenticode EV)">Codesigning for Windows (Authenticode EV)</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#codesigning-for-macos" title="Codesigning for macOS">Codesigning for macOS</a></li>
+<li><a data-indent="4" class="subsection-link subsection-indent-4" href="#level" title="Level">Level</a></li>
+<li><a data-indent="4" class="subsection-link subsection-indent-4" href="#certificate-name" title="Certificate Name">Certificate Name</a></li>
+<li><a data-indent="4" class="subsection-link subsection-indent-4" href="#ssh" title="SSH">SSH</a></li>
+<li><a data-indent="4" class="subsection-link subsection-indent-4" href="#apple-id" title="Apple ID">Apple ID</a></li>
+<li><a data-indent="4" class="subsection-link subsection-indent-4" href="#appspecific-password" title="App-Specific Password">App-Specific Password</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#codesigning-for-android" title="Codesigning for Android">Codesigning for Android</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#codesigning-for-linux" title="Codesigning for Linux">Codesigning for Linux</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#options" title="Options">Options</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#constellation-role" title="Constellation Role">Constellation Role</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#targets" title="Targets">Targets</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#properties" title="Properties">Properties</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#risks" title="Risks">Risks</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#tenants" title="Tenants">Tenants</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#server-selfbackup" title="Server Self-Backup">Server Self-Backup</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#target" title="Target">Target</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#video" title="Video">Video</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#saving-changes" title="Saving changes">Saving changes</a></li>
+</ul>
+</li><li><a href="comet-server-usage.html" title="Comet Server usage">Comet Server usage</a></li>
+<li><a href="comet-backup-installation.html" title="Comet Backup installation">Comet Backup installation</a></li>
+<li><a href="comet-backup-usage.html" title="Comet Backup usage">Comet Backup usage</a></li>
+<li><a href="user-configuration.html" title="User configuration">User configuration</a></li>
+<li><a href="protected-items.html" title="Protected Item types">Protected Item types</a></li>
+<li><a href="storage-configuration.html" title="Storage configuration">Storage configuration</a></li>
+<li><a href="troubleshooting.html" title="Troubleshooting">Troubleshooting</a></li>
+<li><a href="api.html" title="API Guide">API Guide</a></li>
+<li><a href="api-reference.html" title="API Reference">API Reference</a></li>
+<li><a href="appendix.html" title="Appendix">Appendix</a></li>
+<li><a href="cloud-storage-providers.html" title="Cloud Storage Providers">Cloud Storage Providers</a></li>
+<li><a href="third-party-service-addons.html" title="Third-party service addons">Third-party service addons</a></li>
+<li><a href="comet-server-roles.html" title="Comet Server Roles ">Comet Server Roles </a></li>
+<li><a href="comet-chunking-overview.html" title="Comet Chunking Overview ">Comet Chunking Overview </a></li>
+<li><a href="security-compliance.html" title="Security &amp; Compliance">Security & Compliance</a></li>
+</ul>
+				</div>
+			</div>
+		
+			<div id="position-content">
+				<div id="content-inner">
+					<span class="docsSectionMarker"><span id="comet-server-configuration" class="docsSectionMarkerChild"></span></span><h1>Comet Server configuration&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#comet-server-configuration">&para;</a></h1>
+<span class="docsSectionMarker"><span id="overview" class="docsSectionMarkerChild"></span></span><div class="docs-box"><h2>Overview&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#overview">&para;</a></h2>
+<p>Comet Server can be configured either via the Settings page, or by editing the configuration file directly.</p>
+<p>This guide will include screenshots of the Settings page where appropriate, and also include references to the configuration file.</p>
+<span class="docsSectionMarker"><span id="settings-page" class="docsSectionMarkerChild"></span></span><h3>Settings page&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#settings-page">&para;</a></h3>
+<p>You can configure Comet Server via the <strong>Settings page</strong>.</p>
+<p>You can access the Settings page by logging in to the Comet Server web interface, then clicking the <strong>Settings</strong> landing page button or menu item in the <strong>Server</strong> menu.</p>
+<span class="docsSectionMarker"><span id="configuration-file" class="docsSectionMarkerChild"></span></span><h3>Configuration file&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#configuration-file">&para;</a></h3>
+<p>As an alternative to the Settings page, it is possible to edit the Comet Server's configuration via the <code>cometd.cfg</code> file. You can edit this file if you are experiencing any issues accessing the Comet Server web interface.</p>
+<span class="docsSectionMarker"><span id="file-validation-and-access" class="docsSectionMarkerChild"></span></span><h4>File validation and access&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#file-validation-and-access">&para;</a></h4>
+<p>The configuration file is in JSON format. Any changes made to this file must be valid JSON syntax. This mostly boils down to escaping backslash characters in text strings - wherever you intend for a backslash (<code>\</code>) character to appear, please use two backslashes (<code>\\</code>) instead.</p>
+<p>The Comet Server application may overwrite any changes to the <code>cometd.cfg</code> file, unless it is stopped first. After making changes, you should then restart the server software following the instructions in the previous &quot;Install the server application&quot; section.</p>
+<p>On Windows, if the application has been installed in the Program Files directory, then it may be necessary to run the editor as Administrator in order to save changes to the file. On Linux, the file may be owned by the <code>root</code> or <code>cometd</code> users, and it may be necessary to run the editor as a different user in order to save changes to the file.</p>
+<span class="docsSectionMarker"><span id="windows" class="docsSectionMarkerChild"></span></span><h4>Windows&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#windows">&para;</a></h4>
+<p>On Windows, Comet Server Service Manager includes a built-in configuration file editor that </p>
+<ul>
+<li>automatically checks for valid JSON syntax, and</li>
+<li>ensures that all Administrator user operations are handled correctly.</li>
+</ul>
+<p>We would recommend using the Comet Server Service Manager feature to edit the <code>cometd.cfg</code> file on Windows.</p>
+<span class="docsSectionMarker"><span id="serial-number" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Serial number&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#serial-number">&para;</a></h2>
+<p>Enter your serial number.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/settingspage-0100-serial-number.png"><img src="images/settingspage-0100-serial-number.png.thumb.jpg" alt="" /></a></p>
+<p>In <code>cometd.cfg</code>, this field can be set in the <code>License</code> section &gt; <code>SerialNumber</code> property.</p>
+<ul>
+<li>See also <a href="https://account.cometbackup.com/docs/application-architecture#licensing">Licensing</a></li>
+</ul>
+<span class="docsSectionMarker"><span id="server-branding" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Server branding&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#server-branding">&para;</a></h2>
+<p>You can configure the appearance of the Comet Server web interface.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/settingspage-0200-server-branding.png"><img src="images/settingspage-0200-server-branding.png.thumb.jpg" alt="" /></a></p>
+<p>The top-left section of the Comet Server can be configured to display either a Comet brand logo, custom text, or a custom image.</p>
+<p>In <code>cometd.cfg</code>, </p>
+<ul>
+<li>the <code>Branding</code> section contains properties which can be used to modify the appearance of the Comet Server's built-in web interface.</li>
+<li>the <code>BrandName</code> property sets the text displayed in the top-left corner.</li>
+<li>if the <code>LogoImage</code> property is set to the path to an image on the local filesystem, this logo image will be displayed replacing the logo text</li>
+</ul>
+<p>Additionally you can change the <a href="/docs/comet-server-configuration#comet-client-branding"><strong>Comet Client Branding</strong></a>.</p>
+<span class="docsSectionMarker"><span id="email" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Email&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#email">&para;</a></h2>
+<p>Comet Server can be configured to send email reports. To use this functionality, you should configure how email is sent.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/settingspage-0300-email.png"><img src="images/settingspage-0300-email.png.thumb.jpg" alt="" /></a></p>
+<p>You should set the &quot;Send as&quot; properties to configure how email appears to the recipient.</p>
+<p>In <code>cometd.cfg</code>, these properties can be set in the <code>Email</code> section &gt; <code>FromEmail</code> and <code>FromName</code> properties.</p>
+<span class="docsSectionMarker"><span id="delivery-method" class="docsSectionMarkerChild"></span></span><h3>Delivery method&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#delivery-method">&para;</a></h3>
+<p>You can choose to send email via one of four options:</p>
+<span class="docsSectionMarker"><span id="none-do-not-send-email" class="docsSectionMarkerChild"></span></span><h4>None (Do not send email)&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#none-do-not-send-email">&para;</a></h4>
+<p>Select this option to disable sending email from the Comet Server.</p>
+<p>The Comet Server will be unable to send email. You can use this option if you want to disable all outbound email from a Comet Server.</p>
+<p>In <code>cometd.cfg</code>, this option can be set in the <code>Email</code> section &gt; set the <code>Mode</code> property to <code>""</code> (empty string).</p>
+<span class="docsSectionMarker"><span id="mx-direct" class="docsSectionMarkerChild"></span></span><h4>MX Direct&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#mx-direct">&para;</a></h4>
+<p>MX Direct allows you to send email from this Comet Server without needing to configure a custom SMTP server. However, there is a greater chance of the email being discarded as spam. For more information, please see the &quot;Failed email delivery with MX Direct&quot; section in the Troubleshooting document.</p>
+<p>In <code>cometd.cfg</code>, this option can be set in the <code>Email</code> section &gt; set the <code>Mode</code> property to <code>"builtin"</code>.</p>
+<span class="docsSectionMarker"><span id="smtp-server" class="docsSectionMarkerChild"></span></span><h4>SMTP Server&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#smtp-server">&para;</a></h4>
+<p>If this option is enabled, Comet will send email via an SMTP server.</p>
+<p>The following options should be configured:</p>
+<ul>
+<li>Deliver via: SMTP Server</li>
+<li>Send as (display name):</li>
+<li>Send as (email):</li>
+<li>SMTP server address:</li>
+<li>SMTP server port:</li>
+<li>Username: </li>
+<li>Password: </li>
+<li>Security: one of &quot;SSL/TLS&quot; (default port 465), or &quot;STARTTLS&quot; (default port 587), or &quot;Plain&quot; (default port 25)</li>
+<li>Option to accept invalid SSL certificate from the remote SMTP server
+<ul>
+<li>You should leave this option unchecked. However, if you encounter errors, you may choose to enable it.</li>
+<li>In comparison to how SSL certificates are used for HTTPS, it is surprisingly common for SMTP servers to use an invalid SSL certificate.</li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="gmail-account" class="docsSectionMarkerChild"></span></span><h4>Gmail account&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#gmail-account">&para;</a></h4>
+<p>If this option is enabled, Comet will send email via a Gmail account. Internally, this uses known configuration information for Gmail's SMTP server.</p>
+<p>The following options should be configured:</p>
+<ul>
+<li>Deliver via: Gmail account</li>
+<li>Send as (display name):</li>
+<li>Email address: example@gmail.com</li>
+<li>Password: Enter your Gmail password</li>
+</ul>
+<span class="docsSectionMarker"><span id="gmail-accounts-with-two-factor-authentication" class="docsSectionMarkerChild"></span></span><h5>Gmail accounts with two factor authentication&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#gmail-accounts-with-two-factor-authentication">&para;</a></h5>
+<p>If you are using two factor authentication for your email account then you will need to create a Gmail Application-Specific password or the email will not work.</p>
+<p>Log into your Google account and visit your <a href="https://security.google.com/settings/security/apppasswords">App passwords</a> page. You may be asked to sign in to your Google account.</p>
+<p>Click <strong>Select app</strong> and select <strong>Mail</strong>. Click <strong>Select device</strong> and select <strong>Other</strong>.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/settingspage-0300-email-apppassword1.PNG"><img src="images/settingspage-0300-email-apppassword1.PNG.thumb.jpg" alt="" /></a></p>
+<p>Type in the name of the device (Comet Server) and click <strong>Generate</strong>.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/settingspage-0300-email-apppassword2.PNG"><img src="images/settingspage-0300-email-apppassword2.PNG.thumb.jpg" alt="" /></a></p>
+<p>You will be given a password which you will use when setting up the Gmail account with Comet.</p>
+<span class="docsSectionMarker"><span id="allow-less-secure-apps" class="docsSectionMarkerChild"></span></span><h5>Allow less secure apps&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#allow-less-secure-apps">&para;</a></h5>
+<p>If your Gmail is not working with Comet then you will have to enable the &quot;Allow less secure apps&quot; setting.</p>
+<p>Log into your Google account and open the <a href="https://myaccount.google.com/security">security settings</a>.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/settingspage-0300-email-gmailfix1.PNG"><img src="images/settingspage-0300-email-gmailfix1.PNG.thumb.jpg" alt="" /></a></p>
+<p>Scroll down until you see <strong>Allow less secure apps</strong> and turn it <strong>ON</strong>.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/settingspage-0300-email-gmailfix2.PNG"><img src="images/settingspage-0300-email-gmailfix2.PNG.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="network" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Network&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#network">&para;</a></h2>
+<p>Configure which network interfaces and URLs the Comet Server will be accessible on.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/settingspage-0400-network.PNG"><img src="images/settingspage-0400-network.PNG.thumb.jpg" alt="" /></a></p>
+<p>The Comet Server can listen on multiple addresses, ports, and interfaces.</p>
+<p>If you are updating an existing Comet Server's network address, also see <a href="/docs/appendix#updating-comet-server-network-addressurl-considerations">Updating Comet Server Network Address/URL Considerations</a> documentation.</p>
+<span class="docsSectionMarker"><span id="change-hostport-or-use-multiple-ports" class="docsSectionMarkerChild"></span></span><h3>Change host/port, or use multiple ports&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#change-hostport-or-use-multiple-ports">&para;</a></h3>
+<p>By default, the Comet Server listens for connections on 127.0.0.1 port 8060. It is expected that this would be changed to e.g. port 80 or 443. Once the hostname and port are configured for the first time, they should be kept the same so that any installed client software will still be able to log in.</p>
+<p>In <code>cometd.cfg</code>, each listener is configured with an object under the <code>ListenAddresses</code> section. Each object entry in the <code>ListenAddresses</code> section has (at minimum) a <code>ListenAddress</code> property, which should be a text string in the format <code>ip:port</code>.</p>
+<p>Comet Server supports binding to an IPv6 address. You may need to enter IPv6 bind addresses using square-bracket syntax (e.g. <code>[0000:1111::2222]</code>).</p>
+<span class="docsSectionMarker"><span id="configure-ssl-certificate" class="docsSectionMarkerChild"></span></span><h3>Configure SSL Certificate&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#configure-ssl-certificate">&para;</a></h3>
+<p>Configuring an SSL certificate is very strongly recommended to improve security, as malicious network operators are no longer able to intercept passwords.</p>
+<p>Using an SSL certificate with Comet Server also increases performance. The server will only negotiate an HTTP/2 pipelined connection if an SSL certificate is configured. This significantly improves TCP utilization.</p>
+<p>In addition to this, some web browsers will show a warning</p>
+<ul>
+<li>if the login page is not protected by SSL (e.g. Chrome 56, released January 2017), or</li>
+<li>if the website is not protected by SSL (e.g. Chrome 68, released in July 2018).</li>
+</ul>
+<p><a class="doc-thumbnail-popup" href="images/settingspage-0450-network.png"><img src="images/settingspage-0450-network.png.thumb.jpg" alt="" /></a>
+<a class="doc-thumbnail-popup" href="images/settingspage-0451-network.png"><img src="images/settingspage-0451-network.png.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="use-an-existing-ssl-certificate" class="docsSectionMarkerChild"></span></span><h4>Use an existing SSL certificate&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#use-an-existing-ssl-certificate">&para;</a></h4>
+<p>Comet Server supports using an existing SSL certificate in either X.509 (PEM) or PKCS12 file format.</p>
+<p>Self-signed certificates are supported, however, you should consider using a free certificate from Let's Encrypt as described below.</p>
+<p>In <code>cometd.cfg</code>, in one object within the <code>ListenAddresses</code> section, change the <code>ListenAddress</code> property to use the port 443.</p>
+<p>Comet takes SSL certificates in</p>
+<ul>
+<li>X.509 (PEM) file format
+<ul>
+<li>usually has a <code>*.crt</code>, <code>*.cer</code>, <code>*.pem</code>, or <code>*.key</code> file extension</li>
+<li>The X.509 format is a plain-text format. You can inspect the files with a plain-text editor, like Notepad or Nano. The certificate file should start with the text <code>-----BEGIN CERTIFICATE-----</code>. The key file should start with the text <code>-----BEGIN PRIVATE KEY-----</code>.</li>
+</ul></li>
+<li>PKCS12 file format
+<ul>
+<li>usually has a <code>*.pfx</code>, <code>*.p12</code> file extension</li>
+</ul></li>
+</ul>
+<p>Comet Server does not support other file formats for SSL certificates. If your SSL certificate is in another file format (e.g. if it has a <code>*.der</code>, <code>*.pks</code>, <code>*.jks</code>, <code>*.p7b</code>, or <code>*.p7c</code> extension), it should be converted to X.509 or PKCS12 format first before using it with Comet Server.</p>
+<span class="docsSectionMarker"><span id="existing-x-pem-certificate" class="docsSectionMarkerChild"></span></span><h5>Existing X.509 (PEM) certificate&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#existing-x-pem-certificate">&para;</a></h5>
+<ul>
+<li>Set the new <code>SSLCertPath</code> property, to be a path to a local certificate file (or certificate with chain). The certificate should be in X.509 (PEM) format.</li>
+<li>Set the new <code>SSLIntermediate</code> property, to be a path to a local file containing the intermediate certificate (or chain thereof) in X.509 (PEM) format.
+<ul>
+<li>This automatically produces a chain containing your main certificate and the intermediate certificate.</li>
+</ul></li>
+<li>Set the new <code>SSLCertKey</code> property, to be a path to a local certificate key file. The key file should be in X.509 (PEM) format and should not be encrypted.</li>
+</ul>
+<p><em>For Comet 19.5.x and earlier</em></p>
+<p>Earlier versions of Comet Server did not support the <code>SSLIntermediate</code> property. In this case, if you have an intermediate certificate, you should combine your certificate with the intermediate certificates. You can open the files with a plain-text editor like Notepad or Nano, and paste your certificate, followed by the intermediate certificates, to build a combined file. You should use this instead of the certificate file above.</p>
+<p>The Nginx web server requires the same process. You may find more information online about configuring intermediate certificates for Nginx.</p>
+<p>On Linux, you can easily combine files with a command like <code>(cat original.crt; echo; cat intermediate.crt) &gt; combined.crt</code>. In this example, placing <code>echo</code> between each <code>cat</code> command ensures that each file starts on a new line in the combined file.</p>
+<span class="docsSectionMarker"><span id="existing-pkcs-certificate" class="docsSectionMarkerChild"></span></span><h5>Existing PKCS12 certificate&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#existing-pkcs-certificate">&para;</a></h5>
+<ul>
+<li><code>SSLPfxPath</code>: The path to the PKCS12 file</li>
+<li><code>SSLPfxPassword</code>: The password to decrypt the PKCS12 file</li>
+</ul>
+<span class="docsSectionMarker"><span id="troubleshooting" class="docsSectionMarkerChild"></span></span><h5>Troubleshooting&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#troubleshooting">&para;</a></h5>
+<p>Please check the Comet Server logs for more information.</p>
+<p>Once your Comet Server is functional on the HTTPS address, we recommend using the third-party website <a href="https://www.ssllabs.com/ssltest/">https://www.ssllabs.com/ssltest/</a> to validate your SSL configuration for any hidden issues.</p>
+<p><em>&quot;tls: failed to parse private key&quot; or &quot;tls: failed to find any PEM data in key input&quot; errors</em></p>
+<p>This error message can mean that the key file is either encrypted, or, in the wrong format.</p>
+<p>Open the file with a plain-text editor, like Notepad or Nano:</p>
+<ul>
+<li>If the file contains unreadable characters, it is in the wrong file format. You should convert it to X.509 (PEM) format before using it with Comet.</li>
+<li>If the file contains readable characters, but it starts with <code>-----BEGIN ENCRYPTED PRIVATE KEY-----</code>, then the encryption must be removed before using it with Comet.</li>
+</ul>
+<span class="docsSectionMarker"><span id="use-a-free-automaticallyrenewing-ssl-certificate" class="docsSectionMarkerChild"></span></span><h4>Use a free, automatically-renewing SSL certificate&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#use-a-free-automaticallyrenewing-ssl-certificate">&para;</a></h4>
+<p>Comet Server integrates <a href="https://letsencrypt.org">Let's Encrypt</a> support, allowing you to receive a free valid SSL certificate for the Comet Server. The certificate is trusted by all major web browsers, it will be renewed automatically, and requires no intervention from the server administrator. The only requirements for this feature are</p>
+<ul>
+<li>The server must be listening on port 443; and</li>
+<li><em>(prior to Comet 19.3.8)</em> the server must be able to listen to port 80 if necessary; and</li>
+<li>the domain name must be publicly accessible, and the DNS for the domain name must point to this specific Comet Server instance.</li>
+</ul>
+<p>In order to enable this feature, in the configuration file, make the following changes to your object entry under the <code>ListenAddresses</code> key;</p>
+<ul>
+<li>Set the <code>ListenAddress</code> property to <code>:443</code>
+<ul>
+<li>You may specify a specific IP address (<code>ip:443</code>) if necessary. If your server is behind NAT, you should specify the LAN address.</li>
+</ul></li>
+<li>Set the new <code>AutoSSLDomains</code> property to a comma-separated list of domain names for which the SSL certificate should be valid.</li>
+</ul>
+<p>For example:</p>
+<pre><code>"ListenAddresses": [
+        {
+            "ListenAddress": ":443",
+            "AutoSSLDomains": "example.com"
+        }</code></pre>
+<span class="docsSectionMarker"><span id="troubleshooting-2" class="docsSectionMarkerChild"></span></span><h5>Troubleshooting&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#troubleshooting-2">&para;</a></h5>
+<p>Please check the Comet Server logs for more information.</p>
+<p>The Comet Server must be able to access <code>letsencrypt.org</code> in order to issue the SSL certificate.</p>
+<p><em>Provider downtime</em></p>
+<p>You can check the status of the Let's Encrypt service at <a href="https://letsencrypt.status.io/">https://letsencrypt.status.io/</a> .</p>
+<p><em>Rate limits</em></p>
+<p>The SSL certificate provider has rate limits on certificate issuances.</p>
+<ul>
+<li>To avoid reissuing the same certificate every time the Comet Server is restarted, Comet will automatically cache the generated SSL certificate.</li>
+<li>If you modify your SSL configuration very frequently, you may encounter a rate limit from the SSL certificate provider, preventing the SSL certificates from being generated.</li>
+<li>Current rate limits can be seen on <a href="https://letsencrypt.org/docs/rate-limits/">https://letsencrypt.org/docs/rate-limits/</a> .</li>
+</ul>
+<p><em>Error &quot;Can't supply TLS certificate for domain XYZ: acme/autocert: host not configured&quot;</em></p>
+<p>Or</p>
+<p><em>Error &quot;Request on XYZ cannot be satisfied by any configured SSL certificate: acme/autocert: host &quot;XYZ&quot; not configured in HostWhitelist</em></p>
+<p>When Let's Encrypt is used, the Comet Server associates your domain name with the valid SSL certificate.</p>
+<p>However, if someone tries to connect to the server using <code>https:// {direct IP}</code> or <code>https:// {wrong domain name}</code> there is a problem as Comet does not have a valid certificate for the request. Comet Server prefers to drop the connection rather than serve a mismatched certificate.</p>
+<p>If you see this error message including a wrong domain name:</p>
+<ul>
+<li>There is a misconfiguration. Either a client is unintentionally connecting using the wrong domain name, or, you have misconfigured Let's Encrypt to not mention a domain name that should be included.</li>
+<li>A researcher may be scanning the entire IPv4 internet using the Reverse DNS (RDNS) name of your server. It's possible that the RDNS name is out of date compared to the expected domain name for accessing this server.</li>
+</ul>
+<p>If you see this error message including an IP address:</p>
+<ul>
+<li>It's possible that someone tried to connect to your server on <code>https:// {direct IP}</code>. At the time of writing, it is not possible to receive a Let's Encrypt certificate for a bare IPv4 address. </li>
+<li>A researcher may be scanning the entire IPv4 internet, and connecting to the open <code>:443</code> port using the IP address of your server.</li>
+</ul>
+<span class="docsSectionMarker"><span id="enabling-http-to-https-redirection" class="docsSectionMarkerChild"></span></span><h4>Enabling HTTP to HTTPS redirection&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#enabling-http-to-https-redirection">&para;</a></h4>
+<p>Comet Server allows you to add a Listener on multiple IP/port pairs. Each IP/port pair that you enter will allow you to access the Comet Server web interface on that interface.</p>
+<p>Currently (July 2021 and earlier), if you enter a plain domain name (i.e. <code>example.com</code> without HTTP/HTTPS or port) into a web browser, the domain will be resolved using HTTP on port 80. <a href="https://blog.chromium.org/2021/03/a-safer-default-for-navigation-https.html">This may change in the future</a>, but the practical reality of the internet today is that it is a general requirement to listen for HTTP requests on port 80 and automatically redirect them to HTTPS on port 443.</p>
+<p>Comet has a built-in, automatic feature for redirecting HTTP to HTTPS. If you have a listener configured for port 443 and <em>no</em> listener on port 80 for the same IP address, Comet Server will automatically listen on port 80 and redirect traffic to port 443.</p>
+<p>You can see this behaviour in Comet Server's log file around when Comet Server starts up: <code>Listening on interface '0.0.0.0:80' (redirecting)...</code>. This text suffix is displayed as <code>secure</code> (HTTPS serving the Comet Server web interface), <code>insecure</code> (HTTP serving the Comet Server web interface) or <code>redirecting</code> (HTTP serving a HTTPS redirect).</p>
+<span class="docsSectionMarker"><span id="customizing-the-https-security-levels" class="docsSectionMarkerChild"></span></span><h4>Customizing the HTTPS security levels&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#customizing-the-https-security-levels">&para;</a></h4>
+<p>Comet automatically chooses an HTTPS security level. In current (21.6.x) versions of Comet, this is TLS 1.2 or TLS 1.3, with a certain set of ciphers, and no HSTS (HTTP Strict Transport Security). This configuration is sufficient to get an &quot;A&quot; grade on the Qualys SSLLabs test and retains a high level of browser compatibility. Future versions of Comet may choose different HTTPS security settings as the threat landscape evolves. Past versions of Comet may use weaker HTTPS settings.</p>
+<p>No customization is available for the HTTPS security level. If you want to customize the HTTPS security level, to use a different version of TLS, to configure the ciphersuites, or to enable HSTS (HTTP Strict Transport Security) headers, you should configure a reverse proxy in front of Comet Server to terminate TLS and forward to Comet Server over plain HTTP. For more information about this, please see the <a href="/docs/appendix#reverse-proxy-in-front-of-comet-server">Reverse Proxy</a> section,</p>
+<span class="docsSectionMarker"><span id="ip-rate-limiting" class="docsSectionMarkerChild"></span></span><h3>IP rate limiting&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#ip-rate-limiting">&para;</a></h3>
+<p>Comet Server supports IP-based rate limiting. This reduces the bandwidth for the entire Comet Server.</p>
+<p>To use this feature, follow these example changes to the <code>cometd.cfg</code> file:</p>
+<pre><code class="language-json">"IPRateLimit": {
+    "Rules": [
+        {
+            "MatchRegex": ".*",
+            "BytesPerSecond": 1048576
+        }
+    ]
+},</code></pre>
+<p>You can configure multiple rules. Each rule creates a rate-limiting domain. Incoming requests are matched against a domain, and the domain is limited as a whole. Incoming requests will be assigned to the first rate-limiting domain that matches.</p>
+<p>Rate limits apply separately to ingress and egress traffic (e.g. a 10 MB/s limit will allow simultaneous 10 MB/s upload and 10 MB/s download).</p>
+<span class="docsSectionMarker"><span id="session-options" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Session Options&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#session-options">&para;</a></h2>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/sessionoptions.png"><img src="images/sessionoptions.png.thumb.jpg" alt="" /></a></p>
+<p>Choose how long to stay logged into the Comet Server. The default session timeout is 30 minutes and the maximum time is 48 hours (2880 minutes). </p>
+<span class="docsSectionMarker"><span id="admin-accounts" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Admin accounts&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#admin-accounts">&para;</a></h2>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/settingspage-0500-admin-users.png"><img src="images/settingspage-0500-admin-users.png.thumb.jpg" alt="" /></a></p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/settingspage-0600-admin-user-properties.png"><img src="images/settingspage-0600-admin-user-properties.png.thumb.jpg" alt="" /></a></p>
+<p>In <code>cometd.cfg</code>, each object entry in the <code>AdminUsers</code> section represents a user who can log in to the Comet Server interface.</p>
+<span class="docsSectionMarker"><span id="username" class="docsSectionMarkerChild"></span></span><h3>Username&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#username">&para;</a></h3>
+<p>There are no character nor length restrictions on administrator usernames.</p>
+<p>Usernames are case-sensitive.</p>
+<span class="docsSectionMarker"><span id="password" class="docsSectionMarkerChild"></span></span><h3>Password&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#password">&para;</a></h3>
+<p>There are no character nor length restrictions on administrator passwords.</p>
+<span class="docsSectionMarker"><span id="change-or-reset-administrator-password" class="docsSectionMarkerChild"></span></span><h4>Change or reset administrator password&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#change-or-reset-administrator-password">&para;</a></h4>
+<p>You can reset the administrator password by clicking the 'Reset' button.</p>
+<p>In <code>cometd.cfg</code>,</p>
+<ol>
+<li>Find the object entry for the user in question under the <code>AdminUsers</code> section.</li>
+<li>Change the <code>PasswordFormat</code> value to 0 (zero).</li>
+<li>Change the <code>Password</code> field to the desired password.</li>
+<li>The password will be hashed and encrypted after first login.</li>
+</ol>
+<span class="docsSectionMarker"><span id="allow-login-via" class="docsSectionMarkerChild"></span></span><h3>Allow login via&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#allow-login-via">&para;</a></h3>
+<p>Comet Server supports two-factor authentication for administrators. For more information, please see the <a href="/docs/comet-server-usage#configure-twofactor-authentication">Configure two-factor authentication</a> section in the <a href="/docs/comet-server-usage#comet-server-usage">Comet Server usage</a> document.</p>
+<p>You can configure which sets of information are sufficient in order to log in to the Comet Server:</p>
+<ul>
+<li><strong>Password alone</strong>: if this option is checked, the password alone is sufficient to log in to the Comet Server. If you are enabling two-factor support, this option should normally be disabled.</li>
+<li><strong>Password and TOTP together</strong>: if this option is checked, the combination of password + TOTP code will allow the administrator to log in to the Comet Server.</li>
+<li><strong>Password and FIDO2 WebAuthn together</strong>: if this option is checked, the combination of password + FIDO2 WebAuthn authenticator will allow the administrator to log in to the Comet Server.</li>
+</ul>
+<p>In <code>cometd.cfg</code>,</p>
+<ul>
+<li>the <code>AllowPasswordLogin</code> property sets whether a valid password alone is sufficient to log in.</li>
+<li>the <code>AllowPasswordTOTPLogin</code> property sets whether both the Password and TOTP together are sufficient to log in.</li>
+<li>the <code>AllowPasswordWebAuthnLogin</code> property sets whether both the Password and FIDO2 WebAuthn authenticator together are sufficient to log in.</li>
+</ul>
+<span class="docsSectionMarker"><span id="ip-allowlist" class="docsSectionMarkerChild"></span></span><h3>IP Allowlist&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#ip-allowlist">&para;</a></h3>
+<p>It is possible to restrict the IP address of an Administrator logging in to Comet Server.</p>
+<p>This feature is not currently configurable from the web-based Settings page owing to the significant potential for locking yourself out. You must make this change in the server's configuration file: that ensures you have a way to remove it, if necessary.</p>
+<p>In the configuration file <code>cometd.cfg</code>,</p>
+<ol>
+<li>Find the object entry for the user in question under the <code>AdminUsers</code> section.</li>
+<li>Add a <code>IPWhitelist</code> field, with the value, a regular expression to match against IP addresses.</li>
+</ol>
+<p>For example:</p>
+<pre><code class="language-json">"AdminUsers": [
+    {
+        "Username": "my-user-account",
+        "IPWhitelist": "127\\.0\\.0\\.1",</code></pre>
+<p>You should use <code>\\.</code> to represent a literal <code>.</code> character - one slash is required at the regex-level, and the second slash is required because the configuration file is a JSON document.</p>
+<p>An example of how to use a regular expression to allow for dynamic IP:</p>
+<pre><code class="language-json">"AdminUsers": [
+      {
+          "Username": "my-user-account",
+          "IPWhitelist": "127\\.0\\.0\\.[0-9]{1,3}",</code></pre>
+<p>To whitelist multiple addresses you must use a vertical line &quot;|&quot; between each IP.</p>
+<p>An example of how to whitelist multiple addresses:</p>
+<pre><code class="language-json">"AdminUsers": [
+      {
+          "Username": "my-user-account",
+          "IPWhitelist": "127\\.0\\.0\\.1|172\\.0\\.0\\.1",</code></pre>
+<p>To whitelist all private IP ranges:</p>
+<pre><code class="language-json">"AdminUsers": [
+      {
+          "Username": "my-user-account",
+          "IPWhitelist": "^(127\.)|(192\.168\.)|(10\.)|(172\.1[6-9]\.)|(172\.2[0-9]\.)|(172\.3[0-1]\.)|(::1$)|([fF][cCdD])",</code></pre>
+<span class="docsSectionMarker"><span id="policies-administrator-account" class="docsSectionMarkerChild"></span></span><h3>Policies (Administrator account)&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#policies-administrator-account">&para;</a></h3>
+<p>It is possible to restrict the actions of administrator accounts in Comet Server.</p>
+<p>The following restrictions are available:</p>
+<ul>
+<li>Prevent viewing and editing server settings</li>
+<li>Prevent shutting down and restarting server</li>
+</ul>
+<span class="docsSectionMarker"><span id="external-authentication-sources" class="docsSectionMarkerChild"></span></span><h3>External authentication sources&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#external-authentication-sources">&para;</a></h3>
+<p><em>This section applies to Comet 19.3.2 and later.</em></p>
+<p>Comet Server supports using external authentication sources to verify administrator credentials during login. If an external authentication source is configured, then any administrator usernames that do not match a normal internal account are checked against the external authentication source.</p>
+<p>If the external authentication source does successfully validate the administrator credentials, a new Comet administrator account will be created for the user. You can choose the default permissions for the created administrator account.</p>
+<p>The account will be permanently associated with this authentication source; Comet Server does not store its password and always defers to the specific external authentication source for checking its password during login. This means that any password changes or account suspensions are immediately reflected in Comet.</p>
+<p>The following types of external authentication source are available:</p>
+<span class="docsSectionMarker"><span id="ldap" class="docsSectionMarkerChild"></span></span><h4>LDAP&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#ldap">&para;</a></h4>
+<p>Comet Server supports using an LDAP server (e.g. <a href="https://en.wikipedia.org/wiki/Active_Directory">Microsoft Active Directory</a>, <a href="https://directory.fedoraproject.org/">389ds</a>, or <a href="https://www.openldap.org/">OpenLDAP</a>) as an external authentication source.</p>
+<p>You must specify the LDAP address, port, and protocol security (plain, <code>STARTTLS</code>, or <code>LDAPS</code>). The default port for plain and <code>STARTTLS</code> is 389. The default port for <code>LDAPS</code> port is 636.</p>
+<p>There are several possible ways to verify account credentials against your LDAP server. In the Comet Server configuration, the <code>%{USER}</code> and <code>%{PASS}</code> macro substitutions are supported to refer to the supplied logon credentials.</p>
+<iframe width="700" height="440" src="https://www.youtube.com/embed/Oj5L286z0C8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+<span class="docsSectionMarker"><span id="method--bind-as-ownuser-only" class="docsSectionMarkerChild"></span></span><h5>Method 1. Bind as own-user only&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#method--bind-as-ownuser-only">&para;</a></h5>
+<p>An example configuration for a domain <code>MYDOMAIN.example.com</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LDAP Bind User</td>
+<td><code>%{USER}@MYDOMAIN.example.com</code></td>
+</tr>
+<tr>
+<td>LDAP Bind Password</td>
+<td><code>%{PASS}</code></td>
+</tr>
+<tr>
+<td>LDAP Search DN</td>
+<td>(blank)</td>
+</tr>
+<tr>
+<td>LDAP Search Filter</td>
+<td>(blank)</td>
+</tr>
+</tbody>
+</table>
+<p>This will allow users to log in to Comet Server with their domain credentials.</p>
+<p>The account's supplied credentials from the logon form (i.e. <code>%{USER}</code> / <code>%{PASS}</code>) will be validated if Comet is able to bind to the LDAP server as this account (only).</p>
+<p>This approach performs no validation of the user's groups, nor if these credentials are for a user account or some other type of LDAP object (e.g. a Computer) i.e. there is no distinction between authenticating the account and authorising it for use.</p>
+<span class="docsSectionMarker"><span id="method--bind-as-ownuser-search-and-rebind" class="docsSectionMarkerChild"></span></span><h5>Method 2. Bind as own-user, search, and rebind&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#method--bind-as-ownuser-search-and-rebind">&para;</a></h5>
+<p>Example configuration:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LDAP Bind User</td>
+<td><code>%{USER}@MYDOMAIN.example.com</code></td>
+</tr>
+<tr>
+<td>LDAP Bind Password</td>
+<td><code>%{PASS}</code></td>
+</tr>
+<tr>
+<td>LDAP Search DN</td>
+<td><code>CN=Users,DC=mydomain,DC=example,DC=com</code></td>
+</tr>
+<tr>
+<td>LDAP Search Filter</td>
+<td><code>(&amp;(objectClass=user)(sAMAccountName=%{USER})(memberof=CN=Administrators,CN=Builtin,DC=mydomain,DC=example,DC=com))</code></td>
+</tr>
+</tbody>
+</table>
+<p>The account's supplied credentials from the logon form will be validated if</p>
+<ol>
+<li>Comet is able to bind to the LDAP server as this account, and</li>
+<li>search for user accounts with this name that are a member of the <code>Administrators</code> group, and</li>
+<li>there is exactly one unambiguous user result for this search, and</li>
+<li>Comet is able to re-bind to the LDAP server using the DN of the user from the search with the original supplied password</li>
+</ol>
+<p>This requires that the bind user has sufficient permissions to perform the search above.</p>
+<p>Compared to &quot;Method 1&quot; above, this approach allows you to verify properties of the user account, distinguishing between two steps of authenticating the credentials and authorising the login.</p>
+<p>The above Search Filter is a sample only. Active Directory supports the <code>memberof</code> and <code>sAMAccountName</code> filters by default. Other directory servers should modify the search filter as appropriate to check usernames and group memberships.</p>
+<ul>
+<li><code>MemberOf</code> plugin for 389ds: <a href="https://directory.fedoraproject.org/docs/389ds/design/memberof-plugin.html">https://directory.fedoraproject.org/docs/389ds/design/memberof-plugin.html</a> </li>
+<li><code>MemberOf</code> overlay for OpenLDAP: <a href="http://www.openldap.org/doc/admin24/overlays.html#Reverse%20Group%20Membership%20Maintenance">http://www.openldap.org/doc/admin24/overlays.html#Reverse%20Group%20Membership%20Maintenance</a> </li>
+</ul>
+<span class="docsSectionMarker"><span id="method--bind-as-readonly-user-search-and-rebind-as-ownuser" class="docsSectionMarkerChild"></span></span><h5>Method 3. Bind as read-only user, search, and rebind as own-user&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#method--bind-as-readonly-user-search-and-rebind-as-ownuser">&para;</a></h5>
+<p>Example configuration:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LDAP Bind User</td>
+<td><code>CometCredentialValidationUser@MYDOMAIN.example.com</code></td>
+</tr>
+<tr>
+<td>LDAP Bind Password</td>
+<td><code>CometCredentialValidationPassword</code></td>
+</tr>
+<tr>
+<td>LDAP Search DN</td>
+<td><code>CN=Users,DC=mydomain,DC=example,DC=com</code></td>
+</tr>
+<tr>
+<td>LDAP Search Filter</td>
+<td><code>(&amp;(objectClass=user)(sAMAccountName=%{USER})(memberof=CN=Administrators,CN=Builtin,DC=mydomain,DC=example,DC=com))</code></td>
+</tr>
+</tbody>
+</table>
+<p>The account's supplied credentials from the logon form will be validated if</p>
+<ol>
+<li>Comet is able to bind to the LDAP server as this hardcoded account, and</li>
+<li>search for user accounts with this name that are a member of the <code>Administrators</code> group, and</li>
+<li>there is exactly one unambiguous user result for this search, and</li>
+<li>Comet is able to re-bind to the LDAP server using the DN of the user from the search with the original supplied password</li>
+</ol>
+<p>Compared to &quot;Method 2&quot; above, this allows you to restrict the search process to a dedicated account, and restrict search permissions from other user accounts.</p>
+<span class="docsSectionMarker"><span id="twofactor-authentication-for-externallyauthenticated-administrator-accounts" class="docsSectionMarkerChild"></span></span><h4>Two-factor authentication for externally-authenticated administrator accounts&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#twofactor-authentication-for-externallyauthenticated-administrator-accounts">&para;</a></h4>
+<p>If you are using external authentication (e.g. LDAP) for admin accounts, logging in to Comet Server with LDAP credentials causes a stub/passwordless administrator account to be created. The only way to log in to this account is via a successful LDAP handshake.</p>
+<p>After the stub account is created (marked as &quot;External&quot; in the Comet Server Settings page &gt; &quot;Admin accounts&quot; area) you can set up 2FA for this account in the same way as for any Comet admin account. Then, both a successful LDAP handshake and the 2FA credentials will be required to log in to the Comet Server web interface.</p>
+<p>An alternative approach is if your LDAP server has built-in 2FA. For example, if you are using (e.g.)...</p>
+<ul>
+<li>DUO Authentication Proxy (DUO LDAP Proxy)</li>
+<li>Azure Multi-Factor Authentication Server</li>
+<li>Any LDAP server (e.g. Active Directory) using RADIUS authentication, with a 2FA RADIUS solution such as e.g.
+<ul>
+<li>GreenRADIUS</li>
+<li>YubiX / YubiRADIUS (discontinued)</li>
+<li>multiOTP + FreeRADIUS</li>
+</ul></li>
+</ul>
+<p>...as your LDAP server inside Comet, the LDAP handshake will hang until the administrator completes an out-of-band 2FA handshake using the provider's own system (e.g. a push notification gateway). This provides two-factor authentication outside of Comet itself.</p>
+<span class="docsSectionMarker"><span id="primary-bind-exempted-from-fa-when-using-duo-authentication-proxy" class="docsSectionMarkerChild"></span></span><h5>&quot;Primary bind exempted from 2FA&quot; when using DUO Authentication Proxy&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#primary-bind-exempted-from-fa-when-using-duo-authentication-proxy">&para;</a></h5>
+<p>By default, DUO Authentication Proxy does not prompt for 2FA for any LDAP bind. You need to configure the DUO Authentication Proxy software to choose which accounts are subject to 2FA prompts. For instance, an interactive user account should be subject to this, but service accounts (e.g. for Method 2 / 3 above) should not be subject to a 2FA prompt as they would be unable to complete it.</p>
+<p>Please see <a href="https://help.duo.com/s/article/4989?language=en_US">https://help.duo.com/s/article/4989?language=en_US</a> for more information,</p>
+<span class="docsSectionMarker"><span id="authentication-role" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Authentication Role&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#authentication-role">&para;</a></h2>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/settingspage-0700-authrole.png"><img src="images/settingspage-0700-authrole.png.thumb.jpg" alt="" /></a></p>
+<p>The Comet Server software is split into separate roles, as described in the &quot;Application Architecture&quot; section. If this server is expected to only play a storage role or an authentication role in your infrastructure, the other roles should be disabled.</p>
+<p>In <code>cometd.cfg</code>, the <code>AuthenticationRole</code> &gt; <code>RoleEnabled</code> option configures whether the Authentication Role is enabled.</p>
+<p>The Authentication Role is the part of Comet Server responsible for managing users and job history logs. When this role is enabled, the following data files are used:</p>
+<ul>
+<li><code>cometd-users.db</code> - This file contains user profile information for all users. The expected file-size is small.</li>
+<li><code>cometd-jobs.db</code> - This file contains textual job information for all job history. The file-size may grow to some tens of MB, or larger, depending on the retention and volume of job entries.</li>
+</ul>
+<p>It is not safe to copy these <code>.db</code> files while Comet Server is running. You can backup these files and more using the <a href="/docs/comet-server-configuration#server-selfbackup">Server Self-Backup</a> option.</p>
+<span class="docsSectionMarker"><span id="authentication-role-request-storage-vault" class="docsSectionMarkerChild"></span></span><h3>Authentication Role Request Storage Vault&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#authentication-role-request-storage-vault">&para;</a></h3>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/settingspage-0800-authrole-request-destinations.png"><img src="images/settingspage-0800-authrole-request-destinations.png.thumb.jpg" alt="" /></a></p>
+<p>The <strong>Request Storage Vault</strong> section is used to manage default storage options which are available when requesting a new Storage Vault for a user. When adding a Storage Vault for a new or existing account, you can simply assign a Requestable Storage Vault instead of manually creating a storage location per account. Comet will automatically separate user data and therefore there is no need to create separate bucket locations manually.</p>
+<p>The Requestable Storage Vault will automatically assign a bucket location within the storage location. It is possible to configure it with your Storage Role location/s and to a cloud storage provider directly.</p>
+<span class="docsSectionMarker"><span id="configure-a-requestable-storage-vault-using-your-servers-storage-role" class="docsSectionMarkerChild"></span></span><h4>Configure a Requestable Storage Vault using your server's Storage Role&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#configure-a-requestable-storage-vault-using-your-servers-storage-role">&para;</a></h4>
+<p>You can configure your Requestable Storage Vaults to use the Storage Role location of your Comet Servers (no limit). An end user will see the Storage Vault as your server’s storage and not the actual destination (such as, not seeing cloud storage credentials). </p>
+<p>For a single Comet Server with Authentication Role and Storage Role enabled. Create a new Requestable Storage Vault, leave the <em>Address</em> dropdown on <em>Local</em> and it will use the current server's Storage Role location.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/requestablestoragevaultlocal.gif"><img src="images/requestablestoragevaultlocal.gif.thumb.jpg" alt="" /></a></p>
+<p>To add an additional Storage Role server as a Requestable Storage Vault option, create a new Requestable Storage Vault, change the <em>Address</em> dropdown to <em>Remote</em> and input the Storage Role server's credentials.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/requestablestoragevaultremote.gif"><img src="images/requestablestoragevaultremote.gif.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="configure-a-requestable-storage-vault-to-backup-directly-to-a-cloud-provider" class="docsSectionMarkerChild"></span></span><h4>Configure a Requestable Storage Vault to backup directly to a cloud provider&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#configure-a-requestable-storage-vault-to-backup-directly-to-a-cloud-provider">&para;</a></h4>
+<p>You can configure a Requestable Storage Vault with one of the supported cloud storage providers. When using this Storage Vault, the data will backup directly to the storage location and not pass through your Comet Server (unlike using your cloud storage as the Storage Role). When assigning this Storage Vault to an account, the access keys granted will only have permissions for its own subdirectory and won't be able to access other accounts data.</p>
+<p>Create a new Requestable Storage Vault, change the <em>Type</em> dropdown to one of the supported cloud providers, and input your cloud storage details (Master key is required).</p>
+<span class="docsSectionMarker"><span id="current-supported-cloud-storage-providers-for-direct-requestable-storage-vaults" class="docsSectionMarkerChild"></span></span><h5>Current supported cloud storage providers for direct Requestable Storage Vaults&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#current-supported-cloud-storage-providers-for-direct-requestable-storage-vaults">&para;</a></h5>
+<ul>
+<li><a href="https://cometbackup.com/docs/storage-configuration#backblaze-b-cloud-storage">Backblaze B2 Cloud Storage</a></li>
+<li><a href="https://cometbackup.com/docs/storage-configuration#wasabi">Wasabi Hot Cloud Storage</a></li>
+</ul>
+<span class="docsSectionMarker"><span id="video-tutorial" class="docsSectionMarkerChild"></span></span><h5>Video Tutorial&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#video-tutorial">&para;</a></h5>
+<p>See our video explaining and showing you how to configure this:</p>
+<iframe width="700" height="440" src="https://www.youtube.com/embed/OF8oZp76Unk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+<iframe width="700" height="440" src="https://www.youtube.com/embed/RDiihFwFiig" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<span class="docsSectionMarker"><span id="authentication-role-replication" class="docsSectionMarkerChild"></span></span><h3>Authentication Role Replication&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#authentication-role-replication">&para;</a></h3>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/settingspage-0900-authrole-replication.png"><img src="images/settingspage-0900-authrole-replication.png.thumb.jpg" alt="" /></a></p>
+<p><strong>Authentication Role Replication</strong> replicates this server's authentication role data (i.e. user profiles and policy group configurations) to the other Comet Server in one direction (the replica doesn't replicate data back to the main).</p>
+<p>You can have your Replication server store the data using a cloud service provider or using your own storage.</p>
+<p>Server logs and job logs are not replicated (currently).</p>
+<p>For <strong>Storage Role Replication</strong> (i.e. storage buckets and their content) <a href="/docs/comet-server-configuration#storage-role-replication">refer to the Storage Role Replication documentation</a>.</p>
+<span class="docsSectionMarker"><span id="summary-for-setting-up-the-replication-server" class="docsSectionMarkerChild"></span></span><h4>Summary for setting up the Replication server:&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#summary-for-setting-up-the-replication-server">&para;</a></h4>
+<ul>
+<li>
+<p>Install a new Comet Server meeting the <a href="/docs/comet-server-installation#system-requirements">system requirements</a> (can be installed on a virtual machine or VPS) </p>
+</li>
+<li>
+<p>On the Replication server, enable the Authentication Role</p>
+</li>
+<li>
+<p>On the main server, configure the Authentication Role replication settings on the Settings page to point to the replica</p>
+</li>
+</ul>
+<span class="docsSectionMarker"><span id="authentication-role-properties" class="docsSectionMarkerChild"></span></span><h3>Authentication Role Properties&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#authentication-role-properties">&para;</a></h3>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/settingspage-1000-authrole-properties.png"><img src="images/settingspage-1000-authrole-properties.png.thumb.jpg" alt="" /></a></p>
+<p><strong>Keep job logs for: XX day(s)</strong> is how long to keep job logs in the job history before it automatically deletes after the specified time. Job history is located under <em>Accounts &gt; Job History</em>.</p>
+<p>Please note that if you have legal requirements to keep customer logs for an extended period of time, you should ensure this setting is configured appropriately. This setting affects the customer backup job reports; the Comet Server's server-side log entries; it does not affect the retention period for actual backed-up data within each customer's Storage Vault.</p>
+<span class="docsSectionMarker"><span id="missed-backups" class="docsSectionMarkerChild"></span></span><h4>Missed Backups&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#missed-backups">&para;</a></h4>
+<p>The Authentication Role is responsible for maintaining historical logs of each job. Comet Server can generate a virtual &quot;missed&quot; job corresponding to when a backup job was expected to run on schedule but no backup job was found. You can control generation of Missed Backup jobs via the <code>AuthenticationRole</code> &gt; <code>GenerateMissedBackupEvents</code> property. This property defaults to true, but has no effect if the Authentication Role is disabled.</p>
+<p>In general, we would suggest leaving this property enabled for primary servers, and disabling it for replica servers.</p>
+<p>Missed backups are detected the following basis: </p>
+<ul>
+<li>A background task performs calculations every half-hour.</li>
+<li>If a scheduled backup job was expected to run at time <code>T</code>, and no backup job for the same username, Protected Item, and Storage Vault occurred within the time range <code>T - 5m</code> ... <code>T + 15m</code>, then a missed backup job will be injected with the start and stop time set to <code>T</code>.</li>
+</ul>
+<p>Comet Server does not generate missed backup jobs for a time period older than the &quot;Keep job logs for: XX day(s)&quot; setting, as these would be automatically removed.</p>
+<p>When extending the time period of the &quot;Keep job logs for: XX day(s)&quot; to a longer period, there is a blank period in the past for which Missed backup jobs may be eligible to be generated. To avoid this issue, or for any other reason, you can set a cut-off date before which no missed backup jobs will be generated, via the <code>AuthenticationRole</code> &gt; <code>NoMissedBackupEventsBefore</code> configuration property (as a unix timestamp).</p>
+<span class="docsSectionMarker"><span id="internal-database-integrity-checks" class="docsSectionMarkerChild"></span></span><h4>Internal database integrity checks&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#internal-database-integrity-checks">&para;</a></h4>
+<p>Comet Server supports running integrity checks on its internal database files (<code>*.db3</code> files). It may take an extended amount of time to run these integrity checks.</p>
+<p>In Comet 20.2.x, a quick check runs at startup. This may delay server startup by an amount of time proportional to the size of the <code>comet-jobs.db3</code> file. As of Comet 20.3.0, the checks are disabled by default.</p>
+<p>As of Comet 20.3.0, the integrity check level for the Authentication Role's job log database (<code>comet-jobs.db3</code>) can be configured from the <code>cometd.cfg</code> file, by setting the <code>AuthenticationRole</code> &gt; <code>DatabaseCheckLevel</code> property to a value from the below table.</p>
+<p>Note that you do not need to enable this feature, unless, you have specific indicators that signal it will be useful.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0</code></td>
+<td>Default - same as <code>2</code></td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td>No checks (fastest)</td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td><code>wal</code> rollup</td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td><code>wal</code> rollup, and quick <code>db3</code> check</td>
+</tr>
+<tr>
+<td><code>4</code></td>
+<td><code>wal</code> rollup, and extended <code>db3</code> check</td>
+</tr>
+<tr>
+<td><code>5</code></td>
+<td><code>wal</code> rollup, extended <code>db3</code> check, and compact <code>db3</code> file size (slowest)</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="storage-role" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Storage Role&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#storage-role">&para;</a></h2>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/settingspage-1100-storagerole.png"><img src="images/settingspage-1100-storagerole.png.thumb.jpg" alt="" /></a></p>
+<p>The Storage Role is the part of Comet Server responsible for receiving and replicating any data uploaded by a Comet Backup account. When this role is enabled, the following data files are used:</p>
+<ul>
+<li><code>cometd-buckets.db</code> - This file contains metadata and authentication information for all Storage Vaults. The expected file-size is small.</li>
+</ul>
+<p>It is not safe to copy these <code>.db</code> files while Comet Server is running.</p>
+<p>In <code>cometd.cfg</code>, the <code>StorageRole</code> &gt; <code>RoleEnabled</code> option configures whether the Storage Role is enabled.</p>
+<p>When the Storage Role is enabled, data is sent to the Comet server for storage in whichever destinations are selected, be it local path, or sending the data into a cloud-storage account you may have with a supported third party. This is discussed in better detail in the <strong>Storage Configuration</strong> section
+Note: when the storage destination is a cloud service, data will necessarily pass through your Comet server to the cloud. This ensures that your storage choices are not visible to the end-user. If you are likely to encounter bandwidth issues, then you may wish to consider sending user data directly from the end-user to the cloud service. This will potentially expose your data storage choices to the end-user, as the credentials for access must be stored in the desktop client. You can control access to the desktop client via <strong>Policies</strong></p>
+<span class="docsSectionMarker"><span id="locations" class="docsSectionMarkerChild"></span></span><h3>Locations&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#locations">&para;</a></h3>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/settingspage-1200-storagerole-locations.png"><img src="images/settingspage-1200-storagerole-locations.png.thumb.jpg" alt="" /></a></p>
+<p>You must configure a location where this Comet Server can store data. The path might be a local disk path, or a network account, or a cloud storage provider. For more information about the supported storage types, please see the <a href="/docs/storage-configuration#storage-configuration"><strong>Storage Configuration</strong></a> documentation. </p>
+<span class="docsSectionMarker"><span id="storage-role-replication" class="docsSectionMarkerChild"></span></span><h3>Storage Role Replication&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#storage-role-replication">&para;</a></h3>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/settingspage-1300-storagerole-replication.png"><img src="images/settingspage-1300-storagerole-replication.png.thumb.jpg" alt="" /></a></p>
+<p><strong>Storage Role Replication</strong> replicates this server's storage role data (i.e. storage buckets &amp; its content) to the other Comet Server in one direction (the replica doesn't replicate data back to the main).</p>
+<p>You can have your Replication server store the data using a cloud service provider or using your own storage.</p>
+<p>For <strong>Authentication Role Replication</strong> (i.e. user profiles and policy group configurations) <a href="/docs/comet-server-configuration#authentication-role-replication">refer to the Authentication Role Replication documentation</a>.</p>
+<span class="docsSectionMarker"><span id="summary-for-setting-up-the-replication-server-2" class="docsSectionMarkerChild"></span></span><h4>Summary for setting up the Replication server:&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#summary-for-setting-up-the-replication-server-2">&para;</a></h4>
+<ul>
+<li>
+<p>Install a new Comet Server meeting the <a href="/docs/comet-server-installation#system-requirements">system requirements</a> (can be installed on a virtual machine or VPS) </p>
+</li>
+<li>
+<p>On the Replication server, configure the Storage Role (can store data using a cloud service provider or your own storage)</p>
+</li>
+<li>
+<p>On the main server, configure the Storage Role replication settings on the Settings page, to point to the replica</p>
+</li>
+</ul>
+<span class="docsSectionMarker"><span id="software-build-role" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Software Build Role&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#software-build-role">&para;</a></h2>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/settingspage-1400-swbuild.png"><img src="images/settingspage-1400-swbuild.png.thumb.jpg" alt="" /></a></p>
+<p>The <strong>Software Build Role</strong> is the part of Comet Server responsible for generating branded client software installers and making them available for download. When this role is enabled, the <em>Download client software</em> page appears in the Comet Server web interface.</p>
+<iframe width="700" height="440" src="https://www.youtube.com/embed/EmUndzvBfpI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<span class="docsSectionMarker"><span id="comet-client-branding" class="docsSectionMarkerChild"></span></span><h3>Comet Client Branding&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#comet-client-branding">&para;</a></h3>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/settingspage-1500-swbuild-branding.png"><img src="images/settingspage-1500-swbuild-branding.png.thumb.jpg" alt="" /></a></p>
+<p>The <strong>Software Build Role</strong> section is for rebranding the Comet desktop client. This can also be configured within <code>cometd.cfg</code>. When you make changes to your branding, it is required to update the desktop clients for the changes to apply. It is possible to update the branding for multiple devices at once using the <em><a href="/docs/comet-server-usage#bulk-update">Bulk Update</a></em> feature). <a href="/docs/comet-server-configuration#server-branding">Click here for Server branding</a>.</p>
+<span class="docsSectionMarker"><span id="product-name" class="docsSectionMarkerChild"></span></span><h4>Product name&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#product-name">&para;</a></h4>
+<p>The <strong>Product name</strong> is what the Comet client will be named (the shortcut will automatically change to this name). The software will also install in Windows to &quot;C:\Program Files\Product Name&quot;</p>
+<p>Note: If you change the Product Name field, any existing, and, possibly incorrectly-named, installation directories will be re-used if the client software is reinstalled.</p>
+<p>The desktop client will need to be uninstalled completely. The incorrectly-named &quot;C:\Program Files\Product Name&quot; directory will be removed.
+A new installation of the branding-updated client software will create a new brandnamed-directory in C:\Program Files.</p>
+<span class="docsSectionMarker"><span id="company-name" class="docsSectionMarkerChild"></span></span><h4>Company name&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#company-name">&para;</a></h4>
+<p>The Comet client will refer to the <strong>Company name</strong> when making changes within the Comet client.</p>
+<span class="docsSectionMarker"><span id="help-url" class="docsSectionMarkerChild"></span></span><h4>Help URL&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#help-url">&para;</a></h4>
+<p>Setting the <strong>Help URL</strong> will add a <em>Help</em> tab on the client with your URL of choice (not required). </p>
+<p>This feature aids in personalising the backup client and in providing additional assistance to the end customer. You can choose whether the help content is shown with an embedded frame, or with a popup browser.</p>
+<p>If you choose the popup browser option, the device's default web browser will be opened.</p>
+<p>If you choose the embedded frame, Comet will render the content directly within the Comet Backup application window. You can take advantage of this fact to design your help website in a way that matches Comet's design theme. The webpage content may be a simple email address, phone number, or plain text content; but because any web features are available, it may also include rich experiences such as contact forms, videos, and live chat features.</p>
+<p>Comet will try to render the embedded content with the operating system's platform rendering engine (Edge 79+ with Comet 20.6.3 or later; otherwise the latest installed IE / MSHTML engine). If no suitable platform rendering engine is available, Comet will fallback to opening the device's default web browser in a popup.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/help.png"><img src="images/help.png.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="default-server-url" class="docsSectionMarkerChild"></span></span><h4>Default server URL&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#default-server-url">&para;</a></h4>
+<p>The <strong>Default server URL</strong> will prefill the <em>Server</em> field when logging into the Comet client.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/defaultserverURL.png"><img src="images/defaultserverURL.png.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="registration-url" class="docsSectionMarkerChild"></span></span><h4>Registration URL&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#registration-url">&para;</a></h4>
+<p>Comet supports new account registration from within the client software. If this property is non-empty, then any generated software will contain a 'Register' button on the login screen that opens the property as a URL in the device's default web browser.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/register.png"><img src="images/register.png.thumb.jpg" alt="" /></a></p>
+<p>This allows you to create a custom signup workflow that calls into the Comet Server API to actually create the account. This offers an MSP the chance to capture other information such as email address, contact details, and billing / payment details.</p>
+<p>By deferring to an external URL for new account registration, this system is deliberately flexible. For instance, it would be possible for MSPs using this system to </p>
+<ul>
+<li>offer the choice of multiple plans, or</li>
+<li>create the account on a specific Comet Server, or</li>
+<li>automatically request a first storage vault, or</li>
+<li>create a &quot;free trial&quot; system.</li>
+</ul>
+<span class="docsSectionMarker"><span id="icon-windows--macos" class="docsSectionMarkerChild"></span></span><h4>Icon (Windows / macOS)&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#icon-windows--macos">&para;</a></h4>
+<p>You can set a custom icon used for the software on Windows and macOS.</p>
+<p>On Windows, the file must be in <code>*.ico</code> format. On macOS, the file must be in <code>*.icns</code> format. </p>
+<p>All executables that display an icon to the user, on the desktop, in the Start Menu, or in Windows Explorer/Finder, must carry the icon in ICO/ICNS format as this format can contain one or more small images at multiple sizes and color depths, such that they may be scaled appropriately. </p>
+<p>In Comet 20.9.11 and later, PNG and JPEG files are also supported, by automatically converting them to the required ICO/ICNS format. The supplied image should have a square shape. We recommend using a 512x512 image as this will preserve the most information when the image is scaled down to smaller sizes.</p>
+<p>In Comet 20.9.10 and earlier, other file formats (e.g. PNG and JPEG) are not supported. Use of an unsupported format may result in a <code>invalid icon file</code> error message on Windows, or a blank icon display on macOS. However, you can convert a PNG or JPEG image into this format using a dedicated program. At the time of writing, we suggest the following programs:</p>
+<table>
+<thead>
+<tr>
+<th>Software</th>
+<th>Interface</th>
+<th>Runs on</th>
+<th>Price</th>
+<th>Produces</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://greenfishsoftware.org/gfie.php">Greenfish Icon Editor Pro</a></td>
+<td>GUI</td>
+<td>Windows, Linux</td>
+<td>Free and open-source</td>
+<td><code>*.ico</code>, <code>*.icns</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/lemonmojo/IconComposer2x/releases">Icon Composer 2x</a></td>
+<td>GUI</td>
+<td>macOS</td>
+<td>Free and open-source</td>
+<td><code>*.icns</code></td>
+</tr>
+<tr>
+<td><a href="http://icofx.ro/">IcoFX</a></td>
+<td>GUI</td>
+<td>Windows</td>
+<td>Commercial, with a free-trial</td>
+<td><code>*.ico</code>, <code>*.icns</code></td>
+</tr>
+<tr>
+<td><a href="https://www.axialis.com/iconworkshop/">Axialis IconWorkshop</a></td>
+<td>GUI</td>
+<td>Windows</td>
+<td>Commercial, with a free-trial</td>
+<td><code>*.ico</code>, <code>*.icns</code></td>
+</tr>
+<tr>
+<td><a href="https://www.imagemagick.org/">ImageMagick</a></td>
+<td>Command-line</td>
+<td>Windows, Linux, macOS</td>
+<td>Free and open-source</td>
+<td><code>*.ico</code>, <code>*.icns</code></td>
+</tr>
+<tr>
+<td><code>sips</code></td>
+<td>Command-line</td>
+<td>macOS</td>
+<td>Included with OS</td>
+<td><code>*.icns</code></td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="eula" class="docsSectionMarkerChild"></span></span><h4>EULA&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#eula">&para;</a></h4>
+<p>Add an End User License Agreement during the installation process (not required).</p>
+<span class="docsSectionMarker"><span id="logo-image-x" class="docsSectionMarkerChild"></span></span><h4>Logo image (100x32)&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#logo-image-x">&para;</a></h4>
+<p>This image will be displayed in the lower-left corner of the software.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/logoimage.png"><img src="images/logoimage.png.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="tile-image-x" class="docsSectionMarkerChild"></span></span><h4>Tile image (150x150)&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#tile-image-x">&para;</a></h4>
+<p>This image will be displayed in the Windows 10 start menu. The tile background can also be changed using hex format (e.g. #FFFFFF).</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/tileimage.png"><img src="images/tileimage.png.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="background-logo" class="docsSectionMarkerChild"></span></span><h4>Background logo&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#background-logo">&para;</a></h4>
+<p>Choose to hide the Comet branding from the background</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/backgroundlogo1.png"><img src="images/backgroundlogo1.png.thumb.jpg" alt="" /></a></p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/backgroundlogo2.png"><img src="images/backgroundlogo2.png.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="codesigning" class="docsSectionMarkerChild"></span></span><h3>Codesigning&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#codesigning">&para;</a></h3>
+<p>Recent versions of Windows and macOS have introduced measures to encourage distributing code-signed installers.</p>
+<p>You can cross-codesign the windows binary from a linux Comet Server. The Mac OS code signning will require an SSH tunnel connection to be configured from the Comet Server to the Mac OS build server.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/Codesigning.PNG"><img src="images/Codesigning.PNG.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="codesigning-for-windows-authenticode" class="docsSectionMarkerChild"></span></span><h4>Codesigning for Windows (Authenticode)&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#codesigning-for-windows-authenticode">&para;</a></h4>
+<p>You can enable Authenticode signing of generated installers. Signing the installer may reduce &quot;SmartScreen&quot; / &quot;unknown publisher&quot; prompts when installing the software.</p>
+<p>Authenticode signing requires obtaining a certificate from a commercial certificate provider. At the time of writing, the following providers offered Authenticode certificates compatible with current versions of Windows:</p>
+<ul>
+<li><a href="https://www.ksoftware.net/code-signing-certificates/">https://www.ksoftware.net/code-signing-certificates/</a></li>
+<li><a href="https://www.digicert.com/code-signing/microsoft-authenticode.htm">https://www.digicert.com/code-signing/microsoft-authenticode.htm</a> </li>
+<li><a href="https://godaddy.com/web-security/code-signing-certificate">https://godaddy.com/web-security/code-signing-certificate</a> </li>
+</ul>
+<p>Once you have purchased a certificate, you can enable it in your Comet Server by setting the following properties in the <code>cometd.cfg</code> file:</p>
+<ul>
+<li><code>WindowsCodeSignPKCS12FilePath</code> - a path to the PKCS12 (<code>*.pfx</code>, <code>*.p12</code> etc) file on the local disk.</li>
+<li><code>WindowsCodeSignPKCS12Password</code> - the password to decrypt the PKCS12 file</li>
+<li><code>WindowsCodeSignPKCS12PasswordFormat</code> - set to <code>0</code> when first entering a password in the <code>WindowsCodeSignPKCS12Password</code> field; Comet will then encrypt the password, and use this field to indicate the encryption format.</li>
+</ul>
+<p>When you do NOT have a codesigning certificate enabled, the Windows software download is in the form of a zip file, containing a small loader <code>.exe</code> (Authenticode-signed by a partner company of Comet Software Ltd) and a data file. When you DO have a codesigning certificate enabled, the Windows software download is in the form of a zip file containing a single signed <code>.exe</code>.</p>
+<span class="docsSectionMarker"><span id="codesigning-for-windows-authenticode-ev" class="docsSectionMarkerChild"></span></span><h4>Codesigning for Windows (Authenticode EV)&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#codesigning-for-windows-authenticode-ev">&para;</a></h4>
+<p>EV codesigning certificates require a physical hardware token to store sensitive key material. Using EV codesigning is suitable only if you are running Comet Server on a physical machine that can support an attached USB token - it is not suitable for use on a VPS.</p>
+<p>Comet Server uses <code>osslsigncode</code> as the underlying cross-platform Authenticode EV signing technology, that supports PKCS#11 to communicate with physical hardware tokens for Authenticode EV signing.</p>
+<p>The following additional options are available for codesigning using a physical hardware token over PKCS#11:</p>
+<ul>
+<li><code>WindowsCodeSignPKCS11Engine</code>
+<ul>
+<li>The local disk path to the OpenSSL <code>engine-pkcs11</code> bridge <code>*.dll</code> (Windows) or <code>*.so</code> (Linux) file.</li>
+<li>Corresponds to the <code>-pkcs11engine</code> option in <code>osslsigncode</code></li>
+</ul></li>
+<li><code>WindowsCodeSignPKCS11Module</code>
+<ul>
+<li>The local disk path to the PKCS#11 module <code>*.dll</code> (Windows) or <code>*.so</code> (Linux) file for your specific hardware.</li>
+<li>Corresponds to the <code>-pkcs11module</code> option in <code>osslsigncode</code></li>
+</ul></li>
+<li><code>WindowsCodeSignPKCS11Certfile</code>
+<ul>
+<li>Local disk path to the certificate file</li>
+<li>Corresponds to the <code>-certs</code> option in <code>osslsigncode</code></li>
+</ul></li>
+<li><code>WindowsCodeSignPKCS11KeyID</code>
+<ul>
+<li>Select the key on your hardware device (e.g. <code>slotID:keyID</code>)</li>
+<li>Corresponds to the <code>-key</code> option in <code>osslsigncode</code></li>
+</ul></li>
+<li><code>WindowsCodeSignPKCS11Password</code>
+<ul>
+<li>Plain text PKCS11 key password: will be encrypted for obfuscation at first server boot.</li>
+<li>Corresponds to the <code>-pass</code> option in <code>osslsigncode</code></li>
+</ul></li>
+<li><code>WindowsCodeSignPKCS11PasswordFormat</code>
+<ul>
+<li>The encryption format for the password. Set this to 0 (zero) when entering a plaintext password; it will be automatically changed when the password security is upgraded</li>
+</ul></li>
+</ul>
+<p>The engine/module DLLs provided by the OpenSC project are coincidentally compatible with many hardware tokens: <a href="https://github.com/OpenSC/OpenSC/wiki/Windows-Quick-Start">https://github.com/OpenSC/OpenSC/wiki/Windows-Quick-Start</a> however any DLLs supplied by your hardware vendor should be preferred.</p>
+<span class="docsSectionMarker"><span id="codesigning-for-macos" class="docsSectionMarkerChild"></span></span><h4>Codesigning for macOS&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#codesigning-for-macos">&para;</a></h4>
+<p>Comet Server 19.12.4 and later are able to automatically sign and/or notarize a macOS installer.</p>
+<p>In earlier versions of Comet Server, a manual (Terminal.app) codesigning process was also available. Owing to changes to macOS codesigning requirements, the manual process is no longer feasible and the automated process must be used to codesign the custom-branded application.</p>
+<p>Because Comet Server runs on Windows and Linux, and the necessary codesigning tools are currently only available on macOS, this process works by SSH'ing into a macOS machine on-demand.</p>
+<p>Your macOS machine must be connected to the internet; it must be SSH accessible; and it must have XCode, or the XCode developer tools installed. You must either run XCode once, or run <code>sudo xcodebuild -license</code> from Terminal.app, in order to accept the XCode license agreement.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/macos-codesigning-settings.png"><img src="images/macos-codesigning-settings.png.thumb.jpg" alt="" /></a></p>
+<p>The following options must be configured in the Comet Server settings:</p>
+<span class="docsSectionMarker"><span id="level" class="docsSectionMarkerChild"></span></span><h5>Level&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#level">&para;</a></h5>
+<p>The Level can be one of the following options:</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sign only</td>
+<td>Fastest, lowest compatibility. Does not work with macOS 10.15+ after February 2020</td>
+</tr>
+<tr>
+<td>Sign and notarise</td>
+<td>Fast, good compatibility. The customer's Mac will make one network request to Apple servers when first installed</td>
+</tr>
+<tr>
+<td>Sign, notarise, and staple</td>
+<td>Slowest (perhaps 10 minutes or longer on first download), best compatibility. The codesigning will work offline without any prompting. Comet Server will wait until notarisation has completed before serving the generated client installer; this has the additional benefit that any notarisation validation issues will appear in the Comet Server server log.</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="certificate-name" class="docsSectionMarkerChild"></span></span><h5>Certificate Name&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#certificate-name">&para;</a></h5>
+<p>Codesigning for macOS requires a certificate signed by Apple. To get one, you must first register for Apple's developer program. This requires a DUNS number (for organisations) and payment of a 99USD fee. You may be required to accept any Apple Developer license agreements in iTunes Connect.</p>
+<p>Once you have enrolled in the Apple Developer program, visit <a href="https://developer.apple.com/account/">https://developer.apple.com/account/</a> and click &quot;Certificates, IDs &amp; Profiles&quot; in the left-hand menu to generate and download certificates. At the time of writing, the following certificates are required:</p>
+<table>
+<thead>
+<tr>
+<th>Certificate</th>
+<th>Required for...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Developer ID Installer</code></td>
+<td>Sign (affects <code>*.pkg</code> file)</td>
+</tr>
+<tr>
+<td><code>Developer ID Application</code></td>
+<td>Notary (affects interior content of <code>*.pkg</code> file)</td>
+</tr>
+</tbody>
+</table>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/macos-codesigning-developer.png"><img src="images/macos-codesigning-developer.png.thumb.jpg" alt="" /></a></p>
+<p>The end result should be a certificate in your local Keychain. Comet Server then requires you to adjust some of the certificate permissions in order for it to be accessible to remote SSH processes. In the Keychain Access app on your Mac, make the following changes:</p>
+<ul>
+<li>
+<p>First, move or copy the certificate into the &quot;System&quot; keychain</p>
+</li>
+<li>
+<p>Secondly, grant the codesigning tools permission to access this certificate</p>
+<ol>
+<li>Unfold the certificate row, to see the &quot;private key&quot; row</li>
+<li>Double-click the &quot;private key&quot; row to open the Info panel</li>
+<li>On the &quot;Access Control&quot; tab, click the &quot;+&quot; button</li>
+<li>In the file picker, browse to <code>/usr/bin/codesign</code>
+<ul>
+<li>You can press Apple+Shift+Period to temporarily show hidden files, such as the <code>/usr/</code> folder in the root drive</li>
+</ul></li>
+<li>Repeat for <code>/usr/bin/productsign</code></li>
+<li>Save and close this dialog</li>
+</ol>
+</li>
+</ul>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/macos-codesigning-access-control.png"><img src="images/macos-codesigning-access-control.png.thumb.jpg" alt="" /></a></p>
+<p>You should configure the full certificate name in the Comet Server settings.</p>
+<span class="docsSectionMarker"><span id="ssh" class="docsSectionMarkerChild"></span></span><h5>SSH&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#ssh">&para;</a></h5>
+<p>The automatic codesigning for macOS works by connecting to a macOS machine over SSH. </p>
+<p>You must enable SSH access to your Mac by running: <code>sudo systemsetup -setremotelogin on</code></p>
+<p>If the Mac is on a different network, you may need to enable port-forwarding to allow the Comet Server to reach out to your Mac.</p>
+<p>WARNING: Enabling SSH will open your Mac up to internet attacks, including but not limited to brute-force password guessing attempts, and credential-stuffing attacks. Please ensure that your Mac is receiving current security updates, and that all user accounts on the Mac have very strong passwords.</p>
+<span class="docsSectionMarker"><span id="apple-id" class="docsSectionMarkerChild"></span></span><h5>Apple ID&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#apple-id">&para;</a></h5>
+<p>Comet Server requires your Apple ID email address to perform Notary submission.</p>
+<p>If you have set the &quot;Level&quot; parameter to &quot;Sign only&quot;, this field is not required.</p>
+<span class="docsSectionMarker"><span id="appspecific-password" class="docsSectionMarkerChild"></span></span><h5>App-Specific Password&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#appspecific-password">&para;</a></h5>
+<p>Comet Server requires an App-Specific Password for your Apple ID, to perform Notary submission. Your primary Apple ID password is not sufficient.</p>
+<p>If you have set the &quot;Level&quot; parameter to &quot;Sign only&quot;, this field is not required.</p>
+<p>You can create an App-Specific Password from <a href="https://appleid.apple.com/account/manage">https://appleid.apple.com/account/manage</a> by clicking the &quot;App-Specific Passwords&quot; link. The password will be auto-generated by the Apple ID website.</p>
+<span class="docsSectionMarker"><span id="codesigning-for-android" class="docsSectionMarkerChild"></span></span><h4>Codesigning for Android&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#codesigning-for-android">&para;</a></h4>
+<p>You must configure a codesigning certificate for Android before the resulting <code>.apk</code> file can be installed.</p>
+<span class="docsSectionMarker"><span id="codesigning-for-linux" class="docsSectionMarkerChild"></span></span><h4>Codesigning for Linux&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#codesigning-for-linux">&para;</a></h4>
+<p>Linux applications do not contain embedded codesigning. You can achieve codesigning support for Linux by GPG-signing the hash of the binary and making this information available on your website independently.</p>
+<span class="docsSectionMarker"><span id="options" class="docsSectionMarkerChild"></span></span><h3>Options&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#options">&para;</a></h3>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/settingspage-1600-swbuild-options.png"><img src="images/settingspage-1600-swbuild-options.png.thumb.jpg" alt="" /></a></p>
+<p>Enable/disable the ability to download the Comet client for anyone visiting the Comet Servers web interface.</p>
+<span class="docsSectionMarker"><span id="constellation-role" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Constellation Role&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#constellation-role">&para;</a></h2>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/settingspage-1700-constellation.png"><img src="images/settingspage-1700-constellation.png.thumb.jpg" alt="" /></a></p>
+<p>The <strong>Constellation Role</strong> is the part of Comet Server responsible for providing global insight across multiple Comet Servers.</p>
+<p>Recall that Comet is designed to separate the Authentication and Storage roles to allow independent scaling.</p>
+<ul>
+<li>A small MSP using Comet software might have only a single Comet Server,</li>
+<li>A large MSP might have one Authentication Role server and a dozen Storage Role servers,</li>
+<li>A white-label MSP might have a dozen different Authentication Role servers all backed by a single Storage Role server.</li>
+</ul>
+<p>These latter cases are perfectly valid scenarios, but present some complexity when answering questions like &quot;which user accounts are using this bucket&quot; and &quot;is this bucket safe to delete&quot;. The Constellation role communicates with all your Comet Servers to produce a global overview of your entire cluster to help answer these questions.</p>
+<p>The <strong>Constellation role</strong> is optional. However, it is necessary if you want to automatically remove unused storage buckets from your Storage Role servers.</p>
+<p>The <strong>Constellation role</strong> was formerly known as the &quot;Overseer&quot; role.</p>
+<p>Choose one (and only one) of your servers to have the Constellation role. You can then use the Report features inside Comet Server &gt; Cluster menu &gt; &quot;About this Cluster&quot; to find which buckets are in-use by which accounts.</p>
+<p>In <code>cometd.cfg</code>, you can enable the Constellation Role by setting the property <code>ConstellationRole</code> &gt; <code>RoleEnabled</code> to <code>true</code>.</p>
+<span class="docsSectionMarker"><span id="targets" class="docsSectionMarkerChild"></span></span><h3>Targets&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#targets">&para;</a></h3>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/settingspage-1800-constellation-targets.png"><img src="images/settingspage-1800-constellation-targets.png.thumb.jpg" alt="" /></a></p>
+<p>When setting up the <strong>Constellation role</strong> you must add the other Authentication role/Storage role servers to manage.</p>
+<p>In <code>cometd.cfg</code>, fill the <code>Servers</code> array with all your servers (including the Constellation), in the same format as for replication targets and remote storage buckets.</p>
+<p>If you add a new Comet Server, you should add it to the Constellation Role Targets list.</p>
+<p>If you add a tenant, you should add it to the Constellation Role Targets list.</p>
+<span class="docsSectionMarker"><span id="properties" class="docsSectionMarkerChild"></span></span><h3>Properties&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#properties">&para;</a></h3>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/settingspage-1900-constellation-properties.png"><img src="images/settingspage-1900-constellation-properties.png.thumb.jpg" alt="" /></a></p>
+<p>The <strong>Constellation role</strong> will automatically produce a bucket usage report every hour, listing for each bucket (A) which servers the bucket exists on, and (B) which users have a Storage Vault configured pointing to this bucket. This information is sufficient to identify unused buckets in order to reclaim storage space on your Comet Server.</p>
+<p>In the default configuration, no data will be deleted as a result of running this report. Once you are happy with the result of this report, you can enable the deletion feature to allow the Constellation role to delete unused buckets automatically.</p>
+<p>Please keep an eye on the server logs in order to draw attention to any correctness issues with the report.</p>
+<p>In <code>cometd.cfg</code>, you can configure this option via the <code>ConstellationRole</code> section &gt; <code>DeleteUnusedData</code> property.</p>
+<span class="docsSectionMarker"><span id="risks" class="docsSectionMarkerChild"></span></span><h4>Risks&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#risks">&para;</a></h4>
+<p>It is <em>essential</em> that the Constellation has access to every single one of your Comet Servers. If a new Authentication Role server is added to your infrastructure, but not added to the list of servers managed by the Constellation Role, then Constellation will see that the buckets are unused and remove them.</p>
+<p>Such an issue should be obvious when the customer's next backup job fails to run. If the issue is noticed early, then recovery should be possible by reverting to an earlier filesystem snapshot (if available) or by re-uploading the data. However, if backup jobs are performed infrequently, or if the issue occurs at the same time as another outage, it may be more difficult to recover from the issue.</p>
+<p>If an Authentication Role server is found to reference a Storage Role server outside the Constellation's vision, then a warning message will be added to the log file.</p>
+<span class="docsSectionMarker"><span id="tenants" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Tenants&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#tenants">&para;</a></h2>
+<p><em>This feature is available in Comet Server 20.9.0 and later. Configuration via the Setup Wizard is available in Comet Server 20.12.0 - 21.9.12, and via the Settings page from 21.12.0+</em>
+<em>Prior to Comet Server 21.12.0, this feature was named <strong>Organizations</strong></em></p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/organizations-overview.png"><img src="images/organizations-overview.png.thumb.jpg" alt="" /></a></p>
+<p>The tenants feature provides a way to divide your Comet Server into isolated zones. This can be used for any multi-tenancy purpose such as supporting resellers, client grouping, etc.</p>
+<p>You can configure this feature either by the <code>cometd.cfg</code> file, or via the API without requiring a service restart, via the Setup Wizard <em>(20.12.0 - 21.9.12)</em>, or via the Settings page <em>(&gt;=21.12.0)</em>.</p>
+<p>To set up your Comet Server for multiple tenants:</p>
+<ul>
+<li>The tenant hostname(s) must resolve to the existing Comet Server</li>
+<li>The tenant hostname(s) must be unique (different from the existing Comet Server hostname, and different from other tenant hostnames).</li>
+</ul>
+<p>Example: Your Comet Server will already be 'listening' for communications on a URL, eg: <code>example.com</code>, which, in turn, resolves to <code>123.123.123.123</code>.</p>
+<p>When adding a tenant, in the 'Hostname' section, add a new, unique URL for the tenant, eg: <code>tenant.com</code>. This URL should <em>also</em> resolve to <code>123.123.123.123</code> (or to wherever the Comet Server is located).
+We would recommend that the tenant URL, and its resolution, should be something that you have configured and verified <em>prior</em> to adding the new tenant.</p>
+<p>When the Comet Server web interface is accessed from the configured hostname, the tenant's own branding will be used.</p>
+<ul>
+<li>In the tenant configuration, the hostname should be specified as a plain domain name only, such as <code>tenant.com</code>, and <em>excluding</em> any port (e.g. <code>:443</code>) or protocol (e.g. <code>https://</code>). It is only possible to separate tenants based on the domain name, not the port or protocol.</li>
+</ul>
+<p>Tenants are isolated from each other, but the usual top-level administrator does have hierarchal visibility into seeing a tenant's users, policies and so on. When logged in as a top-level administrator, any items belonging to a tenant (such as users, jobs, policies, and Storage Role buckets) are all specially marked with an <code>Other Tenant</code> badge.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/organizations-single.png"><img src="images/organizations-single.png.thumb.jpg" alt="" /></a></p>
+<p>Each tenant has its own isolated set of:</p>
+<ul>
+<li><strong>Admin user accounts.</strong> You can create admin accounts that will have limited visibility only to this tenant's set of customers.
+<ul>
+<li>It is possible to reuse an Admin username between multiple tenants <em>(&gt;=21.3.0)</em></li>
+</ul></li>
+<li><strong>Branding.</strong> When accessed on the configured hostname, the web interface and the Comet Backup software download would have your tenant's custom branding applied to it.</li>
+<li><strong>Email return address</strong></li>
+<li><strong>User accounts and devices</strong></li>
+<li><strong>Policies</strong></li>
+<li><strong>Requestable Storage Vault settings.</strong> You can assign each reseller a different set of Requestable Storage Vault providers, from a cloud provider or otherwise.
+<ul>
+<li>It is possible to select the Local Comet Server Storage Role. In this case, the resulting Bucket will belong to the isolated tenant.</li>
+<li>It is possible to configure a remote Comet Server Storage Role. In this case, the resulting Bucket on the remote Comet Server will belong to the same tenant as the credentials used.</li>
+</ul></li>
+</ul>
+<p>Some features are still system-wide for the Comet Server:</p>
+<ul>
+<li><strong>Bulk Upgrade Campaign</strong> A tenant administrator does not have access to the bulk upgrade campaign page.</li>
+<li><strong>Storage Role configuration.</strong> The tenants feature does not allow tenant administrators to configure the Storage Role to have Comet Server store data in different locations other than what the top-level administrator has configured. If Storage Role is used, then buckets will be appropriately isolated for each tenant.</li>
+<li><strong>Email deliverability configuration.</strong> Any email reports sent on behalf of the tenant can be delivered with the tenant's own configured 'From' name and return address. However, the actual deliverability configuration and/or SMTP details would be the same as for the top-level administrator.</li>
+<li><strong>Constellation.</strong> Constellation uses the top-level administrator credentials to see all tenant accounts.
+<ul>
+<li>If you add a tenant, you should add it to the Constellation Role Targets list.</li>
+</ul></li>
+<li><strong>Replication.</strong> The replica Comet Server should be manually configured to have the same tenant IDs by copying the <code>Organizations</code> section in the <code>cometd.cfg</code> file.</li>
+</ul>
+<p>A tenant admin can only log in to the Comet Server web interface from their configured hostname with the matching branding. The top-level administrator account can only log in to the Comet Server web interface from a hostname that is not used for a tenant.</p>
+<p>During API calls, tenant visibility restrictions are automatically applied based on your supplied credentials. A tenant admin user account can use the API to access their isolated zone without any API code changes.</p>
+<ul>
+<li>Prior to Comet 21.3.0, the top-level administrator could log in from any hostname, even with mismatched branding. Prior to Comet 21.3.0, administrator usernames were required to be unique across all tenants.</li>
+</ul>
+<span class="docsSectionMarker"><span id="server-selfbackup" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Server Self-Backup&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#server-selfbackup">&para;</a></h2>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/serverselfbackup1.png"><img src="images/serverselfbackup1.png.thumb.jpg" alt="" /></a></p>
+<p>Server Self-Backup makes periodic copies of Comet Server's own database and configuration files, for safe-keeping.</p>
+<p>Server Self-Backup is a feature which is available only on self-hosted Comet Servers. Comet-Hosted Comet Servers are a managed service which has a separate, regular backup.</p>
+<p>We <strong><em>strongly</em></strong> recommend that you enable Server Self-Backup for your Self-Hosted Comet Server. An hourly or daily backup to some off-site location would be ideal.
+On Windows, this will save a zipped copy of the contents of: <code>C:\ProgramData\Comet</code>, and, on Linux/Unix, this will save a zipped copy of the contents of <code>/var/lib/cometd/</code>. We recommend that you use the built-in Server Self-backup function, rather than accessing these files directly, as they may be in-use. The Server Self-Backup function can take a safe copy of in-use files.</p>
+<p>For recovery, you will need to obtain the last zipped Server Self-Backup file from just before the incident happened.</p>
+<p>Because Comet Backup's normal operation requires access to a running Comet Server, if the Comet Server itself is unavailable, it is not possible to use Comet Backup to back up the Comet Server itself. To avoid problems when restoring, the Comet Server Self-Backup feature stores all files in a simple zip file, allowing easy copy-and-paste recovery of the configuration and database files.</p>
+<p>The backed-up data includes:</p>
+<ul>
+<li>User profiles</li>
+<li>Policies</li>
+<li>Job History
+<ul>
+<li>The Recent Activity page is based on Job History data, and therefore will be preserved during recovery</li>
+</ul></li>
+<li>Client News</li>
+<li>Server configuration</li>
+<li>Branding
+<ul>
+<li>Files uploaded on the Settings page in the Comet Server web interface are included. Any branding images that were configured using custom on-disk paths may not be included.</li>
+</ul></li>
+<li>Serial License lease</li>
+</ul>
+<span class="docsSectionMarker"><span id="target" class="docsSectionMarkerChild"></span></span><h3>Target&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#target">&para;</a></h3>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/serverselfbackup2.PNG"><img src="images/serverselfbackup2.PNG.thumb.jpg" alt="" /></a></p>
+<p>You can set up multiple targets for Self-Backup.</p>
+<ul>
+<li>Specify a location for where you want to backup your server data. All of Comet's normal locations are supported.</li>
+<li>Set a schedule for when this backup runs, using the timezone selected. All of Comet's normal schedule options are supported.</li>
+<li>Choose a retention range. Retention can be set up for Server Self-Backup to restore from any version within your retention range. All of Comet's normal retention options are supported.</li>
+<li><em>(optional)</em> Add an encryption key. This will be the password to access the data (zip file)</li>
+</ul>
+<span class="docsSectionMarker"><span id="video" class="docsSectionMarkerChild"></span></span><h3>Video&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#video">&para;</a></h3>
+<iframe width="700" height="440" src="https://www.youtube.com/embed/3srsEWFacws" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<span class="docsSectionMarker"><span id="saving-changes" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Saving changes&nbsp;<a class="docsSectionLinkIcon" href="comet-server-configuration.html#saving-changes">&para;</a></h2>
+<p>If you are applying changes via the Comet Server web interface, the Comet Server will restart to save your changes. The Comet Server will be automatically restarted by the service system. Any running backup jobs will resume automatically.</p></div><div class="doc-navigation-section"><div class="doc-navigation-back doc-navigation-width-2"><a href="comet-server-installation.html">&laquo; Back: Comet Server installation</a></div><div class="doc-navigation-next doc-navigation-width-2"><a href="comet-server-usage.html">Next: Comet Server usage &raquo;</a></div></div> 
+				</div>
+			</div>
+		</div>
+	
+	
+	</body>
+</html>

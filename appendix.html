@@ -1,571 +1,1092 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="docs.css" />
-    <link rel="stylesheet" type="text/css" href="magnific-popup.css" />
-    <script type="text/javascript" src="jquery-1.12.4.min.js"></script>
-    <script type="text/javascript" src="jquery.scrollTo.min.js"></script>
-    <script type="text/javascript" src="magnific-popup.1.1.0.min.js"></script>
-    <script type="text/javascript" src="docs.js"></script>
-    <title>Documentation</title>
-  </head>
-  <body>
-    <div id="header-bar">
-      Blue Moon Backup Documentation
-    </div>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="docs.css">
+		<link rel="stylesheet" type="text/css" href="magnific-popup.css">		
+		<script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="magnific-popup.1.1.0.min.js"></script>
+		<script type="text/javascript" src="lunr-2.1.0.min.js"></script>
+		<script type="text/javascript" src="docs.js"></script>
+		<title>Documentation</title>		
+	</head>
+	<body>
+	
+		<div id="header-bar">
+			<div id="header-logo"></div>
+			Documentation
+		</div>
+	
+		<div id="main-area">
+			<div id="position-nav">
+				<div id="nav-inner">
+					<ul><li><form method="GET" action="search-results.html"><input name="s" class="search-box" placeholder="Search..."></form></li>
+<li><span class="category-header">Guides</span></li>
+<li><a href="guide-getting-started.html" title="Getting Started with Self-Hosted Comet">Getting Started with Self-Hosted Comet</a></li>
+<li><a href="guide-cometgo-getting-started.html" title="Getting Started with Comet-Hosted">Getting Started with Comet-Hosted</a></li>
+<li><a href="guide-comet-backup-getting-started.html" title="Getting Started with Comet Backup">Getting Started with Comet Backup</a></li>
+<li><a href="guide-disk-image-walkthrough.html" title="Disk Image Walkthrough">Disk Image Walkthrough</a></li>
+<li><a href="guide-seedload-walkthrough.html" title="Seed Load Walkthrough">Seed Load Walkthrough</a></li>
+<li><a href="guide-disaster-recovery.html" title="Disaster Recovery">Disaster Recovery</a></li>
+<li><a href="guide-best-practices.html" title="Best Practices">Best Practices</a></li>
+<li><a href="guide-common-problems-and-solutions.html" title="Common Problems and Solutions">Common Problems and Solutions</a></li>
+<li><span class="category-header">Documentation</span></li>
+<li><a href="about-these-docs.html" title="Software Documentation">Software Documentation</a></li>
+<li><a href="application-architecture.html" title="Overview and Concepts">Overview and Concepts</a></li>
+<li><a href="comet-server-installation.html" title="Comet Server installation">Comet Server installation</a></li>
+<li><a href="comet-server-configuration.html" title="Comet Server configuration">Comet Server configuration</a></li>
+<li><a href="comet-server-usage.html" title="Comet Server usage">Comet Server usage</a></li>
+<li><a href="comet-backup-installation.html" title="Comet Backup installation">Comet Backup installation</a></li>
+<li><a href="comet-backup-usage.html" title="Comet Backup usage">Comet Backup usage</a></li>
+<li><a href="user-configuration.html" title="User configuration">User configuration</a></li>
+<li><a href="protected-items.html" title="Protected Item types">Protected Item types</a></li>
+<li><a href="storage-configuration.html" title="Storage configuration">Storage configuration</a></li>
+<li><a href="troubleshooting.html" title="Troubleshooting">Troubleshooting</a></li>
+<li><a href="api.html" title="API Guide">API Guide</a></li>
+<li><a href="api-reference.html" title="API Reference">API Reference</a></li>
+<li class="current-page"><a data-indent="0" class="subsection-link subsection-indent-0" href="#appendix" title="Appendix">Appendix</a>
+<ul>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#encryption-and-key-management" title="Encryption and key management">Encryption and key management</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#zeroknowledge-ratchet" title="Zero-knowledge ratchet">Zero-knowledge ratchet</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#storage-vault-encryption-keys" title="Storage Vault encryption keys">Storage Vault encryption keys</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#data-location-access-keys" title="Data location access keys">Data location access keys</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#compatibility-events" title="Compatibility events">Compatibility events</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#importing-backup-settings-from-other-products" title="Importing backup settings from other products">Importing backup settings from other products</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#ahsay-obmacb-x-or-compatible" title="Ahsay OBM/ACB 6.x or compatible">Ahsay OBM/ACB 6.x or compatible</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#crashplan" title="CrashPlan">CrashPlan</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#other-products" title="Other products">Other products</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#migrating-user-data" title="Migrating user data">Migrating user data</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#migrating-serverside-user-data-to-a-different-volume" title="Migrating server-side user data to a different volume">Migrating server-side user data to a different volume</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#offline-server-migration-without-spanning" title="Off-line server migration, without Spanning">Off-line server migration, without Spanning</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#gradual-online-server-migration-without-spanning" title="Gradual, on-line server migration, without Spanning">Gradual, on-line server migration, without Spanning</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#gradual-online-server-migration-with-spanning" title="Gradual, on-line server migration with Spanning">Gradual, on-line server migration with Spanning</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#migrating-user-data-to-a-different-comet-server" title="Migrating user data to a different Comet Server">Migrating user data to a different Comet Server</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#migrating-user-data-between-storage-vault-types" title="Migrating user data between Storage Vault types">Migrating user data between Storage Vault types</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#migrating-comet-server-to-a-new-location" title="Migrating Comet Server to a new location">Migrating Comet Server to a new location</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#migrate-your-original-comet-server-to-a-new-comet-server-location-without-the-backup-data" title="Migrate your original Comet Server to a new Comet Server location without the backup data:">Migrate your original Comet Server to a new Comet Server location without the backup data:</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#if-you-also-require-your-storage-role-migrated-it-is-as-simple-as-replicating-both-your-authentication-role--storage-role-verify-your-dns-records-and-relax-the-serial-number" title="If you also require your Storage Role migrated, it is as simple as replicating both your Authentication Role &amp; Storage Role, verify your DNS records and relax the serial number.">If you also require your Storage Role migrated, it is as simple as replicating both your Authentication Role &amp; Storage Role, verify your DNS records and relax the serial number.</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#things-to-consider-after-migration" title="Things to consider after migration">Things to consider after migration</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#updating-comet-server-network-addressurl-considerations" title="Updating Comet Server network address/URL considerations">Updating Comet Server network address/URL considerations</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#bulk-update-storage-vault-addresses" title="Bulk update Storage Vault addresses">Bulk update Storage Vault addresses</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#update-the-client-login-address" title="Update the client login address">Update the client login address</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#update-constellation-settings" title="Update Constellation settings">Update Constellation settings</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#converting-from-a-local-test-environment" title="Converting from a local test environment">Converting from a local test environment</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#also-moving-comet-server-to-new-hardware" title="Also moving Comet Server to new hardware">Also moving Comet Server to new hardware</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#updating-the-comet-server-addressurl" title="Updating the Comet Server address/URL">Updating the Comet Server address/URL</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#reverse-proxy-in-front-of-comet-server" title="Reverse Proxy in front of Comet Server">Reverse Proxy in front of Comet Server</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#nginx" title="nginx">nginx</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#apache" title="Apache">Apache</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#haproxy" title="HAProxy">HAProxy</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#using-comet-backup-behind-a-network-proxy" title="Using Comet Backup behind a network proxy">Using Comet Backup behind a network proxy</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#troubleshooting-tls-oversized-record-received-error" title="Troubleshooting &quot;tls: oversized record received&quot; error">Troubleshooting &quot;tls: oversized record received&quot; error</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#windows-event-log" title="Windows Event Log">Windows Event Log</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#event-ids" title="Event IDs">Event IDs</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#suppressing-before--after-command-failures" title="Suppressing Before / After command failures">Suppressing Before / After command failures</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#data-validation" title="Data validation">Data validation</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#referential-integrity" title="Referential integrity">Referential integrity</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#data-file-integrity-at-rest" title="Data file integrity at rest">Data file integrity at rest</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#example-data-validation-commands" title="Example data validation commands">Example data validation commands</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#cloud-storage" title="Cloud storage">Cloud storage</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#data-file-integrity-at-generationtime" title="Data file integrity at generation-time">Data file integrity at generation-time</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#data-validation-steps" title="Data validation steps">Data validation steps</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#recovering-from-file-corruption" title="Recovering from file corruption">Recovering from file corruption</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#missing-files-from-storage-vault" title="Missing files from Storage Vault">Missing files from Storage Vault</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#splitting-a-storage-vault" title="Splitting a Storage Vault">Splitting a Storage Vault</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#commandline-control-of-comet-backup" title="Command-line control of Comet Backup">Command-line control of Comet Backup</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#applying-hotfixes" title="Applying hotfixes">Applying hotfixes</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#applying-backuptoolexe-hotfixes-on-windows" title="Applying backup-tool.exe hotfixes on Windows">Applying backup-tool.exe hotfixes on Windows</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#applying-backuptool-hotfixes-on-macos" title="Applying backup-tool hotfixes on macOS">Applying backup-tool hotfixes on macOS</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#changing-comets-temporary-directory" title="Changing Comet&apos;s temporary directory">Changing Comet&apos;s temporary directory</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#seemingly-unrealisticallyhigh-backup-speed" title="Seemingly unrealistically-high backup speed">Seemingly unrealistically-high backup speed</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#the-experimental-options-system" title="The Experimental Options system">The Experimental Options system</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#registry-keys-on-windows" title="Registry keys on Windows">Registry keys on Windows</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#reducing-size-of-log-files" title="Reducing size of log files">Reducing size of log files</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#chunking-compared-to-other-algorithms" title="Chunking compared to other algorithms">Chunking compared to other algorithms</a></li>
+</ul>
+</li><li><a href="cloud-storage-providers.html" title="Cloud Storage Providers">Cloud Storage Providers</a></li>
+<li><a href="third-party-service-addons.html" title="Third-party service addons">Third-party service addons</a></li>
+<li><a href="comet-server-roles.html" title="Comet Server Roles ">Comet Server Roles </a></li>
+<li><a href="comet-chunking-overview.html" title="Comet Chunking Overview ">Comet Chunking Overview </a></li>
+<li><a href="security-compliance.html" title="Security &amp; Compliance">Security & Compliance</a></li>
+</ul>
+				</div>
+			</div>
+		
+			<div id="position-content">
+				<div id="content-inner">
+					<span class="docsSectionMarker"><span id="appendix" class="docsSectionMarkerChild"></span></span><h1>Appendix&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#appendix">&para;</a></h1>
+<span class="docsSectionMarker"><span id="encryption-and-key-management" class="docsSectionMarkerChild"></span></span><div class="docs-box"><h2>Encryption and key management&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#encryption-and-key-management">&para;</a></h2>
+<p><em>This section follows &quot;Encryption&quot; in the &quot;Overview and Concepts&quot; section.</em></p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/encryption-key-management.png"><img src="images/encryption-key-management.png.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="zeroknowledge-ratchet" class="docsSectionMarkerChild"></span></span><h3>Zero-knowledge ratchet&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#zeroknowledge-ratchet">&para;</a></h3>
+<p>The user's password is used to derive two 192-bit keys (the &quot;L&quot; and &quot;R&quot; keys) via <code>PBKDF2-SHA512</code>, with hard-coded parameters for repeatable output.</p>
+<ul>
+<li>The L-key is used to log in to the Authentication Role server in place of the real password; the server stores only a <code>bcrypt(sha512)</code> hash of this L-key.</li>
+<li>The R-key never leaves the client, and is used to encrypt secret keys stored within the user's profile on the server.</li>
+</ul>
+<p>This means that one password can be used for all client-side account operations, while preventing servers from uncovering client-only secrets.</p>
+<span class="docsSectionMarker"><span id="storage-vault-encryption-keys" class="docsSectionMarkerChild"></span></span><h3>Storage Vault encryption keys&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#storage-vault-encryption-keys">&para;</a></h3>
+<p>When Comet sets up a Storage Vault for the first time, it generates two high-entropy random keys (the 256-bit &quot;A&quot; and 128-bit &quot;E&quot; keys). All user data in the Storage Vault is stored encrypted with the A-key using AES-256 in CTR mode, and authenticated using Poly1305 in AEAD (encrypt-then-MAC) mode.</p>
+<p>The permanent A-key is stored inside the Storage Vault, encrypted with the E-key. The E-key is then encrypted with the R-key and stored in the user's profile on the Authentication Role server. When a backup is performed, the client uses its password to derive the private R-key, to decrypt the E-key from the vault, to decrypt the A-key for data storage. This extra level of indirection enables some key rotation scenarios, as a new E-key can be generated without needing to re-encrypt all the data in the Storage Vault.</p>
+<span class="docsSectionMarker"><span id="data-location-access-keys" class="docsSectionMarkerChild"></span></span><h3>Data location access keys&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#data-location-access-keys">&para;</a></h3>
+<p>If the Storage Vault is for a Storage Role bucket, a high-entropy random 128-bit PSK is used to gate access to the bucket. The Storage Role server stores only a <code>bcrypt(sha512)</code> hash of this PSK. The client encrypts this PSK with the R-key and stores it in the user's profile on the Authentication Role server.</p>
+<span class="docsSectionMarker"><span id="compatibility-events" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Compatibility events&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#compatibility-events">&para;</a></h2>
+<p><em>This section follows &quot;Backward Compatibility&quot; in the &quot;Overview and Concepts&quot; section.</em></p>
+<p>The following compatibility events have occurred:</p>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Details</th>
+<th>Upgrade Compatible</th>
+<th>Downgrade Compatible</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>18.6.2</td>
+<td>A server-side encryption format changed for bucket access keys.</td>
+<td>Yes</td>
+<td>Partial. Accessing the bucket with Comet 18.5.5 (or later 18.5.x) will convert the key format to the backward-compatible format</td>
+</tr>
+<tr>
+<td>17.9.3</td>
+<td>A metadata format was enforced.</td>
+<td>Yes, but pre-existing Storage Vaults will not take advantage of the new features</td>
+<td>No. Storage Vaults created with newer versions of Comet cannot be used in old versions of Comet</td>
+</tr>
+<tr>
+<td>17.6.1</td>
+<td>A compression format was added.</td>
+<td>Yes</td>
+<td>Partial. If the new compression format was used, old versions of Comet will not be able to restore data</td>
+</tr>
+<tr>
+<td>2.8.2 Beta</td>
+<td>The encryption format changed.</td>
+<td>Yes. Accounts are automatically upgraded upon login</td>
+<td>No. Old versions of Comet will not understand secrets in the new format</td>
+</tr>
+<tr>
+<td>2.3.0 Beta</td>
+<td>The compression format changed.</td>
+<td>Yes. New versions of Comet can still read old backed-up data</td>
+<td>No. Old versions of Comet cannot read newly backed-up data</td>
+</tr>
+<tr>
+<td>2.2.0 Beta</td>
+<td>The license server address changed.</td>
+<td>Yes</td>
+<td>No. Old versions of Comet Server can no longer be used</td>
+</tr>
+<tr>
+<td>2.0.0 Beta</td>
+<td>The Storage Vault format changed.</td>
+<td>Partial. Storage Vaults must be recreated</td>
+<td>No. Old versions of Comet are unable to use new Storage Vaults</td>
+</tr>
+<tr>
+<td>1.7.0 Beta</td>
+<td>The Storage Vault format changed.</td>
+<td>Yes. Comet will automatically upgrade Local Copy and Comet Server types, but S3 and SFTP types must be upgraded manually</td>
+<td>No. Old versions of Comet are unable to use new Storage Vaults</td>
+</tr>
+<tr>
+<td>1.0.0 Beta</td>
+<td>Initial compatibility milestone</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>0.?.? Beta</td>
+<td>No compatibility guarantees made in either direction.</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="importing-backup-settings-from-other-products" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Importing backup settings from other products&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#importing-backup-settings-from-other-products">&para;</a></h2>
+<p>Comet Backup supports importing settings from certain other third-party backup products.</p>
+<p>In all cases, only user configuration settings are read from the other product.</p>
+<ul>
+<li>Existing backed-up data is not converted to Comet's format; you must back up the data again using Comet.</li>
+<li>Historical logs are not imported.</li>
+</ul>
+<span class="docsSectionMarker"><span id="ahsay-obmacb-x-or-compatible" class="docsSectionMarkerChild"></span></span><h3>Ahsay OBM/ACB 6.x or compatible&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#ahsay-obmacb-x-or-compatible">&para;</a></h3>
+<p><em>Ahsay, OBM, and ACB are trademarks of Ahsay Systems Corporation Limited.</em></p>
+<p>Comet can import settings from an installed version of Ahsay OBM/ACB 6.x, subject to the following notices and conditions:</p>
+<ul>
+<li>Ahsay backupsets are imported as Comet Protected Items.
+<ul>
+<li>Backupset types
+<ul>
+<li>File
+<ul>
+<li>Source selection/deselection is supported.</li>
+<li>Macro selections (desktop, documents etc) are not supported.</li>
+<li>Inclusion/exclusion filters are not supported.</li>
+</ul></li>
+<li>MySQL</li>
+<li>Microsoft SQL Server
+<ul>
+<li>The &quot;All instances&quot; option is not supported. Your Ahsay backupset must have selected specific instances for backup.</li>
+</ul></li>
+<li>Other backupset types are not supported.</li>
+</ul></li>
+<li>Pre/post commands
+<ul>
+<li>Pre/post commands are imported as applying to the Protected Item, not to the Storage Vault nor the Schedule.</li>
+</ul></li>
+<li>Retention policies
+<ul>
+<li>Basic retention policies (<code>DAYS</code>/<code>JOBS</code> -type) are supported.</li>
+<li>Advanced retention policies will be treated as &quot;keep forever&quot;.</li>
+</ul></li>
+<li>Schedule
+<ul>
+<li>Daily, Weekly and Custom schedules are supported.</li>
+<li>Monthly schedules for a specific day of the month are supported.</li>
+<li>Monthly schedules for a variant day of the month (e.g. Second Tuesday, Last Weekday) are not supported.</li>
+</ul></li>
+<li>&quot;Extra Local Copy&quot;
+<ul>
+<li>&quot;Local Copy&quot; will be imported as a new or existing Local Path Storage Vault in Comet.</li>
+<li>The &quot;Skip Offsite Backup&quot; option is correctly imported.</li>
+</ul></li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="crashplan" class="docsSectionMarkerChild"></span></span><h3>CrashPlan&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#crashplan">&para;</a></h3>
+<p><em>CrashPlan and Code42 are trademarks of Code42 Software, Inc.</em></p>
+<p>Comet can import settings from an installed version of Code42 CrashPlan, subject to the following notices and conditions:</p>
+<ul>
+<li>CrashPlan backupsets are imported as Comet Protected Items.
+<ul>
+<li>Backupset types
+<ul>
+<li>File
+<ul>
+<li>Sources selection/deselection is supported.</li>
+<li>Regular expression exclusions are supported.</li>
+</ul></li>
+</ul></li>
+<li>Retention policies
+<ul>
+<li>CrashPlan and Comet employ fundamentally different retention systems. Comet makes a best-effort attempt to translate the CrashPlan retention policy into a set of Comet retention rules, with some caveats:
+<ul>
+<li>Comet uses a minimum retention period based on the schedule window.</li>
+<li>CrashPlan retention for the last week will be interpreted as multiple daily policies for periods shorter than 24 hours.</li>
+<li>CrashPlan retention for the last week will be interpreted as single or multiple weekly policies for periods greater than 24 hours, depending on the configured value.</li>
+<li>Retention for larger time periods will be configured as single or multiple daily, weekly or monthly rules dependent on the configured value, populated out for periods of a week, three months, a year, and indefinitely.</li>
+<li>Weekly retention policies are treated as one backup per week, on the first day of the week, for the specified number of weeks.</li>
+<li>Monthly retention policies are treated as one backup per month, on the first day of the month, for the specified number of months.</li>
+<li>Indefinite retention policies are implemented as one backup per month, on the first day of the month, for over a million years.</li>
+</ul></li>
+</ul></li>
+<li>Schedule
+<ul>
+<li>CrashPlan and Comet employ fundamentally different scheduling systems. Comet translates a CrashPlan schedule to multiple schedule rules, with some caveats:
+<ul>
+<li>CrashPlan allows a number of very small schedule windows, down to a minute. For the sake of performance, Comet enforces a minimum schedule window of 30 minutes for imported schedules.</li>
+<li>Comet will generate a schedule rule for each time that a CrashPlan backup would have run in its specified window(s).</li>
+<li>The &quot;Skip if already running&quot; option is automatically enabled for imported schedules, to prevent overlapping backup with small schedule windows.</li>
+</ul></li>
+</ul></li>
+<li>Local destinations
+<ul>
+<li>If any local destinations are configured for CrashPlan, Comet will automatically import these using the same location on disk, backing up to a subdirectory within the specified path.</li>
+<li>The folder containing Comet's local vault data will be labelled with a unique ID. If it is necessary to identify which folder belongs to Comet, we recommend checking the modify date for the folder. The Comet data folder can also be distinguished by the format of the unique ID - CrashPlan uses a numerical ID for its folder, while Comet uses a hyphenated GUID with a mixture of numbers and letters.</li>
+</ul></li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="other-products" class="docsSectionMarkerChild"></span></span><h3>Other products&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#other-products">&para;</a></h3>
+<p>Not currently supported</p>
+<span class="docsSectionMarker"><span id="migrating-user-data" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Migrating user data&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#migrating-user-data">&para;</a></h2>
+<p>It is possible to migrate user data to balance your storage requirements.</p>
+<span class="docsSectionMarker"><span id="migrating-serverside-user-data-to-a-different-volume" class="docsSectionMarkerChild"></span></span><h3>Migrating server-side user data to a different volume&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#migrating-serverside-user-data-to-a-different-volume">&para;</a></h3>
+<p>You can migrate user data in different ways.</p>
+<span class="docsSectionMarker"><span id="offline-server-migration-without-spanning" class="docsSectionMarkerChild"></span></span><h4>Off-line server migration, without Spanning&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#offline-server-migration-without-spanning">&para;</a></h4>
+<ol>
+<li>Stop Comet Server</li>
+<li>Move files to the new volume</li>
+<li>Update disk path in Comet Server's configuration file</li>
+<li>Start Comet Server</li>
+</ol>
+<span class="docsSectionMarker"><span id="gradual-online-server-migration-without-spanning" class="docsSectionMarkerChild"></span></span><h4>Gradual, on-line server migration, without Spanning&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#gradual-online-server-migration-without-spanning">&para;</a></h4>
+<ol>
+<li>Use rsync/robocopy/rclone/... to synchronize the current drive contents to the new drive.</li>
+<li>Repeat step #1 until there is very little data change in a single sync run</li>
+<li>Stop Comet Server</li>
+<li>Perform one more sync pass</li>
+<li>Update disk path in Comet Server's configuration file</li>
+<li>Start Comet Server</li>
+<li>Delete all content from the old disk volume</li>
+</ol>
+<span class="docsSectionMarker"><span id="gradual-online-server-migration-with-spanning" class="docsSectionMarkerChild"></span></span><h4>Gradual, on-line server migration with Spanning&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#gradual-online-server-migration-with-spanning">&para;</a></h4>
+<p>If multiple volumes are Spanned together in the same Storage Role Comet Server, then you can move files freely. Comet Server will instantly recognize the changes, because it looks in all attached volumes when looking for a chunk.</p>
+<ol>
+<li>
+<p>Configure Comet Server to Span between both the old and new volumes</p>
+<ul>
+<li>Newly uploaded data will be written in a balanced way to both volumes.</li>
+</ul>
+</li>
+<li>
+<p>Live migrate data from old volume to the new volume</p>
+<ul>
+<li>You can move data between the two volumes on-the-fly while Comet is running. You can even move data for an in-use Storage Vault. This is a safe operation.</li>
+</ul>
+</li>
+<li>
+<p>Stop Comet Server; move any remaining data that was written during step #2; disable the Spanning configuration; and then restart Comet Server</p>
+</li>
+</ol>
+<span class="docsSectionMarker"><span id="migrating-user-data-to-a-different-comet-server" class="docsSectionMarkerChild"></span></span><h3>Migrating user data to a different Comet Server&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#migrating-user-data-to-a-different-comet-server">&para;</a></h3>
+<ol>
+<li>
+<p>Create a new bucket on a different Comet Server</p>
+<ul>
+<li>You can either manually create the bucket, or Request a bucket on a new target server</li>
+</ul>
+</li>
+<li>
+<p>Copy the file content to the new server</p>
+</li>
+<li>
+<p>Edit the user's profile in the Auth Role Comet Server to change the address, bucket, and bucket-key that it points to</p>
+<ul>
+<li>You should first ensure that this user is not running any backup jobs to the original server.</li>
+<li>You must take care to preserve the Encryption Key settings. The key absolutely must not change.</li>
+</ul>
+</li>
+<li>
+<p>Remove the file content from the original server</p>
+<ul>
+<li>You should first ensure that this user is not running any restore jobs from the original server.</li>
+</ul>
+</li>
+</ol>
+<p>For more information, see the <a href="/docs/guide-seedload-walkthrough">Seed Load Walkthrough</a>.</p>
+<span class="docsSectionMarker"><span id="migrating-user-data-between-storage-vault-types" class="docsSectionMarkerChild"></span></span><h3>Migrating user data between Storage Vault types&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#migrating-user-data-between-storage-vault-types">&para;</a></h3>
+<p>All Storage Vault types (e.g. Comet Server, Local Copy, SFTP, Amazon S3 etc) use the same on-disk layout. It is possible to follow the above steps for &quot;Migrating user data to a different Comet Server&quot; even when either the old or new targets are not a Comet Server.</p>
+<span class="docsSectionMarker"><span id="migrating-comet-server-to-a-new-location" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Migrating Comet Server to a new location&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#migrating-comet-server-to-a-new-location">&para;</a></h2>
+<p>It's possible to migrate your Comet Server to a new location. Migrating between two different operating systems won't cause any issues.</p>
+<span class="docsSectionMarker"><span id="migrate-your-original-comet-server-to-a-new-comet-server-location-without-the-backup-data" class="docsSectionMarkerChild"></span></span><h4>Migrate your original Comet Server to a new Comet Server location without the backup data:&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#migrate-your-original-comet-server-to-a-new-comet-server-location-without-the-backup-data">&para;</a></h4>
+<ol>
+<li>
+<p>Install Comet Server at the new location, enable the Authentication Role and configure your new <a href="/docs/storage-configuration">storage location</a>. It is possible to move the old storage data into the new storage location. This is covered in <a href="https://account.cometbackup.com/docs/appendix#migrating-user-data">Migrating user data</a>.
+Ensure that only one server has Constellation enabled.
+Temporarily disable Constellation 'delete data'. This will help avoid inadvertent errors.</p>
+</li>
+<li>
+<p>Now, stop both your new Comet Server and your original Comet Server (via Comet Server Service Manager -&gt; Service -&gt; Stop)</p>
+</li>
+<li>
+<p>On the original Comet Server, open the configuration directory (e.g. &quot;C:\ProgramData\Comet&quot;) and copy the contents of this directory to the same location in the new Comet Server, overwriting the same-named files. You can use a previously-created <a href="/docs/comet-server-configuration#server-selfbackup">Server Self-Backup</a> copy of these same files. The Server Self-Backup is interchangeable between Windows and Linux systems, if migrating between two different operating systems.</p>
+</li>
+<li>
+<p>'Relax' your serial number (located: <a href="https://cometbackup.com/my_servers">https://cometbackup.com/my_servers</a>)</p>
+</li>
+<li>
+<p>Verify your DNS records are configured correctly</p>
+</li>
+</ol>
+<span class="docsSectionMarker"><span id="if-you-also-require-your-storage-role-migrated-it-is-as-simple-as-replicating-both-your-authentication-role--storage-role-verify-your-dns-records-and-relax-the-serial-number" class="docsSectionMarkerChild"></span></span><h4>If you also require your Storage Role migrated, it is as simple as replicating both your Authentication Role &amp; Storage Role, verify your DNS records and relax the serial number.&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#if-you-also-require-your-storage-role-migrated-it-is-as-simple-as-replicating-both-your-authentication-role--storage-role-verify-your-dns-records-and-relax-the-serial-number">&para;</a></h4>
+<ol>
+<li>
+<p>On the new Comet Server, enable the Authentication Role and Storage Role (point the Storage Role to the new storage location)</p>
+</li>
+<li>
+<p>On the original Comet Server, configure the Authentication Role replication / Storage Role Replication settings on the Settings page to point to the new Comet Server</p>
+</li>
+<li>
+<p>Once replicated, shutdown the original Comet Server</p>
+</li>
+<li>
+<p>Point the DNS records to your new Comet Server</p>
+</li>
+<li>
+<p>Relax your serial number (located: <a href="https://cometbackup.com/my_servers">https://cometbackup.com/my_servers</a>)</p>
+</li>
+<li>
+<p>Re-enable Constellation 'delete data' when satisfied that all roles are working correctly.</p>
+</li>
+</ol>
+<span class="docsSectionMarker"><span id="things-to-consider-after-migration" class="docsSectionMarkerChild"></span></span><h4>Things to consider after migration&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#things-to-consider-after-migration">&para;</a></h4>
+<p>If the new Comet Server's address is different from previously, you will need to ensure the existing devices are connecting to that new address. Either install the clients again to update the addresses, or edit the address field when logging in to the device.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/defaultserverURL.png"><img src="images/defaultserverURL.png.thumb.jpg" alt="" /></a></p>
+<p>Also, you will need to change the existing Storage Vaults address/URL. It's possible to change all of the Storage Vault addresses at once by doing the following:</p>
+<p>Enable Advanced options.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/advancedoptions.PNG"><img src="images/advancedoptions.PNG.thumb.jpg" alt="" /></a></p>
+<p>Go to the Users page and select &quot;Bulk replace addresses&quot; under the &quot;Advanced&quot; dropdown.</p>
+<p class="doc-standalone-image-paragraph"><img src="images/bulkreplaceaddresses.PNG" alt="" /></p>
+<p>Enter in the current address the Storage Vaults are using in the first field and then enter the new address in the second field.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/bulkreplaceaddresseseg.PNG"><img src="images/bulkreplaceaddresseseg.PNG.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="updating-comet-server-network-addressurl-considerations" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Updating Comet Server network address/URL considerations&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#updating-comet-server-network-addressurl-considerations">&para;</a></h2>
+<p>If you are converting your Comet Server from a local environment to a live environment, or just updating the existing network address in general, there are a few considerations to keep in mind before updating the address.</p>
+<p>This also includes changing the URL or address at which your client devices connect to your Comet Server.</p>
+<span class="docsSectionMarker"><span id="bulk-update-storage-vault-addresses" class="docsSectionMarkerChild"></span></span><h3>Bulk update Storage Vault addresses&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#bulk-update-storage-vault-addresses">&para;</a></h3>
+<p>If your Comet Server's Storage Role server address is going to be changed, you will need to update the address for where the data is sent to. On the Comet Server:</p>
+<p>Enable Advanced options.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/advancedoptions.PNG"><img src="images/advancedoptions.PNG.thumb.jpg" alt="" /></a></p>
+<p>Go to the Users page and select &quot;Bulk replace addresses&quot; under the &quot;Advanced&quot; dropdown.</p>
+<p class="doc-standalone-image-paragraph"><img src="images/bulkreplaceaddresses.PNG" alt="" /></p>
+<p>Enter in the current address the Storage Vaults are using in the first field and then enter the new address in the second field.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/bulkreplaceaddresseseg.PNG"><img src="images/bulkreplaceaddresseseg.PNG.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="update-the-client-login-address" class="docsSectionMarkerChild"></span></span><h3>Update the client login address&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#update-the-client-login-address">&para;</a></h3>
+<p>Unless you change the client device connection-address, devices won't know the new address, and will still attempt to connect using the old one. It's possible to perform a remote action to update the connection address, and should be performed <em>prior</em> to updating the Comet Server's address.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/updateloginurl.png"><img src="images/updateloginurl.png.thumb.jpg" alt="" /></a></p>
+<p>If you had already updated the Comet Server's address before doing this, then you can either:</p>
+<p>Manually update the login address on the client device.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/defaultserverURL.png"><img src="images/defaultserverURL.png.thumb.jpg" alt="" /></a></p>
+<p>Or reinstall the backup client on the device. The new installation will set the login address to your current Comet Server's address. </p>
+<p>You may want to also check the Settings page if you had set a <code>Default Server URL</code> for client login, and update it.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/defaultserverurlweb.png"><img src="images/defaultserverurlweb.png.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="update-constellation-settings" class="docsSectionMarkerChild"></span></span><h3>Update Constellation settings&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#update-constellation-settings">&para;</a></h3>
+<p>Any affected Constellation targets will need to be updated from the old address to the new.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/constellationtarget.png"><img src="images/constellationtarget.png.thumb.jpg" alt="" /></a></p>
+<p>If you had enabled Constellation to automatically delete data, you may want to temporarily disable it first before you make any other changes, to avoid any potential data loss.</p>
+<span class="docsSectionMarker"><span id="converting-from-a-local-test-environment" class="docsSectionMarkerChild"></span></span><h3>Converting from a local test environment&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#converting-from-a-local-test-environment">&para;</a></h3>
+<p>If you are converting a local test environment to go live, don't forget to revoke any test devices you may no longer need, to avoid unnecessary charges from incurring.</p>
+<span class="docsSectionMarker"><span id="also-moving-comet-server-to-new-hardware" class="docsSectionMarkerChild"></span></span><h3>Also moving Comet Server to new hardware&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#also-moving-comet-server-to-new-hardware">&para;</a></h3>
+<p>See the <a href="/docs/appendix#migrating-comet-server-to-a-new-location">Migration documentation</a></p>
+<span class="docsSectionMarker"><span id="updating-the-comet-server-addressurl" class="docsSectionMarkerChild"></span></span><h3>Updating the Comet Server address/URL&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#updating-the-comet-server-addressurl">&para;</a></h3>
+<p>Now actually going about updating the Comet Server address - you can see the <a href="/docs/comet-server-configuration#network">Network documentation</a> for more details.</p>
+<p>If you just wanted to use the free automatically-renewing SSL certificate, then the server must be listening on port 443, the domain name must be publicly accessible, and the DNS for the domain name must point to your specific Comet Server instance.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/networkautossl.png"><img src="images/networkautossl.png.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="reverse-proxy-in-front-of-comet-server" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Reverse Proxy in front of Comet Server&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#reverse-proxy-in-front-of-comet-server">&para;</a></h2>
+<p>It is possible to run a load balancer or a frontend proxy software in front of Comet Server. All Comet Server communication is performed over HTTP / HTTPS / Websockets, so applications such as <code>nginx</code>, <code>Apache</code>, <code>HAProxy</code>, <code>Traefik</code> or <code>Caddy</code> are all suitable for this purpose.</p>
+<p>Using a load balancer or a frontend proxy software allows you to</p>
+<ul>
+<li>run multiple Comet Server instances on the same machine or IP</li>
+<li>run Comet Server alongside other HTTP websites or applications on the same machine or IP</li>
+<li>deny or allow IP address ranges (although Comet Server has some builtin functionality for this)</li>
+</ul>
+<p>If you choose to do this, you should take the following precautions:</p>
+<ul>
+<li>ensure that the frontend proxy does not introduce additional buffering or timeouts that could interrupt the connection between Comet Backup and Comet Server</li>
+<li>ensure that the frontend proxy forwards the client's real IP address using the <code>X-Forwarded-For</code> header and that the <code>TrustXForwardedFor</code> field is set to <code>true</code> in the <code>cometd.cfg</code> file (<em>&gt;= 20.12.0)</em>
+<ul>
+<li>This field is set to <code>false</code> by default for new and upgraded Comet Server installations</li>
+<li>If the <code>TrustXForwardedFor</code> field is set to <code>true</code> while a reverse proxy is not being used, this may allow the customer to spoof any IP address, bypassing allowlist, throttling, and management features</li>
+<li>If multiple reverse-proxies are chained, Comet Server trusts the left-most (client-origin) IP address in the compound <code>X-Forwarded-For</code> header</li>
+</ul></li>
+<li>ensure that Websocket traffic is proxied through correctly
+<ul>
+<li>If Websockets are not proxied through correctly, the live-connection functionality may be missing or unavailable, and Comet Backup devices may appear as &quot;Offline&quot; inside the Comet Server web interface</li>
+</ul></li>
+<li>ensure that no extra limits are placed on the file upload size. Comet may upload large blobs to a Comet Server Storage Role using HTTP POST.</li>
+</ul>
+<p>Some actions in the Comet Server web interface, such as large changes made on the Settings page, result in restarting the Comet Server daemon. During this time, the Comet Server would be briefly unreachable. If there is no reverse proxy in place, web browsers such as Google Chrome will automatically retry to load the page and Comet Server will appear again after the restart completes in a few seconds. However if a reverse proxy such as nginx is used, the browser will see a 504 Gateway Error message and fail to automatically reload the page after a daemon restart. This is a cosmetic issue only and you can continue to access the Comet Server web interface by manually refreshing the web browser.</p>
+<span class="docsSectionMarker"><span id="nginx" class="docsSectionMarkerChild"></span></span><h3>nginx&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#nginx">&para;</a></h3>
+<p>The following configuration could be used as an example:</p>
+<pre><code class="language-nginx">    # Increase timeouts
+    proxy_connect_timeout 3000;
+    proxy_send_timeout    3000;
+    proxy_read_timeout    3000;
+    client_body_timeout   3000;
+    proxy_buffering off;
 
-    <div id="main-area">
-      <div id="position-nav">
-        <div id="nav-inner">
-          <ul>
-            <li>
-              <a href="about-these-docs.html" title="Documentation"
-                >Documentation</a
-              >
-            </li>
-            <li><a href="upgrade.html" title="Upgrade">Upgrade</a></li>
+    # Allow websockets
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
 
-            <li>
-              <a href="cloud-backup-usage.html" title="Cloud Backup usage"
-                >Cloud Backup usage</a
-              >
-            </li>
-            <li>
-              <a href="user-configuration.html" title="User configuration"
-                >User configuration</a
-              >
-            </li>
-            <li>
-              <a href="protected-items.html" title="Protected Item types"
-                >Protected Item types</a
-              >
-            </li>
-            <li>
-              <a href="troubleshooting.html" title="Troubleshooting"
-                >Troubleshooting</a
-              >
-            </li>
-            <li>
-              <a href="appendix.html" title="Appendix"><b>Appendix</b></a>
-            </li>
-          </ul>
-        </div>
-      </div>
+    # Raise limit on file upload sizes
+    client_max_body_size 500M;
 
-      <div id="position-content">
-        <div id="content-inner">
-          <span class="docsSectionMarker"
-            ><span id="appendix" class="docsSectionMarkerChild"></span
-          ></span>
-          <h1>
-            Appendix&nbsp;<a
-              class="docsSectionLinkIcon"
-              href="appendix.html#appendix"
-              >&para;</a
-            >
-          </h1>
-          <span class="docsSectionMarker"
-            ><span
-              id="encryption-and-key-management"
-              class="docsSectionMarkerChild"
-            ></span
-          ></span>
-          <div class="docs-box">
-            <h2>
-              Encryption and key management&nbsp;<a
-                class="docsSectionLinkIcon"
-                href="appendix.html#encryption-and-key-management"
-                >&para;</a
-              >
-            </h2>
-            <p>
-              The user's password is used to derive two 192-bit keys (the
-              &quot;L&quot; and &quot;R&quot; keys) via
-              <code>PBKDF2-SHA512</code>, with hard-coded parameters for
-              repeatable output.
-            </p>
-            <ul>
-              <li>
-                The L-key is used to log in to the Authentication Role server in
-                place of the real password; the server stores only a
-                <code>bcrypt(sha512)</code> hash of this L-key.
-              </li>
-              <li>
-                The R-key never leaves the client, and is used to encrypt secret
-                keys stored within the user's profile on the server.
-              </li>
-            </ul>
-            <p>
-              This means that one password can be used for all client-side
-              account operations, while preventing servers from uncovering
-              client-only secrets.
-            </p>
-            <p>
-              When Cloud Backup sets up a Storage Vault for the first time, it
-              generates two high-entropy random keys (the 256-bit &quot;A&quot;
-              and 128-bit &quot;E&quot; keys). All user data in the Storage
-              Vault is stored encrypted with the A-key using AES-256 in CTR
-              mode, and authenticated using Poly1305 in AEAD (encrypt-then-MAC)
-              mode.
-            </p>
-            <p>
-              The permanent A-key is stored inside the Storage Vault, encrypted
-              with the E-key. The E-key is then encrypted with the R-key and
-              stored in the user's profile on the Authentication Role server.
-              When a backup is performed, the client uses its password to derive
-              the private R-key, to decrypt the E-key from the vault, to decrypt
-              the A-key for data storage. This extra level of indirection
-              enables some key rotation scenarios, as a new E-key can be
-              generated without needing to re-encrypt all the data in the
-              Storage Vault.
-            </p>
-            <p>
-              If the Storage Vault is for a Storage Role bucket, a high-entropy
-              random 128-bit PSK is used to gate access to the bucket. The
-              Storage Role server stores only a <code>bcrypt(sha512)</code> hash
-              of this PSK. The client encrypts this PSK with the R-key and
-              stores it in the user's profile on the Authentication Role server.
-            </p>
-            <span class="docsSectionMarker"
-              ><span
-                id="importing-backup-settings-from-other-products"
-                class="docsSectionMarkerChild"
-              ></span
-            ></span>
-          </div>
-          <div class="docs-box">
-            <h2>
-              Importing backup settings from other products&nbsp;<a
-                class="docsSectionLinkIcon"
-                href="appendix.html#importing-backup-settings-from-other-products"
-                >&para;</a
-              >
-            </h2>
-            <p>
-              Cloud Backup supports importing settings from certain other
-              third-party backup products.
-            </p>
-            <p>
-              In all cases, only user configuration settings are read from the
-              other product.
-            </p>
-            <ul>
-              <li>
-                Existing backed-up data is not converted to Cloud Backup's
-                format; you must back up the data again using Cloud Backup.
-              </li>
-              <li>Historical logs are not imported.</li>
-            </ul>
-            <span class="docsSectionMarker"
-              ><span
-                id="ahsay-obmacb-x-or-compatible"
-                class="docsSectionMarkerChild"
-              ></span
-            ></span>
-            <h3>
-              Ahsay OBM/ACB 6.x or compatible&nbsp;<a
-                class="docsSectionLinkIcon"
-                href="appendix.html#ahsay-obmacb-x-or-compatible"
-                >&para;</a
-              >
-            </h3>
-            <p>
-              <em
-                >Ahsay, OBM, and ACB are trademarks of Ahsay Systems Corporation
-                Limited.</em
-              >
-            </p>
-            <p>
-              Cloud Backup can import settings from an installed version of
-              Ahsay OBM/ACB 6.x, subject to the following notices and
-              conditions:
-            </p>
-            <ul>
-              <li>
-                Ahsay backupsets are imported as Cloud Backup Protected Items.
-                <ul>
-                  <li>
-                    Backupset types
-                    <ul>
-                      <li>
-                        File
-                        <ul>
-                          <li>Source selection/deselection is supported.</li>
-                          <li>
-                            Macro selections (desktop, documents etc) are not
-                            supported.
-                          </li>
-                          <li>
-                            Inclusion/exclusion filters are not supported.
-                          </li>
-                        </ul>
-                      </li>
-                      <li>MySQL</li>
-                      <li>
-                        Microsoft SQL Server
-                        <ul>
-                          <li>
-                            The &quot;All instances&quot; option is not
-                            supported. Your Ahsay backupset must have selected
-                            specific instances for backup.
-                          </li>
-                        </ul>
-                      </li>
-                      <li>Other backupset types are not supported.</li>
-                    </ul>
-                  </li>
-                  <li>
-                    Pre/post commands
-                    <ul>
-                      <li>
-                        Pre/post commands are imported as applying to the
-                        Protected Item, not to the Storage Vault nor the
-                        Schedule.
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    Retention policies
-                    <ul>
-                      <li>
-                        Basic retention policies (<code>DAYS</code>/<code
-                          >JOBS</code
-                        >
-                        -type) are supported.
-                      </li>
-                      <li>
-                        Advanced retention policies will be treated as
-                        &quot;keep forever&quot;.
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    Schedule
-                    <ul>
-                      <li>Daily, Weekly and Custom schedules are supported.</li>
-                      <li>
-                        Monthly schedules for a specific day of the month are
-                        supported.
-                      </li>
-                      <li>
-                        Monthly schedules for a variant day of the month (e.g.
-                        Second Tuesday, Last Weekday) are not supported.
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    &quot;Extra Local Copy&quot;
-                    <ul>
-                      <li>
-                        &quot;Local Copy&quot; will be imported as a new or
-                        existing Local Path Storage Vault in Cloud Backup.
-                      </li>
-                      <li>
-                        The &quot;Skip Offsite Backup&quot; option is correctly
-                        imported.
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <span class="docsSectionMarker"
-              ><span id="crashplan" class="docsSectionMarkerChild"></span
-            ></span>
-            <h3>
-              CrashPlan&nbsp;<a
-                class="docsSectionLinkIcon"
-                href="appendix.html#crashplan"
-                >&para;</a
-              >
-            </h3>
-            <p>
-              <em
-                >CrashPlan and Code42 are trademarks of Code42 Software,
-                Inc.</em
-              >
-            </p>
-            <p>
-              Cloud Backup can import settings from an installed version of
-              Code42 CrashPlan, subject to the following notices and conditions:
-            </p>
-            <ul>
-              <li>
-                CrashPlan backupsets are imported as Cloud Backup Protected
-                Items.
-                <ul>
-                  <li>
-                    Backupset types
-                    <ul>
-                      <li>
-                        File
-                        <ul>
-                          <li>Sources selection/deselection is supported.</li>
-                          <li>Regular expression exclusions are supported.</li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    Retention policies
-                    <ul>
-                      <li>
-                        CrashPlan and Cloud Backup employ fundamentally
-                        different retention systems. Cloud Backup makes a
-                        best-effort attempt to translate the CrashPlan retention
-                        policy into a set of Cloud Backup retention rules, with
-                        some caveats:
-                        <ul>
-                          <li>
-                            Cloud Backup uses a minimum retention period based
-                            on the schedule window.
-                          </li>
-                          <li>
-                            CrashPlan retention for the last week will be
-                            interpreted as multiple daily policies for periods
-                            shorter than 24 hours.
-                          </li>
-                          <li>
-                            CrashPlan retention for the last week will be
-                            interpreted as single or multiple weekly policies
-                            for periods greater than 24 hours, depending on the
-                            configured value.
-                          </li>
-                          <li>
-                            Retention for larger time periods will be configured
-                            as single or multiple daily, weekly or monthly rules
-                            dependent on the configured value, populated out for
-                            periods of a week, three months, a year, and
-                            indefinitely.
-                          </li>
-                          <li>
-                            Weekly retention policies are treated as one backup
-                            per week, on the first day of the week, for the
-                            specified number of weeks.
-                          </li>
-                          <li>
-                            Monthly retention policies are treated as one backup
-                            per month, on the first day of the month, for the
-                            specified number of months.
-                          </li>
-                          <li>
-                            Indefinite retention policies are implemented as one
-                            backup per month, on the first day of the month, for
-                            over a million years.
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    Schedule
-                    <ul>
-                      <li>
-                        CrashPlan and Cloud Backup employ fundamentally
-                        different scheduling systems. Cloud Backup translates a
-                        CrashPlan schedule to multiple schedule rules, with some
-                        caveats:
-                        <ul>
-                          <li>
-                            CrashPlan allows a number of very small schedule
-                            windows, down to a minute. For the sake of
-                            performance, Cloud Backup enforces a minimum
-                            schedule window of 30 minutes for imported
-                            schedules.
-                          </li>
-                          <li>
-                            Cloud Backup will generate a schedule rule for each
-                            time that a CrashPlan backup would have run in its
-                            specified window(s).
-                          </li>
-                          <li>
-                            The &quot;Skip if already running&quot; option is
-                            automatically enabled for imported schedules, to
-                            prevent overlapping backup with small schedule
-                            windows.
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    Local destinations
-                    <ul>
-                      <li>
-                        If any local destinations are configured for CrashPlan,
-                        Cloud Backup will automatically import these using the
-                        same location on disk, backing up to a subdirectory
-                        within the specified path.
-                      </li>
-                      <li>
-                        The folder containing Cloud Backup's local vault data
-                        will be labelled with a unique ID. If it is necessary to
-                        identify which folder belongs to Cloud Backup, we
-                        recommend checking the modify date for the folder. The
-                        Cloud Backup data folder can also be distinguished by
-                        the format of the unique ID - CrashPlan uses a numerical
-                        ID for its folder, while Cloud Backup uses a hyphenated
-                        GUID with a mixture of numbers and letters.
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <span class="docsSectionMarker"
-              ><span id="other-products" class="docsSectionMarkerChild"></span
-            ></span>
-            <h3>
-              Other products&nbsp;<a
-                class="docsSectionLinkIcon"
-                href="appendix.html#other-products"
-                >&para;</a
-              >
-            </h3>
-            <p class="highlight-upcoming">
-              Future versions of Cloud Backup will support importing
-              configuration from other products.
-            </p>
-            <span class="docsSectionMarker"
-              ><span
-                id="using-cloud-backup-behind-a-network-proxy"
-                class="docsSectionMarkerChild"
-              ></span
-            ></span>
-          </div>
-          <div class="docs-box">
-            <h2>
-              Using Cloud Backup behind a network proxy&nbsp;<a
-                class="docsSectionLinkIcon"
-                href="appendix.html#using-cloud-backup-behind-a-network-proxy"
-                >&para;</a
-              >
-            </h2>
-            <p>Cloud Backup can be used behind an HTTP or SOCKS proxy.</p>
-            <p>
-              Proxy settings are controlled by environment variables named
-              <code>HTTP_PROXY</code> and <code>HTTPS_PROXY</code> (case
-              insensitive).
-            </p>
-            <p>
-              Multiple programs use this configuration method, so the
-              environment variable may already be present for other software on
-              the machine.
-            </p>
-            <p>
-              On Windows, the environment variable should be set systemwide, to
-              ensure that any settings also apply to background services. You
-              can do this either
-            </p>
-            <ul>
-              <li>with the <code>setx</code> command, or</li>
-              <li>
-                in the GUI from <code>SystemPropertiesAdvanced.exe</code> &gt;
-                &quot;Environment Variables&quot; button &gt; &quot;System
-                variables&quot; section
-              </li>
-            </ul>
-            <p>
-              On Linux, environment variables can be set system-wide (e.g. in
-              <code>/etc/environment</code> or
-              <code>/etc/profile.d/my-custom-proxy.sh</code>), or for the
-              <code>root</code> user running Cloud Backup (e.g. in
-              <code>/root/.profile</code>), or in your startup script for Cloud
-              Backup (e.g. in <code>/etc/rc.local</code>).
-            </p>
-            <p>
-              The <code>HTTP_PROXY</code> environment variable should be set to
-              a string of the form
-              <code>https://username:password@my.proxy.host.com/</code> or
-              <code>http://my.proxy.host.com/</code> or
-              <code>socks5://username:password@my.proxy.host.com/</code>. This
-              matches the normal format on Linux; however some Windows
-              applications write this variable without the protocol. Please
-              ensure that the protocol is present.
-            </p>
-            <p>
-              Your proxy software must support websockets in order for Cloud
-              Backup's live-connection functionality to work correctly.
-            </p>
-            <p class="highlight-upcoming">
-              A future version of Cloud Backup will provide GUI settings to
-              configure the network proxy.
-            </p>
-            <span class="docsSectionMarker"
-              ><span
-                id="troubleshooting-tls-oversized-record-received-error"
-                class="docsSectionMarkerChild"
-              ></span
-            ></span>
-            <h3>
-              Troubleshooting &quot;tls: oversized record received&quot;
-              error&nbsp;<a
-                class="docsSectionLinkIcon"
-                href="appendix.html#troubleshooting-tls-oversized-record-received-error"
-                >&para;</a
-              >
-            </h3>
-            <p>
-              The <code>tls: oversized record received</code> error may occur
-              when making an HTTP proxy connection to an HTTPS proxy server (or
-              possibly vice-versa). Please double-check the environment variable
-              and the proxy server URL.
-            </p>
-            <span class="docsSectionMarker"
-              ><span
-                id="suppressing-before--after-command-failures"
-                class="docsSectionMarkerChild"
-              ></span
-            ></span>
-          </div>
-          <div class="docs-box">
-            <h2>
-              Suppressing Before / After command failures&nbsp;<a
-                class="docsSectionLinkIcon"
-                href="appendix.html#suppressing-before--after-command-failures"
-                >&para;</a
-              >
-            </h2>
-            <p>
-              When a command-line program displays some output, the output is
-              either sent to <code>stdout</code> (&quot;fd 1&quot;, for normal
-              messages) or <code>stderr</code> (&quot;fd 2&quot;, for error
-              messages).
-            </p>
-            <p>
-              Cloud Backup will mark a Before/After command as a warning if
-              there was content on <code>stderr</code>, or, if the command had a
-              non-zero exit code.
-            </p>
-            <p>If you are certain that the command cannot fail, you can</p>
-            <ul>
-              <li>
-                redirect stderr messages to go to stdout instead, by adding
-                <code>2&gt;&amp;1</code> to the end of your command
-              </li>
-              <li>
-                override the command exit code, by adding to the end of your
-                command
-                <ul>
-                  <li>Windows: <code>&amp;exit 0</code></li>
-                  <li>Linux and macOS: <code>; exit 0</code></li>
-                </ul>
-              </li>
-            </ul>
-            <p>
-              The above information is not Cloud Backup-specific; more
-              information about <code>2&gt;&amp;1</code> and stdout redirection
-              can be found online, e.g.
-              <a
-                href="https://support.microsoft.com/en-nz/help/110930/redirecting-error-messages-from-command-prompt-stderr-stdout"
-                >https://support.microsoft.com/en-nz/help/110930/redirecting-error-messages-from-command-prompt-stderr-stdout</a
-              >
-              .
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+    # Set the X-Forwarded-For header
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+</code></pre>
+<p>By default, nginx has a limit of 1MB on file upload sizes. This will prevent backups from working to a Comet Server Storage Role server. You should set <code>client_max_body_size</code> to a high value inside a <code>http</code>, <code>server</code>, or <code>location</code> block.</p>
+<span class="docsSectionMarker"><span id="apache" class="docsSectionMarkerChild"></span></span><h3>Apache&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#apache">&para;</a></h3>
+<p>Apache requires the <code>mod_proxy_wstunnel</code> module to proxy Websocket traffic.</p>
+<ul>
+<li>Linux with <code>a2enmod</code> installed
+<ul>
+<li>Run <code>a2enmod proxy_wstunnel</code></li>
+</ul></li>
+<li>Manually
+<ul>
+<li>Add <code>LoadModule proxy_wstunnel_module modules/mod_proxy_wstunnel.so</code> to Apache configuration file</li>
+</ul></li>
+</ul>
+<p>The following configuration could be used as an example:</p>
+<pre><code class="language-apache">    # Allow websockets
+    RewriteEngine On
+    RewriteCond %{HTTP:Connection} Upgrade [NC]
+    RewriteCond %{HTTP:Upgrade} websocket [NC]
+    RewriteRule /(.*) ws://127.0.0.1:8060/$1 [P,L]
+    ProxyRequests off
+
+    # Configure the upstream HTTP target
+    &lt;Location /&gt;
+        ProxyPass http://127.0.0.1:8060/
+        ProxyPassReverse http://127.0.0.1:8060/
+    &lt;/Location&gt;</code></pre>
+<span class="docsSectionMarker"><span id="haproxy" class="docsSectionMarkerChild"></span></span><h3>HAProxy&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#haproxy">&para;</a></h3>
+<p><code>HAProxy</code> introduces additional network timeouts that may prevent live-connection websockets from staying online. Because an HTTPS handshake involves multiple network roundtrips, accidental disconnections may decrease performance. You can adjust HAProxy timeouts to prevent disconnecting long-running connections.</p>
+<p>The following configuration could be used as an example:</p>
+<pre><code class="language-haproxy">    # Increase timeouts
+    timeout connect 30s
+    timeout client 120s
+    timeout http-keep-alive 120s
+    timeout http-request 120s
+
+    # Set the X-Forwarded-For header
+    option forwardfor</code></pre>
+<span class="docsSectionMarker"><span id="using-comet-backup-behind-a-network-proxy" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Using Comet Backup behind a network proxy&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#using-comet-backup-behind-a-network-proxy">&para;</a></h2>
+<p>Comet Backup can be used behind an HTTP or SOCKS proxy.</p>
+<p>Proxy settings are controlled by environment variables named <code>HTTP_PROXY</code> and <code>HTTPS_PROXY</code> (case insensitive).</p>
+<p>Multiple programs use this configuration method, so the environment variable may already be present for other software on the machine.</p>
+<p>On Windows, the environment variable should be set systemwide, to ensure that any settings also apply to background services. You can do this either</p>
+<ul>
+<li>with the <code>setx</code> command, or</li>
+<li>in the GUI from <code>SystemPropertiesAdvanced.exe</code> &gt; &quot;Environment Variables&quot; button &gt; &quot;System variables&quot; section</li>
+</ul>
+<p>On Linux, environment variables can be set system-wide (e.g. in <code>/etc/environment</code> or <code>/etc/profile.d/my-custom-proxy.sh</code>), or for the <code>root</code> user running Comet Backup (e.g. in <code>/root/.profile</code>), or in your startup script for Comet Backup (e.g. in <code>/etc/rc.local</code>).</p>
+<p>The <code>HTTP_PROXY</code> environment variable should be set to a string of the form <code>https://username:password@my.proxy.host.com/</code> or <code>http://my.proxy.host.com/</code> or <code>socks5://username:password@my.proxy.host.com/</code>. This matches the normal format on Linux; however some Windows applications write this variable without the protocol. Please ensure that the protocol is present.</p>
+<p>Your proxy software must support websockets in order for Comet's live-connection functionality to work correctly.</p>
+<span class="docsSectionMarker"><span id="troubleshooting-tls-oversized-record-received-error" class="docsSectionMarkerChild"></span></span><h3>Troubleshooting &quot;tls: oversized record received&quot; error&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#troubleshooting-tls-oversized-record-received-error">&para;</a></h3>
+<p>The <code>tls: oversized record received</code> error may occur when making an HTTP proxy connection to an HTTPS proxy server (or possibly vice-versa). Please double-check the environment variable and the proxy server URL.</p>
+<span class="docsSectionMarker"><span id="windows-event-log" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Windows Event Log&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#windows-event-log">&para;</a></h2>
+<p>Comet Backup logs all job messages to the Windows Event Log. The log content is identical to the job log content seen in the Comet Server log browser, or the Comet Backup history table, or the Comet Server API. This should allow you to check for errors and/or ensure that jobs are running on time, by monitoring the Windows Event Log.</p>
+<p>However, please note that this only covers client-side jobs, that do actually run. e.g. because &quot;Missed Backup&quot; job entries are generated server-side, they won't appear in the client's event log. It is not feasible to use the Windows Event Log as a complete monitoring solution for your customer base.</p>
+<p>The Comet Backup installer also logs some events, that can be used as a proxy for detecting software installation or upgrades.</p>
+<span class="docsSectionMarker"><span id="event-ids" class="docsSectionMarkerChild"></span></span><h3>Event IDs&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#event-ids">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Event ID</th>
+<th>Description</th>
+<th>Available since</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>backup-service</td>
+<td><em>any</em></td>
+<td>Messages about installing and starting the Elevator service, and the Delegate service (18.6.0 and later)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>backup-tool.exe</td>
+<td>50</td>
+<td>Backup job started</td>
+<td>18.3.8 or later</td>
+</tr>
+<tr>
+<td>backup-tool.exe</td>
+<td>51</td>
+<td>Backup job finished</td>
+<td>18.3.8 or later</td>
+</tr>
+<tr>
+<td>backup-tool.exe</td>
+<td>52</td>
+<td>Backup job log message. The Event Log entry severity corresponds to the Comet log entry severity (Info/Warning/Error)</td>
+<td>18.3.8 or later</td>
+</tr>
+<tr>
+<td>backup-tool.exe</td>
+<td>53</td>
+<td>Comet Backup installer has registered the <code>backup-tool.exe</code> Event Log source</td>
+<td>18.3.8 or later</td>
+</tr>
+<tr>
+<td>backup-tool.exe</td>
+<td>54</td>
+<td>Comet Backup uninstaller has de-registered the <code>backup-tool.exe</code> Event Log source</td>
+<td>18.3.8 or later</td>
+</tr>
+<tr>
+<td>backup-tool.exe</td>
+<td>55</td>
+<td>Message from the Comet Delegate service</td>
+<td>18.6.0 or later</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="suppressing-before--after-command-failures" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Suppressing Before / After command failures&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#suppressing-before--after-command-failures">&para;</a></h2>
+<p>When a command-line program displays some output, the output is either sent to <code>stdout</code> (&quot;fd 1&quot;, for normal messages) or <code>stderr</code> (&quot;fd 2&quot;, for error messages).</p>
+<p>Comet will mark a Before/After command as a warning if there was content on <code>stderr</code>, or, if the command had a non-zero exit code.</p>
+<p>If you are certain that the command cannot fail, you can</p>
+<ul>
+<li>redirect stderr messages to go to stdout instead, by adding <code>2&gt;&amp;1</code> to the end of your command</li>
+<li>override the command exit code, by adding to the end of your command
+<ul>
+<li>Windows: <code>&amp;exit 0</code></li>
+<li>Linux and macOS: <code>; exit 0</code></li>
+</ul></li>
+</ul>
+<p>The above information is not Comet-specific; more information about <code>2&gt;&amp;1</code> and stdout redirection can be found online, e.g. <a href="https://support.microsoft.com/en-nz/help/110930/redirecting-error-messages-from-command-prompt-stderr-stdout">https://support.microsoft.com/en-nz/help/110930/redirecting-error-messages-from-command-prompt-stderr-stdout</a> .</p>
+<span class="docsSectionMarker"><span id="data-validation" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Data validation&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#data-validation">&para;</a></h2>
+<p>There are three types of integrity verification in Comet:</p>
+<span class="docsSectionMarker"><span id="referential-integrity" class="docsSectionMarkerChild"></span></span><h3>Referential integrity&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#referential-integrity">&para;</a></h3>
+<p>Referential integrity means that for each snapshot, all its matching chunks exist; that all the chunks are indexed; and so on. This is verified client-side every time the app runs a retention pass, so you should ensure that retention passes run successfully from time-to-time.</p>
+<span class="docsSectionMarker"><span id="data-file-integrity-at-rest" class="docsSectionMarkerChild"></span></span><h3>Data file integrity at rest&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#data-file-integrity-at-rest">&para;</a></h3>
+<p>Data file integrity ensures that each file in the Storage Vault is readable and has not been corrupted at rest (e.g. <code>hash mismatch</code> / <code>decrypt</code> errors).</p>
+<p>Comet stores files inside the Storage Vault data location as opaque, encrypted, compressed files. The filenames are the SHA256 hash of the file content. Comet automatically verifies file integrity client-side, every time a file is accessed during backup and restore operations (i.e. non-exhaustively) by calculating the SHA256 hash of the content and comparing it to the filename.</p>
+<p>Corruption of files at rest is a rare scenario; it's unlikely you need to worry about this, unless you are using local storage and you believe your disk drives are failing. However, for additional peace-of-mind, you can verify the integrity of the files on disk at any time, by comparing the filename to their SHA256 hash.</p>
+<span class="docsSectionMarker"><span id="example-data-validation-commands" class="docsSectionMarkerChild"></span></span><h4>Example data validation commands&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#example-data-validation-commands">&para;</a></h4>
+<p>The following equivalent commands read all files in the current directory, take the SHA256 hash, and compare it to the filename.</p>
+<p>These commands exclude the <code>config</code> file, as these are known to be safe for other reasons.</p>
+<p>These commands do not exclude any other temporary files (e.g. <code>/tmp/</code> subdirectory, or <code>~</code>-named files) that may be used by some storage location types for temporary uploaded data. Such temporary files will almost certainly cause a hash mismatch, but do not interfere with normal backup or restore operations.</p>
+<p>On Linux, you can use the following command:</p>
+<pre><code class="language-bash">find . ! -name 'config' -type f -exec sha256sum '{}' \; | awk '{ sub("^.*/", "", $2) ; if ($1 == $2) { print $2,"ok" } else { print "[!!!]",$2,"MISMATCH",$1 } }'</code></pre>
+<p>On Windows, you can use the following Powershell (4.0 or later) command:</p>
+<pre><code class="language-powershell">Get-ChildItem -Recurse -File | Where-Object { $_.Name -ne "config" } | ForEach-Object {
+    $h = (Get-FileHash -Path $_.FullName -Algorithm SHA256)
+    if ($_.Name -eq $h.Hash) { echo "$($_.Name) ok"; } else { echo "[!!!] $($_.Name) MISMATCH $($h.Hash)"; }
+}</code></pre>
+<span class="docsSectionMarker"><span id="cloud-storage" class="docsSectionMarkerChild"></span></span><h4>Cloud storage&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#cloud-storage">&para;</a></h4>
+<p>Taking hash values of files in this way requires fully reading the file from the storage location. If the storage location is on cloud storage, this is equivalent to fully downloading the entire contents of the storage location. This may result in significant network traffic. In this case, we recommend relying on Comet's normal verification that happens automatically during backup- and restore- operations.</p>
+<span class="docsSectionMarker"><span id="data-file-integrity-at-generationtime" class="docsSectionMarkerChild"></span></span><h3>Data file integrity at generation-time&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#data-file-integrity-at-generationtime">&para;</a></h3>
+<p>It is possible that a malfunctioning Comet Backup client would generate bad data, and then save it into the Storage Vault with a valid hash and valid encryption. For instance, this could happen in some rare situations where the Comet Backup client is installed on a PC with malfunctioning RAM.</p>
+<p>In this situation, Comet would try to run a future backup/restore job, load data from the vault, but fail to parse it with a <code>couldn't load tree [...] hash mismatch</code> error message or a <code>Load(&lt;index/...&gt;): Decode [...] invalid character \x00</code> error message.</p>
+<p>In this situation, it is possible to recover the Storage Vault by removing all the corrupted data. The remaining data is restoreable. However, it's not possible to identify the corrupted data using the data validation commands above.</p>
+<span class="docsSectionMarker"><span id="data-validation-steps" class="docsSectionMarkerChild"></span></span><h4>Data validation steps&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#data-validation-steps">&para;</a></h4>
+<p>Different methods are available to identify the corrupted files.</p>
+<ul>
+<li>
+<p>Use the &quot;Deep verify Vault contents&quot; feature</p>
+<ul>
+<li>This feature is available in Comet via the Comet Server web interface live connected device actions dialog when the &quot;Advanced options&quot; setting is enabled. It is not exposed to the client in the Comet Backup app.</li>
+<li>This will cause the client to download parts of the Storage Vault and perform a deeper type of hash checking than is possible via the existing data validation steps. It should alert you to which data files are corrupt, and the Storage Vault can then be repaired following the existing documented steps.</li>
+<li>The &quot;deep verify&quot; feature downloads only index/tree parts of the Storage Vault, and caches temporary files to reduce total network roundtrips.</li>
+</ul>
+</li>
+<li>
+<p>Files mentioned in error message</p>
+<ul>
+<li>Data files (e.g. <code>couldn't load tree [...] hash mismatch</code> error message)
+<ul>
+<li>The <code>couldn't load tree</code> error message will also indicate the exact corrupted pack file, if possible.</li>
+<li>You can then delete the file from the <code>/data/</code> subdirectory, and run a retention pass to validate the remaining content, as described below. This may assist with repairing the Storage Vault.</li>
+<li>However, this only detects the corrupted directory trees that were immediately referenced by a running backup job; other past and future backup jobs may still be unrestorable.</li>
+</ul></li>
+<li>Index files (e.g. <code>Load(&lt;index/...&gt;): Decode [...] invalid character \x00</code>)
+<ul>
+<li>The index files contain only non-essential metadata to accelerate performance. Index files can be safely regenerated via the &quot;Rebuild indexes&quot; option on a Storage Vault. This is a relatively fast operation.</li>
+</ul></li>
+<li>Compared to the &quot;Deep verify Vault contents&quot; feature, repairing single files in this way does avoid the immediate bandwidth-intensive step of downloading the entire vault content; however, it is not a guarantee that all data in the Vault is safe. Use of this method should be coupled with a (bandwidth-equivalent) complete test restore.</li>
+</ul>
+</li>
+<li>
+<p>Files by modification date</p>
+<ul>
+<li>New backup jobs only add additional files into the Storage Vault. Another possible way to repair the Storage Vault is to assume files in the Storage Vault are affected after a given point in time.</li>
+<li>This is only an option if your Storage Vault type exposes file modification timestamps (e.g. local disk or SFTP; and some limited number of cloud storage providers)</li>
+<li>Specifically
+<ol>
+<li>Ensure that no backup/restore/retention operations are currently running to the Storage Vault</li>
+<li>The corrupted data was created by the job <em>prior</em> to the one in which errors were first reported; Find the start time of this prior job</li>
+<li>Delete all files in the Storage Vault with any modification time greater than when that job started</li>
+<li>If you used the &quot;Rebuild indexes&quot; option or ran a retention pass since the errors began, the contents of the <code>/index/</code> directory may have been consolidated into fewer files. If there are no files in the <code>/index/</code> subdirectory, you should then initiate a &quot;Rebuild indexes&quot; operation</li>
+<li>Initiate a retention pass afterward, to ensure referential integrity of the remaining files, as described below</li>
+</ol></li>
+</ul>
+</li>
+<li>
+<p>The other alternative is to start a new Storage Vault.</p>
+</li>
+</ul>
+<span class="docsSectionMarker"><span id="recovering-from-file-corruption" class="docsSectionMarkerChild"></span></span><h3>Recovering from file corruption&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#recovering-from-file-corruption">&para;</a></h3>
+<p>If you encounter a <code>hash mismatch</code> error, a data file has been corrupted inside the Storage Vault. Data has been lost.</p>
+<p>If the issue only occurred recently, it's highly likely that most backed-up data is safe, and that only recent backup jobs are affected.</p>
+<p>Because Comet is a deduplicating backup engine, future backups may silently depend on this corrupted data. You should immediately take the following steps to re-establish data integrity of the remaining data in the Storage Vault:</p>
+<ol>
+<li>Identify and delete all corrupted files from the Storage Vault's data location
+<ul>
+<li>You can use the example data validation commands above to find all hash mismatches</li>
+</ul></li>
+<li>Run a retention pass for the Storage Vault
+<ul>
+<li>This will check referential integrity (as mentioned above)</li>
+<li>The job will fail, with a number of warnings in the format
+<ul>
+<li><code>&lt;snapshot/ABCDEFGH&gt; depends on missing [...]</code> or</li>
+<li><code>Packindex 'AAAA' for snapshot 'BBBB' refers to unknown pack 'CCCC', shouldn't happen</code></li>
+</ul></li>
+</ul></li>
+<li>Delete snapshots that are missing content data
+<ul>
+<li>Delete files from the <code>/snapshots/</code> subdirectory in the Storage Vault's data location that match the corruption warnings from the backup job report</li>
+</ul></li>
+<li>Repeat step 2 until no issues occur</li>
+</ol>
+<p>Some data has been lost, but by carefully removing the corrupted data and everything that references it, the remaining backup snapshots will all be restorable. Future backup jobs should be safe.</p>
+<span class="docsSectionMarker"><span id="missing-files-from-storage-vault" class="docsSectionMarkerChild"></span></span><h3>Missing files from Storage Vault&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#missing-files-from-storage-vault">&para;</a></h3>
+<p>Please take care to ensure that files do not go missing from the Storage Vault. The loss of any file within the Storage Vault compromises the integrity of your backup data. You are likely to be in a data-loss situation.</p>
+<p>More specifically:</p>
+<p>If there are missing files from the <code>snapshots</code> subdirectory, Comet will not know that there is a backup snapshot available to be restored. There is no solution for this, other than ensuring all the files are present. This is unfortunate, but should only have a limited impact.</p>
+<p>If there are missing files from the <code>packindex</code> subdirectory, some operations will be slower until Comet runs an optimization pass during the next retention pass. This is not a significant problem.</p>
+<p>If there are missing files from the <code>locks</code> subdirectory, Comet may perform a dangerous operation, such as deleting in-use data during a retention pass. This is potentially a significant problem.</p>
+<p>If there are missing files from the <code>index</code> subdirectory, Comet will re-upload some data that it could have otherwise deduplicated. This is unfortunate, but should only have a limited impact. Excess data will be cleaned up by a future retention pass.</p>
+<p>If there are missing files from the <code>keys</code> subdirectory, Comet will be entirely unable to access the Storage Vault. There is no solution for this, other than ensuring all the files are present. This could be a significant problem. However, because the files in this directory do not change often,  it's very likely that their replication is up-to-date.</p>
+<p>If there are missing files from the <code>data</code> subdirectory, Comet will be unable to restore some data. When a retention pass next runs, Comet should detect this problem, and alert you to which backup snapshots are unrecoverable. You can then delete the corresponding files from the <code>snapshots</code> subdirectory and continue on with what is left of the Storage Vault.</p>
+<p>For further information about specific error messages, see <a href="https://account.cometbackup.com/docs/troubleshooting#recovering-from-unsafe-unlock-operations">Recovering from Unsafe Unlock Operations</a></p>
+<span class="docsSectionMarker"><span id="splitting-a-storage-vault" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Splitting a Storage Vault&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#splitting-a-storage-vault">&para;</a></h2>
+<p>It is possible to &quot;split&quot; a Storage Vault by cloning it, then deleting some jobs from each one.</p>
+<p>This would be a preliminary step towards splitting one large Storage Vault into two smaller Storage Vaults. The cloned vault must use the same encryption material in order to access existing encrypted data, so this is not suitable as a protection mechanism.</p>
+<p>This is an advanced process. Please take special care to avoid data loss.</p>
+<ol>
+<li>Prepare a location for the cloned Storage Vault
+<ul>
+<li>If the current Storage Vault is &quot;Local Path&quot;, then make a new empty directory.</li>
+<li>If the current Storage Vault is &quot;Comet Server&quot;, then in Comet Server &gt; Storage menu &gt; &quot;Storage Buckets&quot; page, click &quot;Add new&quot;.</li>
+</ul></li>
+<li>In Comet Backup, create a new &quot;Custom&quot; Storage Vault using these details</li>
+<li>Copy all files from the existing data location to the new data location, so that the backup data exists in both places</li>
+<li>Copy the encryption key
+<ul>
+<li>In Comet Server, from your user menu, enable &quot;Advanced Options&quot;. Then on the user's detail page, choose Actions &gt; Edit Raw Profile. Scroll to the &quot;Destinations&quot; section.</li>
+<li>Find the original Storage Vault by name; 
+<ul>
+<li>copy the <code>EncryptionKeyEncryptionMethod</code>, <code>EncryptedEncryptionKey</code>, and <code>RepoInitTimestamp</code> fields</li>
+</ul></li>
+<li>Find the new Storage Vault by name;
+<ul>
+<li>paste the <code>EncryptionKeyEncryptionMethod</code>, <code>EncryptedEncryptionKey</code>, and <code>RepoInitTimestamp</code> fields</li>
+</ul></li>
+<li>Save changes.</li>
+</ul></li>
+</ol>
+<p>You should then have two cloned Storage Vaults, but have now become independent copies.</p>
+<p>In Comet Backup, you should ensure that you can browse files to restore from both of these Storage Vaults.</p>
+<p>Then it's possible to start work on the cleanup process:</p>
+<ul>
+<li>You can change some schedules to back up to one Storage Vault and not the other</li>
+<li>You can also save space by deleting some old backup snapshots in one of the Storage Vaults, either by
+<ul>
+<li>using the retention features
+<ul>
+<li>at the Protected Item level, you can set a zero-job retention for one of the Storage Vaults to clear out all jobs</li>
+</ul></li>
+<li>or individually
+<ul>
+<li>in the Comet Backup &gt; click Restore &gt; right-click snapshot &gt; choose &quot;delete&quot; from the menu.</li>
+</ul></li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="commandline-control-of-comet-backup" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Command-line control of Comet Backup&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#commandline-control-of-comet-backup">&para;</a></h2>
+<p>In Comet 21.9.10 and later, it is possible to control the installed Comet Backup application from the command-line. This may be helpful for some remote SSH servers and Windows Server Core installations. The available set of commands is currently limited; full control should be achieved via the desktop app interface, or via the web interface, or via the Comet Server API.</p>
+<p>The following commands are possible:</p>
+<pre><code>Usage: backup-tool COMMAND
+
+Commands:
+    version        Display the application version
+    login          Control the service login status
+    help           Display this message</code></pre>
+<p>The <code>login</code> command contains subcommands for manipulating the login state of the background service (<code>backup.delegate</code>):</p>
+<pre><code>Usage: backup-tool login COMMAND
+
+Commands:
+    status         Display the login status of the background service
+    prompt         Interactively prompt for service login credentials
+    disconnect     Log out of the application
+    help           Display this message</code></pre>
+<p>The <code>backup-tool login status</code> command returns one of the following status texts:</p>
+<table>
+<thead>
+<tr>
+<th>Message</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Logged out (0)</code></td>
+<td>No credentials are stored. The application is not logged in.</td>
+</tr>
+<tr>
+<td><code>Logged in, locked (1)</code></td>
+<td>The application is logged in, and background jobs will run on schedule, but a password is required to open the user interface.</td>
+</tr>
+<tr>
+<td><code>Logged in, unlocked (2)</code></td>
+<td>The application is logged in and no password is required to open the user interface.</td>
+</tr>
+<tr>
+<td><code>Connection error (3)</code></td>
+<td>The background service has stored credentials, and is running, but has been unable to communicate with the Comet Server since starting. Note that a temporary connection error may not always produce this status.</td>
+</tr>
+<tr>
+<td><code>Unregistered device for the supplied credentials (4)</code></td>
+<td>The background service has stored credentials, and is running, but this device is no longer registered in the target account. This may be caused by hardware change or if the device was explicitly revoked. You can resolve this issue by re-registering the device via the user interface or via the <code>backup-tool login prompt</code> command. Note that a temporary error may not always produce this status if the background service was previously running.</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="applying-hotfixes" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Applying hotfixes&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#applying-hotfixes">&para;</a></h2>
+<p>When you report an issue to Comet staff, every attempt is made to reproduce the issue in-house. Once the issue is reproduced, we can confirm a fix internally.</p>
+<p>Sometimes an issue depends on specific environment details that are infeasible to recreate. In these situations, support staff may ask you to run a &quot;hotfix&quot; version of Comet that contains experimental changes to test a potential resolution for your issue.</p>
+<p>Hotfixes normally come in the form of a replacement <code>backup-tool</code> file.</p>
+<span class="docsSectionMarker"><span id="applying-backuptoolexe-hotfixes-on-windows" class="docsSectionMarkerChild"></span></span><h3>Applying backup-tool.exe hotfixes on Windows&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#applying-backuptoolexe-hotfixes-on-windows">&para;</a></h3>
+<ol>
+<li>Exit the Comet Backup app from the system tray</li>
+<li>Stop Comet's background services
+<ul>
+<li>Use <code>services.msc</code> or Task Manager to stop the &quot;Comet Backup (delegate service)&quot; and &quot;Comet Backup (elevator service)&quot; services</li>
+</ul></li>
+<li>Replace files inside <code>C:\Program Files\Comet Backup\backup-tool.exe</code> with updated version</li>
+<li>Restart all stopped background services</li>
+<li>Restart the Comet Backup app</li>
+</ol>
+<span class="docsSectionMarker"><span id="applying-backuptool-hotfixes-on-macos" class="docsSectionMarkerChild"></span></span><h3>Applying backup-tool hotfixes on macOS&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#applying-backuptool-hotfixes-on-macos">&para;</a></h3>
+<ol>
+<li>Exit the Comet Backup app from the system taskbar</li>
+<li>Stop Comet's background services
+<ul>
+<li><code>sudo launchctl unload /Library/LaunchDaemons/backup.delegate.plist</code></li>
+<li><code>sudo launchctl unload /Library/LaunchDaemons/backup.elevator.plist</code></li>
+</ul></li>
+<li>Replace files inside <code>/Applications/Comet Backup.app/Contents/MacOS/backup-tool</code> with updated version</li>
+<li>Restart all stopped background services
+<ul>
+<li><code>sudo launchctl load /Library/LaunchDaemons/backup.elevator.plist</code></li>
+<li><code>sudo launchctl load /Library/LaunchDaemons/backup.delegate.plist</code></li>
+</ul></li>
+<li>Restart the Comet Backup app</li>
+</ol>
+<span class="docsSectionMarker"><span id="changing-comets-temporary-directory" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Changing Comet's temporary directory&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#changing-comets-temporary-directory">&para;</a></h2>
+<p>Comet uses the local system's temporary directory for some cache files while the backup job is running. The needed storage size is small; but on some devices (e.g. NAS with fixed-size <code>/tmp/</code> mounts) the system's default temporary directory may be insufficient.</p>
+<p>On Linux, you can change the temporary directory Comet uses by adding <code>export TMPDIR=/some/other/path/</code> in your startup script (e.g. normally <code>/opt/CometBackup/backup-daemon-start.sh</code> or any custom rc.local file). However, any changes to the <code>backup-daemon-start.sh</code> file will be overwritten by Comet software updates.</p>
+<p>On macOS, you can change the temporary directory Comet uses by adding an <code>EnvironmentVariables</code> section to the <code>backup.delegate.plist</code> LaunchDaemon. However, any changes to the <code>.plist</code> file will be overwritten by Comet software updates.</p>
+<p>On Windows, you can change the temporary directory Comet uses by</p>
+<ul>
+<li>setting the <code>%TMP%</code> or <code>%TEMP%</code> environment variables for the <code>NT SERVICE\backup.delegate</code> user account; or</li>
+<li>modifying the <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\backup.delegate\Parameters\AppEnvironmentExtra</code> registry key to add <code>TEMP=C:\some\path</code> on a new line, and, restarting the <code>backup.delegate</code> service</li>
+</ul>
+<span class="docsSectionMarker"><span id="seemingly-unrealisticallyhigh-backup-speed" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Seemingly unrealistically-high backup speed&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#seemingly-unrealisticallyhigh-backup-speed">&para;</a></h2>
+<p>The speed displayed in the Comet Backup desktop app is not the upload speed; it is the overall backup speed.</p>
+<p>The overall backup speed:</p>
+<ul>
+<li>may be bottlenecked by the internet upload speed; or</li>
+<li>may exceed 100MB/s if Comet is reading from the disk that fast, and all data already exists in the Storage Vault and therefore does not need to be reuploaded; or</li>
+<li>may exceed 1 GB/sec if Comet is able to entirely skip backing up GBs of data that is already uploaded (when the <code>Rescan unchanged files</code> option is disabled).</li>
+</ul>
+<span class="docsSectionMarker"><span id="the-experimental-options-system" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>The Experimental Options system&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#the-experimental-options-system">&para;</a></h2>
+<p>If you have been offered the opportunity to participate in an experimental program, you may have been supplied a code to enable experimental software functionality. These codes can be used via the Experimental Options system in Comet. This system is a way for Comet to pre-release certain functionality before it becomes generally available, while still relying on existing deployment and distribution infrastructure (e.g. the Voyager software release track).</p>
+<p>To use a code:</p>
+<ul>
+<li>Comet Server
+<ul>
+<li>in <code>cometd.cfg</code>, add <code>"ExperimentalOptions": ["YOUR_OPTION_CODE"],</code> at the top level of the JSON document (e.g. line 2)</li>
+</ul></li>
+<li>Comet Backup on Windows
+<ol>
+<li>Open Registry Editor (<code>regedit.exe</code>)</li>
+<li>Browse to the <code>HKEY_LOCAL_MACHINE\Software\backup-tool</code> folder key, creating it if it does not already exist</li>
+<li>Create a &quot;String Value&quot; with name <code>ExperimentalOptions</code> value <code>YOUR_OPTION_CODE</code></li>
+</ol></li>
+<li>Comet Backup on macOS
+<ol>
+<li>Exit the Comet Backup app from the menu bar</li>
+<li>From a terminal, run <code>cd "/Applications/Comet Backup/Contents/MacOS" ; ./backup-interface --experimental-options YOUR_OPTION_CODE</code></li>
+</ol></li>
+</ul>
+<span class="docsSectionMarker"><span id="registry-keys-on-windows" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Registry keys on Windows&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#registry-keys-on-windows">&para;</a></h2>
+<p>Comet Backup on Windows uses the registry to store some settings and configuration options.</p>
+<p>As of Comet 20.11.0 &quot;Io&quot;, the following registry keys are used:</p>
+<ul>
+<li><code>HKLM\SYSTEM\CurrentControlSet\Services\backup.delegate</code>
+<ul>
+<li>Settings for installed &quot;Comet Backup (delegate service)&quot; service</li>
+</ul></li>
+<li><code>HKLM\SYSTEM\CurrentControlSet\Services\backup.elevator</code>
+<ul>
+<li>Settings for installed &quot;Comet Backup (elevator service)&quot; service</li>
+</ul></li>
+<li><code>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\backup-tool</code>
+<ul>
+<li>Registering the software uninstall program with Windows</li>
+</ul></li>
+<li><code>HKLM\SOFTWARE\backup-tool</code>
+<ul>
+<li>Main application settings</li>
+<li><code>DeviceIdentificationID</code>
+<ul>
+<li>This is a copy of Comet's device ID. You may read this key programmatically from an external system to help correlate the current device with Comet's API. Any changes to this key will be overwritten by Comet Backup when the background services start up.</li>
+</ul></li>
+<li><code>DeviceIdentificationEntropy</code>
+<ul>
+<li>This is a diagnostic feature to mix additional data in to the generated device ID, to help separate multiple devices that are being incorrectly detected as the same device. For more information, see <a href="/docs/troubleshooting#multiple-devices-are-detected-as-being-the-same-device">&quot;Multiple devices are detected as being the same device&quot;</a>.</li>
+</ul></li>
+<li><code>DeviceIdentificationHardwareIDOverride</code>
+<ul>
+<li>This is a diagnostic feature to forcibly reassign a device's ID. Misuse of this feature will cause problems with job scheduling and billing.</li>
+</ul></li>
+<li><code>ExperimentalOptions</code></li>
+<li><code>InstallDirectory</code>
+<ul>
+<li>This field shows where the Comet Backup software is installed. This can be used to reliably locate the Comet Backup installation directory when custom rebranded installation directories are used.</li>
+</ul></li>
+<li><code>InstallerLanguage</code>
+<ul>
+<li>This field shows what language was selected when Comet Backup was installed, using Windows language codes (e.g. <code>1033</code> for <code>en_US</code>).</li>
+</ul></li>
+<li><code>Shortcuts</code> <em>(&gt;= 20.9.6)</em>
+<ul>
+<li>This field controls whether the installer will create desktop shortcuts. You can disable creating desktop shortcuts by either (A) pre-filling this value with <code>DWORD(0)</code> before running the Comet Backup installer, or (B) passing the <code>/SHORTCUT="disable"</code> flag to the Comet Backup silent installer. For more information, see <a href="/docs/comet-backup-installation#installation">the silent installation documentation</a>.</li>
+</ul></li>
+<li><code>TrayIcon</code> <em>(&gt;= 20.9.8)</em>
+<ul>
+<li>This field controls whether the installer will launch the system tray icon after installation. You can disable launching the system tray icon after installation by either (A) pre-filling this value with <code>DWORD(0)</code> before running the Comet Backup installer, or (B) passing the <code>/TRAYICON="disable"</code> flag to the Comet Backup silent installer. For more information, see <a href="/docs/comet-backup-installation#installation">the silent installation documentation</a>.</li>
+</ul></li>
+<li><code>USBRecoveryMediaLastSettings</code> <em>(&gt;= 20.12.0)</em>
+<ul>
+<li>This field contains the last successful configuration used for the USB Recovery Media, in JSON format. If this field is present, the configuration will be loaded automatically when the user next goes to create a USB Recovery Media from inside the Comet Backup desktop app.</li>
+</ul></li>
+</ul></li>
+<li><code>{backup.delegate service user account's HKCU}\SOFTWARE\backup-tool</code>
+<ul>
+<li>The following registry keys are stored in the registry hive belonging to the user account of the <code>backup.delegate</code> service.
+<ul>
+<li>If this service is running as <code>LOCAL SYSTEM</code>, you may find it under <code>HKEY_USERS\S-1-5-18\SOFTWARE\backup-tool</code> key.</li>
+<li>If this service is running as the limited-permission <code>NT SERVICE\backup.delegate</code> user account, you may find it under the <code>HKEY_USERS</code> subkey corresponding to the SID of this virtual service account.</li>
+</ul></li>
+<li><code>config</code> <em>(&gt;= 21.6.3)</em>
+<ul>
+<li>This encrypted field stores Comet's username and password to automatically log in to the software.</li>
+</ul></li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="reducing-size-of-log-files" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Reducing size of log files&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#reducing-size-of-log-files">&para;</a></h2>
+<p>The default retention period for job logs is 90 days, and is configured via: Settings page -&gt; Authentication Role -&gt; Properties. Comet Server allows unlimited retention of job logs, if desired. Over time, this can have an unwanted effect of the storage space in the host machine, and it can affect email report sending, if, for example, the Server tries to attach huge summary reports.</p>
+<p>To change the retention period from a large value, eg 'unlimited' to the default 90 days, then you will need to to make a small change to the Comet Server config to force a resizing of the jobs database.
+Please see here: <a href="https://account.cometbackup.com/docs/comet-server-configuration#internal-database-integrity-checks">https://account.cometbackup.com/docs/comet-server-configuration#internal-database-integrity-checks</a></p>
+<p>Open the Comet Server Service Manager -&gt; Service -&gt; Stop
+Configuration -&gt; Edit Configuration File
+Find the section :</p>
+<pre><code>    "AuthenticationRole": {
+        "RoleEnabled": true,
+        "DatabaseCheckLevel": 0,</code></pre>
+<p>Change it to:</p>
+<pre><code>    "AuthenticationRole": {
+        "RoleEnabled": true,
+        "DatabaseCheckLevel": 5,</code></pre>
+<p>Save, Restart the Service.
+Allow an amount of time for the resizing to complete (it has to check 68GB!)
+Then undo the change to the 'DatabaseCheckLevel' parameter.</p>
+<span class="docsSectionMarker"><span id="chunking-compared-to-other-algorithms" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Chunking compared to other algorithms&nbsp;<a class="docsSectionLinkIcon" href="appendix.html#chunking-compared-to-other-algorithms">&para;</a></h2>
+<p><em>This section follows the <a href="https://account.cometbackup.com/docs/comet-chunking-overview">Comet Chunking Overview</a> page.</em></p>
+<p>Comet always uses its Chunking algorithm to process the backup data. Comet was developed to use this algorithm because it has the best available properties. You can compare different market backup products by which algorithm they use.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Chunking</th>
+<th>Always full<br>(e.g. tape rotation)</th>
+<th>File versions</th>
+<th>Full + diff chain<br>(with periodic reupload)</th>
+<th>Full + diff chain<br>(with server-side synthetic rollup)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Backup</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>Incremental</td>
+<td>✔</td>
+<td>❌</td>
+<td>⚠ File-level only</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>Incremental forever</td>
+<td>✔</td>
+<td>❌</td>
+<td>✔</td>
+<td>❌</td>
+<td>✔ With high IOPS load</td>
+</tr>
+<tr>
+<td>Supports cloud storage</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>❌ Requires complete redownload/reupload</td>
+</tr>
+<tr>
+<td>Supports compression</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>Supports encryption</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>❌ With server trust</td>
+</tr>
+<tr>
+<td>Storage efficiency</td>
+<td>✔ High</td>
+<td>❌❌ Very low</td>
+<td>❌ Low</td>
+<td>⚠ Must store multiple full archives</td>
+<td>✔ High</td>
+</tr>
+<tr>
+<td>Restore performance</td>
+<td>✔ Fast, constant</td>
+<td>✔ Fast, constant</td>
+<td>✔ Fast, constant</td>
+<td>❌ Fast head, slow tail</td>
+<td>❌ Fast head, slow tail</td>
+</tr>
+<tr>
+<td>Retention cleanup performance</td>
+<td>✔ Good</td>
+<td>✔✔ Best (overwrite)</td>
+<td>✔ Good</td>
+<td>⚠ Fast, but requires additional storage</td>
+<td>❌ Slow, requires rollup</td>
+</tr>
+<tr>
+<td>Duplicate file consolidation</td>
+<td>✔ Perfect</td>
+<td>⚠ With long-range solid compression</td>
+<td>❌</td>
+<td>⚠ With extra scan</td>
+<td>⚠ With extra scan</td>
+</tr>
+<tr>
+<td>Block deduplication</td>
+<td>✔</td>
+<td>⚠ With long-range solid compression</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Renamed file detection</td>
+<td>✔ Perfect</td>
+<td>❌ N/A</td>
+<td>❌</td>
+<td>⚠ With extra scan</td>
+<td>⚠ With extra scan</td>
+</tr>
+</tbody>
+</table>
+<p>One way to think about Chunking is that it always creates a full backup job that is deduplicated against the previous backup job. This approach has all the restore performance characteristics of taking full backup jobs, with all the storage- and processing-efficiency characteristics of incremental backup jobs.</p></div><div class="doc-navigation-section"><div class="doc-navigation-back doc-navigation-width-2"><a href="api-reference.html">&laquo; Back: API Reference</a></div><div class="doc-navigation-next doc-navigation-width-2"><a href="cloud-storage-providers.html">Next: Cloud Storage Providers &raquo;</a></div></div> 
+				</div>
+			</div>
+		</div>
+	
+	
+	</body>
 </html>

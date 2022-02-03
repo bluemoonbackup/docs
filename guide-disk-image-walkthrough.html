@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="docs.css">
+		<link rel="stylesheet" type="text/css" href="magnific-popup.css">		
+		<script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="magnific-popup.1.1.0.min.js"></script>
+		<script type="text/javascript" src="lunr-2.1.0.min.js"></script>
+		<script type="text/javascript" src="docs.js"></script>
+		<title>Documentation</title>		
+	</head>
+	<body>
+	
+		<div id="header-bar">
+			<div id="header-logo"></div>
+			Documentation
+		</div>
+	
+		<div id="main-area">
+			<div id="position-nav">
+				<div id="nav-inner">
+					<ul><li><form method="GET" action="search-results.html"><input name="s" class="search-box" placeholder="Search..."></form></li>
+<li><span class="category-header">Guides</span></li>
+<li><a href="guide-getting-started.html" title="Getting Started with Self-Hosted Comet">Getting Started with Self-Hosted Comet</a></li>
+<li><a href="guide-cometgo-getting-started.html" title="Getting Started with Comet-Hosted">Getting Started with Comet-Hosted</a></li>
+<li><a href="guide-comet-backup-getting-started.html" title="Getting Started with Comet Backup">Getting Started with Comet Backup</a></li>
+<li class="current-page"><a data-indent="0" class="subsection-link subsection-indent-0" href="#disk-image-walkthrough" title="Disk Image Walkthrough">Disk Image Walkthrough</a>
+<ul>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#overview" title="Overview">Overview</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#backup-using-disk-image" title="Backup using Disk Image">Backup using Disk Image</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#create-a-protected-item-using-the-disk-image-backup-type" title="Create a Protected Item using the Disk Image backup type">Create a Protected Item using the Disk Image backup type</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#select-partitions-for-backup" title="Select partitions for backup">Select partitions for backup</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#include-unused-disk-sectors-for-forensic-data-recovery" title="Include unused disk sectors for forensic data recovery">Include unused disk sectors for forensic data recovery</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#restore-disk-image-protected-items" title="Restore Disk Image protected items">Restore Disk Image protected items</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#restore-options" title="Restore options">Restore options</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#restore-to-physical-devices" title="Restore to physical device(s)">Restore to physical device(s)</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#restore-from-windows-boot-environment" title="Restore from Windows boot environment">Restore from Windows boot environment</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#restore-from-linux-boot-environment" title="Restore from Linux boot environment">Restore from Linux boot environment</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#restore-as-virtual-disk-files" title="Restore as virtual disk files">Restore as virtual disk files</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#create-usb-recovery-media" title="Create USB Recovery Media">Create USB Recovery Media</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#winre" title="WinRE">WinRE</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#windows-to-go" title="Windows To Go">Windows To Go</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#other-boot-environment" title="Other boot environment">Other boot environment</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#video-tutorial" title="Video Tutorial">Video Tutorial</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#amazon-web-service-aws" title="Amazon Web Service AWS">Amazon Web Service AWS</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#creating-a-virtual-machine-in-the-aws-cloud-from-a-comet-disk-image-backup" title="Creating a Virtual Machine in the AWS cloud from a Comet Disk Image Backup">Creating a Virtual Machine in the AWS cloud from a Comet Disk Image Backup</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#perform-restore-in-comet-to-create-vmdk-files" title="Perform restore in Comet to create VMDK files">Perform restore in Comet to create VMDK files</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#concatenate-the-restored-files-to-produce-a-single-vmdk" title="Concatenate the restored files to produce a single VMDK">Concatenate the restored files to produce a single VMDK</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#upload-the-vmdk-file-to-the-aws-folder" title="Upload the VMDK file to the AWS folder">Upload the VMDK file to the AWS folder</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#run-the-aws-importimage-command-with-filejson-as-parameter" title="Run the AWS import-image command with file.json as parameter">Run the AWS import-image command with file.json as parameter</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#connect-via-rdp" title="Connect via RDP">Connect via RDP</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#azure" title="Azure">Azure</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#creating-a-virtual-machine-in-the-azure-cloud-from-a-comet-disk-image-backup" title="Creating a Virtual Machine in the Azure cloud from a Comet Disk Image Backup">Creating a Virtual Machine in the Azure cloud from a Comet Disk Image Backup</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#perform-restore-in-comet-to-create-vmdk-files-2" title="Perform restore in Comet to create VMDK files">Perform restore in Comet to create VMDK files</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#convert-vmdk-to-vhd-format" title="Convert VMDK to VHD format">Convert VMDK to VHD format</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#resize-the-vhd-file-upwards-to-the-nearest-megabyte-multiple-if-needed" title="Resize the VHD file upwards to the nearest megabyte multiple if needed">Resize the VHD file upwards to the nearest megabyte multiple if needed</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#create-empty-managed-disk-on-azure" title="Create empty managed disk on Azure">Create empty managed disk on Azure</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#grant-write-access-to-obtain-sasuri" title="Grant write access to obtain ‘sasURI’">Grant write access to obtain ‘sasURI’</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#upload-the-vhd-file-to-azure" title="Upload the VHD file to Azure">Upload the VHD file to Azure</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#create-the-new-vm-in-azure" title="Create the new VM in Azure">Create the new VM in Azure</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#connect-via-rdp-2" title="Connect via RDP">Connect via RDP</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#virtualbox" title="VirtualBox">VirtualBox</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#creating-a-virtualbox-virtual-machine-from-a-comet-disk-image-backup" title="Creating a VirtualBox Virtual Machine from a Comet Disk Image Backup">Creating a VirtualBox Virtual Machine from a Comet Disk Image Backup</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#getting-started" title="Getting started">Getting started</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#perform-restore-in-comet-to-create-vmdk-disk-files" title="Perform restore in Comet to create VMDK disk files">Perform restore in Comet to create VMDK disk files</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#open-virtualbox-and-create-a-new-virtual-machine" title="Open VirtualBox and create a new virtual machine">Open VirtualBox and create a new virtual machine</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#add-hard-disk" title="Add hard disk">Add hard disk</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#finalize-configuration-and-start" title="Finalize configuration and Start">Finalize configuration and Start</a></li>
+</ul>
+</li><li><a href="guide-seedload-walkthrough.html" title="Seed Load Walkthrough">Seed Load Walkthrough</a></li>
+<li><a href="guide-disaster-recovery.html" title="Disaster Recovery">Disaster Recovery</a></li>
+<li><a href="guide-best-practices.html" title="Best Practices">Best Practices</a></li>
+<li><a href="guide-common-problems-and-solutions.html" title="Common Problems and Solutions">Common Problems and Solutions</a></li>
+<li><span class="category-header">Documentation</span></li>
+<li><a href="about-these-docs.html" title="Software Documentation">Software Documentation</a></li>
+<li><a href="application-architecture.html" title="Overview and Concepts">Overview and Concepts</a></li>
+<li><a href="comet-server-installation.html" title="Comet Server installation">Comet Server installation</a></li>
+<li><a href="comet-server-configuration.html" title="Comet Server configuration">Comet Server configuration</a></li>
+<li><a href="comet-server-usage.html" title="Comet Server usage">Comet Server usage</a></li>
+<li><a href="comet-backup-installation.html" title="Comet Backup installation">Comet Backup installation</a></li>
+<li><a href="comet-backup-usage.html" title="Comet Backup usage">Comet Backup usage</a></li>
+<li><a href="user-configuration.html" title="User configuration">User configuration</a></li>
+<li><a href="protected-items.html" title="Protected Item types">Protected Item types</a></li>
+<li><a href="storage-configuration.html" title="Storage configuration">Storage configuration</a></li>
+<li><a href="troubleshooting.html" title="Troubleshooting">Troubleshooting</a></li>
+<li><a href="api.html" title="API Guide">API Guide</a></li>
+<li><a href="api-reference.html" title="API Reference">API Reference</a></li>
+<li><a href="appendix.html" title="Appendix">Appendix</a></li>
+<li><a href="cloud-storage-providers.html" title="Cloud Storage Providers">Cloud Storage Providers</a></li>
+<li><a href="third-party-service-addons.html" title="Third-party service addons">Third-party service addons</a></li>
+<li><a href="comet-server-roles.html" title="Comet Server Roles ">Comet Server Roles </a></li>
+<li><a href="comet-chunking-overview.html" title="Comet Chunking Overview ">Comet Chunking Overview </a></li>
+<li><a href="security-compliance.html" title="Security &amp; Compliance">Security & Compliance</a></li>
+</ul>
+				</div>
+			</div>
+		
+			<div id="position-content">
+				<div id="content-inner">
+					<span class="docsSectionMarker"><span id="disk-image-walkthrough" class="docsSectionMarkerChild"></span></span><h1>Disk Image Walkthrough&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#disk-image-walkthrough">&para;</a></h1>
+<span class="docsSectionMarker"><span id="overview" class="docsSectionMarkerChild"></span></span><div class="docs-box"><h2>Overview&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#overview">&para;</a></h2>
+<p>This is a walkthrough of using the Disk Image backup type.</p>
+<p>Note: The backed-up disk image data will deduplicate with other data existing inside the Storage Vault. A backup of  Files and Folders in the same data volumes should achieve a high degree of space savings.</p>
+<ul>
+<li>
+<p><a href="https://youtu.be/rcnMxvjQEfU">Click here for a video version of this walkthrough</a></p>
+</li>
+<li>
+<p><a href="/docs/protected-items#disk-image-items">Click here for more technical information about Disk Image</a></p>
+</li>
+</ul>
+<span class="docsSectionMarker"><span id="backup-using-disk-image" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Backup using Disk Image&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#backup-using-disk-image">&para;</a></h2>
+<span class="docsSectionMarker"><span id="create-a-protected-item-using-the-disk-image-backup-type" class="docsSectionMarkerChild"></span></span><h3>Create a Protected Item using the Disk Image backup type&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#create-a-protected-item-using-the-disk-image-backup-type">&para;</a></h3>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/di001.png"><img src="images/di001.png.thumb.jpg" alt="" /></a></p>
+<ul>
+<li>Note: Using this Protected Item will incur a Booster charge - <a href="https://cometbackup.com/pricing">see Pricing</a>, and requires Windows 7, or Windows Server 2008 R2, or later.</li>
+</ul>
+<span class="docsSectionMarker"><span id="select-partitions-for-backup" class="docsSectionMarkerChild"></span></span><h3>Select partitions for backup&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#select-partitions-for-backup">&para;</a></h3>
+<p>Select any currently-attached drives or individual partitions from any drive for backup. It is possible to select “all drives” and exclude individual disks or partitions.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/di002.png"><img src="images/di002.png.thumb.jpg" alt="" /></a></p>
+<ul>
+<li>If there is any change to the partition structure of a drive, it will cause that drive to be recognized differently in Comet. If such a drive is selected, Comet will warn that the drive can no longer be found. You must reselect the drive and/or partitions.</li>
+</ul>
+<span class="docsSectionMarker"><span id="include-unused-disk-sectors-for-forensic-data-recovery" class="docsSectionMarkerChild"></span></span><h4>Include unused disk sectors for forensic data recovery&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#include-unused-disk-sectors-for-forensic-data-recovery">&para;</a></h4>
+<p>Comet will exclude unused space from the disk in the backup, but turning on this option will include any non-indexed and marked-as-deleted files in the free space. This could be used for forensic data recovery, but keep in mind that it will lengthen the backup time.</p>
+<ul>
+<li><a href="/docs/protected-items#unused-disk-sectors">Click here for more information</a></li>
+</ul>
+<span class="docsSectionMarker"><span id="restore-disk-image-protected-items" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Restore Disk Image protected items&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#restore-disk-image-protected-items">&para;</a></h2>
+<span class="docsSectionMarker"><span id="restore-options" class="docsSectionMarkerChild"></span></span><h3>Restore options&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#restore-options">&para;</a></h3>
+<p>The Restore wizard inside Comet Backup allows restoring of backed-up disks and partitions directly to physical disks and partitions, without requiring temporary spool space. Alternatively, it can be restored as virtual disk files.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/di003.png"><img src="images/di003.png.thumb.jpg" alt="" /></a></p>
+<ul>
+<li>Comet stores the Disk Image files in VMDK format, from which single files can be extracted. <a href="/docs/protected-items#restoring">Click here for our recommended software for extraction</a>.</li>
+</ul>
+<span class="docsSectionMarker"><span id="restore-to-physical-devices" class="docsSectionMarkerChild"></span></span><h3>Restore to physical device(s)&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#restore-to-physical-devices">&para;</a></h3>
+<p>In order to restore to physical hardware, the target disk or partition should be unmounted (not in use). Comet may be able to do this automatically from within the currently booted OS if no programs are using the target drive (e.g. for a non-boot drive). </p>
+<ul>
+<li>
+<p>If the goal is to restore to the boot drive, first, reboot the PC into a recovery environment.</p>
+</li>
+<li>
+<p>When <a href="/docs/protected-items#filesystem-smaller-than-target-volume">restoring a smaller partition into a larger one</a>, Comet will automatically extend the restored filesystem to the fill the target partition. Comet does not support restoring a large backed-up partition into a smaller physical partition. The partition must be shrunk using the OS’s partition manager prior to performing the backup.</p>
+</li>
+</ul>
+<span class="docsSectionMarker"><span id="restore-from-windows-boot-environment" class="docsSectionMarkerChild"></span></span><h4>Restore from Windows boot environment&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#restore-from-windows-boot-environment">&para;</a></h4>
+<ol>
+<li>
+<p>Select a backed-up disk or partition to restore, from the left-hand column</p>
+</li>
+<li>
+<p>Select a target disk or partition to write to, from the right-hand column</p>
+</li>
+<li>
+<p>Click the <em>Add to restore queue</em> button</p>
+</li>
+<li>
+<p>Repeat steps 1-3 as necessary for other disks and partitions</p>
+</li>
+<li>
+<p>Click the <em>Restore</em> button to begin the restore job</p>
+</li>
+</ol>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/di004.png"><img src="images/di004.png.thumb.jpg" alt="" /></a></p>
+<ul>
+<li>The <em>Edit</em> function can be used to repartition the local drives using Windows Disk Management. After doing so, the <em>Refresh</em> function may be used to refresh the view of the local disks and partitions able to be selected for restore.</li>
+</ul>
+<span class="docsSectionMarker"><span id="restore-from-linux-boot-environment" class="docsSectionMarkerChild"></span></span><h4>Restore from Linux boot environment&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#restore-from-linux-boot-environment">&para;</a></h4>
+<p>Steps to restore an entire disk, without spooling:</p>
+<ol>
+<li>
+<p>Restore just the <code>disk.vmdk</code> file (without the data extents), and open it in a text editor in order to read the partition sizes.</p>
+</li>
+<li>
+<p>Recreate partitions to the exact target size</p>
+</li>
+<li>
+<p>Single partitions can be restored without any local spool disk, using the &quot;Program Output&quot; restore option, and selecting only a single partition file for restore: <code>dd of=/dev/sdx1 bs=8M</code></p>
+</li>
+</ol>
+<ul>
+<li><a href="/docs/protected-items#restore-from-linux-boot-environment">Click here for other methods of restoring from a Linux boot environment</a></li>
+</ul>
+<span class="docsSectionMarker"><span id="restore-as-virtual-disk-files" class="docsSectionMarkerChild"></span></span><h3>Restore as virtual disk files&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#restore-as-virtual-disk-files">&para;</a></h3>
+<p>There is one plain text VMDK descriptor file containing metadata about the whole drive, plus separate raw image files for each partition’s extent on the disk. The plain text file is labelled <code>disk.vmdk</code> by default.</p>
+<p>Partitions of the disk that were not selected for backup are represented as zero extents in the VMDK descriptor file. The effect of this is that the restored disk image will appear to have the full disk size, even if only a small amount of partitions inside it were selected. However, the zero extents will be compressed inside the Storage Vault.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/di005.png"><img src="images/di005.png.thumb.jpg" alt="" /></a></p>
+<p>The VMDK disk images may be restored, then, optionally, do one of the following:</p>
+<ul>
+<li><a href="/docs/protected-items#restoring-2">Extract single files from them</a>, or</li>
+<li><a href="/docs/protected-items#recovery-to-local-vm">Recover to a local virtual machine</a>, or</li>
+<li><a href="/docs/protected-items#recovery-to-cloud-server">Recover to a cloud server</a></li>
+</ul>
+<span class="docsSectionMarker"><span id="create-usb-recovery-media" class="docsSectionMarkerChild"></span></span><h3>Create USB Recovery Media&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#create-usb-recovery-media">&para;</a></h3>
+<p>The Comet Backup desktop app supports the creation of USB Recovery Media from the wizard on the Settings screen.</p>
+<p>This allows a user to boot from the USB device, type-in the username and password for the Comet user profile, and make a full restoration from backup onto the drive(s) of the connected PC. In this fashion, bare-metal restorations can be achieved.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/di006.png"><img src="images/di006.png.thumb.jpg" alt="" /></a></p>
+<p>The following options are available:</p>
+<ul>
+<li>WinRE</li>
+<li>Windows To Go</li>
+</ul>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/di007.png"><img src="images/di007.png.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="winre" class="docsSectionMarkerChild"></span></span><h4>WinRE&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#winre">&para;</a></h4>
+<p>Selecting this option allows the creation of a minimal USB Recovery Media based on the Windows Recovery Environment. <a href="/docs/protected-items#winre">Click here for more information about this method</a></p>
+<span class="docsSectionMarker"><span id="windows-to-go" class="docsSectionMarkerChild"></span></span><h4>Windows To Go&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#windows-to-go">&para;</a></h4>
+<p>Selecting this option allows the creation of a full Windows boot environment. <a href="/docs/protected-items#windows-to-go">Click here for more information about this method</a></p>
+<span class="docsSectionMarker"><span id="other-boot-environment" class="docsSectionMarkerChild"></span></span><h4>Other boot environment&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#other-boot-environment">&para;</a></h4>
+<p>A recovery environment may also be created in other ways. Both Windows or Linux can be used as a suitable recovery environment. Some possible methods include:</p>
+<ul>
+<li>creating a Linux bootable USB drive, or</li>
+<li>using a third-party tool like <a href="https://rufus.ie/">Rufus</a> to create a Windows-To-Go drive, or</li>
+<li>using recovery media from your PC OEM vendor (e.g. Lenovo / Dell / HP)</li>
+</ul>
+<p>In these cases, the Comet Backup app will need to be launched manually, once booted into the recovery environment.</p>
+<span class="docsSectionMarker"><span id="video-tutorial" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Video Tutorial&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#video-tutorial">&para;</a></h2>
+<iframe width="700" height="440" src="https://www.youtube.com/embed/rcnMxvjQEfU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<hr />
+<span class="docsSectionMarker"><span id="amazon-web-service-aws" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Amazon Web Service AWS&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#amazon-web-service-aws">&para;</a></h2>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/aws001-aws-logo.png"><img src="images/aws001-aws-logo.png.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="creating-a-virtual-machine-in-the-aws-cloud-from-a-comet-disk-image-backup" class="docsSectionMarkerChild"></span></span><h3>Creating a Virtual Machine in the AWS cloud from a Comet Disk Image Backup&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#creating-a-virtual-machine-in-the-aws-cloud-from-a-comet-disk-image-backup">&para;</a></h3>
+<ul>
+<li>All example commands executed in Windows Powershell</li>
+</ul>
+<p>You will need:</p>
+<ul>
+<li>An AWS account and API access keys for it</li>
+<li>Access to EC2 and S3 using your API access keys</li>
+<li>A correctly configured AWS EC2 environment</li>
+<li>Amazon generic guide: <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#import-image-prereqs">https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#import-image-prereqs</a></li>
+</ul>
+<span class="docsSectionMarker"><span id="perform-restore-in-comet-to-create-vmdk-files" class="docsSectionMarkerChild"></span></span><h4>Perform restore in Comet to create VMDK files&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#perform-restore-in-comet-to-create-vmdk-files">&para;</a></h4>
+<ul>
+<li>Note: The restored files will be the same size as the original disk size, so ensure you have enough space in your restore location.</li>
+</ul>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/vb002-restore.png"><img src="images/vb002-restore.png.thumb.jpg" alt="Restore dialogue" /></a></p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/vb003-select-all.png"><img src="images/vb003-select-all.png.thumb.jpg" alt="Select all items" /></a></p>
+<ul>
+<li>Produces files as shown below</li>
+</ul>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/vb004-vmdk-files.png"><img src="images/vb004-vmdk-files.png.thumb.jpg" alt="Example files as shown in Windows file explorer" /></a></p>
+<span class="docsSectionMarker"><span id="concatenate-the-restored-files-to-produce-a-single-vmdk" class="docsSectionMarkerChild"></span></span><h4>Concatenate the restored files to produce a single VMDK&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#concatenate-the-restored-files-to-produce-a-single-vmdk">&para;</a></h4>
+<ul>
+<li>When concatenating the files, don’t include the 1 KB descriptor file. Running the example command below will produce a singleton file the size of the original partition as shown.</li>
+<li>Example command:
+<code>cmd /c copy /b .\disk_f0000.vmdk+.\disk_f0001.vmdk+.\disk_f0002.vmdk diskname.vmdk</code></li>
+</ul>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/aws002-aws-concatenated-files.png"><img src="images/aws002-aws-concatenated-files.png.thumb.jpg" alt="Produces a singleton file the size of the original partition" /></a></p>
+<span class="docsSectionMarker"><span id="upload-the-vmdk-file-to-the-aws-folder" class="docsSectionMarkerChild"></span></span><h4>Upload the VMDK file to the AWS folder&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#upload-the-vmdk-file-to-the-aws-folder">&para;</a></h4>
+<ul>
+<li>
+<p>Example command:
+<code>aws s3 cp .\diskname.vmdk s3://bucketname/subfolder/</code></p>
+</li>
+<li>
+<p>Verify the contents of the storage folder:
+<code>aws s3 ls bucketname/subfolder/</code>
+(note the trailing '/')</p>
+</li>
+<li>
+<p>Create a local file.json file for importing the image into AWS</p>
+</li>
+</ul>
+<p>Example:</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/aws003-aws-example-json.png"><img src="images/aws003-aws-example-json.png.thumb.jpg" alt="Example json descriptor file" /></a></p>
+<span class="docsSectionMarker"><span id="run-the-aws-importimage-command-with-filejson-as-parameter" class="docsSectionMarkerChild"></span></span><h4>Run the AWS import-image command with file.json as parameter&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#run-the-aws-importimage-command-with-filejson-as-parameter">&para;</a></h4>
+<ul>
+<li>Example command:
+<code>aws ec2 import-image --region &lt;yourregionname&gt; --disk-containers "file://C:\path\to\file.json"</code></li>
+<li>Initial response similar to:</li>
+</ul>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/aws004-aws-initial-response.png"><img src="images/aws004-aws-initial-response.png.thumb.jpg" alt="Initial response" /></a></p>
+<p>Note the 'ImportTaskId' in the form of: <strong>“import-ami-XXXX”</strong></p>
+<ul>
+<li>Example command to show ongoing progress:
+<code>aws ec2 describe-import-image-tasks --import-task-ids import-ami-XXXX --region &lt;yourregionname&gt;</code></li>
+<li>Ongoing progress similar to:</li>
+</ul>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/aws005-aws-ongoing-progress.png"><img src="images/aws005-aws-ongoing-progress.png.thumb.jpg" alt="Ongoing progress" /></a></p>
+<ul>
+<li>When the command to show ongoing progress returns <code>“Status”: “completed”,</code> note down the <code>AMI ID</code></li>
+</ul>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/aws006-aws-status-completed.png"><img src="images/aws006-aws-status-completed.png.thumb.jpg" alt="Status completed" /></a></p>
+<span class="docsSectionMarker"><span id="connect-via-rdp" class="docsSectionMarkerChild"></span></span><h4>Connect via RDP&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#connect-via-rdp">&para;</a></h4>
+<ul>
+<li>Log in to AWS website</li>
+<li>Select ‘Services’ drop-down</li>
+<li>Select ‘EC2’</li>
+</ul>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/aws007-aws-login.png"><img src="images/aws007-aws-login.png.thumb.jpg" alt="Log in to AWS" /></a></p>
+<ul>
+<li>Select 'AMIs'</li>
+<li>Tick to select the <strong><code>AMI ID</code></strong> from the previous step</li>
+<li>Actions</li>
+<li>Launch</li>
+</ul>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/aws008-aws-select-ami-ids.png"><img src="images/aws008-aws-select-ami-ids.png.thumb.jpg" alt="Select AMIs" /></a></p>
+<ul>
+<li>Configure and launch</li>
+</ul>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/aws009-aws-configure-and-launch.png"><img src="images/aws009-aws-configure-and-launch.png.thumb.jpg" alt="Configure and launch" /></a></p>
+<ul>
+<li>Select the launched instance</li>
+<li>Select Connect</li>
+<li>Download remote connection details</li>
+<li>Use your preferred Remote Desktop program to connect using the downloaded details </li>
+</ul>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/aws010-aws-select-connect-download.png"><img src="images/aws010-aws-select-connect-download.png.thumb.jpg" alt="Select, connect, download" /></a></p>
+<hr />
+<span class="docsSectionMarker"><span id="azure" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Azure&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#azure">&para;</a></h2>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/az001-azure-icon.png"><img src="images/az001-azure-icon.png.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="creating-a-virtual-machine-in-the-azure-cloud-from-a-comet-disk-image-backup" class="docsSectionMarkerChild"></span></span><h3>Creating a Virtual Machine in the Azure cloud from a Comet Disk Image Backup&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#creating-a-virtual-machine-in-the-azure-cloud-from-a-comet-disk-image-backup">&para;</a></h3>
+<ul>
+<li>All example commands executed in Windows Powershell</li>
+<li>Azure accepts only VHD file format, so images must first be converted  to this format. Example instructions included below.</li>
+<li>Install and configure MS Azure command-line interface (CLI):
+<a href="https://aka.ms/installazurecliwindows">https://aka.ms/installazurecliwindows</a></li>
+<li>If using an existing VM, Microsoft recommends that it be prepared first:
+<a href="https://docs.microsoft.com/en-us/azure/virtual-machines/windows/prepare-for-upload-vhd-image?toc=/azure/virtual-machines/windows/toc.json">https://docs.microsoft.com/en-us/azure/virtual-machines/windows/prepare-for-upload-vhd-image?toc=/azure/virtual-machines/windows/toc.json</a> </li>
+</ul>
+<span class="docsSectionMarker"><span id="perform-restore-in-comet-to-create-vmdk-files-2" class="docsSectionMarkerChild"></span></span><h4>Perform restore in Comet to create VMDK files&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#perform-restore-in-comet-to-create-vmdk-files-2">&para;</a></h4>
+<ul>
+<li>Note: The restored files will be the same size as the original disk size, so ensure you have enough space in your restore location.</li>
+</ul>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/vb002-restore.png"><img src="images/vb002-restore.png.thumb.jpg" alt="Restore dialogue" /></a></p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/vb003-select-all.png"><img src="images/vb003-select-all.png.thumb.jpg" alt="Select all items" /></a></p>
+<p>Produces files as shown below</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/vb004-vmdk-files.png"><img src="images/vb004-vmdk-files.png.thumb.jpg" alt="Example files as shown in Windows file explorer" /></a></p>
+<span class="docsSectionMarker"><span id="convert-vmdk-to-vhd-format" class="docsSectionMarkerChild"></span></span><h4>Convert VMDK to VHD format&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#convert-vmdk-to-vhd-format">&para;</a></h4>
+<ul>
+<li>We used QEMU utility with the 1 KB VMDK file from the previous step (with fixed-size-type required by Azure).</li>
+<li>Example command to convert VMDK file to VHD format:
+<code>.\qemu-img.exe convert C:\path\to\disk.vmdk -O vpc -o subformat=fixed C:\path\to\disk.vhd</code></li>
+<li>Note: <strong>The disk.vhd image just produced can now be imported, without further changes, into any locally-installed MS Hyper-V program</strong>. </li>
+</ul>
+<span class="docsSectionMarker"><span id="resize-the-vhd-file-upwards-to-the-nearest-megabyte-multiple-if-needed" class="docsSectionMarkerChild"></span></span><h4>Resize the VHD file upwards to the nearest megabyte multiple if needed&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#resize-the-vhd-file-upwards-to-the-nearest-megabyte-multiple-if-needed">&para;</a></h4>
+<ul>
+<li>The size of the disk.vhd file from the previous step must be a multiple of megabytes (ie: the VHD file-size needs to be a number exactly divisible by 1024).</li>
+<li>Example command to find file size:
+<code>ls C:\path\to\diskname.vhd = X</code></li>
+<li>Our example produced a file of size X = 41943040 KB</li>
+<li>X/1024/1024 must be a whole number. You may need to resize your own file upwards to a megabyte-multiple.</li>
+<li>An exact next-biggest megabyte-multiple for our example 40 GB disk = 42951770112 bytes. </li>
+<li>We resize our example file to illustrate:</li>
+<li>Example command to resize the disk.vhd file upwards to a megabyte multiple:
+<code>resize-vhd C:\path\to\diskname.vhd -SizeBytes 42951770112</code></li>
+<li>Note: This creates a resized VHD file of size <strong>42951770624</strong> bytes. Azure 'resize' command adds 512 bytes for their footer <strong>42951770112 + 512</strong></li>
+</ul>
+<span class="docsSectionMarker"><span id="create-empty-managed-disk-on-azure" class="docsSectionMarkerChild"></span></span><h4>Create empty managed disk on Azure&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#create-empty-managed-disk-on-azure">&para;</a></h4>
+<ul>
+<li>Example command to create empty managed disk on Azure using the size parameter from the previous step:
+<code>az disk create --name azure-disk-name --resource-group azure-resource-name --sku standardssd_lrs --hyper-v-generation V1 --location australiaeast --for-upload true --upload-size-bytes 42951770624</code>
+<br></li>
+<li>Use your own preference parameters for disk-name, resource-group, hard-disk type, location. Other VM parameters, such as CPU and RAM allocation, can be added later. Location parameter can be selected via:
+<code>az account list-locations -o table</code></li>
+</ul>
+<span class="docsSectionMarker"><span id="grant-write-access-to-obtain-sasuri" class="docsSectionMarkerChild"></span></span><h4>Grant write access to obtain ‘sasURI’&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#grant-write-access-to-obtain-sasuri">&para;</a></h4>
+<ul>
+<li>Example command to grant write access to Azure:
+<code>az disk grant-access -n azure-disk-name -g azure-resource-name --access-level Write --duration-in-seconds 86400</code></li>
+<li>Produces an <strong>sas-URI</strong>: similar to: &quot;<a href="https://xx-xxxxx-xxxxxxxxxx.blob.core.windows.net/xxxxxxxxxx/abcd?sv=2017-04-17&amp;sr=b&amp;si=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&amp;sig=xxxx%3D">https://xx-xxxxx-xxxxxxxxxx.blob.core.windows.net/xxxxxxxxxx/abcd?sv=2017-04-17&amp;sr=b&amp;si=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&amp;sig=xxxx%3D</a>&quot;</li>
+<li>Note: <strong>Azure charges while disk is writeable</strong></li>
+</ul>
+<span class="docsSectionMarker"><span id="upload-the-vhd-file-to-azure" class="docsSectionMarkerChild"></span></span><h4>Upload the VHD file to Azure&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#upload-the-vhd-file-to-azure">&para;</a></h4>
+<ul>
+<li>We used the convenient AzCopy
+<a href="https://adamtheautomator.com/azcopy-setup/">https://adamtheautomator.com/azcopy-setup/</a></li>
+<li>Command format:
+<code>AzCopy.exe copy "C:\path\to\diskname.vhd" "sas-URI" --blob-type PageBlob</code></li>
+<li>Example command to upload the VHD file to Azure, using the <strong>sas-URI</strong> from the previous step:
+<code>AzCopy.exe copy "C:\path\to\diskname.vhd" "https://xx-xxxxx-xxxxxxxxxx.blob.core.windows.net/xxxxxxxxxx/abcd?sv=2017-04-17&amp;sr=b&amp;si=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&amp;sig=xxxx%3D" --blob-type PageBlob</code></li>
+<li>Note: <strong>To reduce costs, revoke write-access when finished uploading</strong>.</li>
+<li>Example command to revoke write access: <code>az disk revoke-access -n azure-disk-name -g azure-resource-name</code></li>
+</ul>
+<span class="docsSectionMarker"><span id="create-the-new-vm-in-azure" class="docsSectionMarkerChild"></span></span><h4>Create the new VM in Azure&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#create-the-new-vm-in-azure">&para;</a></h4>
+<ul>
+<li>Example command to create the new VM in Azure using the azure-disk-name file uploaded from the previous step:
+<code>az vm create --resource-group azure-resource-name --location australiaeast --name new-vm-name --os-type windows --attach-os-disk azure-disk-name</code></li>
+<li>Use your parameters for resource group, location, vm name.
+<br></li>
+<li>Example result from command to create new VM in Azure:</li>
+</ul>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/az002-azure-start-vm-example.png"><img src="images/az002-azure-start-vm-example.png.thumb.jpg" alt="" /></a></p>
+<ul>
+<li>Copy the ‘publicIpAddress’ field</li>
+</ul>
+<span class="docsSectionMarker"><span id="connect-via-rdp-2" class="docsSectionMarkerChild"></span></span><h4>Connect via RDP&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#connect-via-rdp-2">&para;</a></h4>
+<ul>
+<li>Use your preferred Remote Desktop program to connect to the ‘publicIpAddress’ from previous step: “XXX.XXX.XXX.XXX”</li>
+</ul>
+<hr />
+<span class="docsSectionMarker"><span id="virtualbox" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>VirtualBox&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#virtualbox">&para;</a></h2>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/vb001-virtualbox-icon.png"><img src="images/vb001-virtualbox-icon.png.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="creating-a-virtualbox-virtual-machine-from-a-comet-disk-image-backup" class="docsSectionMarkerChild"></span></span><h3>Creating a VirtualBox Virtual Machine from a Comet Disk Image Backup&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#creating-a-virtualbox-virtual-machine-from-a-comet-disk-image-backup">&para;</a></h3>
+<span class="docsSectionMarker"><span id="getting-started" class="docsSectionMarkerChild"></span></span><h4>Getting started&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#getting-started">&para;</a></h4>
+<ul>
+<li>This backup method requires VirtualBox v6.x if MS Hyper-V is running simultaneously, otherwise earlier versions will work. </li>
+</ul>
+<span class="docsSectionMarker"><span id="perform-restore-in-comet-to-create-vmdk-disk-files" class="docsSectionMarkerChild"></span></span><h4>Perform restore in Comet to create VMDK disk files&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#perform-restore-in-comet-to-create-vmdk-disk-files">&para;</a></h4>
+<ul>
+<li>Note: The restored files will be the same size as the original disk size, so ensure you have enough space in your restore location.</li>
+</ul>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/vb002-restore.png"><img src="images/vb002-restore.png.thumb.jpg" alt="Restore dialogue" /></a></p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/vb003-select-all.png"><img src="images/vb003-select-all.png.thumb.jpg" alt="Select all items" /></a></p>
+<ul>
+<li>Produces files as shown below</li>
+</ul>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/vb004-vmdk-files.png"><img src="images/vb004-vmdk-files.png.thumb.jpg" alt="Example files as shown in Windows file explorer" /></a></p>
+<span class="docsSectionMarker"><span id="open-virtualbox-and-create-a-new-virtual-machine" class="docsSectionMarkerChild"></span></span><h4>Open VirtualBox and create a new virtual machine&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#open-virtualbox-and-create-a-new-virtual-machine">&para;</a></h4>
+<ul>
+<li>Select ‘New’ on main screen of VirtualBox as shown below</li>
+</ul>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/vb005-virtualbox-create-new.png"><img src="images/vb005-virtualbox-create-new.png.thumb.jpg" alt="" /></a></p>
+<ul>
+<li>Allocate RAM and virtual hard disk space. Use your own preferences for system requirements</li>
+</ul>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/vb006-virtualbox-allocate-ram.png"><img src="images/vb006-virtualbox-allocate-ram.png.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="add-hard-disk" class="docsSectionMarkerChild"></span></span><h4>Add hard disk&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#add-hard-disk">&para;</a></h4>
+<ul>
+<li>Open VirtualBox Settings as shown below</li>
+<li>Storage</li>
+<li>SATA Controller</li>
+<li>Add Hard Disk</li>
+<li>Select the 1 KB “disk.vmdk” file restored earlier (as shown below)</li>
+</ul>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/vb007-virtualbox-add-disk.png"><img src="images/vb007-virtualbox-add-disk.png.thumb.jpg" alt="" /></a></p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/vb008-virtualbox-add-disk-vmdk.png"><img src="images/vb008-virtualbox-add-disk-vmdk.png.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="finalize-configuration-and-start" class="docsSectionMarkerChild"></span></span><h4>Finalize configuration and Start&nbsp;<a class="docsSectionLinkIcon" href="guide-disk-image-walkthrough.html#finalize-configuration-and-start">&para;</a></h4>
+<ul>
+<li>Finalize CPU, RAM, etc.</li>
+<li>Start the VM</li>
+</ul>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/vb009-virtualbox-start-vm.png"><img src="images/vb009-virtualbox-start-vm.png.thumb.jpg" alt="" /></a></p></div><div class="doc-navigation-section"><div class="doc-navigation-back doc-navigation-width-2"><a href="guide-comet-backup-getting-started.html">&laquo; Back: Getting Started with Comet Backup</a></div><div class="doc-navigation-next doc-navigation-width-2"><a href="guide-seedload-walkthrough.html">Next: Seed Load Walkthrough &raquo;</a></div></div> 
+				</div>
+			</div>
+		</div>
+	
+	
+	</body>
+</html>

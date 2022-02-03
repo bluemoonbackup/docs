@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="docs.css">
+		<link rel="stylesheet" type="text/css" href="magnific-popup.css">		
+		<script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="magnific-popup.1.1.0.min.js"></script>
+		<script type="text/javascript" src="lunr-2.1.0.min.js"></script>
+		<script type="text/javascript" src="docs.js"></script>
+		<title>Documentation</title>		
+	</head>
+	<body>
+	
+		<div id="header-bar">
+			<div id="header-logo"></div>
+			Documentation
+		</div>
+	
+		<div id="main-area">
+			<div id="position-nav">
+				<div id="nav-inner">
+					<ul><li><form method="GET" action="search-results.html"><input name="s" class="search-box" placeholder="Search..."></form></li>
+<li><span class="category-header">Guides</span></li>
+<li><a href="guide-getting-started.html" title="Getting Started with Self-Hosted Comet">Getting Started with Self-Hosted Comet</a></li>
+<li><a href="guide-cometgo-getting-started.html" title="Getting Started with Comet-Hosted">Getting Started with Comet-Hosted</a></li>
+<li><a href="guide-comet-backup-getting-started.html" title="Getting Started with Comet Backup">Getting Started with Comet Backup</a></li>
+<li><a href="guide-disk-image-walkthrough.html" title="Disk Image Walkthrough">Disk Image Walkthrough</a></li>
+<li><a href="guide-seedload-walkthrough.html" title="Seed Load Walkthrough">Seed Load Walkthrough</a></li>
+<li><a href="guide-disaster-recovery.html" title="Disaster Recovery">Disaster Recovery</a></li>
+<li><a href="guide-best-practices.html" title="Best Practices">Best Practices</a></li>
+<li><a href="guide-common-problems-and-solutions.html" title="Common Problems and Solutions">Common Problems and Solutions</a></li>
+<li><span class="category-header">Documentation</span></li>
+<li><a href="about-these-docs.html" title="Software Documentation">Software Documentation</a></li>
+<li><a href="application-architecture.html" title="Overview and Concepts">Overview and Concepts</a></li>
+<li><a href="comet-server-installation.html" title="Comet Server installation">Comet Server installation</a></li>
+<li><a href="comet-server-configuration.html" title="Comet Server configuration">Comet Server configuration</a></li>
+<li><a href="comet-server-usage.html" title="Comet Server usage">Comet Server usage</a></li>
+<li><a href="comet-backup-installation.html" title="Comet Backup installation">Comet Backup installation</a></li>
+<li class="current-page"><a data-indent="0" class="subsection-link subsection-indent-0" href="#comet-backup-usage" title="Comet Backup usage">Comet Backup usage</a>
+<ul>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#log-in" title="Log in">Log in</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#custom-server-address" title="Custom server address">Custom server address</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#device-registration" title="Device registration">Device registration</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#backup-tab" title="Backup tab">Backup tab</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#add-a-new-protected-item" title="Add a new Protected Item">Add a new Protected Item</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#edit-an-existing-protected-item" title="Edit an existing Protected Item">Edit an existing Protected Item</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#back-up-data" title="Back up data">Back up data</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#restore-tab" title="Restore tab">Restore tab</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#restore-data" title="Restore data">Restore data</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#restore-types" title="Restore types">Restore types</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#remove-a-single-backup-snapshot" title="Remove a single backup snapshot">Remove a single backup snapshot</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#restore-a-protected-item-from-a-different-device" title="Restore a Protected Item from a different device">Restore a Protected Item from a different device</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#restore-an-accidentallydeleted-protected-item" title="Restore an accidentally-deleted Protected Item">Restore an accidentally-deleted Protected Item</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#history-tab" title="History tab">History tab</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#filter" title="Filter">Filter</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#account-tab" title="Account tab">Account tab</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#add-a-new-storage-vault" title="Add a new Storage Vault">Add a new Storage Vault</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#edit-an-existing-storage-vault" title="Edit an existing Storage Vault">Edit an existing Storage Vault</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#operations-on-storage-vaults" title="Operations on Storage Vaults">Operations on Storage Vaults</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#run-retention-pass-now" title="Run retention pass now">Run retention pass now</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#rebuild-indexes" title="Rebuild indexes">Rebuild indexes</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#account-dialog" title="Account dialog">Account dialog</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#lock-and-disconnect" title="Lock and Disconnect">Lock and Disconnect</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#importing-data" title="Importing data">Importing data</a></li>
+</ul>
+</li><li><a href="user-configuration.html" title="User configuration">User configuration</a></li>
+<li><a href="protected-items.html" title="Protected Item types">Protected Item types</a></li>
+<li><a href="storage-configuration.html" title="Storage configuration">Storage configuration</a></li>
+<li><a href="troubleshooting.html" title="Troubleshooting">Troubleshooting</a></li>
+<li><a href="api.html" title="API Guide">API Guide</a></li>
+<li><a href="api-reference.html" title="API Reference">API Reference</a></li>
+<li><a href="appendix.html" title="Appendix">Appendix</a></li>
+<li><a href="cloud-storage-providers.html" title="Cloud Storage Providers">Cloud Storage Providers</a></li>
+<li><a href="third-party-service-addons.html" title="Third-party service addons">Third-party service addons</a></li>
+<li><a href="comet-server-roles.html" title="Comet Server Roles ">Comet Server Roles </a></li>
+<li><a href="comet-chunking-overview.html" title="Comet Chunking Overview ">Comet Chunking Overview </a></li>
+<li><a href="security-compliance.html" title="Security &amp; Compliance">Security & Compliance</a></li>
+</ul>
+				</div>
+			</div>
+		
+			<div id="position-content">
+				<div id="content-inner">
+					<span class="docsSectionMarker"><span id="comet-backup-usage" class="docsSectionMarkerChild"></span></span><h1>Comet Backup usage&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#comet-backup-usage">&para;</a></h1>
+<span class="docsSectionMarker"><span id="log-in" class="docsSectionMarkerChild"></span></span><div class="docs-box"><h2>Log in&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#log-in">&para;</a></h2>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/img-comet-backup-windows-login.png"><img src="images/img-comet-backup-windows-login.png.thumb.jpg" alt="" /></a></p>
+<p>Enter the client's username and password, and click the button to log in.</p>
+<span class="docsSectionMarker"><span id="custom-server-address" class="docsSectionMarkerChild"></span></span><h3>Custom server address&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#custom-server-address">&para;</a></h3>
+<p>The server address will be automatically filled, pointing to the Comet Server that generated the client software.</p>
+<p>You can connect the Comet Backup application to a different Comet Server:</p>
+<ul>
+<li>Check the &quot;Advanced Settings&quot; option, to display the Server field</li>
+<li>Enter the server address.
+<ul>
+<li>The address should include the protocol (<code>http</code>/<code>https</code>); any non-default port; and a trailing forward-slash (<code>/</code>) character.</li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="device-registration" class="docsSectionMarkerChild"></span></span><h3>Device registration&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#device-registration">&para;</a></h3>
+<p>If this is the first time logging in to your Comet Backup account from this device, you will be prompted to register the device into your account.</p>
+<span class="docsSectionMarker"><span id="backup-tab" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Backup tab&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#backup-tab">&para;</a></h2>
+<span class="docsSectionMarker"><span id="add-a-new-protected-item" class="docsSectionMarkerChild"></span></span><h3>Add a new Protected Item&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#add-a-new-protected-item">&para;</a></h3>
+<p>To add a new Protected Item, mouse over the &quot;Protected Items&quot; text and click the &quot;Add&quot; button.</p>
+<p>For more information about configuring a Protected Item, see the &quot;User configuration&quot; section. No changes are applied until the Save button is pressed.</p>
+<span class="docsSectionMarker"><span id="edit-an-existing-protected-item" class="docsSectionMarkerChild"></span></span><h3>Edit an existing Protected Item&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#edit-an-existing-protected-item">&para;</a></h3>
+<p>To edit an existing Storage Vault, either double-click the row, or right-click the row and choose Edit.</p>
+<p>For more information about configuring a Protected Item, see the &quot;User configuration&quot; section. No changes are applied until the Save button is pressed.</p>
+<span class="docsSectionMarker"><span id="back-up-data" class="docsSectionMarkerChild"></span></span><h3>Back up data&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#back-up-data">&para;</a></h3>
+<p>Data should be backed up automatically on schedule as per the schedule setting options above. The backup schedules will still run even if logged out of the client GUI, as the background service will stay logged in.</p>
+<p>At times, you may wish to immediately start a backup job, or back up to a different Storage Vault than usual. You can back up any Protected Item to any Storage Vault as follows:</p>
+<ol>
+<li>Click a Protected Item, and click the Backup Now button</li>
+<li>Step through the wizard to select a destination Storage Vault</li>
+<li>The backup job starts within the main window interface.</li>
+</ol>
+<span class="docsSectionMarker"><span id="restore-tab" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Restore tab&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#restore-tab">&para;</a></h2>
+<p>Clicking the Restore tab opens the Restore dialog. Multiple actions are possible from within the Restore dialog:</p>
+<span class="docsSectionMarker"><span id="restore-data" class="docsSectionMarkerChild"></span></span><h3>Restore data&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#restore-data">&para;</a></h3>
+<p>You can restore data from any Storage Vault as follows:</p>
+<ol>
+<li>Click the Restore button in the left-hand menu bar</li>
+<li>Select the Storage Vault containing the backed-up data, and click Next</li>
+<li>Select the Protected Item that you want to restore, and click Next
+<ul>
+<li>(Optional) Unfold the Protected Item to pick a snapshot other than the most recent</li>
+<li>(Optional) Use the Search button to search for files to restore</li>
+</ul></li>
+</ol>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/img-restore-expand-to-show-all-snapshots.png"><img src="images/img-restore-expand-to-show-all-snapshots.png.thumb.jpg" alt="" /></a></p>
+<ol start="4">
+<li>Select which files to restore, and click Next
+<ul>
+<li>(Optional) By default, all files are restored. You can use the &quot;Choose files&quot; radio option to select individual files or folders to restore.</li>
+</ul></li>
+</ol>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/img-restore-select-which-files-to-restore.png"><img src="images/img-restore-select-which-files-to-restore.png.thumb.jpg" alt="" /></a></p>
+<ol start="5">
+<li>Select the destination path to restore to, and click Next</li>
+</ol>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/img-restore-choose-output-directory.png"><img src="images/img-restore-choose-output-directory.png.thumb.jpg" alt="" /></a></p>
+<ul>
+<li>The restore job starts within the main window interface.</li>
+</ul>
+<p>If you are restoring from a Protected Item that is known to your current device, the progress operation will appear on the Backup tab under the Protected Item in question. If you are restoring from a Protected Item that is unknown to your current device, the progress operation will appear on the Account tab under the Storage Vault in question.</p>
+<span class="docsSectionMarker"><span id="restore-types" class="docsSectionMarkerChild"></span></span><h4>Restore types&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#restore-types">&para;</a></h4>
+<p>When restoring files, you can choose to restore data as:</p>
+<ul>
+<li>Files and Folders
+<ul>
+<li>The files you selected for restore will be restored from the Storage Vault to the local harddrive in the path you have selected.</li>
+<li>The following options are available:
+<ul>
+<li>Restore to original paths <em>(&gt;= 20.12.4)</em>
+<ul>
+<li>If this option is checked, the selected files will be restored to their original on-disk locations.</li>
+<li>This checkbox is only available if the necessary original path information was preserved during the backup job. This is the behavior for all &quot;File and Folder&quot;-type backup jobs in Comet 20.12.4 and later.</li>
+<li>This option is not presently available for Protected Item types other than &quot;File and Folder&quot; and will be greyed-out in the user interface.</li>
+</ul></li>
+<li>Overwrite existing files
+<ul>
+<li>If this option is checked, any file that already exists will be silently overwritten with the restored file. If this option is not checked, any file that already exists will be silently skipped from the restore operation.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Simulate restore only
+<ul>
+<li>The files you selected for restore will be downloaded from the Storage Vault, and reassembled, but not saved onto the local harddrive. This option can be useful as a test of the restore process.</li>
+</ul></li>
+<li>Program Input
+<ul>
+<li>The files you selected for restore will be streamed as the standard input (<code>stdin</code>) to a command-line program.</li>
+<li>If you have selected multiple files for restore, you can choose whether they will result in multiple commands being run sequentially, or if the files are virtually archived before streaming into a single command-line program.</li>
+</ul></li>
+<li>Compressed archive file (zip / tar)
+<ul>
+<li>The files you selected for restore will be restored from the Storage Vault to an archive file on your local harddrive.</li>
+<li>If you select a compressed archive format, the files will consume less space on the local disk. No spool space is required when using a compressed archive format. This may be particularly useful for restoring large, highly compressible files (e.g. SQL dumps with repeated INSERT statements, or non-sparse disk images containing zero extents).</li>
+<li>The following file formats are available:
+<ul>
+<li>zip (compressed)</li>
+<li>tar (uncompressed)
+<ul>
+<li>The tar file format has many different specifications (V7 (1979), oldgnu (1992), GNU (1997), USTAR/POSIX (1998), PAX/POSIX (2001)). Comet uses POSIX 1003.1-2001 (pax) TAR format files to preserve fidelity of file metadata. If your tar program does not fully support PAX extensions, you may see a hidden <code>PaxHeader.0</code> directory.</li>
+</ul></li>
+<li>tar.gz (compressed)</li>
+<li>sqfs (compressed)
+<ul>
+<li>SquashFS is a compressed archive file that can be mounted as a read-only virtual drive, using <code>mount</code> on Linux. This allows you to work with the compressed data while only requiring a low amount of physical disk space. Third-party programs are available for Windows to allow mounting zip files as virtual drives for a similar effect (e.g. <a href="http://www.winarchiver.com/virtual-drive.htm">WinArchiver Virtual Drive</a>).</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="remove-a-single-backup-snapshot" class="docsSectionMarkerChild"></span></span><h3>Remove a single backup snapshot&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#remove-a-single-backup-snapshot">&para;</a></h3>
+<p>You can remove a single snapshot from within a Storage Vault as follows:</p>
+<ol>
+<li>Click the Restore button in the left-hand menu bar</li>
+<li>Select the Storage Vault containing the backed-up data, and click Next</li>
+<li>Identify the Protected Item snapshot that you want to remove from the Storage Vault, expanding the selection as necessary</li>
+<li>Right click the Protected Item snapshot, and select &quot;Delete this snapshot&quot;</li>
+</ol>
+<p>Comet will remove the snapshot from the Storage Vault, and then immediately clean up unused data within the Storage Vault to save on disk space.</p>
+<span class="docsSectionMarker"><span id="restore-a-protected-item-from-a-different-device" class="docsSectionMarkerChild"></span></span><h3>Restore a Protected Item from a different device&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#restore-a-protected-item-from-a-different-device">&para;</a></h3>
+<ol>
+<li>Install the client software onto the second device, login using the user-profile username and password of the first device. If a new device, this will register a new device into the user-profile</li>
+<li>Open the Restore section of the client software, tick 'Show items from other devices'. Then click the 'Refresh' button top right to show the available snapshots from the first device </li>
+</ol>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/img-restore-protected-item-from-different-device.png"><img src="images/img-restore-protected-item-from-different-device.png.thumb.jpg" alt="" /></a></p>
+<ol start="3">
+<li>Choose the snapshot you want to restore, and restore to a location of your choosing.</li>
+</ol>
+<ul>
+<li>Note: Devices will not attract fees or charges unless the device has Protected Items or performs a backup.</li>
+<li>Note: If the first user-profile has a Policy which adds default Protected Items, the second device will be have Protected Items, and will attract charges. You can temporarily disable the Policy from the user-profile so that any default Protected Items are not added to the test device when it registers for the first time.</li>
+</ul>
+<span class="docsSectionMarker"><span id="restore-an-accidentallydeleted-protected-item" class="docsSectionMarkerChild"></span></span><h3>Restore an accidentally-deleted Protected Item&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#restore-an-accidentallydeleted-protected-item">&para;</a></h3>
+<ol>
+<li>Login using the user-profile username and password of the first device. If a new device, this will register a new device into the user-profile</li>
+<li>Open the Restore section of the client software, tick 'Show unknown items'. This will list snapshots which are available, but have no detail, because they have been deleted from the list of Protected Items.</li>
+</ol>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/img-restore-accidentally-deleted-protected-item.png"><img src="images/img-restore-accidentally-deleted-protected-item.png.thumb.jpg" alt="" /></a></p>
+<ol start="3">
+<li>Choose the snapshot you want to restore, and restore to a location of your choosing.</li>
+</ol>
+<span class="docsSectionMarker"><span id="history-tab" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>History tab&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#history-tab">&para;</a></h2>
+<p>Click the &quot;history&quot; button at the top of the Comet Backup window to browse through job history.</p>
+<span class="docsSectionMarker"><span id="filter" class="docsSectionMarkerChild"></span></span><h3>Filter&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#filter">&para;</a></h3>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/client-job-history-filter.png"><img src="images/client-job-history-filter.png.thumb.jpg" alt="" /></a></p>
+<p>Click the filter icon to toggle displaying the Filter pane. The Filter pane allows you to filter the displayed jobs by status, classification, Protected Item, Storage Vault, and device.</p>
+<p>When the filter bar is closed, the data area shows all jobs from the current device. You can use the filter bar to show historic jobs from other devices in the account.</p>
+<span class="docsSectionMarker"><span id="account-tab" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Account tab&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#account-tab">&para;</a></h2>
+<p>The account tab shows</p>
+<ul>
+<li>A list of your Storage Vaults, where data can be stored</li>
+<li>A list of devices registered within your account</li>
+<li>Additional actions (&quot;Account&quot; button; &quot;Import&quot; button; and the software version number).</li>
+</ul>
+<span class="docsSectionMarker"><span id="add-a-new-storage-vault" class="docsSectionMarkerChild"></span></span><h3>Add a new Storage Vault&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#add-a-new-storage-vault">&para;</a></h3>
+<p>To add a new Storage Vault, mouse over the &quot;Storage Vaults&quot; text and click the &quot;Add&quot; button.</p>
+<p>For more information about configuring a Storage Vault, see the &quot;User configuration&quot; section. No changes are applied until the Save button is pressed.</p>
+<span class="docsSectionMarker"><span id="edit-an-existing-storage-vault" class="docsSectionMarkerChild"></span></span><h3>Edit an existing Storage Vault&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#edit-an-existing-storage-vault">&para;</a></h3>
+<p>To edit an existing Storage Vault, right-click the row and choose Edit from the context menu.</p>
+<span class="docsSectionMarker"><span id="operations-on-storage-vaults" class="docsSectionMarkerChild"></span></span><h3>Operations on Storage Vaults&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#operations-on-storage-vaults">&para;</a></h3>
+<p>Further operations are available under the &quot;Advanced&quot; sub-menu when you right-click a Storage Vault.</p>
+<span class="docsSectionMarker"><span id="run-retention-pass-now" class="docsSectionMarkerChild"></span></span><h4>Run retention pass now&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#run-retention-pass-now">&para;</a></h4>
+<p>Comet will automatically perform a retention pass after each backup job. You can immediately run a retention pass by choosing the &quot;Run retention pass now&quot; menu item.</p>
+<span class="docsSectionMarker"><span id="rebuild-indexes" class="docsSectionMarkerChild"></span></span><h4>Rebuild indexes&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#rebuild-indexes">&para;</a></h4>
+<p>This is a technical feature to repair a specific type of potential issue. It is safe to use at any time, but should generally only be used if your support agent recommends it.</p>
+<span class="docsSectionMarker"><span id="account-dialog" class="docsSectionMarkerChild"></span></span><h3>Account dialog&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#account-dialog">&para;</a></h3>
+<p>The Account dialog allows you to configure your username, password, privacy, language, timezone, and email settings. For more information, please see the &quot;User configuration&quot; section.</p>
+<span class="docsSectionMarker"><span id="lock-and-disconnect" class="docsSectionMarkerChild"></span></span><h4>Lock and Disconnect&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#lock-and-disconnect">&para;</a></h4>
+<p>The Comet Backup desktop app allows you to view and manage your backup settings. However, backup jobs will continue to run in the background even when the desktop app is closed.</p>
+<ul>
+<li>Use the Close button to close the desktop app, without logging out or locking the app. The app can be launched again and will open to the main screen, not the login screen. Backup jobs will continue to run in the background.</li>
+<li>Use the &quot;Lock&quot; button to log out of the desktop app, while still allowing backup jobs to run in the background. The app can be launched again and will open to the login screen, with the username pre-filled.</li>
+<li>Use the &quot;Disconnect&quot; button to log out of the desktop app and also from the background service. Scheduled backup jobs will no longer run. The app can be launched again and will open to the login screen, with no username pre-filled.</li>
+</ul>
+<span class="docsSectionMarker"><span id="importing-data" class="docsSectionMarkerChild"></span></span><h3>Importing data&nbsp;<a class="docsSectionLinkIcon" href="comet-backup-usage.html#importing-data">&para;</a></h3>
+<p>Comet Backup will scan your local device for certain online backup products from other software vendors. If a supported product is found, you may be prompted to import settings from the detected product.</p>
+<p>For more details about supported products, please see the &quot;Importing backup settings from other products&quot; section in the Appendix.</p></div><div class="doc-navigation-section"><div class="doc-navigation-back doc-navigation-width-2"><a href="comet-backup-installation.html">&laquo; Back: Comet Backup installation</a></div><div class="doc-navigation-next doc-navigation-width-2"><a href="user-configuration.html">Next: User configuration &raquo;</a></div></div> 
+				</div>
+			</div>
+		</div>
+	
+	
+	</body>
+</html>

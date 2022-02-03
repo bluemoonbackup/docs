@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="docs.css">
+		<link rel="stylesheet" type="text/css" href="magnific-popup.css">		
+		<script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="magnific-popup.1.1.0.min.js"></script>
+		<script type="text/javascript" src="lunr-2.1.0.min.js"></script>
+		<script type="text/javascript" src="docs.js"></script>
+		<title>Documentation</title>		
+	</head>
+	<body>
+	
+		<div id="header-bar">
+			<div id="header-logo"></div>
+			Documentation
+		</div>
+	
+		<div id="main-area">
+			<div id="position-nav">
+				<div id="nav-inner">
+					<ul><li><form method="GET" action="search-results.html"><input name="s" class="search-box" placeholder="Search..."></form></li>
+<li><span class="category-header">Guides</span></li>
+<li><a href="guide-getting-started.html" title="Getting Started with Self-Hosted Comet">Getting Started with Self-Hosted Comet</a></li>
+<li><a href="guide-cometgo-getting-started.html" title="Getting Started with Comet-Hosted">Getting Started with Comet-Hosted</a></li>
+<li><a href="guide-comet-backup-getting-started.html" title="Getting Started with Comet Backup">Getting Started with Comet Backup</a></li>
+<li><a href="guide-disk-image-walkthrough.html" title="Disk Image Walkthrough">Disk Image Walkthrough</a></li>
+<li><a href="guide-seedload-walkthrough.html" title="Seed Load Walkthrough">Seed Load Walkthrough</a></li>
+<li><a href="guide-disaster-recovery.html" title="Disaster Recovery">Disaster Recovery</a></li>
+<li class="current-page"><a data-indent="0" class="subsection-link subsection-indent-0" href="#best-practices" title="Best Practices">Best Practices</a>
+<ul>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#general-guide" title="General guide">General guide</a></li>
+</ul>
+</li><li><a href="guide-common-problems-and-solutions.html" title="Common Problems and Solutions">Common Problems and Solutions</a></li>
+<li><span class="category-header">Documentation</span></li>
+<li><a href="about-these-docs.html" title="Software Documentation">Software Documentation</a></li>
+<li><a href="application-architecture.html" title="Overview and Concepts">Overview and Concepts</a></li>
+<li><a href="comet-server-installation.html" title="Comet Server installation">Comet Server installation</a></li>
+<li><a href="comet-server-configuration.html" title="Comet Server configuration">Comet Server configuration</a></li>
+<li><a href="comet-server-usage.html" title="Comet Server usage">Comet Server usage</a></li>
+<li><a href="comet-backup-installation.html" title="Comet Backup installation">Comet Backup installation</a></li>
+<li><a href="comet-backup-usage.html" title="Comet Backup usage">Comet Backup usage</a></li>
+<li><a href="user-configuration.html" title="User configuration">User configuration</a></li>
+<li><a href="protected-items.html" title="Protected Item types">Protected Item types</a></li>
+<li><a href="storage-configuration.html" title="Storage configuration">Storage configuration</a></li>
+<li><a href="troubleshooting.html" title="Troubleshooting">Troubleshooting</a></li>
+<li><a href="api.html" title="API Guide">API Guide</a></li>
+<li><a href="api-reference.html" title="API Reference">API Reference</a></li>
+<li><a href="appendix.html" title="Appendix">Appendix</a></li>
+<li><a href="cloud-storage-providers.html" title="Cloud Storage Providers">Cloud Storage Providers</a></li>
+<li><a href="third-party-service-addons.html" title="Third-party service addons">Third-party service addons</a></li>
+<li><a href="comet-server-roles.html" title="Comet Server Roles ">Comet Server Roles </a></li>
+<li><a href="comet-chunking-overview.html" title="Comet Chunking Overview ">Comet Chunking Overview </a></li>
+<li><a href="security-compliance.html" title="Security &amp; Compliance">Security & Compliance</a></li>
+</ul>
+				</div>
+			</div>
+		
+			<div id="position-content">
+				<div id="content-inner">
+					<span class="docsSectionMarker"><span id="best-practices" class="docsSectionMarkerChild"></span></span><h1>Best Practices&nbsp;<a class="docsSectionLinkIcon" href="guide-best-practices.html#best-practices">&para;</a></h1>
+<span class="docsSectionMarker"><span id="general-guide" class="docsSectionMarkerChild"></span></span><div class="docs-box"><h2>General guide&nbsp;<a class="docsSectionLinkIcon" href="guide-best-practices.html#general-guide">&para;</a></h2>
+<ul>
+<li>Keep your Server up to date with your release stream (Quarterly or Voyager). Update customer devices silently via the Bulk Update feature in ‘Accounts’.</li>
+<li>Ensure that the Server Self-Backup is enabled, and saved to a safe location.</li>
+<li>Consider separate Storage Vaults for different devices, unless there is a significant amount of shared data.</li>
+<li>Stagger the schedules of backups into the same Storage Vault to avoid lock issues. Lock issues are rare, unless a device unexpectedly stops or pauses.</li>
+<li>Multiple, simultaneous backups into the same Vault are usually not a problem, and it offers benefits such as deduplication. Some devices which are shutdown frequently, such as laptops, can cause some issues. Consider separate Vaults for these. Contact Comet for more specific recommendations.</li>
+<li>Instead of backing up network-shares, consider installing the client software directly onto the device where the original data is stored. The backup will then be for a local path, and usually without issue.</li>
+<li>Where there are issues with the MS proprietary Windows Server System State and Windows System Backup backup types, consider using the Disk Image backup type instead. Disk Image was specifically designed to overcome issues with these types, and has much greater functionality, as well as scope for future enhancement.</li>
+<li>Ensure that the Comet Server and customer devices are synced with internet time, or you may get a series of log messages showing missed backups, followed or preceded by successful backups. A device which is out-of-sync with internet time may also experience difficulties with backups to some cloud storage providers. The Comet Server allows up to 10 minutes difference before logging separate events. </li>
+<li>Ensure that customer devices are always ‘Online’ with respect to the Comet Server, and have sufficient resources available to be able to complete the backups in the expected time-frame.</li>
+<li>Consider setting the Policy option &quot;Allow administrator to reset password&quot; to &quot;Always On&quot;. This will allow the Comet admin to access and reset the user-profile password as needed. </li>
+<li>Ransomware protection: Consider Policy options to prevent end-users from deleting snapshots from Storage Vaults.</li>
+<li>Ransomware protection: Consider Policy options to prevent end-users from editing/deleting Vaults and Protected Items.</li>
+<li>Ransomware protection: Ensure that no user-account on any device has read/write access to any storage location.</li>
+</ul></div><div class="doc-navigation-section"><div class="doc-navigation-back doc-navigation-width-2"><a href="guide-disaster-recovery.html">&laquo; Back: Disaster Recovery</a></div><div class="doc-navigation-next doc-navigation-width-2"><a href="guide-common-problems-and-solutions.html">Next: Common Problems and Solutions &raquo;</a></div></div> 
+				</div>
+			</div>
+		</div>
+	
+	
+	</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="docs.css">
+		<link rel="stylesheet" type="text/css" href="magnific-popup.css">		
+		<script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="magnific-popup.1.1.0.min.js"></script>
+		<script type="text/javascript" src="lunr-2.1.0.min.js"></script>
+		<script type="text/javascript" src="docs.js"></script>
+		<title>Documentation</title>		
+	</head>
+	<body>
+	
+		<div id="header-bar">
+			<div id="header-logo"></div>
+			Documentation
+		</div>
+	
+		<div id="main-area">
+			<div id="position-nav">
+				<div id="nav-inner">
+					<ul><li><form method="GET" action="search-results.html"><input name="s" class="search-box" placeholder="Search..."></form></li>
+<li><span class="category-header">Guides</span></li>
+<li><a href="guide-getting-started.html" title="Getting Started with Self-Hosted Comet">Getting Started with Self-Hosted Comet</a></li>
+<li><a href="guide-cometgo-getting-started.html" title="Getting Started with Comet-Hosted">Getting Started with Comet-Hosted</a></li>
+<li class="current-page"><a data-indent="0" class="subsection-link subsection-indent-0" href="#getting-started-with-comet-backup" title="Getting Started with Comet Backup">Getting Started with Comet Backup</a>
+<ul>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#getting-started-with-comet-backup-2" title="Getting Started with Comet Backup">Getting Started with Comet Backup</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#add-a-user" title="Add a User">Add a User</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#day-new-user-credit" title="14-Day New User Credit">14-Day New User Credit</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#download-and-install-the-comet-backup-client" title="Download and install the Comet Backup client">Download and install the Comet Backup client</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#log-into-the-comet-backup-client" title="Log into the Comet Backup client">Log into the Comet Backup client</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#setting-up-comet-client" title="Setting up Comet client">Setting up Comet client</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#adding-storage-vault" title="Adding Storage Vault">Adding Storage Vault</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#backing-up-files-and-folders" title="Backing up (Files and Folders)">Backing up (Files and Folders)</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#select-items-to-be-backed-up" title="Select items to be backed up">Select items to be backed up</a></li>
+<li><a data-indent="4" class="subsection-link subsection-indent-4" href="#take-filesystem-snapshot" title="Take filesystem snapshot">Take filesystem snapshot</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#commands" title="Commands">Commands</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#schedules" title="Schedules">Schedules</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#retention" title="Retention">Retention</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#policy-groups" title="Policy Groups">Policy Groups</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#run-the-backup" title="Run the backup">Run the backup</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#further-assistance" title="Further assistance">Further assistance</a></li>
+</ul>
+</li><li><a href="guide-disk-image-walkthrough.html" title="Disk Image Walkthrough">Disk Image Walkthrough</a></li>
+<li><a href="guide-seedload-walkthrough.html" title="Seed Load Walkthrough">Seed Load Walkthrough</a></li>
+<li><a href="guide-disaster-recovery.html" title="Disaster Recovery">Disaster Recovery</a></li>
+<li><a href="guide-best-practices.html" title="Best Practices">Best Practices</a></li>
+<li><a href="guide-common-problems-and-solutions.html" title="Common Problems and Solutions">Common Problems and Solutions</a></li>
+<li><span class="category-header">Documentation</span></li>
+<li><a href="about-these-docs.html" title="Software Documentation">Software Documentation</a></li>
+<li><a href="application-architecture.html" title="Overview and Concepts">Overview and Concepts</a></li>
+<li><a href="comet-server-installation.html" title="Comet Server installation">Comet Server installation</a></li>
+<li><a href="comet-server-configuration.html" title="Comet Server configuration">Comet Server configuration</a></li>
+<li><a href="comet-server-usage.html" title="Comet Server usage">Comet Server usage</a></li>
+<li><a href="comet-backup-installation.html" title="Comet Backup installation">Comet Backup installation</a></li>
+<li><a href="comet-backup-usage.html" title="Comet Backup usage">Comet Backup usage</a></li>
+<li><a href="user-configuration.html" title="User configuration">User configuration</a></li>
+<li><a href="protected-items.html" title="Protected Item types">Protected Item types</a></li>
+<li><a href="storage-configuration.html" title="Storage configuration">Storage configuration</a></li>
+<li><a href="troubleshooting.html" title="Troubleshooting">Troubleshooting</a></li>
+<li><a href="api.html" title="API Guide">API Guide</a></li>
+<li><a href="api-reference.html" title="API Reference">API Reference</a></li>
+<li><a href="appendix.html" title="Appendix">Appendix</a></li>
+<li><a href="cloud-storage-providers.html" title="Cloud Storage Providers">Cloud Storage Providers</a></li>
+<li><a href="third-party-service-addons.html" title="Third-party service addons">Third-party service addons</a></li>
+<li><a href="comet-server-roles.html" title="Comet Server Roles ">Comet Server Roles </a></li>
+<li><a href="comet-chunking-overview.html" title="Comet Chunking Overview ">Comet Chunking Overview </a></li>
+<li><a href="security-compliance.html" title="Security &amp; Compliance">Security & Compliance</a></li>
+</ul>
+				</div>
+			</div>
+		
+			<div id="position-content">
+				<div id="content-inner">
+					<span class="docsSectionMarker"><span id="getting-started-with-comet-backup" class="docsSectionMarkerChild"></span></span><h1>Getting Started with Comet Backup&nbsp;<a class="docsSectionLinkIcon" href="guide-comet-backup-getting-started.html#getting-started-with-comet-backup">&para;</a></h1>
+<span class="docsSectionMarker"><span id="getting-started-with-comet-backup-2" class="docsSectionMarkerChild"></span></span><div class="docs-box"><h2>Getting Started with Comet Backup&nbsp;<a class="docsSectionLinkIcon" href="guide-comet-backup-getting-started.html#getting-started-with-comet-backup-2">&para;</a></h2>
+<p>This guide follows on from the <a href="/docs/guide-getting-started">Getting Started with Self-Hosted Comet</a> or <a href="/docs/guide-cometgo-getting-started">Getting Started with Comet-Hosted</a> guides.</p>
+<span class="docsSectionMarker"><span id="add-a-user" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Add a User&nbsp;<a class="docsSectionLinkIcon" href="guide-comet-backup-getting-started.html#add-a-user">&para;</a></h2>
+<div style="height:84px; background:#F15E43; color:white; padding: 10px 30px 10px 100px; text-align: left; position: relative; font-size: 140%;">
+    <div style="pointer-events:none;">
+        <a class="doc-thumbnail-popup" href="images/Email 1_Six steps-03.png"><img src="images/Email 1_Six steps-03.png.thumb.jpg" style="width:64px;height:64px; position:absolute; left:10px;"></a>
+    </div>
+    Step 3<br>
+    <strong style="color:white;">Create a new user</strong>
+</div>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/GettingStarted-adduser.PNG"><img src="images/GettingStarted-adduser.PNG.thumb.jpg" alt="" /></a></p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/GettingStarted-08.png"><img src="images/GettingStarted-08.png.thumb.jpg" alt="" /></a></p>
+<p>From the quick actions menu, select &quot;Add User&quot;. This allows you to create a new user/customer that can login to the backup client for backups and restores.</p>
+<p>During this process you can choose if you have access for reseting their password, a predefined Storage Vault, and if they will be part of a policy group. It's possible to configure pre-selected defaults for these options.</p>
+<p>The 'Storage Vault' is for a device's data location within your server's storage destination, and each Storage Vault will contain the backup data in its own subdirectory. It's recommended to add a Storage Vault for each device, unless multiple devices share similar data, as in this case, they would be able to take advantage of cross-device deduplication (not required to upload the same data twice).</p>
+<span class="docsSectionMarker"><span id="day-new-user-credit" class="docsSectionMarkerChild"></span></span><h3>14-Day New User Credit&nbsp;<a class="docsSectionLinkIcon" href="guide-comet-backup-getting-started.html#day-new-user-credit">&para;</a></h3>
+<p>Provide free demos and trials of your backup service. If the service isn't a good fit, for whatever reason, then simply delete the user-account before the end of 14 days, and all charges are refunded.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/GettingStarted-14-Day-New-User-Credit-01.png"><img src="images/GettingStarted-14-Day-New-User-Credit-01.png.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="download-and-install-the-comet-backup-client" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Download and install the Comet Backup client&nbsp;<a class="docsSectionLinkIcon" href="guide-comet-backup-getting-started.html#download-and-install-the-comet-backup-client">&para;</a></h2>
+<div style="height:84px; background:#F58C3E; color:white; padding: 10px 30px 10px 100px; text-align: left; position: relative; font-size: 140%;">
+    <div style="pointer-events:none;">
+        <a class="doc-thumbnail-popup" href="images/Email 1_Six steps-04.png"><img src="images/Email 1_Six steps-04.png.thumb.jpg" style="width:64px;height:64px; position:absolute; left:10px;"></a>
+    </div>
+    Step 4<br>
+    <strong style="color:white;">Download the desktop client</strong>
+</div>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/GettingStarted-07.png"><img src="images/GettingStarted-07.png.thumb.jpg" alt="" /></a></p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/GettingStarted-09.PNG"><img src="images/GettingStarted-09.PNG.thumb.jpg" alt="" /></a></p>
+<p>Using the quick actions menu, you can download the Comet Backup client and install it on the device you wish to backup. The backup client can also be downloaded from the initial login page on the web interface.</p>
+<span class="docsSectionMarker"><span id="log-into-the-comet-backup-client" class="docsSectionMarkerChild"></span></span><h3>Log into the Comet Backup client&nbsp;<a class="docsSectionLinkIcon" href="guide-comet-backup-getting-started.html#log-into-the-comet-backup-client">&para;</a></h3>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/GettingStarted-10.png"><img src="images/GettingStarted-10.png.thumb.jpg" alt="" /></a></p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/GettingStarted-11.png"><img src="images/GettingStarted-11.png.thumb.jpg" alt="" /></a></p>
+<p>Once you have installed the backup client, you can login with the user details you just created and start setting up a backup by selecting '+ Add Protected Item'. Then simply follow through the short wizard to create a backup job. Upon completing this you can manually run the backup, or leave it to run on <a href="/docs/user-configuration#schedules">schedule</a>.</p>
+<span class="docsSectionMarker"><span id="setting-up-comet-client" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Setting up Comet client&nbsp;<a class="docsSectionLinkIcon" href="guide-comet-backup-getting-started.html#setting-up-comet-client">&para;</a></h2>
+<div style="height:84px; background:#F8B039; color:white; padding: 10px 30px 10px 100px; text-align: left; position: relative; font-size: 140%;">
+    <div style="pointer-events:none;">
+        <a class="doc-thumbnail-popup" href="images/Email 1_Six steps-05.png"><img src="images/Email 1_Six steps-05.png.thumb.jpg" style="width:64px;height:64px; position:absolute; left:10px;"></a>
+    </div>
+    Step 5<br>
+    <strong style="color:white;">Configure the backup</strong>
+</div>
+<p>For testing, evaluation, and training purposes, we would suggest that you use separate machines for the Comet Server and the backup client (user device). This will help avoid confusion, as some processes have similar names, and can be easily mixed up.</p>
+<p>Once you have configured your Comet Server and installed the backup client, log into the client and you will be able to configure Protected Items &amp; Storage Vaults.</p>
+<span class="docsSectionMarker"><span id="adding-storage-vault" class="docsSectionMarkerChild"></span></span><h3>Adding Storage Vault&nbsp;<a class="docsSectionLinkIcon" href="guide-comet-backup-getting-started.html#adding-storage-vault">&para;</a></h3>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/GettingStarted-12.png"><img src="images/GettingStarted-12.png.thumb.jpg" alt="" /></a></p>
+<p>Set up a Storage Vault in the Settings tab by clicking &quot;+ Add Storage Vault&quot;. Now, either choose your <a href="/docs/comet-server-configuration#configuring-storage-role-servers-for-storage-vault-registration-optional">requestable Storage Vault</a> which you  configured on your Comet Server, or select &quot;Custom&quot; if you want to have a unique Storage Vault for this client. The Custom option will allow you to set up local path storage, which can be used along side your Comet Server's storage location.</p>
+<span class="docsSectionMarker"><span id="backing-up-files-and-folders" class="docsSectionMarkerChild"></span></span><h3>Backing up (Files and Folders)&nbsp;<a class="docsSectionLinkIcon" href="guide-comet-backup-getting-started.html#backing-up-files-and-folders">&para;</a></h3>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/GettingStarted-11.png"><img src="images/GettingStarted-11.png.thumb.jpg" alt="" /></a></p>
+<p>Go to the &quot;Backup&quot; tab and click &quot;+ Add Protected Item&quot;, add a meaningful name for this Protected Item, and choose the Files and Folders backup type. </p>
+<span class="docsSectionMarker"><span id="select-items-to-be-backed-up" class="docsSectionMarkerChild"></span></span><h4>Select items to be backed up&nbsp;<a class="docsSectionLinkIcon" href="guide-comet-backup-getting-started.html#select-items-to-be-backed-up">&para;</a></h4>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/GettingStarted-14.png"><img src="images/GettingStarted-14.png.thumb.jpg" alt="" /></a></p>
+<p>Add the items you would like to be backed up. You can exclude a range of files from the backup job. An exclusion filter checks whether to exclude each file from backup, using either a glob pattern or a regular expression (regex). There is no limit to the number of exclusion filters you can add to a single Protected Item.</p>
+<span class="docsSectionMarker"><span id="take-filesystem-snapshot" class="docsSectionMarkerChild"></span></span><h5>Take filesystem snapshot&nbsp;<a class="docsSectionLinkIcon" href="guide-comet-backup-getting-started.html#take-filesystem-snapshot">&para;</a></h5>
+<p>On Windows, the &quot;Take filesystem snapshot&quot; option creates a VSS snapshot. This enables Comet to backup files that are currently in-use. It also provides disk-wide &quot;crash-consistency&quot;, as all files for backup will originate from the precisely same timestamp.</p>
+<span class="docsSectionMarker"><span id="commands" class="docsSectionMarkerChild"></span></span><h4>Commands&nbsp;<a class="docsSectionLinkIcon" href="guide-comet-backup-getting-started.html#commands">&para;</a></h4>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/GettingStarted-15.PNG"><img src="images/GettingStarted-15.PNG.thumb.jpg" alt="" /></a></p>
+<p>You can register additional commands to run before- or after any backup job. For maximum flexibility, commands can be registered</p>
+<pre><code>for a Protected Item (e.g. to dump a database), or
+for a Storage Vault (e.g. to perform custom network authentication), or
+for a Schedule (e.g. to shut down the computer afterward).</code></pre>
+<p>During a backup job, the commands are run in this order: </p>
+<pre><code>Schedule Before
+Protected Item Before
+Storage Vault Before
+Backup
+Storage Vault After
+Protected Item After
+Schedule After</code></pre>
+<p>Shell built-ins can be used as part of the command execution - the specified command is passed to either <code>cmd.exe</code> or <code>/bin/sh</code> as appropriate for your operating system.</p>
+<span class="docsSectionMarker"><span id="schedules" class="docsSectionMarkerChild"></span></span><h4>Schedules&nbsp;<a class="docsSectionLinkIcon" href="guide-comet-backup-getting-started.html#schedules">&para;</a></h4>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/GettingStarted-16.png"><img src="images/GettingStarted-16.png.thumb.jpg" alt="" /></a></p>
+<p>Comet can run backup jobs automatically on a schedule. It is strongly recommended to automate your backups on a regular schedule. When a schedule is due to run, the backup job will run automatically into the selected Storage Vault.</p>
+<p>You can also configure <a href="/docs/user-configuration#schedules">advanced backup runtime options</a>.</p>
+<span class="docsSectionMarker"><span id="retention" class="docsSectionMarkerChild"></span></span><h4>Retention&nbsp;<a class="docsSectionLinkIcon" href="guide-comet-backup-getting-started.html#retention">&para;</a></h4>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/GettingStarted-17.png"><img src="images/GettingStarted-17.png.thumb.jpg" alt="" /></a></p>
+<p>You can configure a <a href="/docs/user-configuration#retention-storage-vault">retention</a> policy to apply just for this Protected Item. If you skip this step, the Storage Vault's own retention policy will apply. Note that a retention policy configured on a Protected Item will override the Storage Vault retention, for that specific Protected Item.</p>
+<p>Enforcing a default retention policy for all Storage Vaults within an account is possible, and can be configured on the account policy.</p>
+<span class="docsSectionMarker"><span id="policy-groups" class="docsSectionMarkerChild"></span></span><h4>Policy Groups&nbsp;<a class="docsSectionLinkIcon" href="guide-comet-backup-getting-started.html#policy-groups">&para;</a></h4>
+<p>On the Comet Server, an administrator can create and assign a <a href="/docs/user-configuration#policies">Policy</a> to each user account to enhance, or limit, certain functionalities on the backup client.
+This includes:</p>
+<pre><code>Default Retention Periods
+Default Email Reports
+Default Protected Items
+Default Schedules</code></pre>
+<p>The first policy created is the Default Policy. You should make this policy as generic as needs be, and customize this policy on a per-client basis, as you bring on-board new clients, or groups of clients and their devices.</p>
+<p>Apply customized policies to individual clients by selecting the custom-policy name via the user-profile Policy tab.</p>
+<span class="docsSectionMarker"><span id="run-the-backup" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Run the backup&nbsp;<a class="docsSectionLinkIcon" href="guide-comet-backup-getting-started.html#run-the-backup">&para;</a></h2>
+<div style="height:84px; background:#FBCF3E; color:white; padding: 10px 30px 10px 100px; text-align: left; position: relative; font-size: 140%;">
+    <div style="pointer-events:none;">
+        <a class="doc-thumbnail-popup" href="images/Email 1_Six steps-06.png"><img src="images/Email 1_Six steps-06.png.thumb.jpg" style="width:64px;height:64px; position:absolute; left:10px;"></a>
+    </div>
+    Step 6<br>
+    <strong style="color:white;">Run the backup!</strong>
+</div>
+<p>You can run the backup job immediately after creating the Protected Item. Alternatively, you can run a manual backup job at any time by clicking the large &quot;Backup&quot; text on the left side of the Comet Backup app interface.</p>
+<span class="docsSectionMarker"><span id="further-assistance" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Further assistance&nbsp;<a class="docsSectionLinkIcon" href="guide-comet-backup-getting-started.html#further-assistance">&para;</a></h2>
+<p>Please see the <a href="/docs/comet-server-configuration#comet-server-configuration">Comet Server configuration</a> documentation for a more detailed explanation of the setup process.</p>
+<p>If you need any further support, please open a ticket from inside the <a href="https://account.cometbackup.com/support">Support</a> section of cometbackup.com.</p></div><div class="doc-navigation-section"><div class="doc-navigation-back doc-navigation-width-2"><a href="guide-cometgo-getting-started.html">&laquo; Back: Getting Started with Comet-Hosted</a></div><div class="doc-navigation-next doc-navigation-width-2"><a href="guide-disk-image-walkthrough.html">Next: Disk Image Walkthrough &raquo;</a></div></div> 
+				</div>
+			</div>
+		</div>
+	
+	
+	</body>
+</html>

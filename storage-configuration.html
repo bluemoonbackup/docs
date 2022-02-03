@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="docs.css">
+		<link rel="stylesheet" type="text/css" href="magnific-popup.css">		
+		<script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="magnific-popup.1.1.0.min.js"></script>
+		<script type="text/javascript" src="lunr-2.1.0.min.js"></script>
+		<script type="text/javascript" src="docs.js"></script>
+		<title>Documentation</title>		
+	</head>
+	<body>
+	
+		<div id="header-bar">
+			<div id="header-logo"></div>
+			Documentation
+		</div>
+	
+		<div id="main-area">
+			<div id="position-nav">
+				<div id="nav-inner">
+					<ul><li><form method="GET" action="search-results.html"><input name="s" class="search-box" placeholder="Search..."></form></li>
+<li><span class="category-header">Guides</span></li>
+<li><a href="guide-getting-started.html" title="Getting Started with Self-Hosted Comet">Getting Started with Self-Hosted Comet</a></li>
+<li><a href="guide-cometgo-getting-started.html" title="Getting Started with Comet-Hosted">Getting Started with Comet-Hosted</a></li>
+<li><a href="guide-comet-backup-getting-started.html" title="Getting Started with Comet Backup">Getting Started with Comet Backup</a></li>
+<li><a href="guide-disk-image-walkthrough.html" title="Disk Image Walkthrough">Disk Image Walkthrough</a></li>
+<li><a href="guide-seedload-walkthrough.html" title="Seed Load Walkthrough">Seed Load Walkthrough</a></li>
+<li><a href="guide-disaster-recovery.html" title="Disaster Recovery">Disaster Recovery</a></li>
+<li><a href="guide-best-practices.html" title="Best Practices">Best Practices</a></li>
+<li><a href="guide-common-problems-and-solutions.html" title="Common Problems and Solutions">Common Problems and Solutions</a></li>
+<li><span class="category-header">Documentation</span></li>
+<li><a href="about-these-docs.html" title="Software Documentation">Software Documentation</a></li>
+<li><a href="application-architecture.html" title="Overview and Concepts">Overview and Concepts</a></li>
+<li><a href="comet-server-installation.html" title="Comet Server installation">Comet Server installation</a></li>
+<li><a href="comet-server-configuration.html" title="Comet Server configuration">Comet Server configuration</a></li>
+<li><a href="comet-server-usage.html" title="Comet Server usage">Comet Server usage</a></li>
+<li><a href="comet-backup-installation.html" title="Comet Backup installation">Comet Backup installation</a></li>
+<li><a href="comet-backup-usage.html" title="Comet Backup usage">Comet Backup usage</a></li>
+<li><a href="user-configuration.html" title="User configuration">User configuration</a></li>
+<li><a href="protected-items.html" title="Protected Item types">Protected Item types</a></li>
+<li class="current-page"><a data-indent="0" class="subsection-link subsection-indent-0" href="#storage-configuration" title="Storage configuration">Storage configuration</a>
+<ul>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#overview" title="Overview">Overview</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#virtual-storage-locations" title="Virtual storage locations">Virtual storage locations</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#utilizing-cloud-storage-with-comet" title="Utilizing Cloud Storage with Comet">Utilizing Cloud Storage with Comet</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#utilizing-cloud-storage-at-the-client-level-directtocloud" title="Utilizing cloud storage at the **client level** (direct-to-cloud)">Utilizing cloud storage at the **client level** (direct-to-cloud)</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#utilizing-cloud-storage-at-the-comet-server-level" title="Utilizing cloud storage at the **Comet Server level**">Utilizing cloud storage at the **Comet Server level**</a></li>
+<li><a data-indent="1" class="subsection-link subsection-indent-1" href="#available-storage-locations" title="Available storage locations">Available storage locations</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#local-path" title="Local Path">Local Path</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#configuration" title="Configuration">Configuration</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#simultaneous-connections" title="Simultaneous connections">Simultaneous connections</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#windows" title="Windows">Windows</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#comet-server-storage-role-bucket" title="Comet Server Storage Role Bucket">Comet Server Storage Role Bucket</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#configuration-2" title="Configuration">Configuration</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#simultaneous-connections-2" title="Simultaneous connections">Simultaneous connections</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#sftp" title="SFTP">SFTP</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#configuration-3" title="Configuration">Configuration</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#simultaneous-connections-3" title="Simultaneous connections">Simultaneous connections</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#ftp" title="FTP">FTP</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#configuration-4" title="Configuration">Configuration</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#simultaneous-connections-4" title="Simultaneous connections">Simultaneous connections</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#amazon-s" title="Amazon S3">Amazon S3</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#configuration-5" title="Configuration">Configuration</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#simultaneous-connections-5" title="Simultaneous connections">Simultaneous connections</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#amazon-s-china" title="Amazon S3 (China)">Amazon S3 (China)</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#configuration-6" title="Configuration">Configuration</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#simultaneous-connections-6" title="Simultaneous connections">Simultaneous connections</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#google-cloud-storage" title="Google Cloud Storage">Google Cloud Storage</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#configuration-7" title="Configuration">Configuration</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#simultaneous-connections-7" title="Simultaneous connections">Simultaneous connections</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#scompatible" title="S3-compatible">S3-compatible</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#api-compatibility" title="API Compatibility">API Compatibility</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#configuration-8" title="Configuration">Configuration</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#simultaneous-connections-8" title="Simultaneous connections">Simultaneous connections</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#wasabi" title="Wasabi">Wasabi</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#configuration-9" title="Configuration">Configuration</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#simultaneous-connections-9" title="Simultaneous connections">Simultaneous connections</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#immutability--antiransomware" title="Immutability / Anti-Ransomware">Immutability / Anti-Ransomware</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#backblaze-b-cloud-storage" title="Backblaze B2 Cloud Storage">Backblaze B2 Cloud Storage</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#configuration-10" title="Configuration">Configuration</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#alternative-connectivity" title="Alternative connectivity">Alternative connectivity</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#hiding-deleted-files" title="Hiding deleted files">Hiding deleted files</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#backblaze-b-fireball" title="Backblaze B2 Fireball">Backblaze B2 Fireball</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#azure-blob-storage" title="Azure Blob Storage">Azure Blob Storage</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#compatible-implementations" title="Compatible implementations">Compatible implementations</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#alternative-connectivity-2" title="Alternative connectivity">Alternative connectivity</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#configuration-11" title="Configuration">Configuration</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#simultaneous-connections-10" title="Simultaneous connections">Simultaneous connections</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#filebase" title="Filebase">Filebase</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#configuration-12" title="Configuration">Configuration</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#simultaneous-connections-11" title="Simultaneous connections">Simultaneous connections</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#storadera" title="Storadera">Storadera</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#configuration-13" title="Configuration">Configuration</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#simultaneous-connections-12" title="Simultaneous connections">Simultaneous connections</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#digital-ocean-spaces" title="Digital Ocean Spaces">Digital Ocean Spaces</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#configuration-14" title="Configuration">Configuration</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#simultaneous-connections-13" title="Simultaneous connections">Simultaneous connections</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#catalyst-cloud-object-storage" title="Catalyst Cloud Object Storage">Catalyst Cloud Object Storage</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#configuration-15" title="Configuration">Configuration</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#simultaneous-connections-14" title="Simultaneous connections">Simultaneous connections</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#cynny-space-the-swarm" title="Cynny Space The SwARM">Cynny Space The SwARM</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#configuration-16" title="Configuration">Configuration</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#simultaneous-connections-15" title="Simultaneous connections">Simultaneous connections</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#openstack-swift" title="OpenStack Swift">OpenStack Swift</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#configuration-17" title="Configuration">Configuration</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#simultaneous-connections-16" title="Simultaneous connections">Simultaneous connections</a></li>
+<li><a data-indent="2" class="subsection-link subsection-indent-2" href="#spanned" title="Spanned">Spanned</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#file-placement-strategy" title="File placement strategy">File placement strategy</a></li>
+<li><a data-indent="4" class="subsection-link subsection-indent-4" href="#default-automatic" title="Default (Automatic)">Default (Automatic)</a></li>
+<li><a data-indent="4" class="subsection-link subsection-indent-4" href="#static-locations" title="Static locations">Static locations</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#using-spanned-with-comet-server" title="Using &quot;Spanned&quot; with Comet Server">Using &quot;Spanned&quot; with Comet Server</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#cloud-failover" title="Cloud Failover">Cloud Failover</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#simultaneous-connections-17" title="Simultaneous connections">Simultaneous connections</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#rebalancing" title="Rebalancing">Rebalancing</a></li>
+<li><a data-indent="3" class="subsection-link subsection-indent-3" href="#expanding-available-storage-space-by-changing-storage-type-to-span" title="Expanding available storage space by changing Storage Type to Span">Expanding available storage space by changing Storage Type to Span</a></li>
+</ul>
+</li><li><a href="troubleshooting.html" title="Troubleshooting">Troubleshooting</a></li>
+<li><a href="api.html" title="API Guide">API Guide</a></li>
+<li><a href="api-reference.html" title="API Reference">API Reference</a></li>
+<li><a href="appendix.html" title="Appendix">Appendix</a></li>
+<li><a href="cloud-storage-providers.html" title="Cloud Storage Providers">Cloud Storage Providers</a></li>
+<li><a href="third-party-service-addons.html" title="Third-party service addons">Third-party service addons</a></li>
+<li><a href="comet-server-roles.html" title="Comet Server Roles ">Comet Server Roles </a></li>
+<li><a href="comet-chunking-overview.html" title="Comet Chunking Overview ">Comet Chunking Overview </a></li>
+<li><a href="security-compliance.html" title="Security &amp; Compliance">Security & Compliance</a></li>
+</ul>
+				</div>
+			</div>
+		
+			<div id="position-content">
+				<div id="content-inner">
+					<span class="docsSectionMarker"><span id="storage-configuration" class="docsSectionMarkerChild"></span></span><h1>Storage configuration&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#storage-configuration">&para;</a></h1>
+<span class="docsSectionMarker"><span id="overview" class="docsSectionMarkerChild"></span></span><div class="docs-box"><h2>Overview&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#overview">&para;</a></h2>
+<p>This document describes the storage locations available in Comet. The information applies to both (A) configuring a data storage location in Comet Server, and (B) configuring a Storage Vault location for a Comet Backup user (either locally in the Comet desktop client, or remotely via the Comet Server web interface).</p>
+<p>There is a unified storage model across both Comet Server and the Comet Backup client. This means that you can use any of the supported storage locations as a data location for a Storage Role Comet Server; or, you can configure a Storage Vault in Comet Backup to enable backing up to any of the supported storage locations.</p>
+<p>The former allows you to leverage cloud resources while still providing a completely opaque front to your customers. The latter may be more efficient and avoids double-handling the bandwidth.</p>
+<span class="docsSectionMarker"><span id="virtual-storage-locations" class="docsSectionMarkerChild"></span></span><h3>Virtual storage locations&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#virtual-storage-locations">&para;</a></h3>
+<p>As well as physical storage locations (e.g. local disk, an SFTP server, or Amazon S3), Comet also has a number of virtual storage locations available. These virtual storage locations may combine aspects of physical storage locations in order to offer additional features.</p>
+<span class="docsSectionMarker"><span id="utilizing-cloud-storage-with-comet" class="docsSectionMarkerChild"></span></span><h3>Utilizing Cloud Storage with Comet&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#utilizing-cloud-storage-with-comet">&para;</a></h3>
+<p>Comet supports any S3-compatible cloud storage provider. The cloud storage provider can be configured at the Comet Server level, or at the client level. It is recommended to setup cloud storage at the <a href="/docs/comet-server-configuration#configure-a-requestable-storage-vault-to-backup-directly-to-a-cloud-provider">client level</a> for better performance.</p>
+<span class="docsSectionMarker"><span id="utilizing-cloud-storage-at-the-client-level-directtocloud" class="docsSectionMarkerChild"></span></span><h4>Utilizing cloud storage at the <strong>client level</strong> (direct-to-cloud)&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#utilizing-cloud-storage-at-the-client-level-directtocloud">&para;</a></h4>
+<p>The backup data will go directly from the desktop client to the cloud storage provider. The cloud storage credentials will be exposed; even though the information is hidden in the Comet Backup client GUI, the customer could still discover it by network analysis or with a software debugger.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/directtocloud.png"><img src="images/directtocloud.png.thumb.jpg" alt="" /></a></p>
+<p>It's possible to use the direct-to-cloud method as a <a href="/docs/comet-server-configuration#authentication-role-request-storage-vault">requestable Storage Vault</a>. This means that you only have to setup your cloud provider details once, and then request Storage Vaults when required. Comet will manage the data within the cloud provider's bucket, and generate unique sub-directory level access keys per Storage Vault to minimize the impact this could have if the credentials are acquired.</p>
+<p>Direct-to-cloud also applies for custom Storage Vaults; ensure credentials are exclusive to the user, i.e. generated per-user credentials with separate buckets. </p>
+<p><a href="/docs/comet-server-configuration#configure-a-requestable-storage-vault-to-backup-directly-to-a-cloud-provider">Video tutorial</a></p>
+<span class="docsSectionMarker"><span id="utilizing-cloud-storage-at-the-comet-server-level" class="docsSectionMarkerChild"></span></span><h4>Utilizing cloud storage at the <strong>Comet Server level</strong>&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#utilizing-cloud-storage-at-the-comet-server-level">&para;</a></h4>
+<p>The backup data will pass through the Comet Server first and then the server will upload the data to the cloud storage provider (in memory). Cloud storage credentials won't be exposed to the client using this method. If your Comet Server is hosted in the same region as the cloud storage account, this may or may not have zero-rated bandwidth cost.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/throughservertocloud.png"><img src="images/throughservertocloud.png.thumb.jpg" alt="" /></a></p>
+<p>This method can be configured at the <a href="/docs/comet-server-configuration#storage-role">Storage Role</a> location on your Comet Server's Settings page. When setting up a Storage Vault for an account, simply assign it a <a href="/docs/comet-server-configuration#authentication-role-request-storage-vault">requestable Storage Vault</a>. Your Comet Server will automatically create subdirectories to store the data for each new Storage Vault.</p>
+<p>When using cloud storage in Comet Server as the Storage Role, the upload stream is proxied through to the cloud storage account (if possible), or buffered in memory. No data touches the local disk (no IOPS penalty). However, under memory pressure, the operating system may write to the swap file in proportion to the transfer load.</p>
+<span class="docsSectionMarker"><span id="available-storage-locations" class="docsSectionMarkerChild"></span></span></div><div class="docs-box"><h2>Available storage locations&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#available-storage-locations">&para;</a></h2>
+<span class="docsSectionMarker"><span id="local-path" class="docsSectionMarkerChild"></span></span><h3>Local Path&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#local-path">&para;</a></h3>
+<p>Data will be stored on the local filesystem.</p>
+<p class="doc-standalone-image-paragraph"><img src="images/storage-localpath.png" alt="" /></p>
+<span class="docsSectionMarker"><span id="configuration" class="docsSectionMarkerChild"></span></span><h4>Configuration&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#configuration">&para;</a></h4>
+<p>The following configuration options are available:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Requirement</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Local Path</td>
+<td>Mandatory</td>
+<td>The path to store data</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="simultaneous-connections" class="docsSectionMarkerChild"></span></span><h4>Simultaneous connections&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#simultaneous-connections">&para;</a></h4>
+<p>In this mode, Comet does not place a limit on the number of simultaneous accesses to the storage.</p>
+<span class="docsSectionMarker"><span id="windows" class="docsSectionMarkerChild"></span></span><h4>Windows&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#windows">&para;</a></h4>
+<p>Some versions of Windows have a limit of 255 characters in a path name. As of Comet Server 2.8.6, Comet works around this issue, so there is no restriction on the path length that you use for local storage.</p>
+<p>If the storage path is a mapped network drive, then ensure that you consider any path restrictions on both the mapped drive and its source drive.</p>
+<span class="docsSectionMarker"><span id="comet-server-storage-role-bucket" class="docsSectionMarkerChild"></span></span><h3>Comet Server Storage Role Bucket&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#comet-server-storage-role-bucket">&para;</a></h3>
+<p><em>In the Comet Backup client application, this option appears under a rebranded name.</em></p>
+<p>Comet Server includes the &quot;Storage Role&quot; microservice. The Storage Role is an object storage system; you can create any number of &quot;buckets&quot;, each with a secret authorization key, which can be used to store and retrieve structured data from the bucket.</p>
+<p>A Storage Role Bucket is a supported data storage location for a Comet Backup Storage Vault. In the interest of preventing confusion, Comet Server does not accept using another Storage Role Bucket as a data storage location; if you want to store data from one Comet Server on another physical Comet Server, consider enabling server replication instead.</p>
+<span class="docsSectionMarker"><span id="configuration-2" class="docsSectionMarkerChild"></span></span><h4>Configuration&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#configuration-2">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Requirement</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hostname</td>
+<td>Mandatory</td>
+<td>The URL of the Comet Server (Storage Role) hosting this bucket. The URL should include the protocol (<code>http</code>/<code>https</code>) and a trailing slash.</td>
+</tr>
+<tr>
+<td>Bucket ID</td>
+<td>Mandatory</td>
+<td>The name of the bucket.</td>
+</tr>
+<tr>
+<td>Bucket Key</td>
+<td>Mandatory</td>
+<td>The secret key, to authorize bucket access.</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="simultaneous-connections-2" class="docsSectionMarkerChild"></span></span><h4>Simultaneous connections&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#simultaneous-connections-2">&para;</a></h4>
+<p>Comet Backup makes up to 10 simultaneous connections to the Comet Server Storage Role.</p>
+<p>If multiple operations are running simultaneously in Comet Backup, the number of connections may be higher.</p>
+<span class="docsSectionMarker"><span id="sftp" class="docsSectionMarkerChild"></span></span><h3>SFTP&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#sftp">&para;</a></h3>
+<p>Data will be stored on an SFTP server, such as OpenSSH.</p>
+<span class="docsSectionMarker"><span id="configuration-3" class="docsSectionMarkerChild"></span></span><h4>Configuration&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#configuration-3">&para;</a></h4>
+<p>The following configuration options are available:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Requirement</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Address</td>
+<td>Mandatory</td>
+<td>The hostname for the SFTP server. You may specify a port by adding a <code>:22</code> suffix. The default port is <code>22</code>.</td>
+</tr>
+<tr>
+<td>Username</td>
+<td>Mandatory</td>
+<td>The username to log in to the SFTP server.</td>
+</tr>
+<tr>
+<td>Remote path</td>
+<td>Optional</td>
+<td>A remote path or subdirectory where data will be stored on the SFTP server. If the path starts with <code>/</code>, it is an absolute path. If the path does not start with <code>/</code>, the path is relative to the SFTP user's home directory.</td>
+</tr>
+<tr>
+<td>Authentication</td>
+<td>Mandatory</td>
+<td>The authentication type to log in to the SFTP server. Must be one of <code>Native</code>, <code>Password</code>, or <code>Private key</code>. In Native mode, the system OpenSSH configuration is used to log in to the server.</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>Required when Authentication is <code>Password</code></td>
+<td>The account password.</td>
+</tr>
+<tr>
+<td>Private key</td>
+<td>Required only when Authentication is <code>Private key</code></td>
+<td>The account private key, unencrypted, in OpenSSH format.</td>
+</tr>
+<tr>
+<td>Verification</td>
+<td>Required only when Authentication is not <code>Native</code></td>
+<td>Whether to verify host keys for the SFTP server. Must be one of <code>Native</code>, <code>Allow any host key</code>, or <code>Custom path to known_hosts file</code>. In Native mode, the system OpenSSH configuration is used to check known hosts.</td>
+</tr>
+<tr>
+<td><code>known_hosts</code> file</td>
+<td>Required only when Verification is <code>Custom path</code> only</td>
+<td>A local file path, used to keep track of SFTP server host keys.</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="simultaneous-connections-3" class="docsSectionMarkerChild"></span></span><h4>Simultaneous connections&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#simultaneous-connections-3">&para;</a></h4>
+<p>During a job, Comet Backup performs up to 10 simultaneous actions upon an SFTP destination.</p>
+<p>If multiple operations are running simultaneously to an SFTP Storage Vault in Comet Backup, the number of network connections may be higher.</p>
+<span class="docsSectionMarker"><span id="ftp" class="docsSectionMarkerChild"></span></span><h3>FTP&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#ftp">&para;</a></h3>
+<p>Data will be stored on an FTP server, such as FileZilla Server or ProFTPd.</p>
+<p><strong>WARNING:</strong> The FTP protocol has a number of inherent limitations, making this storage type a &quot;last resort&quot; for accessing certain remote data locations. If possible, you may achieve better performance and connectivity by using an alternative server, such as SFTP or the &quot;Local Path&quot; type over a mounted SMB or NFS share.</p>
+<span class="docsSectionMarker"><span id="configuration-4" class="docsSectionMarkerChild"></span></span><h4>Configuration&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#configuration-4">&para;</a></h4>
+<p>The following configuration options are available:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Requirement</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Address</td>
+<td>Mandatory</td>
+<td>The hostname for the FTP server. You may specify a port by adding a <code>:21</code> suffix. The default port is <code>21</code>.</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>Mandatory</td>
+<td>The FTP over TLS (FTPS) mode.</td>
+</tr>
+<tr>
+<td>Username</td>
+<td>Mandatory</td>
+<td>The username to log in to the FTP server.</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>Mandatory</td>
+<td>The account password.</td>
+</tr>
+<tr>
+<td>Use default home directory</td>
+<td>Optional</td>
+<td>Whether to store data in the FTP user's home directory.</td>
+</tr>
+<tr>
+<td>Custom directory</td>
+<td>Required only when <code>Use default home directory</code> is disabled</td>
+<td>A remote path to store data in. Paths are relative unless anchored with a leading <code>/</code>.</td>
+</tr>
+<tr>
+<td>Connections</td>
+<td>Mandatory</td>
+<td>The number of simultaneous FTP connections. The defalut connection limit is 5.</td>
+</tr>
+<tr>
+<td>Accept invalid SSL</td>
+<td>Optioinal</td>
+<td>Whether to accept invalid SSL Certificate from the FTP server.</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="simultaneous-connections-4" class="docsSectionMarkerChild"></span></span><h4>Simultaneous connections&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#simultaneous-connections-4">&para;</a></h4>
+<p>Prior to Comet 19.9.1, Comet makes 1 single network connection to the FTP server.</p>
+<p>As of Comet 19.9.1, the number of simultaneous connections can be set to the FTP server.(default 5)</p>
+<p>If multiple operations are running simultaneously to an FTP Storage Vault in Comet Backup, the number of network connections may be higher.</p>
+<span class="docsSectionMarker"><span id="amazon-s" class="docsSectionMarkerChild"></span></span><h3>Amazon S3&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#amazon-s">&para;</a></h3>
+<p><a href="https://aws.amazon.com/s3/"><img src="images/cloudprovider-amazon-s3.png" alt="Amazon S3" /></a></p>
+<p>Data will be stored in an Amazon S3 bucket.</p>
+<p>With Amazon S3, bucket names are globally unique across all of the standard regions, so it's not necessary to specify which region the bucket is contained in (e.g. <code>us-east-1</code>, <code>eu-central-1</code>) as this can be determined automatically.  </p>
+<p>If you specify a bucket name that does not exist, Comet will attempt to create it automatically in the default <code>US East (N. Virginia)</code> region.</p>
+<p>It's possible to connect to Amazon S3 using the &quot;S3-compatible&quot; storage type, however, a dedicated option is available owing to the popularity of this service.</p>
+<p>Comet supports Amazon S3 since the very first release.</p>
+<span class="docsSectionMarker"><span id="configuration-5" class="docsSectionMarkerChild"></span></span><h4>Configuration&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#configuration-5">&para;</a></h4>
+<p>The following configuration options are available:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Requirement</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access key</td>
+<td>Mandatory</td>
+<td>The access key for the Amazon S3 account</td>
+</tr>
+<tr>
+<td>Secret key</td>
+<td>Mandatory</td>
+<td>The secret key for the Amazon S3 account</td>
+</tr>
+<tr>
+<td>Bucket</td>
+<td>Mandatory</td>
+<td>The globally unique name of the storage bucket</td>
+</tr>
+<tr>
+<td>Subdirectory</td>
+<td>Optional</td>
+<td>A prefix to add to all stored blobs. This may be useful to isolate Comet's data within the bucket if the bucket is being shared with another application.</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="simultaneous-connections-5" class="docsSectionMarkerChild"></span></span><h4>Simultaneous connections&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#simultaneous-connections-5">&para;</a></h4>
+<p>Comet makes up to 10 network connections to the Amazon S3 server.</p>
+<p>If multiple operations are running simultaneously to an Amazon S3 Storage Vault in Comet Backup, the number of network connections may be higher.</p>
+<span class="docsSectionMarker"><span id="amazon-s-china" class="docsSectionMarkerChild"></span></span><h3>Amazon S3 (China)&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#amazon-s-china">&para;</a></h3>
+<p><a href="https://aws.amazon.com/s3/"><img src="images/cloudprovider-amazon-s3-china.png" alt="Amazon S3 China" /></a></p>
+<p>Data will be stored in an Amazon China S3 bucket.</p>
+<p>Most people have learned that an S3 bucket name must be unique across all regions in AWS, but this does not include the AWS China Region. Due to its special status you can have one bucket in the China region and one in a global region which both use the same name. The current avaiable Amazon China regions are <code>China (Beijing) Isolated Region</code> and <code>China (Ningxia) Isolated Region</code>.</p>
+<p>It's possible to connect to Amazon China S3 using the &quot;S3-compatible&quot; storage type, however, a dedicated option is available owing to the popularity of this service.</p>
+<span class="docsSectionMarker"><span id="configuration-6" class="docsSectionMarkerChild"></span></span><h4>Configuration&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#configuration-6">&para;</a></h4>
+<p>The following configuration options are available:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Requirement</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Region</td>
+<td>Mandatory</td>
+<td>The endpoint for accessing Amazon China S3</td>
+</tr>
+<tr>
+<td>Access key</td>
+<td>Mandatory</td>
+<td>The access key for the Amazon China S3 account</td>
+</tr>
+<tr>
+<td>Secret key</td>
+<td>Mandatory</td>
+<td>The secret key for the Amazon China S3 account</td>
+</tr>
+<tr>
+<td>Bucket</td>
+<td>Mandatory</td>
+<td>The globally unique name of the storage bucket</td>
+</tr>
+<tr>
+<td>Subdirectory</td>
+<td>Optional</td>
+<td>A prefix to add to all stored blobs. This may be useful to isolate Comet's data within the bucket if the bucket is being shared with another application.</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="simultaneous-connections-6" class="docsSectionMarkerChild"></span></span><h4>Simultaneous connections&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#simultaneous-connections-6">&para;</a></h4>
+<p>Comet makes up to 10 network connections to the Amazon China S3 server.</p>
+<p>If multiple operations are running simultaneously to an Amazon China S3 Storage Vault in Comet Backup, the number of network connections may be higher.</p>
+<span class="docsSectionMarker"><span id="google-cloud-storage" class="docsSectionMarkerChild"></span></span><h3>Google Cloud Storage&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#google-cloud-storage">&para;</a></h3>
+<p><a href="https://cloud.google.com/storage/"><img src="images/cloudprovider-google-gcp.png" alt="Google Cloud Storage" /></a></p>
+<p>Google Cloud Storage is an S3-compatible storage product within the Google Cloud Platform.</p>
+<p>It's possible to connect to Google Cloud Storage using the &quot;S3-compatible&quot; storage type, however, a dedicated option is available owing to the popularity of this service.</p>
+<p>You can retrieve credentials under the &quot;Interoperability&quot; section of the Google Cloud Platform web interface.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/google-cloud-storage-interoperability.png"><img src="images/google-cloud-storage-interoperability.png.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="configuration-7" class="docsSectionMarkerChild"></span></span><h4>Configuration&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#configuration-7">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Requirement</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access key</td>
+<td>Mandatory</td>
+<td>The access key for the Google Cloud Platform account</td>
+</tr>
+<tr>
+<td>Secret key</td>
+<td>Mandatory</td>
+<td>The secret key for the Google Cloud Platform account</td>
+</tr>
+<tr>
+<td>Bucket</td>
+<td>Mandatory</td>
+<td>The globally unique name of the storage bucket</td>
+</tr>
+<tr>
+<td>Subdirectory</td>
+<td>Optional</td>
+<td>A prefix to add to all stored blobs. This may be useful to isolate Comet's data within the bucket if the bucket is being shared with another application.</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="simultaneous-connections-7" class="docsSectionMarkerChild"></span></span><h4>Simultaneous connections&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#simultaneous-connections-7">&para;</a></h4>
+<p>Comet makes up to 10 network connections to the Google Cloud Storage server.</p>
+<p>If multiple operations are running simultaneously to a Google Cloud Storage Storage Vault in Comet Backup, the number of network connections may be higher.</p>
+<span class="docsSectionMarker"><span id="scompatible" class="docsSectionMarkerChild"></span></span><h3>S3-compatible&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#scompatible">&para;</a></h3>
+<p>The protocol for object storage on Amazon S3 eventually became widespread enough to be called a pseudo-standard. A number of alternative storage providers offer S3-compatible object storage, in order to interoperate with the large body of available software and services surrounding this pseudo-standard.</p>
+<p>A number of commercial storage providers offer an S3-compatible API. For more information about S3-compatible cloud storage providers, please see the &quot;Cloud Storage Providers&quot; document.</p>
+<p>Alternatively, you can run your own S3-compatible storage server as a replacement for Comet Server's Storage Role. A number of server software packages are available for this purpose, such as </p>
+<ul>
+<li><a href="https://www.minio.io/">Minio</a></li>
+<li><a href="https://docs.openstack.org/developer/swift/">OpenStack Swift</a></li>
+<li><a href="http://ceph.com/ceph-storage/object-storage/">Ceph Object Store</a></li>
+<li><a href="http://www.openio.io/">OpenIO</a></li>
+<li><a href="https://leo-project.net/leofs/">LeoFS</a></li>
+<li><a href="http://pithos.io/">Pithos</a> on <a href="http://cassandra.apache.org/">Apache Cassandra</a></li>
+<li><a href="https://www.zenko.io/">Scality Zenko CloudServer</a> (formerly Scality S3 Server)</li>
+<li><a href="https://github.com/chrislusf/seaweedfs">SeaweedFS</a></li>
+<li>Read more on <a href="https://en.wikipedia.org/wiki/Amazon_S3#S3_API_and_competing_services">Wikipedia</a></li>
+</ul>
+<span class="docsSectionMarker"><span id="api-compatibility" class="docsSectionMarkerChild"></span></span><h4>API Compatibility&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#api-compatibility">&para;</a></h4>
+<p>Comet uses S3's streaming APIs to improve performance. You should ensure that any S3-compatible server implements streaming APIs in order to maintain compatibility.</p>
+<p>In late August 2017, the S3-compatible storage provider <a href="https://wasabi.com/">Wasabi</a> added support for S3's streaming APIs, and is now compatible with all versions of Comet Backup.</p>
+<span class="docsSectionMarker"><span id="configuration-8" class="docsSectionMarkerChild"></span></span><h4>Configuration&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#configuration-8">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Requirement</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hostname</td>
+<td>Mandatory</td>
+<td>The hostname for the S3-compatible server.</td>
+</tr>
+<tr>
+<td>Access key</td>
+<td>Mandatory</td>
+<td>The access key for your user account</td>
+</tr>
+<tr>
+<td>Secret key</td>
+<td>Mandatory</td>
+<td>The secret key for your user account</td>
+</tr>
+<tr>
+<td>Bucket</td>
+<td>Mandatory</td>
+<td>The bucket in which to store all data</td>
+</tr>
+<tr>
+<td>Subdirectory</td>
+<td>Optional</td>
+<td>A prefix to apply to all objects stored in the bucket</td>
+</tr>
+<tr>
+<td>Use encrypted transmission</td>
+<td>Optional</td>
+<td>Whether to access the S3-compatible server using the HTTPS protocol. Data is encrypted and authenticated regardless of whether HTTPS is in use.</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="simultaneous-connections-8" class="docsSectionMarkerChild"></span></span><h4>Simultaneous connections&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#simultaneous-connections-8">&para;</a></h4>
+<p>Comet makes up to 10 network connections to the S3-compatible Storage server.</p>
+<p>If multiple operations are running simultaneously to an S3-compatible Storage Vault in Comet Backup, the number of network connections may be higher.</p>
+<span class="docsSectionMarker"><span id="wasabi" class="docsSectionMarkerChild"></span></span><h3>Wasabi&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#wasabi">&para;</a></h3>
+<p><a href="https://wasabi.com/"><img src="images/cloudprovider-wasabi.png" alt="Wasabi Cloud Storage" /></a></p>
+<p>Wasabi Cloud Storage is an S3-compatible storage product.</p>
+<p>It's possible to connect to Wasabi Cloud Storage using the &quot;S3-compatible&quot; storage type, however, a dedicated option is available owing to the popularity of this service.</p>
+<p>You can retrieve your access keys under the hamburger button on the top left section and then clicking on <strong>Access Keys</strong></p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/wasabikey.PNG"><img src="images/wasabikey.PNG.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="configuration-9" class="docsSectionMarkerChild"></span></span><h4>Configuration&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#configuration-9">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Requirement</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access key</td>
+<td>Mandatory</td>
+<td>The access key for the Wasabi Cloud Storage account</td>
+</tr>
+<tr>
+<td>Secret key</td>
+<td>Mandatory</td>
+<td>The secret key for the Wasabi Cloud Storage account</td>
+</tr>
+<tr>
+<td>Bucket</td>
+<td>Mandatory</td>
+<td>The globally unique name of the storage bucket</td>
+</tr>
+<tr>
+<td>Subdirectory</td>
+<td>Optional</td>
+<td>A prefix to add to all stored blobs. This may be useful to isolate Comet's data within the bucket if the bucket is being shared with another application.</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="simultaneous-connections-9" class="docsSectionMarkerChild"></span></span><h4>Simultaneous connections&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#simultaneous-connections-9">&para;</a></h4>
+<p>Comet makes up to 10 network connections to the Wasabi Cloud Storage server.</p>
+<p>If multiple operations are running simultaneously to a Wasabi Cloud Storage Storage Vault in Comet Backup, the number of network connections may be higher.</p>
+<span class="docsSectionMarker"><span id="immutability--antiransomware" class="docsSectionMarkerChild"></span></span><h4>Immutability / Anti-Ransomware&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#immutability--antiransomware">&para;</a></h4>
+<p>If malicious software gains access to the access key and secret key used by Comet, it would be able to delete files within the Wasabi storage location. Comet is not able to defend against misuse of these credentials - however, the Wasabi storage platform does offers multiple features for defending against this:</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/wasabi-bucket-versioning.png"><img src="images/wasabi-bucket-versioning.png.thumb.jpg" alt="" /></a></p>
+<p><strong><a href="https://wasabi.com/wp-content/themes/wasabi/docs/User_Guide/topics/Enabling_Compliance.htm">Compliance mode</a></strong></p>
+<p>Comet does not support the Wasabi Compliance Mode. Comet needs to have read/write access to the backups, and Compliance Mode will prevent this.</p>
+<p>Enabling Compliance Mode, even if disabling afterwards, may have unwanted consequences, and therefore enabling Compliance Mode is not recommended.</p>
+<p><strong><a href="https://wasabi.com/object-lock/">Object Locking</a></strong></p>
+<p>Comet does not support Object Lock. Comet never modifies a file after creation, and almost all files are named after their SHA256 hash to reinforce this immutability; however, Comet does require the regular ability to delete files (such as for index rollup, retention passes, lock file management) and Object Lock will prevent this. It is not currently suitable for use with Comet.</p>
+<p><strong><a href="https://wasabi.com/wp-content/themes/wasabi/docs/User_Guide/topics/Enabling_Disabling_Bucket_Versioning.htm">Bucket Versioning</a></strong></p>
+<p>Comet does support Bucket Versioning. It is safe to enable this feature in Wasabi for use with Comet. No additional configuration is required within Comet itself.</p>
+<p>When you enable Bucket Versioning for a Wasabi bucket, each file stored in that bucket is redefined to comprise of a stack of versions. In this mode, when Comet (or any malicious software using Comet's access key / secret key pair) goes to delete a file, then instead of it being actually deleted, a &quot;delete marker&quot; or &quot;tombstone version&quot; is placed on top of the file's version stack.</p>
+<p>A &quot;tombstoned&quot; file generally seems to have been deleted; it is not available via regular use of the access key. The file will appear to be missing when viewing a subdirectory and will not be available for download. However, such files can later be undeleted by removing the tombstone from on top of the version stack.</p>
+<p>When using Bucket Versioning there are some further key points to be aware of:</p>
+<ul>
+<li>Cost
+<ul>
+<li>Wasabi will continue to charge you for the ongoing storage of deleted files, until the entire version-stack is deleted.</li>
+</ul></li>
+<li>Regaining access to deleted files
+<ul>
+<li>You can regain access to deleted files by removing the &quot;tombstone&quot; from each of the version stacks.</li>
+<li>Because Comet never modifies a file after creation, one way to achieve this is to delete the top-most version from all files that have multiple versions in their version stack. This may cause some excess files to reappear, but a single retention pass and/or Unlock operation should resolve any issues.</li>
+<li>Another way to achieve this is to use timestamp metadata on each files' version stack to roll back the versioned-bucket to a specific point in time.</li>
+<li>This operation can be performed in bulk from the command-line via an S3 command-line tool such as <a href="https://docs.min.io/minio/baremetal/reference/minio-cli/minio-mc.html">Minio Client</a>, <a href="https://aws.amazon.com/cli/">awscli</a>, or <a href="https://s3tools.org/s3cmd">s3cmd</a>: e.g.</li>
+<li><code>mc rm --recursive --rewind "2021.11.29"</code> (<a href="https://docs.min.io/minio/baremetal/reference/minio-cli/minio-mc/mc-rm.html#roll-object-back-to-previous-version">Read more</a>)</li>
+</ul></li>
+<li>Lifecycle policy
+<ul>
+<li>To avoid ever-increasing costs, it is important to periodically delete tombstoned files in order to reduce costs. For instance, you may want to fully delete a file from Wasabi 90 days after it has been tombstoned.</li>
+<li>This extra time period is in addition to the retention policy configured within Comet itself.</li>
+<li><em>(As of November 2021)</em> Wasabi does not currently have built-in retention settings for the Bucket Versioning feature. It does have built-in retention settings for the Compliance Mode feature and we do expect this to become available for Bucket Versioning in the near future.</li>
+<li>Until that time, you can periodically prune tombstoned files either </li>
+<li>Manually, by following Wasabi's instructions at <a href="https://wasabi-support.zendesk.com/hc/en-us/articles/360042534431-How-do-I-delete-old-object-versions">https://wasabi-support.zendesk.com/hc/en-us/articles/360042534431-How-do-I-delete-old-object-versions</a>- ; or</li>
+<li>In bulk, by running Wasabi's example python script at <a href="https://wasabi-support.zendesk.com/hc/en-us/articles/360045760851-How-do-I-mass-delete-current-and-non-current-objects-inside-a-bucket">https://wasabi-support.zendesk.com/hc/en-us/articles/360045760851-How-do-I-mass-delete-current-and-non-current-objects-inside-a-bucket</a>-</li>
+</ul></li>
+<li>Permissions
+<ul>
+<li>The additional security of this model is predicated on Comet's access key / secret key not having permission to delete entire version stacks (<code>s3:DeleteObjectVersion</code>), and only being able to tombstone a file (<code>s3:DeleteObject</code>).</li>
+<li>If you use the Requestable Storage Vault feature in Comet Server to automatically provision new access key / secret key pairs for each customer, they only have the more restricted <code>s3:DeleteObject</code> API available. For a versioning-enabled bucket, this means that deletions will only tombstone a file instead of deleting the entire version stack.</li>
+<li>If you use the root Wasabi key, it has permission to delete entire version stacks. Although Comet will still only call the <code>s3:DeleteObject</code> API, to tombstone a file instead of deleting it, any malicious user who gains access to these keys would still be able to delete the entire version stack via the broader <code>s3:DeleteObjectVersion</code> API, meaning that you do not gain any additional security from enabling this feature.</li>
+<li>If you are declaring a custom IAM policy document, please consider taking the above detail into account in the <code>Action</code> array.</li>
+</ul></li>
+</ul>
+<span class="docsSectionMarker"><span id="backblaze-b-cloud-storage" class="docsSectionMarkerChild"></span></span><h3>Backblaze B2 Cloud Storage&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#backblaze-b-cloud-storage">&para;</a></h3>
+<p><a href="https://www.backblaze.com/b2/cloud-storage.html"><img src="images/cloudprovider-backblazeb2.png" alt="Backblaze B2" /></a></p>
+<p>B2 is a low-cost storage offering from Backblaze.</p>
+<p>BackBlaze B2 supports multiple Application Keys for different access permission to B2 Buckets. You can configure Comet to use either the Master Application Key, or a per-bucket Application Key.</p>
+<span class="docsSectionMarker"><span id="configuration-10" class="docsSectionMarkerChild"></span></span><h4>Configuration&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#configuration-10">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Requirement</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Application key ID / Account ID</td>
+<td>Mandatory</td>
+<td>If you are using the Master Application Key, enter the Account ID for your Backblaze B2 account here. For a per-bucket Application Key, enter the Application Key ID.</td>
+</tr>
+<tr>
+<td>Application key</td>
+<td>Mandatory</td>
+<td>Enter your Master Application Key or for per-bucket, enter the Application key (this is shown when creating the Application key).</td>
+</tr>
+<tr>
+<td>Bucket name</td>
+<td>Mandatory</td>
+<td>The bucket in which to store all data</td>
+</tr>
+<tr>
+<td>Subdirectory</td>
+<td>Optional</td>
+<td>A prefix to apply to all objects stored in the bucket</td>
+</tr>
+<tr>
+<td>Hide files rather than delete them</td>
+<td>Optional</td>
+<td>When enabled, Comet will hide files rather than deleting them from the bucket when deleting old backups. This setting should only be enabled alongside bucket lifecycle rules which remove hidden files after a certain length of time; see <a href="/docs/storage-configuration#hiding-deleted-files">Hiding deleted files</a> for more information.</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="alternative-connectivity" class="docsSectionMarkerChild"></span></span><h4>Alternative connectivity&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#alternative-connectivity">&para;</a></h4>
+<p>As an alternative, you can also access Backblaze B2 Cloud Storage using the &quot;S3-compatible&quot; storage type if you run a S3-to-B2 gateway server, such as <a href="https://blog.minio.io/experimental-amazon-s3-api-support-for-backblaze-b2-cloud-storage-service-685e0f35a6d7">Minio</a>.</p>
+<span class="docsSectionMarker"><span id="hiding-deleted-files" class="docsSectionMarkerChild"></span></span><h4>Hiding deleted files&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#hiding-deleted-files">&para;</a></h4>
+<p>Comet supports hiding files which would be deleted from a B2 bucket rather than deleting them. This setting provides improved protection against ransomware; when this setting is enabled, Comet can use keys which do not have the B2 <code>deleteFiles</code> capability (see <a href="https://www.backblaze.com/b2/docs/application_keys.html#capabilities">Application Keys</a>) and thus cannot delete files from the bucket, preventing a compromised key from being used to delete backed up data. While this setting can be enabled and used with a key that <em>does</em> have the <code>deleteFiles</code> capability, it does not offer improved protection against ransomware in this configuration, as if compromised the key can still be used to delete files.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/b2-hide-files-web-vault-creator.png"><img src="images/b2-hide-files-web-vault-creator.png.thumb.jpg" alt="File hiding in the Web UI Vault Creator" /></a></p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/b2-hide-files-desktop-vault-creator.png"><img src="images/b2-hide-files-desktop-vault-creator.png.thumb.jpg" alt="File hiding in the Desktop UI Vault Creator" /></a></p>
+<p>This setting should only be enabled alongside bucket lifecycle rules which remove hidden files after a certain length of time. If no such rule is enabled, Comet will not delete old files and the bucket size can grow indefinitely. See the <a href="https://www.backblaze.com/b2/docs/lifecycle_rules.html">B2 Lifecycle Rules</a> documentation for more information on setting up appropriate rules.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/b2-lifecycle-rules.png"><img src="images/b2-lifecycle-rules.png.thumb.jpg" alt="Backblaze B2 Lifecycle Rules" /></a></p>
+<p>When this setting is enabled, <a href="/docs/comet-server-configuration#configure-a-requestable-storage-vault-to-backup-directly-to-a-cloud-provider">Requestable Storage Vaults</a> will automatically generate keys which do not have the <code>deleteFiles</code> capability. It is safe to toggle this setting on or off for an existing Requestable Storage Vault; future keys generated by the Requestable Storage Vault will reflect the changed setting, while existing requested Storage Vaults and keys will be unaffected and will continue to use the setting value from the time at which the Storage Vault was requested.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/b2-rsv-file-hiding-toggle.png"><img src="images/b2-rsv-file-hiding-toggle.png.thumb.jpg" alt="Toggling B2 file hiding on a Requestable Storage Vault" /></a></p>
+<p>Comet does not automatically detect the capabilities of the key that is used for a storage vault. If a storage vault that uses a key without the <code>deleteFiles</code> capability has this option toggled off, it will attempt and fail to delete files in future operations. To remedy this, when this option is toggled off the vault should also be updated to use a key with the <code>deleteFiles</code> capability.</p>
+<span class="docsSectionMarker"><span id="backblaze-b-fireball" class="docsSectionMarkerChild"></span></span><h4>Backblaze B2 Fireball&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#backblaze-b-fireball">&para;</a></h4>
+<p><a href="https://www.backblaze.com/b2/solutions/datatransfer/fireball.html"><img src="images/backblazefireball.png" alt="Backblaze B2 Fireball" /></a></p>
+<p>To perform a backup to the Backblaze Fireball, connect your Backblaze Fireball to your network or computer and ensure the <strong>SFTP</strong> is enabled.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/backblazeimg.jpg"><img src="images/backblazeimg.jpg.thumb.jpg" alt="SFTP" /></a></p>
+<p>On the Comet client in the <strong>Account</strong> tab, select <strong>+ Add Storage Vault</strong> and click <strong>Custom</strong>.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/backblaze1.PNG"><img src="images/backblaze1.PNG.thumb.jpg" alt="" /></a></p>
+<p>Create a name and in the <strong>Storage</strong> tab, select the <strong>SFTP</strong> option.
+Enter the Fireball’s address, path, username and password (change <strong>Authentication</strong> to <strong>Password</strong>).</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/backblaze2.PNG"><img src="images/backblaze2.PNG.thumb.jpg" alt="" /></a></p>
+<p>Now you can backup to Backblaze Fireball.</p>
+<p>After you have backed up the data to the Fireball, follow Backblaze’s instructions to courier the Fireball to their datacentre. You will then need to update the storage vault details so that it points to the Backblaze B2 bucket.</p>
+<span class="docsSectionMarker"><span id="azure-blob-storage" class="docsSectionMarkerChild"></span></span><h3>Azure Blob Storage&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#azure-blob-storage">&para;</a></h3>
+<p><a href="https://azure.microsoft.com/en-us/"><img src="images/cloudprovider-azure.png" alt="Microsoft Azure" /></a></p>
+<p>Azure Blob Storage is a public-cloud object storage service operated by Microsoft under the Azure branding.</p>
+<span class="docsSectionMarker"><span id="compatible-implementations" class="docsSectionMarkerChild"></span></span><h4>Compatible implementations&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#compatible-implementations">&para;</a></h4>
+<p>Comet's support for Azure Blob Storage can also be used to connect to third-party storage services that are compatible with the Azure Blob Storage API.</p>
+<p>You can enter a custom &quot;Realm Address&quot; in the configuration to use a third-party storage service.</p>
+<p>Comet is compatible with storage providers based on</p>
+<ul>
+<li>Microsoft Azure Stack</li>
+<li><a href="https://github.com/arafato/azurite">Azurite</a></li>
+<li>Microsoft Azure Storage Emulator <em>(not recommended for production data storage)</em></li>
+</ul>
+<span class="docsSectionMarker"><span id="alternative-connectivity-2" class="docsSectionMarkerChild"></span></span><h4>Alternative connectivity&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#alternative-connectivity-2">&para;</a></h4>
+<p>You can access Azure Blob Storage using the &quot;S3-compatible&quot; storage type if you run a S3-to-Azure gateway server, such as <a href="https://github.com/minio/minio/blob/master/docs/gateway/azure.md">Minio</a>.</p>
+<span class="docsSectionMarker"><span id="configuration-11" class="docsSectionMarkerChild"></span></span><h4>Configuration&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#configuration-11">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Requirement</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Realm address</td>
+<td>Mandatory</td>
+<td>The hostname or URL for the Azure Blob Storage realm (usually <code>core.windows.net</code>). Use a scheme-qualified URI (e.g. <code>http://</code>) in order to toggle TLS.</td>
+</tr>
+<tr>
+<td>Account name</td>
+<td>Mandatory</td>
+<td>The name of your user account</td>
+</tr>
+<tr>
+<td>Account key</td>
+<td>Mandatory</td>
+<td>The key for your user account</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Mandatory</td>
+<td>The container in which to store all data</td>
+</tr>
+<tr>
+<td>Subdirectory</td>
+<td>Optional</td>
+<td>A prefix to apply to all objects stored in the container</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="simultaneous-connections-10" class="docsSectionMarkerChild"></span></span><h4>Simultaneous connections&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#simultaneous-connections-10">&para;</a></h4>
+<p>During a job, Comet Backup performs up to 10 simultaneous actions upon an Azure Blob Storage destination. </p>
+<p>If multiple operations are running simultaneously to a Azure Blob Storage -based Storage Vault in Comet Backup, the number of network connections may be higher.</p>
+<span class="docsSectionMarker"><span id="filebase" class="docsSectionMarkerChild"></span></span><h3>Filebase&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#filebase">&para;</a></h3>
+<p><a href="https://filebase.com/"><img src="images/cloudprovider-filebase.png" alt="Filebase" /></a></p>
+<p>Filebase Cloud Storage is an S3-compatible storage product powered by Blockchain.</p>
+<p>It's possible to connect to Filebase using the &quot;S3-compatible&quot; storage type, however, a dedicated option is available owing to the popularity of this service.</p>
+<p>To perform a backup to the Filebase, on the Comet client in the <strong>Account</strong> tab, select <strong>+ Add Storage Vault</strong> and click <strong>Custom</strong>.
+Create a name and in the <strong>Storage</strong> tab, click the <strong>+</strong> button.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/filebase1.PNG"><img src="images/filebase1.PNG.thumb.jpg" alt="" /></a></p>
+<p>Select <strong>Filebase</strong> option and click <strong>OK</strong> button.  </p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/filebase2.PNG"><img src="images/filebase2.PNG.thumb.jpg" alt="" /></a></p>
+<p>Enter the Filebase <strong>Access key</strong>, <strong>Secret key</strong> and <strong>Bucket</strong>. You can test the connectivity to Filebase storage by clicking the <strong>Test Connection</strong> button.  </p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/filebase3.PNG"><img src="images/filebase3.PNG.thumb.jpg" alt="" /></a></p>
+<p>You can retrieve your access keys by clicking on <strong>Access Keys</strong> on the left section</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/filebase-key.PNG"><img src="images/filebase-key.PNG.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="configuration-12" class="docsSectionMarkerChild"></span></span><h4>Configuration&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#configuration-12">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Requirement</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access key</td>
+<td>Mandatory</td>
+<td>The key for the Filebase Cloud Storage account</td>
+</tr>
+<tr>
+<td>Secret key</td>
+<td>Mandatory</td>
+<td>The secret for the Filebase Cloud Storage account</td>
+</tr>
+<tr>
+<td>Bucket</td>
+<td>Mandatory</td>
+<td>The globally unique name of the storage bucket</td>
+</tr>
+<tr>
+<td>Subdirectory</td>
+<td>Optional</td>
+<td>A prefix to add to all stored blobs. This may be useful to isolate Comet's data within the bucket if the bucket is being shared with another application.</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="simultaneous-connections-11" class="docsSectionMarkerChild"></span></span><h4>Simultaneous connections&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#simultaneous-connections-11">&para;</a></h4>
+<p>Comet makes up to 10 network connections to the Filebase Cloud Storage server.</p>
+<p>If multiple operations are running simultaneously to a Filebase Cloud Storage Storage Vault in Comet Backup, the number of network connections may be higher.</p>
+<span class="docsSectionMarker"><span id="storadera" class="docsSectionMarkerChild"></span></span><h3>Storadera&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#storadera">&para;</a></h3>
+<p><a href="https://storadera.com/"><img src="images/cloudprovider-storadera.png" alt="Storadera" /></a></p>
+<p>Storadera Cloud Storage is an S3-compatible storage product.</p>
+<p>It's possible to connect to Storadera using the &quot;S3-compatible&quot; storage type, however, a dedicated option is available owing to the popularity of this service.</p>
+<p>You can retrieve your access keys by navigating <strong>Keys</strong> on the top section and then clicking on <strong>Create</strong>.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/storadera-key.PNG"><img src="images/storadera-key.PNG.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="configuration-13" class="docsSectionMarkerChild"></span></span><h4>Configuration&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#configuration-13">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Requirement</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access key</td>
+<td>Mandatory</td>
+<td>The access key id for the Storadera Cloud Storage account</td>
+</tr>
+<tr>
+<td>Secret key</td>
+<td>Mandatory</td>
+<td>The secret access key for the Storadera Cloud Storage account</td>
+</tr>
+<tr>
+<td>Bucket</td>
+<td>Mandatory</td>
+<td>The globally unique name of the storage bucket</td>
+</tr>
+<tr>
+<td>Subdirectory</td>
+<td>Optional</td>
+<td>A prefix to add to all stored blobs. This may be useful to isolate Comet's data within the bucket if the bucket is being shared with another application.</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="simultaneous-connections-12" class="docsSectionMarkerChild"></span></span><h4>Simultaneous connections&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#simultaneous-connections-12">&para;</a></h4>
+<p>Comet makes up to 10 network connections to the Storadera Cloud Storage server.</p>
+<p>If multiple operations are running simultaneously to a Storadera Cloud Storage Storage Vault in Comet Backup, the number of network connections may be higher.</p>
+<span class="docsSectionMarker"><span id="digital-ocean-spaces" class="docsSectionMarkerChild"></span></span><h3>Digital Ocean Spaces&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#digital-ocean-spaces">&para;</a></h3>
+<p><a href="https://www.digitalocean.com/products/spaces/"><img src="images/cloudprovider-digitalocean.png" alt="DigitalOcean Spaces Cloud Object Storage" /></a></p>
+<p>Digital Ocean Spaces is an S3-compatible storage product with a built-in CDN. The current avaiable Digital Ocean Spaces regions are <code>San Francisco Region</code>, <code>Frankfurt Region</code>, <code>Amsterdam Region</code>, <code>New York Region</code> and <code>Singapore Region</code>.</p>
+<p>It's possible to connect to Digital Ocean Spaces using the &quot;S3-compatible&quot; storage type, however, a dedicated option is available owing to the popularity of this service.</p>
+<p>You can retrieve your access keys by navigating <strong>API</strong> on the left section and then clicking on <strong>Generate New Key</strong> on the Space access keys section.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/digital-ocean-spaces-key.png"><img src="images/digital-ocean-spaces-key.png.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="configuration-14" class="docsSectionMarkerChild"></span></span><h4>Configuration&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#configuration-14">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Requirement</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access key</td>
+<td>Mandatory</td>
+<td>The key for the Digital Ocean Spaces</td>
+</tr>
+<tr>
+<td>Secret key</td>
+<td>Mandatory</td>
+<td>The secret for the Digital Ocean Spaces</td>
+</tr>
+<tr>
+<td>Bucket</td>
+<td>Mandatory</td>
+<td>The globally unique name of the storage bucket</td>
+</tr>
+<tr>
+<td>Subdirectory</td>
+<td>Optional</td>
+<td>A prefix to add to all stored blobs. This may be useful to isolate Comet's data within the bucket if the bucket is being shared with another application.</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="simultaneous-connections-13" class="docsSectionMarkerChild"></span></span><h4>Simultaneous connections&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#simultaneous-connections-13">&para;</a></h4>
+<p>Comet makes up to 10 network connections to the Digital Ocean Spaces server.</p>
+<p>If multiple operations are running simultaneously to a Digital Ocean Storage Vault in Comet Backup, the number of network connections may be higher.</p>
+<span class="docsSectionMarker"><span id="catalyst-cloud-object-storage" class="docsSectionMarkerChild"></span></span><h3>Catalyst Cloud Object Storage&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#catalyst-cloud-object-storage">&para;</a></h3>
+<p><a href="https://catalystcloud.nz/"><img src="images/cloudprovider-catalyst.png" alt="Catalyst Cloud" /></a></p>
+<p>Catalyst Cloud Object Storage is an S3-compatible storage product based in New Zealand. The Catalyst Cloud has three regions (separate geographical locations) that can operate independently of each other. Each region provides local redundancy and high availability for increased service levels. The current avaiable regions are <code>New Zealand Hamilton Region</code>, <code>New Zealand Porirua Region</code> and <code>New Zealand Wellington Region</code>.</p>
+<p>It's possible to connect to Catalyst Cloud Object Storage using the &quot;S3-compatible&quot; storage type, however, a dedicated option is also available.</p>
+<p>You can retrieve your access keys by navigating <strong>API Access</strong> on the left section and then clicking on <strong>Create EC2 Credentials</strong>.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/catalyst-cloud-key.png"><img src="images/catalyst-cloud-key.png.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="configuration-15" class="docsSectionMarkerChild"></span></span><h4>Configuration&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#configuration-15">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Requirement</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access key</td>
+<td>Mandatory</td>
+<td>The EC2 Access Key for the Catalyst Cloud account</td>
+</tr>
+<tr>
+<td>Secret key</td>
+<td>Mandatory</td>
+<td>The EC2 Secret Key for the Catalyst Cloud account</td>
+</tr>
+<tr>
+<td>Bucket</td>
+<td>Mandatory</td>
+<td>The globally unique name of the storage bucket</td>
+</tr>
+<tr>
+<td>Subdirectory</td>
+<td>Optional</td>
+<td>A prefix to add to all stored blobs. This may be useful to isolate Comet's data within the bucket if the bucket is being shared with another application.</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="simultaneous-connections-14" class="docsSectionMarkerChild"></span></span><h4>Simultaneous connections&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#simultaneous-connections-14">&para;</a></h4>
+<p>Comet makes up to 10 network connections to the Catalyst Cloud server.</p>
+<p>If multiple operations are running simultaneously to a Catalyst Cloud Storage Vault in Comet Backup, the number of network connections may be higher.</p>
+<span class="docsSectionMarker"><span id="cynny-space-the-swarm" class="docsSectionMarkerChild"></span></span><h3>Cynny Space The SwARM&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#cynny-space-the-swarm">&para;</a></h3>
+<p><a href="https://www.theswarm.co/"><img src="images/cloudprovider-cynnyspace.png" alt="European Cloud Hosting" /></a></p>
+<p>Cynny Space The SwARM is an S3-compatible storage product based on ARM CPU. The current avaiable regions are <code>Italy Isolated Region 1</code> and <code>Italy Isolated Region 2</code>.</p>
+<p>It's possible to connect to Cynny Space The SwARM using the &quot;S3-compatible&quot; storage type, however, a dedicated option is also available.</p>
+<p>You can retrieve your access keys by navigating <strong>S3 Access</strong> on the left section.</p>
+<p class="doc-standalone-image-paragraph"><a class="doc-thumbnail-popup" href="images/cynny-space-key.png"><img src="images/cynny-space-key.png.thumb.jpg" alt="" /></a></p>
+<span class="docsSectionMarker"><span id="configuration-16" class="docsSectionMarkerChild"></span></span><h4>Configuration&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#configuration-16">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Requirement</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access key</td>
+<td>Mandatory</td>
+<td>The S3 compatible API access key for the Cynny Space account</td>
+</tr>
+<tr>
+<td>Secret key</td>
+<td>Mandatory</td>
+<td>The S3 secret key for the Cynny Space account</td>
+</tr>
+<tr>
+<td>Bucket</td>
+<td>Mandatory</td>
+<td>The globally unique name of the storage bucket</td>
+</tr>
+<tr>
+<td>Subdirectory</td>
+<td>Optional</td>
+<td>A prefix to add to all stored blobs. This may be useful to isolate Comet's data within the bucket if the bucket is being shared with another application.</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="simultaneous-connections-15" class="docsSectionMarkerChild"></span></span><h4>Simultaneous connections&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#simultaneous-connections-15">&para;</a></h4>
+<p>Comet makes up to 10 network connections to the Cynny Space The SwARM server.</p>
+<p>If multiple operations are running simultaneously to a Cynny Space Storage Vault in Comet Backup, the number of network connections may be higher.</p>
+<span class="docsSectionMarker"><span id="openstack-swift" class="docsSectionMarkerChild"></span></span><h3>OpenStack Swift&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#openstack-swift">&para;</a></h3>
+<p><a href="https://www.openstack.org/software/releases/ocata/components/swift"><img src="images/cloudprovider-openstack.png" alt="OpenStack Swift" /></a></p>
+<p>OpenStack Swift is an open-source data storage system that can be implemented by a storage provider. A number of commercial storage providers using this system are listed on the &quot;Cloud Storage Providers&quot; document.</p>
+<p>Comet's integration with OpenStack Swift also supports compatible implementations of the Swift protocol, such as <a href="http://ceph.com/ceph-storage/object-storage/">Ceph Object Store</a>.</p>
+<span class="docsSectionMarker"><span id="configuration-17" class="docsSectionMarkerChild"></span></span><h4>Configuration&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#configuration-17">&para;</a></h4>
+<p>Your connection to OpenStack is authenticated using one of the following methods:</p>
+<ul>
+<li>Identity API v1 is a basic system available from all OpenStack providers.</li>
+<li>Identity API v2 introduced &quot;Tenants&quot;, to isolate multiple users.</li>
+<li>Identity API v3 introduced &quot;domains&quot;, as another layer of isolation. Additionally, Tenants were renamed to &quot;Projects&quot;.</li>
+</ul>
+<p>Comet automatically determines the API version to use based on the URL set in the &quot;Auth Endpoint&quot; field. For security reasons, we recommend using the highest possible API version that is supported by both Comet and your OpenStack provider.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Requirement</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auth Endpoint</td>
+<td>Mandatory</td>
+<td>The URL for the OpenStack Auth server, including protocol (<code>http://</code> or <code>https://</code>). These URLs commonly end in <code>v1.0</code> or <code>v2.0</code>.</td>
+</tr>
+<tr>
+<td>Username</td>
+<td>Mandatory</td>
+<td>The username for your account.</td>
+</tr>
+<tr>
+<td>API Key</td>
+<td>Mandatory</td>
+<td>The API key for your user account.</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Mandatory</td>
+<td>The container in which to store all data. It will be created if it does not yet exist.</td>
+</tr>
+<tr>
+<td>Subdirectory</td>
+<td>Optional</td>
+<td>A prefix to apply to all objects stored in the container</td>
+</tr>
+<tr>
+<td>Domain Name</td>
+<td>Optional</td>
+<td>The domain name. <em>Applies to v3 only</em></td>
+</tr>
+<tr>
+<td>Region</td>
+<td>Optional</td>
+<td>The region to use (e.g. <code>LON</code> or <code>ORD</code>). If not specified, a region may be automatically selected. <em>Applies to v2 / v3</em></td>
+</tr>
+<tr>
+<td>Tenant name</td>
+<td>Optional</td>
+<td>Name of the tenant/project. <em>Applies to v2 / v3</em></td>
+</tr>
+<tr>
+<td>Tenant ID</td>
+<td>Optional</td>
+<td>The ID of the tenant/project. <em>Applies to v2 / v3</em></td>
+</tr>
+<tr>
+<td>Tenant Domain</td>
+<td>Optional</td>
+<td>Name of the tenant/project's domain, if it differs from the user domain. <em>Applies to v3 only</em></td>
+</tr>
+<tr>
+<td>Trust ID</td>
+<td>Optional</td>
+<td>The ID of the trust <em>Applies to v3 only</em></td>
+</tr>
+<tr>
+<td>Container Policy</td>
+<td>Optional</td>
+<td>The policy to use when creating the container, if it does not yet exist.</td>
+</tr>
+</tbody>
+</table>
+<span class="docsSectionMarker"><span id="simultaneous-connections-16" class="docsSectionMarkerChild"></span></span><h4>Simultaneous connections&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#simultaneous-connections-16">&para;</a></h4>
+<p>Comet makes up to 10 network connections to an OpenStack Swift server.</p>
+<p>If multiple operations are running simultaneously to an OpenStack Swift Storage Vault in Comet Backup, the number of network connections may be higher.</p>
+<span class="docsSectionMarker"><span id="spanned" class="docsSectionMarkerChild"></span></span><h3>Spanned&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#spanned">&para;</a></h3>
+<p>The 'Spanned' storage location is a virtual location that pools disk space from multiple other storage locations. It is implemented similarly to a union filesystem, where all locations are viewed as one. Data files can be spread between all locations.</p>
+<span class="docsSectionMarker"><span id="file-placement-strategy" class="docsSectionMarkerChild"></span></span><h4>File placement strategy&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#file-placement-strategy">&para;</a></h4>
+<p>Multiple file placement strategies are available in Comet.</p>
+<span class="docsSectionMarker"><span id="default-automatic" class="docsSectionMarkerChild"></span></span><h5>Default (Automatic)&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#default-automatic">&para;</a></h5>
+<p>If multiple storage volumes are configured, then new data will be automatically written in a balanced way between applicable drives.</p>
+<p>Comet must determine which volume to write to. New files are placed on one of the constituent targets in a way that is intended to balance the priorities of (A) storage space, (B) keeping disks busy, and (C) minimizing overheads associated with measuring disk free space and disk IOPS.</p>
+<p>At first, when all volumes have a lot of free space, writes are randomly distributed evenly between all storage volumes. This strategy means that disk space is used roughly efficiently across all volumes, and all drives will simultaneously serve the writing load on the server, providing the maximum benefit.</p>
+<p>Once any volume has less than a certain amount of free space, Comet gradually switches to a different strategy, in which it writes solely to a particular volumes with the most free space available. This means that the remaining disk space will be used efficiently, although only one drive at a time will service the writing load (all drives will still service the reading load).</p>
+<p>It is not generally feasible to determine the free space available on a cloud storage provider. When spanning between local disks and cloud storage providers, cloud storage providers are preferred.</p>
+<p>When using the Default file placement method, you can add a new spanned drive location at any time. This has the effect of increasing the space available for storage.</p>
+<p>There is zero overhead when using the Spanned type with one single location. There is a small overhead when using multiple locations, as Comet must check each location to find any requested file.</p>
+<span class="docsSectionMarker"><span id="static-locations" class="docsSectionMarkerChild"></span></span><h5>Static locations&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#static-locations">&para;</a></h5>
+<p><em>(This feature is available in Comet 20.12.3 and later.)</em></p>
+<p>The default automatic Spanned file placement strategy puts files in any location that has free space. That means when Comet needs to get a file back, it has to check in all locations to find it, reducing performance.</p>
+<p>&quot;Static locations&quot; is an alternative file placement strategy where files are consistently placed in one of the span targets based on the file name. Comet will immediately know where to look for any given filename.</p>
+<p>The placement algorithm hashes the requested filename and dividing its integer hash between the number of total targets. </p>
+<p>This has several limitations:</p>
+<ul>
+<li>This is only feasible for brand-new Span targets, since if you have an existing one, the files will be in any of the constituent targets, instead of exactly where Comet expects them</li>
+<li>It is not safe to add additional targets</li>
+<li>It is not safe to reorder the targets</li>
+<li>The targets should also all have roughly the same total free space, for the same reasons</li>
+</ul>
+<p>If you are creating a brand new Spanned storage location, and you can abide by the above restrictions, this may provide higher performance.</p>
+<p>If at any time you are no longer able to abide by the above restrictions (e.g. need to expand storage to an additional location) it is always safe to convert from &quot;Static locations&quot; into &quot;Default&quot; file placement, but not vice versa.</p>
+<span class="docsSectionMarker"><span id="using-spanned-with-comet-server" class="docsSectionMarkerChild"></span></span><h4>Using &quot;Spanned&quot; with Comet Server&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#using-spanned-with-comet-server">&para;</a></h4>
+<p>When using the Spanned type as a storage location for a Comet Server, this allows your Storage Role server to virtually offer data that is hosted on a remote server (e.g. Amazon S3).</p>
+<span class="docsSectionMarker"><span id="cloud-failover" class="docsSectionMarkerChild"></span></span><h4>Cloud Failover&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#cloud-failover">&para;</a></h4>
+<p>When using the Spanned type with Comet Server, you can achieve a best-performance scenario by configuring a Spanned storage with only a Local Path location, and then expanding to a cloud storage provider once local resources are exhausted. (This requires the &quot;Default&quot; file placement strategy.)</p>
+<span class="docsSectionMarker"><span id="simultaneous-connections-17" class="docsSectionMarkerChild"></span></span><h4>Simultaneous connections&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#simultaneous-connections-17">&para;</a></h4>
+<p>Each constituent data location that comprises the Spanned data location is subject to its individual connection limit. There is no additional connection limit for Spanned data locations.</p>
+<span class="docsSectionMarker"><span id="rebalancing" class="docsSectionMarkerChild"></span></span><h4>Rebalancing&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#rebalancing">&para;</a></h4>
+<p>The &quot;Spanned&quot; virtual storage location does not actively rebalance data between the underlying locations.</p>
+<p>However, some rebalancing will happen passively, as retention passes will delete files from the old unbalanced layout, and new data is always written in a balanced way.</p>
+<p>If you are using the &quot;Default&quot; file placement strategy, you may manually rebalance the constituent storage locations by moving files between storage locations. This operation is safe to perform live while Comet Server is running.</p>
+<p>If you are using the &quot;Static locations&quot; file placement strategy, you may not rebalance the constituent storage locations.</p>
+<span class="docsSectionMarker"><span id="expanding-available-storage-space-by-changing-storage-type-to-span" class="docsSectionMarkerChild"></span></span><h4>Expanding available storage space by changing Storage Type to Span&nbsp;<a class="docsSectionLinkIcon" href="storage-configuration.html#expanding-available-storage-space-by-changing-storage-type-to-span">&para;</a></h4>
+<p>Whilst the principle of adding a new Span Target to increase storage space already applies to all storage types, this guide will address the straight-forward addition of a single new hard drive to expand the storage of a Comet Server.</p>
+<p>In the following example, the Comet Server has the Storage Role enabled, and currently stores data on an almost-full hard drive, which shows as &quot;D:\&quot;. A new hard drive has been attached to the Comet Server, and this new drive shows as &quot;E:\&quot;. </p>
+<p>The steps to add this additional storage to the Comet Server so as to expand its storage space are as follows:</p>
+<ul>
+<li>Open the Settings page to the <em>Storage Role &gt; Locations</em> section</li>
+<li><em>Choose where data will be stored</em> will show the current type of storage, as well as the physical storage location. </li>
+<li>In this example, the type is <code>Local Path</code> and the path is &quot;D:\&quot;.</li>
+<li>Change the type from <code>Local Path</code> to <code>Spanned</code>.  </li>
+<li>Add a Span Target, using the existing location used previously, i.e.: <code>Local Path</code> and &quot;D:\&quot;.</li>
+<li>Add a <em>new</em> Span Target, using the new drive and location, e.g: <code>Local Path</code> and &quot;E:\&quot;</li>
+<li>Leave the <em>File Placement Strategy</em> as <code>Default</code>, as &quot;D:\&quot; already has data stored on it.</li>
+<li>Click 'Save' at the top of the Settings page, and the Comet Server will restart.</li>
+</ul>
+<p>If, after applying the changes, you experience issues with accessing your Comet Server, check your server logs for any errors related to storage, and edit the storage settings through the Comet Server Service Manager, or config file.
+It is possible to change from <code>Spanned</code> to a different storage type, such as <code>Local Path</code>, however, this is a potentially lengthy and complex process. Contact Support for more details.</p></div><div class="doc-navigation-section"><div class="doc-navigation-back doc-navigation-width-2"><a href="protected-items.html">&laquo; Back: Protected Item types</a></div><div class="doc-navigation-next doc-navigation-width-2"><a href="troubleshooting.html">Next: Troubleshooting &raquo;</a></div></div> 
+				</div>
+			</div>
+		</div>
+	
+	
+	</body>
+</html>

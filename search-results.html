@@ -32,10 +32,8 @@
 <li><a href="guide-best-practices.html" title="Best Practices">Best Practices</a></li>
 <li><a href="guide-common-problems-and-solutions.html" title="Common Problems and Solutions">Common Problems and Solutions</a></li>
 <li><span class="category-header">Documentation</span></li>
-<li class="current-page"><a data-indent="0" class="subsection-link subsection-indent-0" href="#software-documentation" title="Software Documentation">Software Documentation</a>
-<ul>
-</ul>
-</li><li><a href="application-architecture.html" title="Overview and Concepts">Overview and Concepts</a></li>
+<li><a href="about-these-docs.html" title="Software Documentation">Software Documentation</a></li>
+<li><a href="application-architecture.html" title="Overview and Concepts">Overview and Concepts</a></li>
 <li><a href="comet-server-installation.html" title="Comet Server installation">Comet Server installation</a></li>
 <li><a href="comet-server-configuration.html" title="Comet Server configuration">Comet Server configuration</a></li>
 <li><a href="comet-server-usage.html" title="Comet Server usage">Comet Server usage</a></li>
@@ -59,39 +57,82 @@
 		
 			<div id="position-content">
 				<div id="content-inner">
-					<span class="docsSectionMarker"><span id="software-documentation" class="docsSectionMarkerChild"></span></span><h1>Software Documentation&nbsp;<a class="docsSectionLinkIcon" href="about-these-docs.html#software-documentation">&para;</a></h1><div class="docs-box">
-<p>To get started, select your topic from the left hand side or use the search box. </p>
-<p>This documentation is aimed at system administrators and/or MSP (Managed Service Provider) partners with a valid license.</p>
-<p>The backup software consists of two components: </p>
-<ul>
-<li><em>Comet Server</em>, a server-side application that manages user accounts and stores backup data; and</li>
-<li><em>Comet Backup</em>, a client-side application that performs backup and restore operations on a user's device.</li>
-</ul>
-<p>Comet Server is offered in two packages:</p>
-<ul>
-<li><em>Self-Hosted</em> (formerly <em>Comet Enterprise</em>), in which you install Comet Server on your own hardware; and</li>
-<li><em>Comet-Hosted</em> (formerly <em>CometGo!</em>), in which you access a managed instance of Comet Server running on Amazon AWS.</li>
-</ul>
-<p>There are two release branches of Comet:</p>
-<ul>
-<li><em>Major releases</em> every quarter, with patches and long-term support to ensure a stable experience for your customers; and</li>
-<li><em>Comet Voyager</em> every one to two weeks, adding the latest features and application compatibility, that eventually becomes the next major release.</li>
-</ul>
-<p>This documentation is available from two locations:</p>
-<ul>
-<li>Online at <a href="https://cometbackup.com/">cometbackup.com</a>, where it refers to the latest released version</li>
-<li>Offline in your Comet Server install directory in the <code>docs/</code> subdirectory, or from the Help menu in the Comet Server Service Manager app, where it refers to your installed version</li>
-</ul>
-<p>If you need any further support, please open a ticket from inside the My Account section of <a href="https://cometbackup.com/">cometbackup.com</a>.</p>
-<p>
-     The key words "MUST", "MUST NOT",
-     "REQUIRED", "SHALL", "SHALL NOT",
-     "SHOULD", "SHOULD NOT",
-     "RECOMMENDED", "MAY", and "OPTIONAL"
-     in this document are to be interpreted as described in <a
-     href="http://www.ietf.org/rfc/rfc2119.txt"
-     rel="help glossary">RFC 2119</a>.
-   </p></div><div class="doc-navigation-section"><div class="doc-navigation-back doc-navigation-width-2"><a href="guide-common-problems-and-solutions.html">&laquo; Back: Common Problems and Solutions</a></div><div class="doc-navigation-next doc-navigation-width-2"><a href="application-architecture.html">Next: Overview and Concepts &raquo;</a></div></div> 
+					<h1>Search Results</h1>
+
+<div class="doc-search-results-area">
+    Loading...
+</div>
+
+<script type="text/javascript" src="lunr-index.js"></script>
+<script type="text/javascript">
+    (function() {
+        var rx = /s=([^=&]*)/g;
+        var match = rx.exec(window.location.search);
+        var search_term = match ? decodeURIComponent(match[1].replace(/\+/g, '%20')) : "";
+		
+		// Remove lunr.js field-search operator from supplied term
+		search_term = search_term.replace(/:/g, " ");
+
+        $(".search-box").val(search_term).focus();
+
+        var results = searchindex.search(search_term);
+        if (results.length == 0) {
+            $(".doc-search-results-area").text("No results matched your search \"" + search_term + "\".");
+            return;
+        } else {
+			if (results.length > 10) {
+				$(".doc-search-results-area").html('').append([
+					$("<span>").text("Showing 1-"),
+					$("<span class='doc-search-count'>10</span>"),
+					$("<span>").text(" of " + results.length + " result(s) for your search \"" + search_term + "\":")
+				]);
+			} else {
+				$(".doc-search-results-area").text("Showing " + results.length + " result(s) for your search \"" + search_term + "\":");
+			}
+        }
+
+		var $container = $(".doc-search-results-area");
+        for (var i = 0; i < results.length; ++i) {
+            var $p = $("<p class='doc-search-result-p-" + i + "'>");
+			if (i >= 10) {
+				$p.hide();
+			}
+			
+            var matchRef = results[i]['ref'];
+            $p.append( $("<a>").attr('href', matchRef).text( refnames[matchRef] ) );
+            $container.append($p);
+        }
+		
+		if (results.length > 10) {
+			var visible_ptr = 10;
+			
+			var $link_p = $("<p>").append([
+				"More search results are available. ",
+				$("<a>")
+					.attr('href', 'javascript:;')
+					.text("Show...")
+					.click(function() {
+					
+						for (var i = visible_ptr; i < visible_ptr + 10; ++i) {
+							if (i == results.length) {
+								$link_p.remove();
+								break;
+							}
+							
+							$(".doc-search-result-p-" + i).show();
+						}
+						visible_ptr = i;
+						$(".doc-search-count").text(visible_ptr);
+						
+					})
+			]);
+		
+			$container.append($link_p);
+		}
+		
+    })();
+</script>
+ 
 				</div>
 			</div>
 		</div>
